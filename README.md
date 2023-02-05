@@ -25,59 +25,68 @@ This repository contains various notes, ideas, and lessons that I've gathered ov
 
 ## Cloud 
 
-<p>
+- [Work-in-progress...](xxx)
+
+<!-- <p>
 <img width=250 src="Images/loadingicon4.png">
-</p>
+</p> -->
 
 
 
 ## Infrastructure as Code 
 
 - [Terraform](https://github.com/joseeden/All-Things-Terraform) 
-- Ansible
+- [Ansible](xxx)
+- [Work-in-progress...](xxx)
 
 
 ## Security 
 
 - [Public Key Infrastructure (PKI)](pages/007-DevSecOps/002-PKI.md)
+- [Work-in-progress...](xxx)
 
 
 ## CICD
 
-<p>
+- [Work-in-progress...](xxx)
+
+<!-- <p>
 <img width=250 src="Images/loadingicon4.png">
-</p>
+</p> -->
 
 
 ## Docker and Kubernetes
 
 - [Docker](https://github.com/joseeden/All-Things-Docker-and-Kubernetes) 
 - [Kubernetes](https://github.com/joseeden/All-Things-Docker-and-Kubernetes) 
+- [Work-in-progress...](xxx)
 
 ## Python 
 
-<p>
+- [Work-in-progress...](xxx)
+
+<!-- <p>
 <img width=250 src="Images/loadingicon4.png">
-</p>
+</p> -->
 
 
 ## Observability
 
-<p>
-<img width=250 src="Images/loadingicon4.png">
-</p>
+- [Work-in-progress...](xxx)
 
 
 ## DevSecOps 
 
 - [Adopting DevSecOps](pages/007-DevSecOps/001-DevSecops-Adoption.md) 
 - [dependency-track](https://github.com/DependencyTrack/dependency-track)
+- [Work-in-progress...](xxx)
 
 ## Site Reliability Engineering (SRE) 
 
 - [Automation](pages/009-SRE/001-Automation.md)
+- [Work-in-progress...](xxx)
 
-## Handling Projects  
+## Project Management
 
 - [Agile](pages/008-Handling-Projects/001-Agile.md)
 
