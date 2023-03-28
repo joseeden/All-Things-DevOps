@@ -105,7 +105,7 @@ Lean values the contributions of every employee and encourages a culture of mutu
 - **Value creation**   
 Lean emphasizes creating value for customers through the delivery of high-quality products and services that meet their needs and exceed their expectations.
 
-- **Pull-based production** 
+- **Pull-based production**    
 Lean adopts a pull-based approach to production, where production is initiated only when a customer order is received, rather than producing based on forecasts or assumptions.
 
 ### The Agile Manifesto
