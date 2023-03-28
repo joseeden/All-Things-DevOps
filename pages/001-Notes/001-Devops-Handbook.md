@@ -2,6 +2,9 @@
 # Notes from the DevOps Handbook 
 
 
+- [Common Myths about DevOps](#common-myths-about-devops)
+- [Technical Debts](#technical-debts)
+
 
 
 ## Common Myths about DevOps 
