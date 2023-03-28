@@ -4,6 +4,9 @@
 All-in-one stop for all my notes in various DevOps topics. 
 This repository contains various labs, notes, ideas, and lessons that I've gathered over the years working on various DevOps projects. 
 
+
+## Readings 
+
 - [Notes from the DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
 
 ## Foundations 
