@@ -9,7 +9,7 @@
 
 ## Common Myths about DevOps 
 
-- **DevOps is only for startups**<br>
+- **DevOps is only for startups**    
 Various organizations, regardless of whether they are a new-comer or an already established titan in the tech industry, have been able to transform their architecture, technical practices, and culture that create amazing outcomes that  we associate with DevOps.
 
 - **DevOps replaces Agile**
