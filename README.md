@@ -17,17 +17,17 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [Security](pages/002-Becoming-a-Cloud-Architect/016-Security.md)
 
-- [Web Fundamentals](pages/002-Becoming-a-Cloud-Architect/010-Web-Fundamentals.md)
-
-- [DevOps](pages/002-Becoming-a-Cloud-Architect/012-Devops.md)
+- [Web Basics](pages/002-Becoming-a-Cloud-Architect/010-Web-Fundamentals.md)
 
 - [Containers](pages/002-Becoming-a-Cloud-Architect/013-Containers.md)
+
+- [DevOps](pages/002-Becoming-a-Cloud-Architect/012-Devops.md)
 
 - [Serverless Computing](pages/002-Becoming-a-Cloud-Architect/014-Serverless-Computing.md)
 
 ## Linux 
 
-- [Linux Labs](https://github.com/joseeden/All-Things-Linux)
+- [My Linux Labs](https://github.com/joseeden/All-Things-Linux)
 
 - [Kodekloud Engineer Labs](https://github.com/joseeden/KodeKloud_Tasks)
 
@@ -69,6 +69,9 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [What is a Cloud Architect](pages/002-Becoming-a-Cloud-Architect/001-What-is-a-Cloud-Architect.md)
 
+- [Five Pillars of Well-Architected Frameworks](pages/004-AWS/109_well_architected_framework.md)
+
+- [AWS Services](pages/004-AWS/108_aws_services.md) 
 
 - [AWS Networking ](pages/004-AWS/51_aws_networking_art.md)
 
@@ -76,16 +79,21 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
     - [Securing your Account](pages/004-AWS/101_aws_security_start.md)
 
+    - [Authentication, Authorization, and Access Control](pages/004-AWS/107_AAA_in_AWS.MD) 
+
     - [Infrastructure Security](pages/004-AWS/102_infra_security.md)
 
     - [Logging and Monitoring](pages/004-AWS/103_logging_and_monitoring.md)
 
-    - [Identity and Access Management ](pages/004-AWS/104_aws_iam)
+    - [Identity and Access Management ](pages/004-AWS/104_aws_iam.md)
 
     - [Data Protection](pages/004-AWS/105_aws_data_protection.md)
 
-    - [Managing Incident Response](pages/004-AWS/106_Managing_incident_response.md)
+    - [Managing Incident Responsew](pages/004-AWS/106_Managing_incident_response.md)
 
+    - [AWS Well-Architected Labs: Security](https://wellarchitectedlabs.com/security/)
+
+    - [AWS Security Specialty Exam: Resources](pages/004-AWS/999_aws_exam_sec_resources.md)
 
 
 <!-- <p>

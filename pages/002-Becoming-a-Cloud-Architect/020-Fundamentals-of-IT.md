@@ -6,7 +6,6 @@
 - [IT as a Hot Skill](#it-as-a-hot-skill)
 - [Now that we have a general idea](#now-that-we-have-a-general-idea)
 
-
 As with any skill, we cannot go from "good" to "great" with just one leap onto the highest floor. We need to learn first what is the actual first step that we need to take to get some traction in the field of Cloud Computing.
 
 Regardless of whether you're goal is to be a skilled network engineer, security specialist, software developer, or an all-around system administrator, you will benefit from learning the fundamentals of IT.
@@ -21,16 +20,13 @@ But IT isn't just about building computers and using the Internet, it's really a
 
 ## IT as a Hot Skill 
 
-IT skills are becoming necessary for day to day living, like finding a job, getting an education and looking up your health information. There are many social and economic reasons why some people have digital literacy skills and other people do not. There's growing skills gap is known as the **digital divide**. 
+There are many social and economic reasons why some people have digital literacy skills and other people do not. There's growing skills gap is known as the **digital divide**. 
 
-People without digital literacy skills are falling behind. But people like you are the real solution to bridging that digital divide. 
-
-Overcoming the digital divide, not only involves confronting and understanding the combination of socio economic factors that shape our experience, but also helping others confront and understand those experiences.
-
+The digital divide is a growing skills gap that separates those with digital literacy skills from those without. In today's world, IT skills have become essential for various activities such as job searching, education, and accessing health information. Those with digital skills have an opportunity to bridge this divide by helping others to confront and understand the socio-economic factors that contribute to the digital divide.
 
 ## Now that we have a general idea
 
-It's time for us to dive into more interesting concepts in IT.
+Time to dive into more interesting concepts in IT.
 
 - [A Day in the Life of IT Support](021-A-Day-in-the-Life-of-IT-Support.md)
 

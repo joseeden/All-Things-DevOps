@@ -54,4 +54,4 @@ While we work with computers every day, it is the user interaction that makes up
 
 ## Next Steps 
 
-Let's now jump onto the first layer: the [hardware](027-Programs-and-Hardware.md)!
+Let's now jump onto the first layer: the [hardware](027-Programs-and-Hardware.md).

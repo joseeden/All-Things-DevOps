@@ -46,7 +46,7 @@ It's used in many aspects of computing like computer networking. It's important 
 
 There are simple lookup tables available online that you can use like the "ASCII to binary table", but you'll still need to know how binary works. 
 
-he binary system is how our computers count using ones and zeros, but humans don't count like that. When you were a child, you may have counted using ten fingers on your hand. That innate counting system is called the decimal form or base-10 system. 
+The binary system is how our computers count using ones and zeros, but humans don't count like that. When you were a child, you may have counted using ten fingers on your hand. That innate counting system is called the decimal form or base-10 system. 
 
 In the decimal system, there are 10 possible numbers you can use ranging from zero to nine. When we count binary, which only uses zero and one, we convert it to a system that we can understand, decimal. 330, 250, 2, 40, 4 million, they're all decimal numbers. 
 
@@ -66,4 +66,4 @@ Now, let's look at an ASCII to decimal table. The letter h in decimal is 104. No
 
 ## Next Steps 
 
-We've gone over all the essentials of the basic building blocks of computing and machine language. Next, let's learn the layer of computing that helps us perform the task you'll do day to day in the [next page.](026-Computer-Architecture.md)
+Up next, learn the layer of computing that helps us perform the day to day tasks in the [next page.](026-Computer-Architecture.md)

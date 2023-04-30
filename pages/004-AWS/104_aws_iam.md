@@ -1,28 +1,42 @@
 
 # AWS Identity and Access Management 
 
-
-- [IAM for User and Group Management](#iam-for-user-and-group-management)
+- [Identity and Access Management](#identity-and-access-management)
+- [IAM User created through AWS CLI or AWS API](#iam-user-created-through-aws-cli-or-aws-api)
 - [IAM Roles](#iam-roles)
     - [Service Roles](#service-roles)
     - [Service-linked Roles](#service-linked-roles)
+        - [Limited number of cases when Service-linked Roles can be modified](#limited-number-of-cases-when-service-linked-roles-can-be-modified)
 - [IAM Policies](#iam-policies)
+- [Sample IAM Scenario: Conflicting Policies](#sample-iam-scenario-conflicting-policies)
+- [EC2 Instances with IAM Profile](#ec2-instances-with-iam-profile)
+- [Cross-Account Access](#cross-account-access)
 - [AWS Organizations](#aws-organizations)
 - [Service Control Policies](#service-control-policies)
 - [Policy Evaluation Logic](#policy-evaluation-logic)
 - [Active Directory Federation within AWS](#active-directory-federation-within-aws)
 - [AWS Cognito and Web Identity Federation](#aws-cognito-and-web-identity-federation)
 
-
-
-## IAM for User and Group Management 
+## Identity and Access Management 
 
 IAM is used to manage access to AWS services and resources securely through users, groups, and permissions to allow and deny access to AWS resources. Important concepts to know:
 
-- Users 
-- Groups 
-- Roles
-- Policies
+- **IAM Users**
+These are account objects that allow an individual user to access your AWS environment with a set of credentials. You can issue user accounts to anyone you want to view or administer objects and resources within your AWS environment. Permissions can be applied individually to a user, but the best practice for permission assignments is to add the user to an IAM Group.
+
+- **IAM Groups**
+These are objects that have permissions assigned to them via Policies allowing the members of the Group access to specific resources. Having Users assigned to these groups allows for a uniform approach to access management and control.
+
+- **IAM Roles**
+These are objects created within IAM which have Policy permissions associated to them. However, instead of just being associated with users as groups are, roles can be assigned to instances at the time of launch. This allows the instance to adopt the permissions given by the role without the need to have access keys stored locally on the instance.
+
+- **IAM Policies**
+IAM policies define permissions for an action regardless of the method that you use to perform the operation
+
+To learn more, check out:
+
+- [What are policies?](https://docs.aws.amazon.com/robomaker/latest/dg/auth_access_what-are-policies.html)
+- [Overview of access management: Permissions and policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_access-management.html)
 
 
 Best practices:
@@ -37,6 +51,15 @@ Best practices:
 - For temporary access, use AWS STS
 
 ![](../../Images/awsiamusersgroupsrolespolicies.png)
+
+
+## IAM User created through AWS CLI or AWS API 
+
+By default, a brand new IAM user created using AWS CLI or AWS API has no access keys of any kind. 
+
+- no credentials of any kind
+- no password and no access key (neither an access key ID nor a secret access key)
+- user is not authorized to perform any AWS actions or to access any AWS resources
 
 ## IAM Roles 
 
@@ -60,12 +83,17 @@ Pre-configured with a specific set of read-only AWS-managed policies that can on
 - roles are created during the first time you use the service
 - comes with pre-built trust, permissions, and managed policies which cannot be modified
 
-
 Examples of service-linked roles:
 
 - **AWS ServiceRoleForAmaazonSSM** - used by AWS Systems Manager to manage resources on your behalf
 - **AWS ServiceRoleForCloduTrail** - used by CloudTrail for managing your organizations' trail feature
 - **AWS ServiceRoleForCloudWatchEvents** -used by CloudWatch to perform EC2 alarm actions
+
+
+#### Limited number of cases when Service-linked Roles can be modified
+The method that you use to edit a service-linked role depends on the service. Some services might allow you to edit the permissions for a service-linked role from the service console, API, or CLI. However, after you create a service-linked role, you cannot change the name of the role because various entities might reference the role. You can edit the description of any role from the IAM console, API, or CLI. 
+
+To learn more, check out: [Editing a service-linked role](https://docs.amazonaws.cn/en_us/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role)
 
 ## IAM Policies 
 
@@ -114,6 +142,45 @@ An IAM Policy is a document that defines one or more permissions.
     - similar to permission boundaries, they don't grant permissions
     - they defined boundary of maximum permissions
 
+## Sample IAM Scenario: Conflicting Policies 
+
+Scenario: 
+A user is included in multiple IAM group policies:
+- One allows read-only access to Amazon EC2 with no actions denied
+- Another allows full access to Amazon EC2 
+
+Solution: 
+The IAM group policy is always aggregated. In this case, if the user does not have permission for one group, but has permission for another group, they will have full access to EC2. Unless there is specific deny policy, the user will be able to access EC2. 
+
+To learn more, check out: http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html
+
+## EC2 Instances with IAM Profile 
+
+We can designate an IAM role to attach to an EC2 instance when launching the instance, or any time after. Attaching an IAM role to an instance allows us to manage permissions for instances centrally with IAM.
+
+Example screenshot below when manuelly creating EC2 instances in the AWS Management Console:
+
+![](../../Images/ec2instanceswithiamprofilescreenshotsample.png)
+
+## Cross-Account Access 
+
+Cross-Account Access allows you to delegate access to resources across different AWS accounts that you own without needing IAM users in each account.
+
+- You can share resources in one account with users in a different account
+- You don't need to create individual IAM users in each account
+- Users don't have to sign out of one account and sign into another in order to access resources that are in different AWS accounts
+
+When using a role for cross-account access, a **trust policy** must be established between the two accounts. This Role type offers two options:
+
+- providing access between AWS accounts that you own
+- providing access between an account that you own and a 3rd party AWS account
+
+This access is managed by policies that establish trusting and trusted accounts that explicitly allow a trusted principal to access specific resources. Many services use Roles to allow cross-account access to resources.
+
+To learn more, check out: 
+
+- http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html
+- http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html
 
 ## AWS Organizations
 

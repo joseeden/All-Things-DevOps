@@ -1,9 +1,7 @@
 
 # The History of Computing
 
-
-
-- [And there was Computers](#and-there-was-computers)
+- [Computers](#computers)
 - [From Abacus to Analytical Engine](#from-abacus-to-analytical-engine)
 - [Let's get Mechanical](#lets-get-mechanical)
 - [The Looming Innovation](#the-looming-innovation)
@@ -11,69 +9,77 @@
 - [Algorithms](#algorithms)
 - [Next Steps](#next-steps)
 
+## Computers
 
+When we think of computers, we might imagine high-performance desktops or slim laptops. However, these modern devices are not what was originally meant by the term. 
 
-## And there was Computers
+Essentially, a **computer** is a device that performs calculations and stores and processes data. Before computers existed as we know them, the term referred to a person who performed these calculations. Understanding the history of technology is important in comprehending the present and future. 
 
-When you hear the word computer, maybe you think of something like a beefy gaming desktop with flashing lights, or maybe you think of a slim and sleek laptop. These fancy devices aren't what people had in mind when computers were first created. 
-
-To put it simply, a **computer** is a device that stores and processes data by performing calculations.
-
-Before we had actual computer devices, the term computer was used to refer to someone who actually did the calculation. 
-
-In the world of technology, and in life, it is important to know where we've been in order to understand where we are and where we are going. Historical context can help you understand why things work the way they do today. 
-
-Have you ever wondered why the alphabet isn't laid out in order on your keyboard? 
-
-The keyboard layout that most of the world uses today is the qwerty layout, distinguished by the Q, W, E, R, T, and Y keys in the top row of the keyboard. The most common letters that you type aren't found on the home row, where your fingers hit the most. 
-
-But why? There are many stories that claim to answer this question. Some say it was developed a slow down typist so they wouldn't jam old mechanical typewriters. Others claim it was meant to resolve problem for telegraph operators. 
-
-One thing is for sure, the keyboard layout that millions of people use today isn't the most effective one. Different keyboard layouts have even been created to try and make typing more efficient. 
+For instance, have you ever wondered why the keyboard on your computer is laid out the way it is? The most commonly used letters are not found on the home row, where your fingers rest the most. The most widely used keyboard layout is the QWERTY layout, with many stories claiming to explain its development. While not the most efficient layout, it remains in widespread use, though other layouts have been designed in attempts to improve typing efficiency.
 
 ## From Abacus to Analytical Engine
 
-Now that we're starting to live in a mobile-centric world with our smartphones, the landscape for keyboards may change completely. In the technology industry, having a little context can go a long way to making sense of the concepts you'll encounter. 
+In our current mobile-centric world, the use of smartphones may completely change the landscape for keyboards. It's important to have some historical context when delving into the technology industry to better understand the concepts you'll encounter.
 
-Do you know what an **abacus** is? It looks like a wooden toy that a child would play with, but it's actually one of the earliest known computers. It was invented in 500 BC to count large numbers. 
+Have you ever heard of an **abacus**? Although it may look like a wooden toy that a child would play with, it's actually one of the earliest known computing devices, invented in 500 BC for counting large numbers. Despite the development of more advanced counting tools like calculators, abacuses are still used today, as they require only manual calculations.
 
-While we have calculators like the old reliable TI-89s or the ones in our computers, abacuses actually are still used today. Over the centuries, humans built more advanced counting tools but they still required a human to manually perform the calculations. 
+<p align=center>
+<img width=500 src="../../Images/022historyofcomputingabacus.png">
+</p>
+
+
 
 ## Let's get Mechanical 
 
-The first major step forward was the invention of the **mechanical calculator** in the 17th by Blaise Pascal. This device used a series of gears and levers to perform calculations for the user automatically. 
+The invention of the **mechanical calculator** in the 17th century was a significant leap forward in the history of computing. This device utilized a system of gears and levers to perform basic arithmetic operations automatically. 
 
-While it was limited to addition, subtraction, multiplication and division for pretty small numbers, it paved the way for more complex machines. The fundamental operations of the mechanical calculator were later applied to the textile industry. 
+Although it was limited to simple calculations involving small numbers, such as addition, subtraction, multiplication, and division, it paved the way for more advanced machines. The principles behind the mechanical calculator were also applied to the textile industry.
+
+<p align=center>
+<img width=500 src="../../Images/mechanicalclaculators.png">
+</p>
+
 
 
 ## The Looming Innovation 
 
-Before we had streamlined manufacturing, looms were used to weave yarn into fabric. If you wanted to design patterns on your fabric, that took an incredible amount of manual work. 
+Imagine a time before the industrial revolution when producing fabric was a laborious and time-consuming task. Creating patterns on the fabric was an even more daunting challenge that required a significant amount of manual labor. But in the 1800s, a French weaver named Joseph Jacquard changed everything with his invention of the programmable loom.
 
-In the 1800s, a man by the name of Joseph Jacquard invented a **programmable loom**. These looms took a sequence of cards with holes in them. When the loom encountered a hole, it would hook the thread underneath it. 
+The **Jacquard loom** was the first machine that could weave intricate patterns into fabric automatically. The secret was in a sequence of cards with holes punched into them. These cards controlled the loom's movements, allowing it to weave patterns with incredible precision. When the loom encountered a hole, it would hook the thread underneath it, and if it didn't encounter a hole, the hook wouldn't thread anything. This simple mechanism allowed the loom to create complex designs with relative ease.
 
-If it didn't encounter a hole, the hook wouldn't thread anything. Eventually this spun up a design pattern on the fabric. These cards were known as punch cards. And while Mr. Jacquard reinvented the textile industry, he probably didn't realize that his invention would shaped the world of computing and the world itself today. 
+While the Jacquard loom revolutionized the textile industry, it also played a significant role in the development of computing. The idea of using punch cards to control machines was later applied to early computers, which used similar cards to store and execute programs. Without Jacquard's invention, the world of computing may have looked very different today.
+
+<p align=center>
+<img width=800 src="../../Images/programmableloom.png">
+</p>
 
 ## The Tale of Two Engines 
 
-Fast forward a few decades and meet a man by the name of Charles Babbage. Babbage was a gifted engineer who developed a series of machines that are now known as the greatest breakthrough on our way to the modern computer. 
+Fast forward to early 19th century and meet the engineering visionary named Charles Babbage. This gifted inventor played a pivotal role in shaping the history of computing by creating groundbreaking machines that paved the way to modern-day computers.
 
-He built what was called a **difference engine**. It was a very sophisticated version of some of the mechanical calculators we were just talking about. It could perform fairly complicated mathematical operations but not much else. 
+Babbage's first breakthrough was the creation of the **difference engine**. This highly complex machine was a significant advancement from the earlier mechanical calculators, as it could perform more intricate mathematical calculations. However, its functionality was still quite limited.
 
-Babbage's follow up to the difference engine was a machine he called the **Analytical Engine**. He was inspired by Jacquard's use of punch cards to automatically perform calculations instead of manually entering them by hand. 
+<p align=center>
+<img width=500 src="../../Images/analyticalengine.png">
+</p>
 
-Babbage used punch cards in his Analytical engine to allow people to predefine a series of calculations they wanted to perform. As impressive as this achievement was, the Analytical engine was still just a very advanced mechanical calculator. 
+
+But Babbage didn't stop there. He was inspired by the punch card system used by Jacquard's loom and envisioned a machine that could be programmed using these cards to perform automatic calculations. And thus, the **Analytical Engine** was born.
+
+<p align=center>
+<img width=500 src="../../Images/analyticalengine2.png">
+</p>
 
 
 ## Algorithms 
 
-It took the powerful insights of a mathematician named Ada Lovelace to realize the true potential of the analytical engine. She was the first person to recognize that the machine could be used for more than pure calculations. 
+Forward to 1800s and meet Ada Lovelace, a mathematician with a mind-boggling insight into computing. Lovelace was one of the first people to see the potential of the analytical engine, a revolutionary machine developed by Charles Babbage.
 
-She developed the first algorithm for the engine. It was the very first example of computer programming. 
+While others saw the machine as a calculator, Lovelace realized that it could do much more than perform mathematical operations. She developed the first algorithm for the analytical engine, making it the very first example of computer programming.
 
-An **algorithm** is just a series of steps that solves specific problems. Because of Lovelace's discovery that algorithms could be programmed into the Analytical engine, it became the very first general purpose computing machine in history, and a great example that women have had some of the most valuable minds in technology since the 1800s. 
+An **algorithm** is a series of steps that solve specific problems, and Lovelace's discovery that algorithms could be programmed into the Analytical engine made it the world's first general-purpose computing machine. This groundbreaking achievement by Lovelace is an excellent example that women have always had a profound impact on the technology industry, even dating back to the 1800s.
 
 ## Next Steps
 
-Now that learned how primitive counting devices like the abacus evolved into huge complex devices like the Analytical engine, jump into the [next page](./023-The-Modern-Computers.md) to learn how these mechanical machines made the leap into modern computing.
+Now that we've learned how primitive counting devices like the abacus evolved into huge complex devices like the Analytical engine, jump into the [next page](./023-The-Modern-Computers.md) to learn how these mechanical machines made the leap into modern computing.
 

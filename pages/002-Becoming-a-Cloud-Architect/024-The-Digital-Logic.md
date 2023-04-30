@@ -84,4 +84,4 @@ With just eight combinations of zeros and ones, we're able to represent everythi
 
 ## Next Steps 
 
-We've had a sneak peak of what binary it. Let's now jump onto the [next page](025-Binary.md) to learn how it actually works.
+Learn how binary works in the [next page](025-Binary.md).
