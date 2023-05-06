@@ -6,7 +6,6 @@
     - [Hypervisors](#hypervisors)
     - [Isolations](#isolations)
     - [Dedicated Hosts vs. Dedicated Instances](#dedicated-hosts-vs-dedicated-instances)
-- [AWS Secrets Manager](#aws-secrets-manager)
 - [AWS Systems Manager - SSM](#aws-systems-manager-ssm)
     - [AWS Systems Manager: Parameter Store](#aws-systems-manager-parameter-store)
     - [AWS Systems Manager: Run Command](#aws-systems-manager-run-command)
@@ -103,37 +102,6 @@ A dedicated host gives you control about instance placement in that physical hos
 - billing is per host
 
 ![](../../Images/dedicatedhosts-vs-dedicated-instances.png)
-
-## AWS Secrets Manager
-
-AWS Secrets Manager allows you to store, encrypt, and rotate credentials and other types of secrets.
-
-- automatic secret rotation
-- built-in integration with AWS RDS
-- secret rotation for non-AWS services using Lambda functions
-
-Usage:
-
-- Your application can fetch secrets from AWS Secrets Manager via API call 
-- Secrets are encrypted in-transit and at-rest using KMS
-- if automatic rotation is enabled, secret rotates immediately
-- if secret is deleted, it will remain for 7 days before it is fully removed 
-
-**AWS Secrets Manager vs. AWS Systems Manager Parameter Store**
-
-AWS Secrets Manager:
-
-- Database credentials, API keys, and passwords
-- Encryption is enforced on all secrets
-- Integration with AWS RDS 
-- Automatic secret rotation for RDS
-- Automatoc secret rotation for non-AWS services via Lambda 
-
-AWS SSM Parameter Store
-
-- Any parameter can be stored 
-- Encryption is not mandatory 
-- Integrated with AWS Systems Manager 
 
 ## AWS Systems Manager (SSM)
 

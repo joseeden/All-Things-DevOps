@@ -89,9 +89,9 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
     - [Data Protection](pages/004-AWS/105_aws_data_protection.md)
 
-    - [Managing Incident Responsew](pages/004-AWS/106_Managing_incident_response.md)
+    - [Managing Incident Response](pages/004-AWS/106_Managing_incident_response.md)
 
-    - [AWS Well-Architected Labs: Security](https://wellarchitectedlabs.com/security/)
+    - [AWS Well-Architected Labs on Security](https://wellarchitectedlabs.com/security/)
 
     - [AWS Security Specialty Exam: Resources](pages/004-AWS/999_aws_exam_sec_resources.md)
 
