@@ -14,18 +14,89 @@
     - [Clear Anti-Fragility Strategy](#clear-anti-fragility-strategy)
 - [Hierarchy of Automation Types](#hierarchy-of-automation-types)
 - [Secure Automation](#secure-automation)
+    - [Secure Builds](#secure-builds)
+    - [Secure Tests](#secure-tests)
+    - [Secure Staging](#secure-staging)
+    - [Secure Production](#secure-production)
 - [How much automation do you have?](#how-much-automation-do-you-have)
     - [Manage](#manage)
+        - [Audit Management](#audit-management)
+        - [Authentication](#authentication)
+        - [DevOps Score](#devops-score)
+        - [Value Stream Management](#value-stream-management)
     - [Plan](#plan)
+        - [Issue-tracking](#issue-tracking)
+        - [Kanban Boards](#kanban-boards)
+        - [Time-tracking](#time-tracking)
+        - [Agile Portfolio Management](#agile-portfolio-management)
+        - [Service desk](#service-desk)
+        - [Requirements management](#requirements-management)
+        - [Quality management](#quality-management)
     - [Create](#create)
+        - [Source code management](#source-code-management)
+        - [Code review](#code-review)
+        - [Wiki](#wiki)
+        - [Web IDE](#web-ide)
+        - [Snippets](#snippets)
     - [Verify](#verify)
+        - [Continuous integration](#continuous-integration)
+        - [Code quality](#code-quality)
+        - [Performance testing](#performance-testing)
+        - [Usability testing](#usability-testing)
     - [Package](#package)
+        - [Package registry](#package-registry)
+        - [Container registry](#container-registry)
+        - [Dependency proxy](#dependency-proxy)
+        - [Helm chart registry](#helm-chart-registry)
+        - [Dependency firewall](#dependency-firewall)
     - [Secure](#secure)
+        - [SAST](#sast)
+        - [DAST](#dast)
+        - [IAST](#iast)
+        - [Secret detection](#secret-detection)
+        - [Dependency scanning](#dependency-scanning)
+        - [Container scanning](#container-scanning)
+        - [License compliance](#license-compliance)
+        - [Vulnerability database](#vulnerability-database)
+        - [Fuzzing](#fuzzing)
     - [Release](#release)
+        - [Continuous delivery](#continuous-delivery)
+        - [Release orchestration](#release-orchestration)
+        - [Pages](#pages)
+        - [Review apps](#review-apps)
+        - [Incremental rollout](#incremental-rollout)
+        - [Canary deployments](#canary-deployments)
+        - [Feature flags](#feature-flags)
+        - [Release governance](#release-governance)
+        - [Secrets management](#secrets-management)
     - [Configure](#configure)
+        - [Auto DevOps](#auto-devops)
+        - [ChatOps](#chatops)
+        - [Runbooks](#runbooks)
+        - [Serverless](#serverless)
     - [Monitor](#monitor)
+        - [Metrics](#metrics)
+        - [Logging](#logging)
+        - [Tracing](#tracing)
+        - [Cluster monitoring](#cluster-monitoring)
+        - [Error tracking](#error-tracking)
+        - [Incident management](#incident-management)
+        - [Synthetic monitoring](#synthetic-monitoring)
+        - [Status page](#status-page)
     - [Defend](#defend)
+        - [RASP](#rasp)
+        - [WAF](#waf)
+        - [Threat detection](#threat-detection)
+        - [UEBA](#ueba)
+        - [Vulnerability management](#vulnerability-management)
+        - [DLP](#dlp)
+        - [Storage security](#storage-security)
+        - [Container network security](#container-network-security)
+- [Resources](#resources)
 
+
+
+----------------------------------------------
 
 ## Benefits of Automation within SRE
 
@@ -164,7 +235,7 @@ At the very beginning, there is no automation in place. We can see that automati
 
 With automation, we can remove the chance of human error or "willful sabotage".
 
-**Secure Builds**
+### Secure Builds
 
 - We can secure automated steps but we cannot provenly secure manual steps
 
@@ -178,7 +249,7 @@ With automation, we can remove the chance of human error or "willful sabotage".
 
 - Code should be held in secure code repositories with regualted access
 
-**Secure Tests**
+### Secure Tests
 
 - Deployed artifacts should be the same acorss all environments  
 
@@ -186,7 +257,7 @@ With automation, we can remove the chance of human error or "willful sabotage".
 
 - Using secure and insecure test data to test the security boundaries of the service
 
-**Secure Staging**
+### Secure Staging
 
 - Immutable staging environments 
 
@@ -198,7 +269,7 @@ With automation, we can remove the chance of human error or "willful sabotage".
 
 - PCI compliance may need to be considered for financial and payment-related data
 
-**Secure Production**
+### Secure Production
 
 - Production environments are immutable 
 
@@ -214,11 +285,11 @@ With automation, we can remove the chance of human error or "willful sabotage".
 
 ### Manage 
 
-**Audit Management**
+#### Audit Management
 
 Using automated tools ensure products and services are auditable. This includes audit logs of the pipeline stages, auditing configurations, and log files from production operations. 
 
-**Authentication** 
+#### Authentication
 
 Implement mechanisms to ensure appropriate access to products, services, and tools are in place.
 
@@ -226,11 +297,11 @@ Implement mechanisms to ensure appropriate access to products, services, and too
 - Multi-factor Authentication
 - Cloud-specific IAM
 
-**DevOps Score**
+#### DevOps Score
 
 This is a metric showing DevOps adoption across the organization and the corresponding impact on delivery velocity. 
 
-**Value Stream Management** 
+#### Value Stream Management
 
 This pertains to the ability to visualize the flow of value delivery through the DevOps lifecycle.
 
@@ -239,7 +310,7 @@ This pertains to the ability to visualize the flow of value delivery through the
 
 ### Plan 
 
-**Issue-tracking**
+#### Issue-tracking
 
 Usage fo tools for capturing incidents or backlgos of work 
 
@@ -247,46 +318,46 @@ Usage fo tools for capturing incidents or backlgos of work
 - Trello 
 - Agile Central 
 
-**Kanban Boards**
+#### Kanban Boards
 
 The same tools for issue-tracking can also represent delivery flow through Scrum and Kanban workflow boards  
 
-**Time-tracking**
+#### Time-tracking
 
 Issue-tracking tools can also be used for tracking time, either against the individual issues, other work, or project types.
 
-**Agile Portfolio Management**
+#### Agile Portfolio Management
 
 This involves evaluating in-flight projects and proposed future initiatives to shape and govern the ongoing investment in projects and discretionary work.
 
 - CA's Agile Central 
 - VersionOne 
 
-**Service desk**
+#### Service desk
 
 Using a service-desk platform improves the managing of the services lifecycle, as well as internal and external stakeholder engagement. 
 
 - ServiceNow
 
-**Requirements management** 
+#### Requirements management
 
 Tools that handle requirements definition, traceability, hierarchies, and dependency. Often also handles code requirements and test cases for requirements. 
 
-**Quality management**
+#### Quality management
 Tools that handle test case planning, test execution, defect tracking, severity, and priority analysis.
 
 - CA's Agile Central.
 
 ### Create 
 
-**Source code management** 
+#### Source code management
 
 Tools to securely store source code and make it available in a scalable multi-user environment. 
 
 - Git 
 - SVN 
 
-**Code review** 
+#### Code review
 
 The ability to perform peer code-reviews to check quality can be enforced through tools.
 
@@ -295,17 +366,17 @@ The ability to perform peer code-reviews to check quality can be enforced throug
 - Crucible
 - Gitlab. 
 
-**Wiki** 
+#### Wiki
 
 Tools for knowledge sharing and creating a rich Wiki of content. 
 
 - Confluence 
 
-**Web IDE**
+#### Web IDE
 
 Tools that have a web client integrated development environment. Enables developer productivity without having to use a local development tool.
 
-**Snippets**
+#### Snippets
 
 Stored and shared code snippets to allow collaboration around specific pieces of code. Also allows code snippets to be used in other code-bases. 
 
@@ -314,11 +385,11 @@ Stored and shared code snippets to allow collaboration around specific pieces of
 
 ### Verify
 
-**Continuous integration** 
+#### Continuous integration
 
 Refers to integrating, building, and testing code within the development environment
 
-**Code quality**
+#### Code quality
 
 Also referred to as code analysis. Use tools that automatically check the seven main dimensions of code:
 
@@ -336,53 +407,53 @@ Tools:
 - Sonar 
 - Checkmarks 
 
-**Performance testing**
+#### Performance testing
  
 Performance testing is the process of determining the speed, responsiveness, and stability of a computer, network, software program, and or device under a workload. 
 
-**Usability testing**
+#### Usability testing
 
 Usability testing is a way to see how easy to use something is by testing it with real users. Tools can be used to track how a user works with a service. For example, scroll recording, eye checking, and mouse tracking.
 
 ### Package
 
-**Package registry**
+#### Package registry
 
 A repository for software packages, artifacts and their corresponding metadata. Can store files produced by an organization itself or for third party binaries. 
 
 - Artifactory 
 - Nexus
 
-**Container registry**
+#### Container registry
 
 Secure and private registry for container images. Typically allowing for easy upload and download of images from build tools.
 
-**Dependency proxy** 
+#### Dependency proxy
 
 Implement a local proxy for frequently used upstream images or packages. In the case of CI/CD, the proxy is responsible for receiving a request and returning the upstream image from a registry, acting as a pull-through cache. 
 
-**Helm chart registry**
+#### Helm chart registry
 
 Helm charts describe related Kubernetes resources. Use tools that support a registry for maintaining master records of Helm charts.
 
 - Artifactory 
 - Codefresh 
 
-**Dependency firewall**
+#### Dependency firewall
 
 Many projects depend on packages that may come from unknown or unverified providers, introducing potential security vulnerabilities. There are tools to scan dependencies but that is done after they are downloaded. These tools prevent those vulnerabilities from being downloaded to begin with. 
 
 ### Secure 
 
-**SAST**
+#### SAST
 
 Static application security testing tests applications from the inside out by looking at source code, byte code, or binaries.
 
-**DAST**
+#### DAST
 
 Dynamic application security testing tests applications from the outside in to detect security vulnerabilities.
 
-**IAST**
+#### IAST
 
 Interactive application security testing combines both SAST and DAST approaches but involves application tests changing in real time based on information feedback from SAST and DAST, creating new test cases on the fly. 
 
@@ -391,11 +462,11 @@ Interactive application security testing combines both SAST and DAST approaches 
 - Parasoft
 - Quotium 
 
-**Secret detection**
+#### Secret detection
 
 Secret detection aims to prevent sensitive information like passwords, authentication tokens, and private keys being unintentionally leaked as part of the repository content.
 
-**Dependency scanning**
+#### Dependency scanning
 
 Used to automatically find security vulnerabilities in your dependencies while you are developing and testing your applications. 
 
@@ -404,7 +475,7 @@ Used to automatically find security vulnerabilities in your dependencies while y
 - Retire.js
 - bundler-audit
 
-**Container scanning**
+#### Container scanning
 
 When building a container image for your applications, tools can run a security scan to ensure it does not have any known vulnerability in the environment where your code is shipped. 
 
@@ -414,86 +485,86 @@ When building a container image for your applications, tools can run a security 
 - Claire 
 - Klar
 
-**License compliance**
+#### License compliance
 
 use tools that perform checks to ensure licenses of your dependencies are compatible with your application and either approve or blacklist them. 
 
 - Blackduck 
 - Synopsis
 
-**Vulnerability database** 
+#### Vulnerability database
 
 Aimed at collecting, maintaining, and disseminating information about discovered computer security vulnerabilities. This is then checked as part of the delivery pipeline. 
 
-**Fuzzing**
+#### Fuzzing
 
 Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a service and then watching the results.
 
 ### Release
 
-**Continuous delivery** 
+#### Continuous delivery
 
 This is a software development discipline where you build software in such a way that the software can be released to production at any time. 
 
-**Release orchestration**
+#### Release orchestration
 
 Typically a deployment pipeline used to detect any changes that will lead to potential problems in production. Orchestrating other tools will identify performance, security, or usability issues. 
 
 - Jenkins 
 - Gitlab CI
 
-**Pages**
+#### Pages
 
 For creating supporting web pages automatically as part of a CI/CD pipeline. 
 
-**Review apps** 
+#### Review apps
 
 Allow code to be committed and launched in real time. Environments are spun up to allow developers to review their applications. 
 
 - Gitlab CI 
 
-**Incremental rollout** 
+#### Incremental rollout
 
 This means deploying many small, gradual changes to a service instead of a few large ones. Users are then incrementally moved across to the new version of the service until eventually all users are moved across. Sometimes referred to by colored environments, e.g., blue/green deployments.
 
-**Canary deployments**
+#### Canary deployments
 
 Similar to incremental rollout, it is where a small portion of the user base is updated to a new version first. This subset, the canaries, then serve as the proverbial canary in the coal mine. If something goes wrong, then a release is rolled back and only a small subset of the users have been impacted. 
 
-**Feature flags**
+#### Feature flags
 
 Sometimes called feature toggles, a technique that allows system behavior to change without changing the underlying code through the use of flags to decide which behavior is invoked. This is primarily a programming practice although there are tools which can help with flag management and invocation.
 
 - Launch Darkly
 
-**Release governance**
+#### Release governance
 
 Release governance is all about the controls and automation, security compliance or otherwise, that ensure your releases are managed in an auditable and trackable way in order to meet the need of the business to understand what is changing. 
 
-**Secrets management** 
+#### Secrets management
 
 Secrets management refers to the tools and methods for managing digital authentication credentials, secrets, including passwords, keys, APIs, and tokens for use in applications, services, privileged accounts, and other sensitive parts of the IT ecosystem.
 
 ### Configure
 
-**Auto DevOps**
+#### Auto DevOps
 
 Auto DevOps brings DevOps best practices to your project by automatically configuring software development life cycles. It automatically detects, builds, test, deploys, and monitors applications. 
 
 - Gitlab 
 - AWS Code Pipelines 
 
-**ChatOps**
+#### ChatOps
 
 The ability to execute common DevOps transactions directly from chat, build, deploy, test, incident management, rollback, et cetera, with the resulting output sent back to the ChatOps channel.
 
-**Runbooks**
+#### Runbooks
 
 A collection of procedures necessary for the smooth operation of a service. Previously manual in nature, they are now usually automated with tools.
 
 - Ansible
 
-**Serverless**
+#### Serverless
 
 A code execution paradigm where no underlying infrastructure or dependencies are needed. Moreover, a piece of code is executed by a service provider, typically cloud, who takes over the creation of the execution environment. 
 
@@ -502,74 +573,74 @@ A code execution paradigm where no underlying infrastructure or dependencies are
 
 ### Monitor
 
-**Metrics**
+#### Metrics
 
 Tools that collect and display performance metrics for deployed apps.
 
 - Prometheus
 
-**Logging**
+#### Logging
 
 The capture, aggregation, and storage of all logs associated with system performance including but not limited to process calls, events, user data, responses, error, and status odes. 
 
 - Logstash 
 - Nagios 
 
-**Tracing**
+#### Tracing
 
 Tracing provides insight into the performance and health of a deployed application, tracking each function or microservice which handles a given request.
 
-**Cluster monitoring**
+#### Cluster monitoring
 
 Tools that let you know the health of your deployed environments running in clusters such as Kubernetes. 
 
-**Error tracking**
+#### Error tracking
 
 Tools to easily discover and show the errors that an application may be generating along with the associated data. 
 
-**Incident management** 
+#### Incident management
 
 Involves capturing the who, what, when of service incidents, and the onward use of this data in ensuring service level objectives are being met.
 
-**Synthetic monitoring**
+#### Synthetic monitoring
 
 The ability to monitor service behavior by creating scripts to simulate the action or path taken by a customer or end user and the associated outcome. 
 
-**Status page**
+#### Status page
 
 Service pages that easily communicate the status of services to customers and end users. 
 
 ### Defend
 
-**RASP**
+#### RASP
 
 Runtime application self-protection. Tools that actively monitor and block threats in the production environment before they can exploit vulnerabilities. 
 
-**WAF**
+#### WAF
 
 Web application firewall. Tools that examine traffic being sent to an application and can block anything that looks malicious.
 
-**Threat detection** 
+#### Threat detection
 
 Refers to the ability to detect, report, and support the ability to respond to attacks. Intrusion detection systems and denial-of-service systems allow for some level of threat detection and prevention. 
 
-**UEBA**
+#### UEBA
 
 User and entity behavior analytics is a machine learning technique to analyze normal and abnormal user behavior with the aim of preventing the latter. 
 
-**Vulnerability management** 
+#### Vulnerability management
 
 This is about ensuring that assets and applications are scanned for vulnerabilities and then the subsequent processes to record, manage, and mitigate those vulnerabilities. 
 
-**DLP**
+#### DLP
 
 Data loss protection. Tools that prevent files and content from being removed from within a service environment or organization.
 
-**Storage security**
+#### Storage security
 
 A specialty area of security that is concerned with securing data storage systems and ecosystems and the data that resides on these systems. 
 
-**Container network security**
+#### Container network security
 
 Used to prove that any app that can be run on a container cluster with any other app can be confident that there is no unintended use of the other app or any unintended network traffic between them. 
 
