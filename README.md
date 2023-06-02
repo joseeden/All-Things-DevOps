@@ -7,7 +7,8 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 ## Readings 
 
-- [Notes from the DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
+- [Notes - IDE and Terminal](pages/001-Notes/000-IDE.md)
+- [Notes - DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
 
 ## Foundations 
 
@@ -158,7 +159,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Work-in-progress...](xxx)
 
 ## Site Reliability Engineering (SRE) 
-
+.
 - [Automation](pages/009-SRE/001-Automation.md)
 
 - [Work-in-progress...](xxx)
