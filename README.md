@@ -5,7 +5,7 @@ All-in-one stop for all my notes in various DevOps topics.
 This repository contains various labs, notes, ideas, and lessons that I've gathered over the years working on various DevOps projects. 
 
 
-## Readings 
+## Notes
 
 - [Notes - IDE and Terminal](pages/001-Notes/000-IDE.md)
 - [Notes - DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
