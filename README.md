@@ -96,6 +96,10 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
     - [AWS Security Specialty Exam: Resources](pages/004-AWS/999_aws_exam_sec_resources.md)
 
+- [AWS Developer Services](pages/004-AWS/150_aws_developer_services.md)
+
+- [Being Cloud-Native](pages/020-Cloud-Native/001-Being-Cloud-Native.md)
+
 
 <!-- <p>
 <img width=250 src="Images/loadingicon4.png">
@@ -150,6 +154,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 ## Observability
 
 - [Work-in-progress...](xxx)
+- [Prometheus](pages/010-Obeservability/001-Prometheus.md)
 
 
 ## DevSecOps 
