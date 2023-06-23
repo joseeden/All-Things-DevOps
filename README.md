@@ -70,6 +70,10 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [What is a Cloud Architect](pages/002-Becoming-a-Cloud-Architect/001-What-is-a-Cloud-Architect.md)
 
+- 
+
+- [Being Cloud-Native](pages/020-Cloud-Native/001-Being-Cloud-Native.md)
+
 - [Five Pillars of Well-Architected Frameworks](pages/004-AWS/109_well_architected_framework.md)
 
 - [AWS Services](pages/004-AWS/108_aws_services.md) 
@@ -98,7 +102,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [AWS Developer Services](pages/004-AWS/150_aws_developer_services.md)
 
-- [Being Cloud-Native](pages/020-Cloud-Native/001-Being-Cloud-Native.md)
 
 
 <!-- <p>
