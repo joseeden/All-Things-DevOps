@@ -44,13 +44,17 @@
 
 ## Computer Hardware 
 
-Computers are everywhere. You come into contact with them at home, work, the airport, the grocery store, you're using some type of computer to read this page. There's probably one in your pocket right now. 
-
-While computers are complex and can seem daunting to learn, they ultimately just calculate, process, and store data. Let's check out a typical desktop setup.
+Computers are everywhere. You come into contact with them at home, work, the airport, the grocery store, you're using some type of computer to read this page. There's probably one in your pocket right now. While computers are complex and can seem daunting to learn, they ultimately just calculate, process, and store data. Let's check out a typical desktop setup.
 
 ## Desktops 
 
 Desktops are just computers that can fit on or under our desks. So here we have a monitor, a keyboard, a mouse, and a desktop.
+
+<p align=center>
+<img src="../../Images/comphwdesktops2.png">
+</p>
+
+<br> 
 
 Sometimes you might even add a webcam, speakers, or a printer set up. We'll call these physical components, hardware. 
 
@@ -60,9 +64,7 @@ This is the basically the same setup as in a laptop. There are also physical com
 
 ### CPU 
 
-You could think of the CPU as the brain of our computer. The CPU does all the calculations and data processing. It uses instruction sets to translate and perform functions on our data. 
-
-Lastly, the CPU communicates pretty heavily with the RAM or Random Access Memory, which you can see below.
+You could think of the CPU as the brain of our computer. The CPU does all the calculations and data processing. It uses instruction sets to translate and perform functions on our data. Lastly, the CPU communicates pretty heavily with the RAM or Random Access Memory, which you can see below.
 
 ### Instruction Sets
 
@@ -76,11 +78,17 @@ When you select your CPU, you need to make sure it's compatible with your **moth
 
 The motherboard holds everything in place and lets our components communicate with each other. It's the foundation of our computer. You can think of the motherboard as the body or circulatory system of the computer that connects all the pieces together.
 
+![](../../Images/comphwcpumotherboard.png)
+
 Note that you can't just buy a bunch of parts and expect them to work together. There are different ways CPUs fit on motherboards using different sockets. Your CPU might have lots of tiny pins that either stick out or have contact points that look like dots. 
 
 #### Expansion Cards 
 
 The motherboard lets us expand our computer's functionality by adding expansion cards. It routes power from the power supply and it allows the different parts of the computer to communicate with each other.
+
+<p align=center>
+<img src="../../Images/comphwexpansioncards.png">
+</p>
 
 #### Chipsets 
 
@@ -93,6 +101,11 @@ Every motherboard has a few key characteristics. First is the chipset, which dec
 In some modern CPUs, the Northbridge has been directly integrated into the CPU so there isn't a separate Northbridge chipset. 
 
 A chipset is a key component of our motherboard that allows us to manage data between our CPU, RAM, and peripherals. Peripherals are the external devices we connect to our computer like: a mouse, keyboard, and a monitor. 
+
+<p align=center>
+<img src="../../Images/comphwchipsets.png">
+</p>
+
 
 #### Expansion Slots 
 
@@ -116,14 +129,17 @@ The other type of socket is the PGA socket, where the pins are located on the pr
 
 The socket size may vary. So always make sure you CPU and socket are compatible before hand. When you purchase the CPU or motherboard, they will tell you right on the box what type of socket it has. Make sure your CPU and motherboard socket also both match. If it's not listed on the box, you can go to the manufacturer's website where it usually list what types of CPUs are compatible with the motherboard. 
 
+![](../../Images/comphwcpusocket.png)
+
 
 #### Form Factor 
 
-There are different size of motherboards that are available today. These sizes of form factors determine the amount of stuff we can put in it and the amount of space we'll have. The most common form factor for motherboards is **ATX** which stands for **Advanced Technology eXtended**. 
+There are different size of motherboards that are available today. These sizes of form factors determine the amount of stuff we can put in it and the amount of space we'll have. The most common form factor for motherboards is **ATX** which stands for **Advanced Technology eXtended**. ATX actually comes in different sizes too. In desktops, you'll commonly see full sized ATX's. 
 
-ATX actually comes in different sizes too. In desktops, you'll commonly see full sized ATX's. If you don't want to use an ATX form factor, you could use an **ITX** or **Information Technology eXtended** form factor. 
+If you don't want to use an ATX form factor, you could use an **ITX** or **Information Technology eXtended** form factor. ITXs are much smaller than ATX boards. For example, the Intel NUC uses a variation of the ITX board which comes in three board sizes; mini-ITX, nano-ITX, and pico-ITX. 
 
-ITXs are much smaller than ATX boards. For example, the Intel NUC uses a variation of the ITX board which comes in three board sizes; mini-ITX, nano-ITX, and pico-ITX. 
+![](../../Images/comphwformfactor.png)
+
 
 When building your computer, you will need to keep in mind what type of form factor you want. Do you want to build something small that can't handle as much workload? Or, do you want a powerhouse workstation that you can add lots of functionality to? 
 
@@ -135,9 +151,15 @@ Let's say you're responding to a ticket for a user who is having video problems,
 
 RAM is our computer's short-term memory. We use this component when we want to store data temporarily. Like let's say, you're typing something into a chat or a piece of text in a word processor. This information is stored in the RAM.
 
+<p align=center>
+<img src="../../Images/comphwram.png">
+</p>
+
 Our computer is comprised of [programs](028-Computer-Programs.md). To run a program, we need to make a copy of it in RAM so our CPU can process it. When you see a new phone or laptop that's says it has 16 gigs of RAM, that means it can run up to 16 gigs of programs, meaning you can run lots of programs at the same time. 
 
 We use RAM to store data that we want to access quickly. This data changes all the time so it isn't permanent. Almost all RAM is volatile, which means that once we power off our machines, the data stored in RAM is cleared.
+
+![](../../Images/comphwdram.png)
 
 #### DRAM 
 
@@ -174,6 +196,8 @@ As we've learned from previous [pages](024-The-Digital-Logic.md), the smallest u
 The next largest unit of storage is called a **byte**, which is comprised of 8 bits. A single byte can hold a letter, number or symbol. The next largest unit is refer to as kibibyte, but we typically use the term kilobyte. A kilobyte is made up of 1,024 bytes. 
 
 Let's take a look at the size of an average music file, which is about three megabytes. On a 500 gigabyte machine, that's approximately 165,000 music files. That's a lot of music. We store all of our computer's data on our long-term memory hard drive, which allows us to store our programs, music, pictures, etc. 
+
+![](../../Images/comphwdifftypesofstorage.png)
 
 
 #### HDDs 
