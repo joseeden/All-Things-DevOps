@@ -25,7 +25,9 @@ Turns out, our devices also use programs to tell the CPU how to run them. These 
 
 Our CPU doesn't know that there is a device that it can talk to, so it has to connect to something called the **BIOS**, or **basic input output services**. The BIOS is software that helps initialize the hardware in our computer and gets our operating system up and running.
 
-Unlike the programs, you're probably used to running a web browser or operating system. The BIOS isn't stored on a hard drive. Our motherboard stores the BIOS in a special type of memory called, the read-only memory chip, or ROM chip.
+![](../../Images/mobilebios.png)
+
+Unlike the programs, you're probably used to running a web browser or operating system. The BIOS isn't stored on a hard drive. Our motherboard stores the BIOS in a special type of memory called, the **read-only memory** chip, or **ROM** chip.
 
 ## ROM 
 
@@ -33,7 +35,7 @@ Unlike RAM, ROM is non-volatile, meaning it won't erase the data if the computer
 
 ## UEFI 
 
-n today's system, there is another player for BIOS called **UEFI**, which stands for Unified Extensible Firmware Interface. UEFI performs the same function of starting your computer as a traditional BIOS. 
+In today's system, there is another player for BIOS called **UEFI**, which stands for Unified Extensible Firmware Interface. UEFI performs the same function of starting your computer as a traditional BIOS. 
 
 But it's more modern and has better compatibility and support for newer hardware. Most hardware out there today comes with UEFI built in. Eventually, UEFI will become the predominant BIOS. 
 
@@ -43,10 +45,11 @@ When you turn on a computer, you might notice a beeping from time to time. How c
 
 The POST figures out what hardware is on the computer. So it happens before the BIOS initializes any hardware or loads up essential drivers. If there is an issue with anything at that point, there is no way to display it on the screen, since things like the video driver haven't been loaded. 
 
-Instead, the computer can usually produce a series of beeps, almost like Morse code, which will help identify the problem. Different manufacturers have different beep codes. So, if your computer successfully boots up, you may hear a single beep.
+Instead, the computer can usually produce a series of beeps, almost like Morse code, which will help identify the problem. Different manufacturers have different beep codes. 
 
-If you hear two beeps, it could mean a POST error.
-Play video starting at :3:4 and follow transcript3:04
+- If your computer successfully boots up, you may hear a single beep.
+- If you hear two beeps, it could mean a POST error.
+
 It's best to refer to your motherboard manual to find out what each code means. Also, you should know that not all machines have built-in speakers, so don't worry if your computer boots without a beep.
 
 If it does have a built-in speaker, being able to distinguish what the beep codes mean is an extremely helpful tool when troubleshooting boot issues.
@@ -63,4 +66,8 @@ BIOS settings control which devices to boot to and in an IT role, you might need
 
 A frequently performed IT task is the reimaging of a computer. The term refers to a disk image which is a copy of an operating system. So the process of reimaging involves wiping and reinstalling an operating system. 
 
+![](../../Images/mobiledevicereimage.png)
+
 This procedure is typically performed using a program that's stored on some external device like a USB memory stick, or a CD ROM, or even a server accessible through the network. To access these programs and perform the reimage, you'll need to use the BIOS to tell the computer to boot up from that external device.
+
+For more details, check [How To Reimage A Computer On Windows?](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.technewstoday.com%2Freimaging-computer%2F&psig=AOvVaw25CjSwSoB972Z_QQ7w7tz3&ust=1692245035084000&source=images&cd=vfe&opi=89978449&ved=0CBIQjhxqFwoTCMCz9ZOm4IADFQAAAAAdAAAAABAz)

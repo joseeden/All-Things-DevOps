@@ -21,6 +21,10 @@ All of the components mentioned above make up most computers, even a mobile phon
 
 Mobile devices are computers too. They have CPUs, RAM, Storage, power systems, and peripherals. How are they different from a server, a desktop computer or a laptop? 
 
+<p align=center>
+<img width=700 src="../../Images/laptopsmobiledevices.png">
+</p>
+
 They're portable and usually powered by batteries. Some mobile devices are general purpose computing devices like tablets or smartphones, other mobile devices are optimized to perform a specific set of tasks like fitness monitors, e-readers, and smartwatches. 
 
 Mobile devices are usually very integrated. Remember the systems that we showed you earlier, the components can be taken out and held in your hand. Mobile devices build some or all of these components together in a way that you can't take apart. 

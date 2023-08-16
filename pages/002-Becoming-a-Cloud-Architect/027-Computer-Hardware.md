@@ -147,6 +147,10 @@ The form factor will also play a role into what expansion slots you might want t
 
 Let's say you're responding to a ticket for a user who is having video problems, you don't want to make it all the way to their desk only to realize the graphics card you brought as a replacement doesn't fit the motherboard their computer uses. 
 
+
+----------------------------------------------
+
+
 ### RAM 
 
 RAM is our computer's short-term memory. We use this component when we want to store data temporarily. Like let's say, you're typing something into a chat or a piece of text in a word processor. This information is stored in the RAM.
@@ -159,7 +163,17 @@ Our computer is comprised of [programs](028-Computer-Programs.md). To run a prog
 
 We use RAM to store data that we want to access quickly. This data changes all the time so it isn't permanent. Almost all RAM is volatile, which means that once we power off our machines, the data stored in RAM is cleared.
 
-![](../../Images/comphwdram.png)
+Good to know concepts:
+
+- [DRAM](#dram)
+- [DIMM](#dimm)
+- [SDRAM](#sdram)
+- [DDR](#ddr)
+
+
+<p align=center>
+<img src="../../Images/comphwdram.png">
+</p>
 
 #### DRAM 
 
@@ -189,6 +203,8 @@ DDR is faster, takes up less power, and has a larger capacity than earlier SDRAM
 
 And faster RAM means that programs can be run faster and that more programs can run at the same time. Keep in mind that any RAM sticks you use need a compatible motherboard with a different number of pins aligned with the motherboard RAM slots. 
 
+----------------------------------------------
+
 ### Storage  
 
 As we've learned from previous [pages](024-The-Digital-Logic.md), the smallest unit of a data storage is a **bit**. A bit can store one binary digit, so it can store a one or zero. 
@@ -197,7 +213,17 @@ The next largest unit of storage is called a **byte**, which is comprised of 8 b
 
 Let's take a look at the size of an average music file, which is about three megabytes. On a 500 gigabyte machine, that's approximately 165,000 music files. That's a lot of music. We store all of our computer's data on our long-term memory hard drive, which allows us to store our programs, music, pictures, etc. 
 
-![](../../Images/comphwdifftypesofstorage.png)
+Good to know concepts:
+
+- [HDDs](#hdds)
+- [SSDs](#ssds)
+- [SATA](#sata)
+- [NVMe](#nvme)
+- [Backups](#backups)
+
+<p align=center>
+<img src="../../Images/comphwdifftypesofstorage.png">
+</p>
 
 
 #### HDDs 
@@ -216,11 +242,20 @@ Sounds great, doesn't it? So why doesn't everyone use SSDs? Well, both have thei
 
 There are a few interfaces that hard drives use to connect to our system. ATA interfaces are the most common ones. The most popular ATA drive is a **serial ATA**, or **SATA**, which uses one cable for data transfers. 
 
+<p align=center>
+<img width=700 src="../../Images/comphwsatainterface.png">
+</p>
+
 SATA drives are hot swappable. It means you don't have to turn off your machine to plug in a SATA drive. SATA drives also move data faster and use a more efficient cable than it's predecessors which makes it the de facto interface for HDDs today.
 
 #### NVMe 
 
 People quickly found that using a SATA cable wasn't good enough for some of the blazing fast SSDs that were coming on the market. The interface couldn't keep up with speed of the newest SSDs. So another interface standard was created called **NVM Express**, or **NVMe**.
+
+
+<p align=center>
+<img width=700 src="../../Images/comphwnvmeslot.png">
+</p>
 
 Instead of using a cable to connect your drive to your machine, the drive was added as an expansion slot, which allows for greater throughput of data and increased efficiency.
 
@@ -228,12 +263,26 @@ Instead of using a cable to connect your drive to your machine, the drive was ad
 
 Have you ever had an issue with your computer and lost all the data that was on your hard drive? This actually happens a lot and you'll probably encounter it as an IT support specialist. Make sure you backup your data to be safe. This means you should copy or save your data somewhere else, just in case something goes wrong and your hard drive crashes. That way, you won't lose all your data.
 
+Here are some useful links on how to backup your data:
+
+- [What are the 3 types of backup?](https://iosafe.com/data-protection-topics/3-types-of-backup/)
+
+- [How to Back Up Your Computer](https://www.nytimes.com/wirecutter/guides/how-to-back-up-your-computer/)
+
+
+----------------------------------------------
 
 ### Peripherals 
 
-As we've learned, we can plug in different objects like a mouse, keyboard, and a monitor on ports and connectors. These devies are known as peripherals. 
+As we've learned, we can plug in different objects like a mouse, keyboard, and a monitor on ports and connectors. These devies are known as peripherals. A **peripheral** is basically anything that you connect to your computer externally that adds functionality. 
 
-A peripheral is basically anything that you connect to your computer externally that adds functionality. 
+- [USB](#usb)
+- [Display](#display)
+- [Projectors](#projectors)
+- [Connectors and Cables](#connectors-and-cables)
+- [Device Drivers](#device-drivers)
+- [Lighting](#lighting)
+- [Calibration](#calibration)
 
 #### USB 
 
@@ -290,9 +339,19 @@ Projectors often rely on expensive, hot, very bright incandescent bulbs, or lamp
 #### Calibration
 Sometimes, like when a projector is first installed, reset, or moved, you will need to calibrate the projector image to account for the distance and angle that the projector is installed at. If the image is skewed or keystoned, you might need to recalibrate the projector geometry. Calibrating the image involves focusing the image, and making adjustments to the image to make it square and aligned with the projection surface. Every projector is a little different, so refer to the vendor documentation to complete this task!
 
+
+----------------------------------------------
+
 ### Heat Sinks 
 
 When we install our CPU, we need to do a few things to it to keep it cool. Since it does a lot of work, it's prone to overheating. We have to make sure to include a heat sink, too, which takes the heat from our CPU and dissipates it through a fan or another medium. 
+
+
+<p align=center>
+<img width=700 src="../../Images/comphwcpuheatsinkandfan.png">
+</p>
+
+----------------------------------------------
 
 ### The Power Supply 
 
@@ -312,6 +371,12 @@ Most power supply units have a fan. They also has voltage information just norma
 
 To understand electricity, we must use the example of water pipes. Our sinks have a faucet that's connected to a pressurized water tank. When we turn on the faucet, water comes out. This is sort of like how electricity works. 
 
+**Analogy:**
+
+<p align=center>
+<img src="../../Images/comphwvoltsampwatts.png">
+</p>
+
 When we plug an appliance into a wall outlet and turn it on, a flow of electricity comes out. If we added more pressure to our water tank, would more water come out of it? The higher the pressure, the more water there will be. 
 
 When it comes to electricity, we refer to the pressure as **voltage**. If you plug in a 120 volt appliance into a 220 volt outlet, the power will come busting through and fry your appliance.
@@ -322,7 +387,7 @@ In some cases though, this can deteriorate the performance of the device and cau
 
 #### Amps 
 
-We refer to the amount of electricity coming out as current or amperage, and it's measured in amps. We can think of amps as pulling electricity, as opposed to voltage, which pushes electricity. Amps will pull as much electricity needed, but voltage will just give you everything. 
+We refer to the amount of electricity coming out as current or **amperage**, and it's measured in amps. We can think of amps as pulling electricity, as opposed to voltage, which pushes electricity. Amps will pull as much electricity needed, but voltage will just give you everything. 
 
 Look on the back of the one of your device charges, you might see something like 1 or 2.1a. Charging a device with 2.1 amps will actually charge a device faster because it's able to put current from a 2.1 amp than a 1 amp charger. 
 
@@ -340,6 +405,6 @@ Since power supplies can fail for lots of reasons like burnouts, power surges, o
 
 ## Bits and Pieces  
 
-Before we fully close this page, let's do a high-level view of 32-bits and 64-bits. If you purchase a CPU, you'll see that it has either a 32 bit or 64 bit architecture. What does that mean? 
+Before we fully close this page, let's do a high-level view of 32-bits and 64-bits. If you purchase a CPU, you'll see that it has either a **32 bit** or **64 bit** architecture.
 
-Well, we know we can process 8 bits in binary. Now, imagine how we can process with 32 or even 64 bits. CPUs that have 32 bit or 64 bit architecture are just specifying how much data it can efficiently handle. You can read more about the differences between 32 bit and 64 bit architecture [here](https://support.microsoft.com/en-us/help/15056/windows-7-32-64-bit-faq).
+We know we can process 8 bits in binary. Now, imagine how we can process with 32 or even 64 bits. CPUs that have 32 bit or 64 bit architecture are just specifying **how much data it can efficiently handle**. You can read more about the differences between 32 bit and 64 bit architecture [here](https://support.microsoft.com/en-us/help/15056/windows-7-32-64-bit-faq).
