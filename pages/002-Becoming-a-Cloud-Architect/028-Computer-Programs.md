@@ -86,7 +86,7 @@ And then there's another bus, the **Address Bus** which connects the CPU to the 
 A more complete picture:
 
 <p align=center>
-<img width=600 src="../../Image/compprogramaddressbus.png">
+<img width=600 src="../../Images/compprogramaddressbus.png">
 </p>
 
 
