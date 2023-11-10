@@ -84,6 +84,12 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     - [Networking](pages/004-AWS/113_aws_networking.md) 
     
     - [Security](pages/004-AWS/114_aws_security.md) 
+    
+    - [Serverless](pages/004-AWS/115_aws_serverless.md) 
+    
+    - [Developer Services](pages/004-AWS/116_aws_developer_services.md) 
+    
+    - [Integration and Messaging](pages/004-AWS/117_aws_integration_and_messaging.md) 
 
 
 - [AWS Networking](pages/004-AWS/51_aws_networking_art.md)
@@ -222,6 +228,7 @@ Fundamentals:
 AWS Security:
 
 - [AWS Certified Security - Specialty](https://www.packtpub.com/product/aws-certified-security-specialty-video/9781838550103)
+
 AWS Networking:
 
 - [Security - Specialty Certification Preparation for AWS](https://cloudacademy.com/learning-paths/security-specialty-certification-preparation-for-aws-201/)
