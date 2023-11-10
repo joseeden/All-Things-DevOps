@@ -145,17 +145,14 @@ A DB engine is the specific relational database software that runs on your DB in
 
 ### RDS Security
 
-#### Encryption
-
-
-**Encryption at rest**
+#### Encryption at rest
 
 - Possibility to encrypt the master and read replicas with AWS KMS - AES-256 encryption
 - Encryption has to be defined at the launch time
 - **If the master is not encrypted, the read replicas cannot be encrypted**
 - Transparent Data Encryption (TDE) is available for Oracle and SQL Server
 
-**Encryption in flight** 
+#### Encryption in flight
 
 - Uses SSL certificates to encrypt data from client to RDS in flight
 - It is required SSL a trust certificate when connecting to database
