@@ -169,13 +169,13 @@ A DB engine is the specific relational database software that runs on your DB in
         GRANT USAGE ON *.* To 'user'@'%' REQUIRE SSL; 
         ```
 
-**Encrypting RDS backups**
+#### Encrypting RDS backups
 
 - Snapshots of un-encrypted RDS databases are un-encrypted
 - Snapshots of encrypted RDS databases are encrypted
 - We can copy an un-encrypted snapshot into an encrypted one
 
-**Encrypt an un-encrypted RDS database**
+#### Encrypt an un-encrypted RDS database
 
 - Create a snapshot
 - Copy the snapshot and enable encryption for the snapshot
@@ -201,22 +201,6 @@ A DB engine is the specific relational database software that runs on your DB in
     - Network in/out must be encrypted using SSL
     - IAM is used to centrally manage users instead of DB credentials
     - We can manage IAM roles and EC2 instance profiles for easy integration
-
-#### Security Summary
-
-**Encryption at rest**
-- It is done only when the database is created
-- To encrypt an existing database, we have create a snapshot, copy it as encrypted, and create an encrypted database from the snapshot
-
-**Customer responsibility**
-- Check the ports/IP/security groups inbound rules
-- Take care of database user creation and permissions or manage them through IAM
-- Create a database with or without public access
-- Ensure parameter groups or DB is configured to only allow SSL connections
-
-**AWS responsibility**
-- DB patching
-- Underlying OS patching and updates
 
 
 ## Aurora
