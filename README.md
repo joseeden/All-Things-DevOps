@@ -53,7 +53,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 ## Cloud 
 
-
 - [Cloud Computing](pages/002-Becoming-a-Cloud-Architect/002-Cloud-Computing.md)
 
 - [Cloud Deployment Models](pages/002-Becoming-a-Cloud-Architect/003-Cloud-Deployment-Models.md) 
@@ -78,7 +77,16 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
     - [Compute](pages/004-AWS/110_aws_compute.md) 
 
-- [AWS Networking ](pages/004-AWS/51_aws_networking_art.md)
+    - [Storage](pages/004-AWS/111_aws_storage.md) 
+    
+    - [Databases](pages/004-AWS/112_aws_database.md) 
+    
+    - [Networking](pages/004-AWS/113_aws_networking.md) 
+    
+    - [Security](pages/004-AWS/114_aws_security.md) 
+
+
+- [AWS Networking](pages/004-AWS/51_aws_networking_art.md)
 
 - [AWS Security](pages/004-AWS/101_aws_security_start.md)
 
@@ -99,9 +107,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     - [AWS Well-Architected Labs on Security](https://wellarchitectedlabs.com/security/)
 
     - [AWS Security Specialty Exam: Resources](pages/004-AWS/999_aws_exam_sec_resources.md)
-
-- [AWS Developer Services](pages/004-AWS/150_aws_developer_services.md)
-
 
 
 <!-- <p>
