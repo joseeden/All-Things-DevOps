@@ -6,7 +6,7 @@
 - [Serverless Computing](#serverless-computing)
 - [Scalability](#scalability)
 - [Microservices](#microservices)
-- [-Factor App](#-factor-app)
+- [Twelve-Factor App](#twelve-factor-app)
 - [Standards in Cloud Native](#standards-in-cloud-native)
 - [Cloud Native Computing Foundation](#cloud-native-computing-foundation)
 - [Resources](#resources)
@@ -59,7 +59,7 @@ Cloud-native applications are microservices-oriented which means the application
 
 To ensure that applications are suited for cloud-native environments, we often refer to the 12-factor application model.
 
-## 12-Factor App 
+## Twelve-Factor App 
 
 The 12-factor app is a software development methodology for building applications that:
 
