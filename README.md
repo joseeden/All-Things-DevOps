@@ -76,6 +76,8 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [AWS Services](pages/004-AWS/108_aws_services.md) 
 
+    - [Compute](pages/004-AWS/110_aws_compute.md) 
+
 - [AWS Networking ](pages/004-AWS/51_aws_networking_art.md)
 
 - [AWS Security](pages/004-AWS/101_aws_security_start.md)
