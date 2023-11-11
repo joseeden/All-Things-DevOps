@@ -1,357 +1,634 @@
 
-# Cloud Migrations
 
 
+# Strategy Considerations 
 
+- [The Project Plan and Time Management](#the-project-plan-and-time-management)
+- [The Importance of Security](#the-importance-of-security)
+- [Selecting a Cloud Vendor](#selecting-a-cloud-vendor)
+- [Selecting a Cloud Deployment Model](#selecting-a-cloud-deployment-model)
+- [Are your services ready to move to the Cloud?](#are-your-services-ready-to-move-to-the-cloud)
+- [Alignment of Services](#alignment-of-services)
+- [New Design for an effective Cloud Computing Migration Plan](#new-design-for-an-effective-cloud-computing-migration-plan)
+- [Migration and Deployment Options](#migration-and-deployment-options)
+- [Optimization and Cost Management](#optimization-and-cost-management)
+- [Business Continuity in Cloud Environment](#business-continuity-in-cloud-environment)
 
-## Cloud Migrations Strategy Considerations 
-
-Cloud Migration services from your on-premise environment can sometimes be very simple and other times an extremely complicated project to implement. For either scenario, there are always considerations to bear in mind when doing so. This course has been designed to highlight these topics to help you ask the right questions to aid in a successful Cloud migration.
-
-Within this course, we look at how timing plays an important part in your project's success and why phased deployments are important. Security is also examined where we focus on a number of key questions that you should have answers to from a business perspective before your Cloud migration. One of the biggest decisions is your chosen public cloud vendor, how do you make the decision between the available vendors, what should you look for when selecting you will host your architecture, this course dives into this question to help you finalize your choice.
-
-Understanding the correct deployment model is essential, it affects how you architect your environment and each provides different benefits, so gaining the knowledge. I look at how you can break this question down to help you with your design considerations. We also cover service readiness from your on-premise environment and how to align these to the relevant Cloud services. Your design will certainly be different from your on-premise solution, I discuss the best approach when you start to think about your solution design, some of the dos and some of the don’ts.
-
-Once you have your design, it’s important to understand how you are actually going to migrate your services ensuring optimum availability and minimal interruption to your customer base, for example looking at Blue/Green and Canary deployments. Cloud migration allows for some great advantages within your business continuity plans, as a result, I have included a lecture to discuss various models that work great within the Cloud.
-
-
-**What You Will Learn about Cloud Migration**
-Introduction - This provides an introduction to the trainer and covers the intended audience. We will also look at what lectures are included in the course, and what you will gain as a student from attending the course.
-
-Time Management – How time plays an important part in successful cloud migration. We discuss the key points to allow time for and how to use it to plan a phased migration.
-
-Security – This lecture will give you the ability to ask the key security questions to the business before performing a migration to the Cloud.
-
-Selecting a Vendor – Here you will learn how to define the best way to assess which vendor would be a good fit for your migration based on a number of considerations.
-
-Selecting a Cloud Deployment Model – This discusses different Cloud deployment models where you will understand the differences between them before gaining insight to the questions you should be asking before making a decision as to which to select.
-
-Are your services ready to move to the Cloud? – This lecture will help provide you with the ability to identify if your on-premise applications and services are ready to migrate to the Cloud. There are a number of issues that could arise which we dive into.
-
-Alignment of Services – Here we learn how to categorize your current services and how to map them across to the Cloud service.
-
-New Design – This lecture discusses the importance of not performing a ‘lift and shift’ from on-premise into the Cloud. We look at how this design should be addressed using high availability and other Cloud characteristics.
-
-Migration and Deployment options – Here you will learn the differences between the different deployment methods that could be used and how to tackle the questions around migrating your data into the Cloud to start with.
-
-Optimization and Cost Management – Here we look at some of the considerations around optimization of your costs and how you can achieve greater efficiency.
-
-Business Continuity – The Cloud offers a number of different DR methods which are discussed here and you will be able to define the differences between these and when to you one method over the other.
-
-Proof of Concept – In this lecture, you will learn the importance of implementing a proof of concept design before your production migration.
 
 ## The Project Plan and Time Management 
 
-It's important for your business to have a realistic time frame for your Cloud migration. This will have most likely have been set up within your project plan by your program or project manager, however, check to ensure it allows for testing, phased implementations, and different deployment methods which we shall cover in depth in an upcoming lecture.
+Ensure that the project time frame allows for testing, phased implementations, and different deployment methods.
 
-Having a defined time frame helps to ensure you receive the right level of commitment from the appropriate teams involved at the different phases and stages of your implementation. Timing also helps to define from a project management perspective how successful the project was, which is useful to see new management and other business sponsors.
+**Realistic Time Frame**
 
-Within your strategy plan, be sure to have your key milestones identified, for example, this might be as simple as having an AWS VPC configured and connected to your on-premise network, or your first-compute or storage resource deployed and operational. They help to maintain focus, measure success, and allow for a methodical phased approach to your migration, especially if this is the very first migration you would be conducting. Communicating these milestones to the rest of the business help to maintain engagement and buy-in from the rest of the organization.
+- Set a realistic time frame for Cloud migration within your project plan.
+- Verify the alignment with the project manager's plan.
+- Time frame should accomodate testing, phased implementations, and various deployment methods.
 
-Adopting a phased approach to your full migration plan will help with your timing management and organization. Set aside enough time between each phase to assess any issues you experienced to learn from and to identify any changes that may affect upcoming phases. Communicating any lessons learned throughout your deployment to other teams can help mitigate known problems and issues that may come up again. I suggest you allow time to conduct full testing at the end of each phase, testing your configurations and architecture at the end of each phase allows you to identify problems and issues quicker and helps to pinpoint where the issues may lay.
+**Defined Time Frame Benefits**
 
-Ensure you have allocated time to make sure you have configured the correct level of security for your architecture. This is still one of the areas that many organizations fail to do to an adequate level and often leave themselves exposed to unnecessary threats. I recommend you liaise with your security and compliance officers to determine what governance and legislative controls you need to adhere to, as this can help you formulate and implement the correct level of security for your data.
+- Facilitates commitment from teams at different phases of implementation.
+- Assists in evaluating project success from a project management perspective.
+- Identifies milestones crucial for measuring success and maintaining focus.
 
-Failures will happen within your migration, and it's not possible to identify what these will be and where they are. If you could, then you could mitigate them. As a result, be sure you have time allocated to resolve these problems when they occur. Failure to accurately estimate timings or allow for adequate testing and configuration of your implementation can lead to stress put on your implementation teams, which will ultimately lead to an increased risk of additional mistakes being made and unwelcome shortcuts being applied. Again, I feel the need to iterate this, taking shortcuts to your implementation, especially from a security perspective, can be devastating to a successful implementation for you and your customers.
+**Key Milestones in Strategy Plan**
+
+- Identify key milestones in your strategy plan, such as deploying initial cloud resources.
+- Maintains focus, measures success, and supports a methodical phased migration.
+- Communicate milestones to engage and gain buy-in from the entire organization.
+
+**Phased Approach**
+
+- Adopt a phased approach for effective timing management.
+- Allow sufficient time between phases to assess and learn from issues.
+- Communicate lessons learned to mitigate problems in subsequent phases.
+
+**Testing at Each Phase**
+
+- Conduct full testing after each phase to identify and address problems quickly.
+- Test configurations and architecture to pinpoint potential issues.
+
+**Security Configuration**
+
+- Allocate time to configure the correct level of security for your architecture.
+- Collaborate with security and compliance officers to determine governance and legislative controls.
+- Implement appropriate security measures to protect data.
+
+**Handling Failures**
+
+- Acknowledge that failures will occur during migration.
+- Allocate time to address problems as they arise.
+- Failure to estimate timings and conduct adequate testing can lead to increased risks and mistakes.
+
+**Avoiding Shortcuts**
+
+- Emphasize the importance of avoiding shortcuts, especially in security implementations.
+- Shortcuts can have devastating effects on the success of the implementation for both you and your customers.
 
 
-## Security
+## The Importance of Security
 
-Hello and welcome to this lecture, where I shall be discussing some of the security points. This lecture won't detail how to implement security controls, but simply offer considerations when thinking about your security strategy.
+Emphasizes the critical role of security in the cloud migration strategy plan.
 
-One of the biggest and most critical errors within your cloud migration strategy plan would be surrounding security. No matter the size of the migration or deployment, small or large, security must play a part of your design considerations. Remember, using a public cloud, you are handing over your data and additional responsibility to a third party. And as this information is typically accessed over the Internet, it opens it up to a potentially whole new world of malicious attackers.
+**Security Layers**
 
-Security's a huge topic and one that we could talk about for hours, however, there are a few key points to consider.
+- Consider applying security to multiple layers (network, user, application, service, etc.).
+- Enhances protection against intruders, preventing deeper penetration into the environment.
+- Evaluate security configurations for each layer to prevent unauthorized access.
 
-What layers should security be applied to? For example, the network layer, user, application, service, et cetera.Adding security to multiple layers of your architecture makes it harder for an intruder to penetrate deeper into your environment. Consider what security configurations you could add to each layer to prevent unauthorized access to your data.
+**Access Control**
 
-Who needs access to the service and application and data you're storing? Identify who or what needs access to which resource. This could be a single user, a group of users, or a resource, or a group of resources. Identifying who or what requires access allows you to add fine-grain control to those services. You can then explicitly deny everyone and anything else should your security controls allow you to do so.
+- Identify who or what needs access to services, applications, and data.
+- Allows fine-grain control, explicitly denying unauthorized access.
+- Define access methods, considering additional security like multi-factor authentication for power users.
 
-How will access be granted? What will your access methods be to gain access to resources? Will you use username and passwords, or perhaps federated access for a active directory, leveraging your existing user accounts on premise? Look at where you should add additional of access security, such as adding multi-factual authentication for power users or admins. It's recommended for these users as if their accounts are breached, they could cause havoc within your environment. Also, from an API perspective, will you be using access keys for resources to call upon other resources. It's important to consider how you'll be accessing your objects within your environment, so you must maintain policies around this control.
+**Permission Levels**
 
-How much access do you need and to what level? You must define the required level of permissions for the user or resource to perform the functions required. Only allow the access needed and refine this access as much as possible, as it reduces the potential of unauthorized breaches and what can be done once breached.
+- Define required permissions for users or resources.
+- Restrict access to the minimum needed, reducing the potential for unauthorized breaches.
 
-What other services require access to the service, application, or data and over which ports? Again, when resources are talking to other resources, specify only the ports needed. Do not open up access to all TCP ports, for example, when only Port 22 is required.
+**Resource Interaction and Ports**
 
-Does the data need to be encrypted at rest and in transit? Depending on the sensitivity of your data, you may wish to encrypt your data when it rests and when in transit. This may be required from security compliance reasons, and so you must identify what data is affected by this and ensure that the correct level of encryption is applied.
+- Specify necessary ports when resources communicate.
+- Avoid opening access to all TCP ports when only specific ports are required.
 
-How will encryption be managed? Will you manage the encryption methods for all your data, including management of encryption keys, or will you look to your cloud vendor to manage this aspect for you via one of their service offerings?
+**Data Encryption**
 
-What logging can be enabled? Activating logging for your services allows you to monitor, analyze, and inspect authorized and unauthorized activity, allowing you to increase your security as and where required. This also allows you to identify consistent attackers and block specific requests within your security controls.
+- Determine if data needs encryption at rest and in transit.
+- Consider security compliance reasons and apply the correct level of encryption.
 
-Security is typically a shared responsibility between you and the vendor. The vendor will manage security of the cloud and its global architecture. And you must architect and be responsible for security within the cloud. The vendor will not perform the security for you, but they will offer services and tools to allow you to implement and architect it.
+**Encryption Management**
 
-Bear in mind any data laws that you might have to abide by, ensuring that the infrastructure you are using adheres to any governance controls relating to these requirements. Certain data may need to remain within a certain location or it might have to ensure it has a specified retention period applied. This can affect how you architect your environment and could impact where you physically store data within the cloud.
+- Decide whether to manage encryption methods and keys internally or rely on the cloud vendor.
+- Consider cloud vendor services for encryption management.
 
-I recommend you refer to your internal information security management system document. This document is a set of controls and policies that dictates the security requirements within your organization. It will also identify what risks you have to consider, along with your data protection controls needed. Often, it will also identify what encryption methods should be used and to what extent. Any policies will also be included, such as password requirements.
+**Logging and Monitoring**
+
+- Enable logging for services to monitor and analyze activity.
+- Identify consistent attackers and block specific requests within security controls.
+
+**Shared Responsibility Model**
+
+- Security responsibility is shared between the user and the vendor.
+- Vendor manages cloud and global architecture security.
+Users must architect and be responsible for security within the cloud.
+
+**Adherence to Data Laws**
+
+- Consider data laws and governance controls.
+- Ensure infrastructure adheres to governance controls related to data requirements.
+- Impact on environment architecture and data storage location within the cloud.
+
+**Internal Information Security Management System Document**
+
+- Refer to the internal information security management system document.
+- Contains controls and policies dictating security requirements within the organization.
+- Identifies risks, data protection controls, encryption methods, and password requirements.
 
 ## Selecting a Cloud Vendor
 
-When it comes to selecting a public cloud vendor, there are of course a wide array to choose from, and your decision will typically depend on what you are intending to migrate. The rather global market leaders such as AWS, Azure, and Google Cloud Platform, which offer full-scale infrastructure as the service models. While there are other cloud vendors who offer particular specializations, such as Dropbox, who are known for cloud storage using the software as a service approach, or Cloud Air, who specialize in formulating detailed analysis of data at high speeds.
+When it comes to selecting a public cloud vendor, there are a wide array to choose from, and your decision will typically depend on what you are intending to migrate. 
 
-So firstly, determine what you're going to be using the cloud for. Essentially: What do you want to migrate? Do you require the ability to architect and create your own network segment, which could effectively be an extension of your own on-premise network. If so, then you will require a vendor that allows for infrastructure as a service implementations, such as AWS. However, if you are only looking for cloud storage, then you may look for an alternative vendor that specializes in cloud storage, like Dropbox. Do not be put off by using the market leaders, even for small migrations in these cases, as they may provide you exactly what you need at a great price point when compared to the specialized cloud offerings.
+**Determine Cloud Usage**
 
-One of the key points is to understand is how secure the data centers are. The last thing you want to do is to move data to a cloud vendor who doesn't comply to stringent security controls and governance programs. They should have security information freely available with regards to levels of security they have built into the cloud, and offer these reassurances without question. Do be aware that the leaders of public cloud have a global presence, and as such adhere to security programs worldwide and are therefore considered to be far more secure than your own private data centers.
+- Identify specific needs for cloud usage.
+- Consider architecture requirements, e.g., network extension or dedicated cloud storage.
+- Market leaders can suit even small migrations due to their comprehensive offerings.
 
-Evaluate the range of services that the cloud vendor offers. Does it provide services that you can start using immediately, that allows you to quickly migrate parts of your infrastructure, and does it have a range of services that could be useful for the future? Gain a good understanding of the services, as this could help you guard further business decisions going forward should your initial migration be an overwhelming success.
+**Data Center Security**
 
-Ensuring your cloud provider can provide you with a service that can manage your workload is one thing, but can it provide all the attributes that may be required for your organization to safely maintain your data? For example, you may be a financial organization that must retain its data for at least seven years due to specific legislation. Can your cloud provider safely store this data for that length of time at an efficient cost rate with the required security controls? Or you may have a requirement to use a particular operating system for your cloud instances, and so does the provider allow that flexibility, or are you restricted to operating systems that are non-compatible with your applications?
+- Evaluate the security levels of vendor data centers.
+- Ensure adherence to stringent security controls and governance programs.
+- Recognize the global presence of major public cloud leaders, providing enhanced security.
 
-You don't want to be partway through your migration only to find out that it doesn't fully fulfill the requirements of your business objectives.
+**Service Range Evaluation**
 
-Another point to consider is the cloud vendor's interface that they provide. How can you interact with your services and applications? It's likely that you will need to connect to cloud services using APIs. What functionality does the provider have surrounding API to the services you need? This can impact on how particular services and applications are deployed and so can be extremely important from a development perspective. Also, do they have a GUI console that's self-intuitive and simple to use? You will likely have a range of skill sets supporting your cloud, and so for some management and control, the GUI is better to use for some of the simpler, less technical configurations, monitoring, and reporting.
+- Assess the range of services offered by the cloud vendor.
+- Consider immediate usability and future usefulness.
+- Understand services to guide future business decisions post-migration success.
 
-The market leaders of cloud offerings provide services of similar functionality, and so you may be drawn to one of these vendors through past experience, word of mouth, or recommendations from other organizations. However you are drawn to a vendor, you need to spend time analyzing what they offer, and at what price, under what terms and conditions. You may find that one vendor provides a great service for one aspect of your requirements, and a different vendor offers a service for another part. In this case, you could look at architecture in your business in a multi-vendor configuration. As there are no contractual obligations to only use one cloud vendor, you are in a unique position where you can pick and choose which service you want to utilize from which vendor.
+**Workload Management and Data Retention** 
 
-By doing so, it provides you with the best fit for your business objectives, whilst at the same time offers some level of resilience. By utilizing multiple vendors, you are potentially preventing issues with all of your services if one vendor was to unfortunately experience large, wide-scale problems.
+- Ensure the cloud provider can handle workload and meet data - retention requirements.
+- Evaluate if the provider supports specific operating systems needed for your applications.
 
-Be sure to understand the pricing for all elements attached to the services that you are interested in. Sometimes this can be complicated, depending on which location you're going to deploy your services into, the amount of data transferred in and out, and simply the demand of your service. There are many pricing structures, so it's key to really gain an insight of what you would be paying.
+**Interface and Interaction** 
 
-As with any third-party vendor, you will want to know your level of support, especially as you'll be losing control to a potentially large portion of your environment. If something goes wrong, you will want to know who can help from the vendor themselves, and at what times depending on the severity of the problem. To help you understand how they handle support ques and issues, try to look back into past system failures they may have had and how they handled them. Was the vendor open about any mistakes they had made on their part, and how long did it take to resolve? Also, did they implement any plans or changes to help mitigate the type of issue re-occurring? These are all important factors that as a customer, you'll want to know the answer.
+- Assess the vendor's interface for interacting with services and - applications.
+- Consider API functionality for deployment, especially important for development.
+- Evaluate the user-friendliness of the GUI console for various skill sets supporting the cloud.
+
+**Vendor Selection Analysis**
+
+- Analyze cloud offerings from multiple vendors.
+- Explore past experiences, recommendations, and services at different vendors.
+- Consider a multi-vendor configuration for resilience and the best fit for business objectives.
+
+**Pricing Understanding** 
+
+- Understand the pricing for all elements related to the services of - interest.
+- Consider deployment location, data transfer, and service demand.
+- Gain insight into various pricing structures to determine overall cost.
+
+**Support and Vendor Relations**
+
+- Determine the level of support provided by the vendor.
+- Investigate past system failures and vendor responses.
+- Understand support availability and resolution times for potential issues.
+- Assess how vendors handle mistakes, implement changes, and mitigate recurring issues.
 
 ## Selecting a Cloud Deployment Model
 
-As you are likely aware there are typically three main cloud deployment models. These being public cloud, private cloud, and hybrid cloud. There is another model that is also becoming more popular and that is the community cloud. How do you select the most appropriate deployment model? What factors must your consider for your organization and should you use more than one model? Before we go any further in trying to answer these questions I just want to briefly explain the contents of each of these models for those who may not be over familiar with them. Let's start with the public cloud.
+Understand the available cloud deployment models and asses which one fits your requirement.
 
-The public cloud model is where a vendor makes available the use of shared infrastructure, including compute, storage, and network resources. That can be provisioned on demand and typically accessed over the internet for public usage. The consumer can specify the geographic region to aid with latency and legislative data protection requirements. All backend maintenance of the public cloud such as power, cording, et cetera, along with the physical maintenance of hosts such as hardware failures, all being maintained by the vendor. As a general rule you can access your services on the public cloud from anywhere as long as you have an internet connection.
+**Public Cloud**
 
-A private cloud is different to the public cloud in that the infrastructure in privately hosted, typically onsite. It's managed and owned by the individual company using it, giving greater and more direct control of its data and therefore allows a tighter grasp of security controls. The same cloud principles are applied to the design such as the use of virtualization and creating a pool of shared computer storage and network resources. Making use of scalability and on demand provisioning. This approach requires more capital expenditure for the hardware and the data center that they will physically reside in. Not only this, additional resource will be needed for the day to day operations and maintenance of this equipment. So your daily operational costs will also increase compared to that of a public cloud model. Hybrid cloud.
+- Vendor-provided shared infrastructure (compute, storage, network) accessed over the internet.
+- Provisioned on demand, backend maintenance handled by the vendor.
+- Suitable for global access with internet connectivity.
 
-A hybrid cloud makes use of both public and private clouds combined to make a hybrid cloud. A hybrid model is established when a network link is configured between the private cloud to services within the public cloud. Essentially extending the logical internal network. This takes the benefits given from both the public and private models and allows you to architect your services in the most appropriate model. Hybrid clouds are normally short-term configurations. Maybe for testing and development purposes, and can often be a transitional state for enterprises before moving a service to the public cloud only. This model may also be used for seasonal burst traffic or for disaster recovery.
+**Private Cloud**
 
-A community cloud is designed for multiple organizations so a multi-tendency environment, who share common needs from the architecture such as specific legislative and regulatory requirements. Or even a strict set of security controls. It combines the shared tendency of public clouds but also the added security and compliance often seen with that of private clouds. The cloud itself can either be hosted by one of the community members and held onsite or the cloud can be offsite and managed by a third party service provider.
+- Onsite infrastructure, managed and owned by the organization.
+- Direct control over data, tighter security controls.
+- Utilizes virtualization, shared resources, scalability, and on-demand provisioning.
+Requires capital expenditure for hardware, data center, and additional operational costs.
 
-So now we have given a brief sum of each cloud type. How do you decide which one is best for you? Rather than simply analyzing the pros and cons of the deployment models instead it's best to take each service you are looking to move to the cloud and ask yourself the following questions.
+**Hybrid Cloud**
 
-How sensitive is the data you are moving to the cloud?
+- Combines both public and private clouds.
+- Network link configures a logical internal network extension.
+- Benefits from both models, often used for testing, development, or transitional purposes.
 
-Are there any data retention requirements?
+**Community Cloud**
 
-Who will be accessing your service and data?
+- Designed for multiple organizations with common architectural needs.
+- Shared tendencies of public clouds with added security and compliance.
+- Hosted onsite by a community member or managed by a third-party service provider.
 
-How much will it cost to implement?
+**Choosing Deployment Models**
 
-How quickly will you need to scale your infrastructure?
+- Evaluate specific needs for each service.
+- Ask key questions for decision-making.
 
-What sort of resilience do you require for the service?
+**Key Questions for Decision-Making**
 
-How do you intend to manage your infrastructure and what access do you require?
+- How sensitive is the data you are moving to the cloud?
+- Are there any data retention requirements?
+- Who will be accessing your service and data?
+- How much will it cost to implement?
+- How quickly will you need to scale your infrastructure?
+- What sort of resilience do you require for the service?
+- How do you intend to manage your infrastructure and what access do you require?
+- Are you bound by specific SLAs for your service currently?
+- What performance is required for your migrated services?
+- How much data will you be storing?
 
-Are you bound by specific SLAs for your service currently?
+**Data Sensitivity**
 
-What performance is required for your migrated services?
+- Consider sensitivity and compliance.
+- Public cloud for non-sensitive data.
+- Private cloud for sensitive data with hybrid cloud capabilities.
 
-How much data will you be storing?
+**Data Retention Requirements**
 
-Once you've answered these questions you'll be able to closely align the most appropriate deployment model for that particular service and offering you're migrating. Some answers will gear you more towards one model than others. In this instance you need to decide the most critical factors for your service and select the most appropriate model for deployment.
+- Compliance with legislation for data retention.
+- Public cloud's unlimited storage beneficial.
+- Automation for data management and backups.
 
-How sensitive is the data you're moving to the cloud? If the data is extremely sensitive and bound by very specific government controls and auditing regulations then whichever deployment method you choose you must ensure it is certified to the required level of security compliance. It's likely that public clouds, especially the market leaders, have a higher level of compliance than your own organization.
+**Accessing Services Globally**
 
-If the data is simply too sensitive to let outside of your organization then you may choose to keep your data onsite within a private cloud. But continue to use the public cloud resources to perform other computer actions for the same service. Therefore harnessing the power of a hybrid cloud configuration.
+- Consider customer locations for latency.
+- Public cloud's global presence advantageous.
+- Hybrid cloud for localized access with global reach.
 
-If the data is not classes sensitive then you can usually benefit from the low price points provided by public cloud vendors for data storage. This also provides massive scaling possibilities with an almost unlimited amount of storage available.
+**Cost Implementation**
 
-So are there any data retention requirements? Some organizations have to comply to specific legislation where by the data they hold has to be kept for a number of years. This is common for many financial organizations. If this is the case a private cloud could prove to be a little inconvenient to store data for seven years for example. It would be far better to utilize a public cloud with their unlimited storage capabilities previously mentioned. Also many of them provide services classes called storage. These services can store data that do not require frequent access for as little as $.007 per gig per month. But cloud is fantastic for storage requirements, specifically when it comes to backups. Many services automate backups allowing you to specify retention periods and include life cycle policies allowing you to manage your data automatically, taking much of the administration and management away from your teams.
+- Analyze CAPEX and OPEX ratios.
+- Public cloud requires no CAPEX but increased OPEX.
+- Private and hybrid clouds involve CAPEX for hardware.
 
-Who will be accessing your service and data? Do you have customers accessing your services from all over the globe? If so, hosting your infrastructure within a private cloud may be acceptable for some customers. However, for those further away, perhaps in another country or even continent, then latency would likely become an issue here. Even if your organization had a global presence you may still experience latency issues internally between systems. Public cloud providers have a presence all over the world with high-speed connectivity and offer resiliency at each region with multiple data centers. Hosting your infrastructure within each of these can significantly reduce the latency to your world wide customers and open up the potential to reach a far greater audience that may not have been possible before. You could also utilize the global content delivery network, CDN, to help reduce latency for your website. On the other end of the scale your data may only be needed to get accessed by your employees. In which case it might be worthwhile to keep that data onsite within a private cloud, utilizing your own internal high-speed access network.
+**Scaling Infrastructure Speed**
 
-How much will it cost to implement? Each deployment method offers different CAPEX and OPEX ratios and so it depends on how much of each you have will depend on which method you could align to. A pubic cloud requires no CAPEX, as all hardware is hosted and managed by the vendor. However your OPEX cost will increase as you'll be paying for all your resources on a use basis. Private and hybrid clouds will incur additional CAPEX costs to allow you to host your own resources within your own data centers. However hybrid cloud will require less CAPEX but more OPEX. Depending on where a community cloud is hosted and managed you may need to use CAPEX, but you will certainly use OPEX for the same reasons as per the public cloud offering.
+- Public cloud for rapid scaling.
+- Hybrid cloud for occasional bursts.
+- 
+**Resilience and Management**
 
-How quickly will you need to scale your infrastructure? Are you expecting to scale your infrastructure services over the coming weeks, months, or years? If so at what rate are you expecting this? If you expect a sudden surge or a progressive growth then I recommend utilizing the public cloud. Otherwise the amount of CAPEX spent on hardware alone would be huge. If you only expect growth at particular times of the year then a hybrid cloud approach could be useful in this case. Calling upon the resources of the public cloud as and when you need them in this short time period whilst utilizing your own private cloud for the rest of the time. This ensures you meet capacity and demand whilst at the same time minimizing costs.
+- Evaluate criticality of data and services.
+- Public cloud's global infrastructure and built-in management.
+- Private cloud for specific resilience needs.
 
-What level of resilience and management do you require? How critical is the data and services that you wish to migrate? Can a private cloud offer the same level of resilience that you require? If not perhaps look at a public cloud, making use of the global infrastructure and built-in management and other features.
+**Physical Management Requirements**
 
-What are your physical management requirements of your infrastructure? Do you need physical access to the data and the host that it reside on? If so, then a private cloud is required. If this level of access is not required and you can afford to let a third party manage the hardware and maintenance then any other deployment model would be acceptable.
+- Determine need for physical access.
+- Private cloud for direct access.
+- Other models for third-party management.
 
-Service level agreements. What are your current SLAs for your infrastructure and services that are required by your customers? Can the same parameters, uptime, and availability be offered by your cloud vendor? If not, how does this impact your customer? Can you mitigate this by architecting high availability within your deployment? Understand the SLA for each service of public cloud vendors as they will be different for each service and again different for each region.
+**Service Level Agreements (SLAs)**
 
-What performance is required? Do you need to meet specific performance requirements whether this be from a compute, latency, response times, or even an IOPS perspective for you services and applications. Can your chosen deployment method offer the correct level of performance to meet your needs? Storage of data.
+- Align cloud vendor's SLAs with current parameters.
+- Consider impact on customers and mitigation strategies.
+- 
+**Performance Requirements**
 
-How much data are you intending on storing? Is it gigabytes, terabytes, petabytes, or even exabytes? Obviously the more data you have the more hardware you would need if you were to use a private cloud which is an increased cost. However with the public clouds there is an almost limitless amount of storage available. Although understand the different methods of initially exporting this data to your cloud vendor. Transferring petabytes of data over the internet to the cloud could take weeks or even months. As a result some offer specific services to physically transfer vast amounts of data to the cloud. An example of this is AWS Import/Export Snowball.
+- Assess specific performance needs.
+- Ensure chosen model meets required performance levels.
+- 
+**Data Storage**
 
-Hopefully understanding and questioning the requirementof your services and applications will help lead you into making the correct choice of deployment model.
+- Consider the volume of data.
+- Private cloud's increased cost for larger data.
+- Public cloud's almost limitless storage with data transfer considerations.
 
 ## Are your services ready to move to the Cloud?
 
-You would have most likely already identified which services you would like to move to the Cloud. However are your existing services applications cloud-ready? Now what do I mean by this? Basically, to be cloud-ready, applications need to be architected in a de-coupled structure. By de-coupling, I refer to the removal of the dependency of one subset of the application, part A, from another, part B. If there are parts of the application that are very dependent on each other than they can be classed as coupled; if one part changed, it would ultimately affect the other part.
+Assess the cloud readiness of your applications by identifying the target services and evaluating if they are cloud-ready.
 
-Within the Cloud we should strive to develop de-coupled applications, as this allows different parts of the application to be scowed independently of the others, depending on demand, throughput, response times, etc. This allows far greater flexibility of the application to grow within the Cloud, instead of being restricted. Also having a loose de-coupling between components of the application, makes the whole application more reliable, as if one part breaks, it shouldn't affect the other parts.
 
-Your application would still work if it wasn't de-coupled and you'd simply perform a lift and shift, but it would be far better to architect it in a way that allowed for flexibility, optimization and scaling.
+**Understanding Cloud-Readiness**
 
-Another point to consider is the performance of your service and application when it's hosted within the Cloud. Will it be able to attain the same level of performance if you needed to interact with it over the internet? Could this affect your customer's experience in a negative way? Look at your minimum performance requirements to identify if there could be any risks on this point. And look at ways to mitigate them. Sometimes the only real way to identify issues such as these, is to test it within a test environment on your chosen Cloud provider, and stress test the application and monitor its performance against your existing on-premise baseline.
+- Cloud-ready applications are de-coupled, freeing subsets (part A) from dependencies on others (part B).
+- De-coupling enhances flexibility, scalability, and reliability, allowing independent scaling based on demand, throughput, and response times.
+- Loose de-coupling minimizes the impact of one part's failure on others, contributing to overall application reliability.
 
-Compatibility could be another issue for you if you have a number of legacy applications that rely on old operating systems or databases. Cloud vendors typically offer the latest software from an operating system and database perspective. So if you haven't updated your old legacy applications and services that you're looking to migrate, than you could potentially run into some issues. It would be a good idea to re-architect your systems to bring them up to speed with the underlying technology. Doing this now would enable you to make use of the new features and security services which could in turn increase the performance of your application.
+**Advantages of De-coupled Applications**
 
-You need to be aware of external dependencies that your services might be making use of. Perhaps a third-party performs some kind of data formatting on your behalf. So you'll need to consider how this same process could work. How will they access your data to continue the service? Could this service even be provided by another Cloud service? Analyze all external dependencies surrounding your migration services to ensure that access and connectivity methods are defined and configured.
+- Flexibility for growth within the Cloud.
+- Optimization and scaling capabilities.
+- Better reliability, with individual parts not adversely affecting others.
+
+**Lift and Shift vs. Architectural Flexibility**
+
+- While a non-de-coupled application can still function with a lift-and-shift approach, architecting for flexibility, optimization, and scaling is recommended.
+
+**Performance Considerations in the Cloud**
+
+- Assess how the service and application perform in a Cloud-hosted environment, especially when accessed over the internet.
+- Evaluate if the application can maintain desired performance levels for a positive customer experience.
+- Stress testing within a Cloud test environment can reveal potential issues and allow for performance monitoring against on-premise baselines.
+
+**Compatibility Challenges**
+
+- Legacy applications relying on outdated operating systems or databases may face compatibility issues.
+- Cloud vendors typically offer the latest software, necessitating re-architecture of legacy systems to align with modern technology.
+- Re-architecting enables utilization of new features and security services, potentially enhancing application performance.
+
+**Addressing External Dependencies**
+
+- Be mindful of external dependencies, such as third-party services performing data formatting.
+- Consider how these processes will work in the Cloud migration.
+- Analyze alternative Cloud services that could potentially provide the same external dependencies.
+
+**Mitigating Risks through Testing**
+
+- Conduct testing within a test environment on the chosen Cloud provider.
+- Stress test the application to identify and mitigate risks related to performance, compatibility, and external dependencies.
+- Monitor the application's performance against existing on-premise baselines during testing.
+
+**Proactive Re-architecture for Enhanced Performance**
+
+- Proactively re-architect legacy systems to align with modern technology standards.
+- Leverage new features and security services to improve application performance.
+- Address compatibility challenges and ensure optimal functioning within the Cloud environment.
+
+**Comprehensive Analysis for Successful Migration**
+
+- A holistic analysis covering de-coupling, performance, compatibility, and external dependencies is crucial for a successful Cloud migration.
+- Prioritize flexibility, scalability, and reliability to harness the full potential of Cloud services.
 
 
 ## Alignment of Services
 
-You will now have an understanding of the services that you wish to migrate to the cloud. However, understanding what services to utilize to achieve that migration is key to your success. You may have a cloud architect who specializes in the vendor of your choice, if you're using a public cloud deployment model, who would be able to architect a lot of this for you. However, it's good to know a few points when performing this alignment.
+Understanding what services to utilize to achieve that migration is key to your success. 
 
-It's best to categorize your services that you're moving to the cloud, and break them down into their core infrastructure components. For example, you may be moving your website to the cloud, and this may currently include the following high level elements of design: DNS, load balancers, web servers, application servers, databases, storage, caching, and monitoring.
+**Strategic Utilization of Cloud Services**
 
-Now you have identified the basic architecture needs of your current design, you have some idea as to the different services you will need from the cloud. You can now use this information to help drill down into your chosen cloud vendor, to identify exactly which service you could use. As an example, if we had decided to use AWS, then we could map out this list of infrastructure to the following AWS services.
+- Understanding the specific services to facilitate cloud migration is crucial for success.
+- A dedicated cloud architect, especially for public cloud deployments, can play a key role in architecting the migration.
 
-Now as we know, the cloud can offer far more than just the light float towards your infrastructure, so your architects can then build on top of this list to start introducing some real flexibility and benefits of cloud computing. Some of those examples are shown on the screen here.
+**Categorizing Services for Migration**
 
-It's important to ensure you break your current solutions down by infrastructure, and then map that across to your chosen vendor's available services. Once you have identified these, you can then introduce additional cloud benefits and services, that your chosen vendor offers.
+- Begin by categorizing services earmarked for cloud migration.
+- Break down services into core infrastructure components to identify the elements that need migration.
 
+**Example of Categorization**
+
+- Consider a website migration, breaking down the high-level design into components like DNS, load balancers, web servers, application servers, databases, storage, caching, and monitoring.
+
+**Mapping Infrastructure Components to Cloud Services**
+
+- Once the basic architecture needs are identified, map them to the corresponding services offered by the chosen cloud vendor.
+- For instance, using AWS for the website migration, map infrastructure components to AWS services.
+
+**Expanded Cloud Service Offerings**
+
+- Recognize that cloud services extend beyond basic infrastructure components.
+- Cloud architects can leverage additional cloud benefits to enhance flexibility and optimize cloud computing.
+
+**Building Flexibility and Benefits in the Cloud**
+
+- The cloud provides opportunities beyond basic infrastructure, allowing architects to introduce flexibility and leverage various benefits.
+- Examples of additional cloud benefits are showcased, offering a glimpse of the possibilities.
+
+**Key Considerations for Successful Mapping**
+
+- Ensure a meticulous breakdown of current solutions based on infrastructure components.
+- Methodically map these components to the services offered by the selected cloud vendor.
+
+**Introduction of Additional Cloud Benefits**
+
+- Once core services are identified, explore and introduce supplementary cloud benefits provided by the chosen vendor.
+- This strategic approach enhances the overall advantages and adaptability of the cloud migration.
+
+**Strategic Integration for Enhanced Capabilities**
+
+- Integrate identified cloud services strategically to enhance capabilities.
+- Leverage the full spectrum of services offered by the cloud vendor for comprehensive and efficient migration.
+
+**Continuous Alignment with Cloud Offerings**
+
+- Maintain an ongoing alignment between your infrastructure breakdown and the evolving services offered by the selected cloud vendor.
+- Continuously explore and integrate new features and services for optimal cloud utilization.
+
+**Maximizing Cloud Potential**
+
+- Utilize the cloud's full potential by aligning your infrastructure needs with the expansive range of services provided by the chosen cloud vendor.
+- Regularly reassess and adapt your strategy to leverage emerging technologies and advancements in cloud offerings.
 
 ## New Design for an effective Cloud Computing Migration Plan
 
-Migrating to the cloud gives you a great opportunity to fix a lot of those old legacy mis-configurations and badly built environments that properly exist within your current infrastructure. Although many do it for speed, do not look to simply lift and shift your environment from on-premise to the cloud with the mindset of that you will change once it's up and running. The hard truth is that you likely won't change it and you'll leave it as is. This doesn't help you or your organization. You simply won't benefit from the many advantages of cloud computing by doing this.
+Migrating to the cloud gives you a great opportunity to fix a lot of old legacy mis-configurations and badly built environments that properly exist within your current infrastructure. 
 
-Once you know which core services you need for migration, I recommend you look to re-architect your solution when you migrate to maximize the cloud benefits. Examine the best practices offered by the provider for each and every one of your deployments. Implement additional security that's available to you to add at every stage. The more secure your environment, the better.
+**Avoiding a Simple Lift and Shift Approach**
 
-Build in high availability and resilience to your design. Let the cloud services perform self-healing of your architecture and use features such as auto scaling and load balancing, allowing you to better scale your environment as, and when, needed. Build and lay out architecture to allow for greater flexibility at all levels. Much like a decoupled application, it lets you architect and manipulate your infrastructure to become almost fluid-like, rapidly changing to workload conditions and thresholds.
+- Despite the temptation for speed, refrain from a basic lift and shift from on-premise to the cloud with the intention to make changes later.
+- In reality, delaying modifications may result in maintaining the status quo and missing out on the full benefits of cloud computing.
 
-Allow for scalability within your design. This will give it the elasticity to flex and grow and shrink with that of the demands put on your solution. Look at both scaling in and out as well as up and down for different components depending on monitoring, metrics, and requirements. Scaling well will meet the demands of your customers whilst at the same time, providing a cost effective environment.
+**Recommendation for Re-Architecting Solutions**
 
-Design your applications and services with failure in mind. This will help you re-architect your solution to maintain the highest level of operational service uptime. Strip out the shortcuts you made in your environment when you had it up and running on-premise and use this time to design a solid and stable solution that's far more efficient, effective, scalable, and flexible.
+- Once core migration services are identified, it's advisable to re-architect solutions to maximize cloud benefits.
+- Explore provider best practices for each deployment and enhance security measures at every stage for a more secure environment.
 
-For large applications, it might be worth considering breaking down the functionality into their own services and slowly re-factoring out additional sections into their own microservice. This helps with the decoupling and allows for developers to select the right technology for the given service. These microservices can then scout independently of other microservices. So, for example, a use case for this type of design would be if you have a shopping cart style website then the payment processing may only get a medium amount of traffic because it isn't utilized all the time. However, the search service would likely be getting a high demand of traffic. In this situation, the search microservice aspect could scale out with the auto scaling, as needed, separately from the payment service.
+**Incorporating High Availability and Resilience**
 
-Utilize the resiliency benefits that the cloud has to offer with regards to running services in multiple locations should a disaster occur. This option may not have been possible with many on-premise solutions, so make sure your architect makes use of the possibilities should this service be critical enough to do so. A lot of services offer built-in resiliency, so make sure you're aware of what they offer as this will help you determine what other resilience you need to manually design into your solution.
+- Build high availability and resilience into the design, leveraging self-healing capabilities and features like auto scaling and load balancing.
+- Design architecture for flexibility, allowing rapid adjustments to workload conditions and thresholds.
 
-Some cloud vendors also offer some great monitoring services to help you maintain and manage your environment. Again, make use of these services. They could be invaluable in helping to create a stable service which remains operational. Use monitoring thresholds to identify potential issues in the early stages of them establishing.
+**Scalability and Elasticity in Design**
 
-Cloud migration really does offer the opportunity of change. By now, any issues you may have experienced from the solution when on-premise and learned from these mistakes. Don't bring those same mistakes into the cloud. The cloud is all about efficiency and dynamic implementations. It acts differently to an on-premise solution and so should be looked at different from a design perspective. Understanding these changes will help you to deploy successful cloud solutions.
+- Design for scalability to provide elasticity, enabling flexible growth and contraction based on solution demands.
+- Consider scaling both in/out and up/down for different components, ensuring a cost-effective environment that meets customer demands.
+
+**Designing with Failure in Mind**
+
+- Design applications and services with failure in mind, eliminating shortcuts made in on-premise environments.
+- Invest time in creating a stable, efficient, scalable, and flexible solution during the migration process.
+
+**Microservices for Large Applications**
+
+- For large applications, consider breaking down functionality into microservices for enhanced decoupling.
+- Microservices facilitate independent scaling, allowing the selection of the right technology for each service and optimizing performance.
+
+**Utilizing Cloud Resiliency Benefits**
+
+- Leverage cloud resiliency benefits by running services in multiple locations to mitigate disasters.
+- Take advantage of built-in resiliency options offered by cloud vendors and supplement with additional manual resilience as needed.
+
+**Harnessing Monitoring Services**
+
+- Utilize monitoring services provided by cloud vendors to maintain and manage the environment effectively.
+- Establish monitoring thresholds to detect potential issues in their early stages and ensure a stable and operational service.
+
+**Embracing Change and Learning from Mistakes**
+
+- View cloud migration as an opportunity for change and improvement.
+- Learn from past mistakes in on-premise solutions and avoid replicating them in the cloud, recognizing the need for a different design perspective.
+
+**Efficiency and Dynamic Implementations**
+
+- Understand that the cloud operates differently from on-premise solutions and should be approached with a focus on efficiency and dynamic implementations.
+- Grasp these changes to deploy successful cloud solutions tailored to the unique characteristics of cloud environments.
 
 ## Migration and Deployment Options 
 
-When you're in a position to begin migrating and deploying services to the cloud, or even create new workloads from within the cloud itself, there are a few options to choose from, some of which we shall discuss in this lecture.
+When migrating and deploying services to the cloud, or even creating new workloads from within the cloud itself, there are a few deployment options to choose from.
 
-Start by breaking down each of your services, as they will likely require a different approach. Let's take a look at blue/green deployments.
 
-Blue/green deployments essentially comprise of two environments. One where your current infrastructure is up and running as expected. Let's call this blue. And another, and in this case where it would be hosted within the cloud replicating your on-premise service. Let's call this green. When you are happy with the service and solution you have created within the cloud and you have performed the necessary tests and checks, et cetera, then the green configuration is ready to replace the existing blue service currently running on-premise. Depending on the service and solution, to change from the blue environment to the green could simply mean a change of DNS entry or routine change or a load balance that are pointing to a different environment. Either way, it's a sudden and immediate change onto the new green solution. If there are issues experienced then it's very quickly and easy to change back to the existing and working solution of the blue environment.
+**Blue/Green Deployments**
 
-Another method of deployment but on a more gradual scale than that of blue/green where there is an immediate shift of workload is by utilizing a weighted deployment offered by some DNS services, for example route 53 in AWS. This allows you to redirect traffic between environments based off of weighting. You could assign your current working on-premise environment a weighting of eight, and the cloud environment a weighting of two. This would effectively redirect two requests out of every 10 to the new environment. This allows you to analyze the new environment for issues when it's under a low demand. If there are problems, then it would only effect 20% of your users or customers whilst the remainder would be redirected to a system working environment. If there are no issues, then you can simply increase the weighting in the favor of the cloud environment until all traffic is fed through to the new solution.
+- Involves two environments:
+    - "blue" (current on-premise infrastructure) and 
+    - "green" (replicating on-premise service in the cloud).
+- After satisfactory testing, the green configuration replaces the existing blue service through a DNS change or load balancer adjustment.
+- Immediate switch to the new solution, and easy rollback to the blue environment in case of issues.
 
-A canary deployment method is very similar to the method we just discussed. However, with canary deployments you would issue a new release to a small percentage of your fleet to see how it responded to real workloads and demands. If successful, you could then slowly roll the same release out to the rest of your fleet until the entire environment had the same release. Again, this is with the intention of if there were problems, then it would only effect a very small percentage of your infrastructure until you resolve the issues.
+**Weighted Deployment**
 
-You may have existing virtualized servers on-premise that you would like to host within the cloud, and there are some providers that offer tools to help you migrate these existing images onto their platform and into their environment. The transition of virtualized servers into cloud instances can save you a lot of time by performing in the import rather than having to recreate an instance from scratch, as you may have to do with some of your non-virtualized servers. Also it allows you to keep the existing configurations you have made, whereby you may have hardened the instance from a security perspective.
+- Utilizes DNS services like Route 53 in AWS for gradual traffic redirection.
+- Assigns weightings to environments (e.g., 8 for on-premise, 2 for cloud) to redirect a portion of traffic for analysis.
+- Allows analysis of the new environment with a low impact on users, adjusting the weighting as needed.
 
-When it comes to application deployments, there are a range of different services from cloud vendors that offer great solutions for this. How each of these services work are out of scope for this course, but be sure your developers and deployment teams are aware that it exists, which can utilize automation, continuous integration and delivery methods. For more information into these concepts, take a look at the other courses here at CloudAcademy regarding delivery of services across cloud providers for deeper, in-depth technical content on how to achieve this, such as:
+**Canary Deployment**
 
-Introduction to Continuous Delivery
+- Similar to weighted deployment but involves issuing a new release to a small percentage of the fleet.
+- Tests real workloads and demands on a small scale before gradually rolling out the release to the entire fleet.
+- Minimizes impact in case of issues by initially affecting only a small portion of infrastructure.
 
-Introduction to Continuous Integration
+**Migration of Virtualized Servers**
 
-Advanced Deployment Techniques on AWS
+- Some providers offer tools to migrate existing virtualized servers from on-premise to the cloud.
+- Saves time compared to recreating instances from scratch, particularly for virtualized servers with existing configurations.
 
-As a part of this migration process, you need to define how you're going to move your data and applications into the cloud, and this opens up a few considerations.
+**Application Deployment Services**
 
-Firstly, how will transfer your data into the cloud? You may only have a small database or a few gigabyte's worth of data that you need to move to a storage service. Initially, this could easily be managed by internet connection. However, is this method secure? Is the data confidential? Should it be encrypted when performing this data transfer? And what if you need to transfer petabytes of data instead of just a few gigabytes?
+- Cloud vendors offer various services for application deployments.
+- Developers and deployment teams should be aware of automation, continuous integration, and delivery methods provided by these services.
 
-Transferring data into the cloud is typically free, but how you do it depends on what data you are transferring and how much of it.
+**Data and Application Migration Considerations**
 
-The amount of data you need to transfer into the cloud will require different methods of importing. Cloud vendors will provide a variety of options to help you achieve this. Like I mentioned, if you only have a few gigabyte's worth of data, then you could manage this transfer yourself, either through the vendor's portal or via an API or through your internet connection. However, if this is going to take a long time and you are lucky enough to have a direct connection into the vendor's platform and onto your own environment, you could utilize his high bandwidth connection to make the transfer quicker or to move more data.
+- Define the approach for moving data and applications into the cloud.
+- Consider methods such as blue/green deployments, weighted deployments, canary deployments, and migration of virtualized servers.
 
-In certain circumstances, you may have terabytes' or even petabytes' worth of data that you require in the cloud. In this instance, internet connection or direct connections will simply take too long. It could take weeks or even months to transfer that amount of data, which simply isn't efficient. In these circumstances, cloud vendors offer disk shipping services where your data is loaded onto physical disks from your on-premise environment, and then it is shipped directly to the vendor's data center where your data is then imported into the cloud environment. This method is far quicker to import huge data sets. These services also offer intense security feature sets, from being able to even request an import/export request to encryption protocols. For a full set of security features, see your chosen vendor's documentation.
+**Data Transfer into the Cloud**
 
-If you are transferring sensitive data over the internet or via a VPN connection, or even direct connection into the cloud, then it's important that you apply the correct level of encryption to your data, both when in transit and at rest.
+- Consider the security of data transfer, especially for confidential or large datasets.
+- Cloud vendors provide options like self-management through portals, APIs, or internet connections, or using high-bandwidth direct connections for quicker transfers.
 
-Define your data sets when migrating and ascertain which data requires that greater level of security and encryption applied.
+**Disk Shipping Services for Large Data Sets**
 
-You may have the need for synchronization and replication to take place between your cloud environment and the services on-premise. If this is the case, assure you have adequate bandwidth for this synchronization to happen. Will you need to perform asynchronous replications or synchronous? The difference between the two being that synchronous replications writes to both the primary and secondary storage points at the same time. This, of course, requires high bandwidth capacity. Asynchronous writes to the primary first and then the secondary storage point. Asynchronous replication does not require as great a bandwidth as synchronous.
+- For terabytes or petabytes of data, disk shipping services are efficient.
+- Data is loaded onto physical disks from on-premise and shipped to the vendor's data center for import into the cloud.
+- Offers enhanced security features, including encryption protocols.
 
+**Encryption for Data Transfer**
+
+- Apply appropriate encryption levels for sensitive data during transfer over the internet, VPN, or direct cloud connections.
+- Consider encryption for data at rest as well.
+
+**Synchronization and Replication**
+
+- Assess bandwidth requirements for synchronization and replication between cloud and on-premise services.
+- Choose between asynchronous and synchronous replication based on bandwidth capacity; synchronous requires higher bandwidth.
 
 
 ## Optimization and Cost Management
 
-Optimization and cost management is one of the fundamental reasons why many organizations initially look at using the Cloud. The great savings that can be achieved whilst optimizing their current infrastructure seems like a win win to many. For many this is the case, however, if you do not fully understand how to manage and operate your Cloud infrastructure, then you could soon see your costs spiraling above and beyond what you'd initially thought. Now there are a few things to consider from this perspective. Let's start by taking a look at cost calculators.
+If you do not fully understand how to manage and operate your Cloud infrastructure, you could soon see your costs spiraling above and beyond what you intitally thought.
 
-When initially working out your budgetary requirements and getting an understanding of what the Cloud services are going to cost you, you can find a number of cost calculators online to help you achieve this. For example, here are the cost calculators for both AWS and Azure.
 
-These calculators allow you to select your chosen services along with any estimated or predicted resource amounts that you require, enabling you to get a good estimate of what your cost would be. It's only an estimate, as your environment will be ever-changing and the amount of data transfer will also fluctuate too.
+**Utilize Online Cost Calculators**
 
-These calculators can help you compose some of the financial information when presenting to senior management regarding your return on investment.
+- AWS and Azure offer cost calculators to estimate Cloud service costs.
+- Helps in planning and presenting financial information to senior management.
+- Enables better understanding and realistic planning of Cloud spend budget.
 
-Once you have an understanding of what your costs could potentially be using the calculators, it enables you to better plan and be realistic about your requirements for your Cloud spend budget. Have these budgets defined, as they will help you maintain your spend. You may want to split your budget down between resources or services to have a more fine-grained control of overall spending. Some areas are likely to fluctuate quite a lot depending on demand whereas others will likely remain the same and maintain a more constant spend. And so you might choose to split these between different budgets.
+**Define Budgets for Fine-Grained Control**
 
-A good practice when it comes to monitoring your Cloud spend is to set up billing alerts on your chosen Cloud platform which the larger market leaders offer and allow you to do. By doing so, you could be notified by custom thresholds that you can configure when your monthly spend reaches a certain point. This early warning system allows you to spot and identify potential unknowns and unexpected costs that have arisen within your architecture. Whilst at the same time, provides enough time to reduce resources elsewhere that may not be needed to help manage your monthly expenditure. This all of course helps to manage your budget spend and so I suggest you set this up as a part of your initial account creation.
+- Split budgets between resources or services for more control.
+- Some areas may fluctuate based on demand, while others maintain a constant spend.
 
-To try and reduce your bills even further, you should analyze your billing reports to ascertain where your largest spend is occurring to see if this ties up with projected costs. These reports come to use to optimize your existing infrastructure. Perhaps one of your biggest spends is within the compute resource. You could look at ways of reducing the spend here by looking at payment plans for this resource type. Perhaps in the case of AWS you could purchase reserved instances whereby you commit to a resource for a specified period of time and therefore reducing the overall cost when compared to the other single on demand resource.
+**Set Up Billing Alerts**
 
-Another way to optimize your resources is to right size your infrastructure. Initially, you will create instance sizes within your environment from an educated guess and using performance metrics. And we'll know that will be overcautious. So factor in time to review your fleet instances from a performance perspective as your predictions may be way off once they start handling workloads in a production environment. You could potentially downsize a lot of your infrastructure to small instances and couple that with reserved instances in AWS and you could find yourself drastically reducing your cost. There are other pricing plans from a compute point of view so be sure to understand all pricing plans for each of your services as going forward you'll be able to fine tune and optimize your infrastructure. As a part of your Cloud migration strategy, you should spend time trying to get the best pricing solution available for your resources, however it's easy to upsize or downsize your infrastructure so it's not a huge problem if you need to adjust them either way.
+- Use billing alerts provided by Cloud platforms to receive notifications when monthly spend reaches certain thresholds.
+- Acts as an early warning system for potential unexpected costs and allows adjustment of resources to manage monthly expenditure.
 
-If you intend to store a lot of data in the Cloud, then having a sound understanding of the different storage services could help you optimize your requirements from a price, durability, and retention perspective. Typically, the vendors will offer a myriad of storage services, each with its own set of benefits. Ensure you are aware of the best storage medium and service for the solution you intend to use. Some storage is designed to be accessed at speed whereby a high speed and read write performance is required. Other storage such as backups can be archived after a service where access is rarely required. The difference between the two storage options for this is huge, so be aware of the correct storage service for your data needs.
+**Analyze Billing Reports**
 
-There are a number of 3rd party vendors out there who partner with some of the large Cloud vendors. Some of these specialize in products that can help you identify low utilized and redundant resources and suggest where improvements for optimization could be achieved with your environment. The Cloud vendors themselves also offer services to help with this too such as AWS Trusted Advisor. Be sure to look at the available tool sets to help you manage your fleet to help with optimizing your infrastructure. It would be a good practice from the get-go to implement and make use of these services as in the long run they could save you an exceptional amount of money by monitoring and suggesting cost improvements for you on your behalf based off a number of different metrics.
+- Review billing reports to identify areas of significant spend.
+- Optimize existing infrastructure based on spending patterns.
+- Consider payment plans like reserved instances to reduce costs for compute resources.
+
+**Right Size Your Infrastructure**
+
+- Continuously review fleet instances for performance and adjust sizes accordingly.
+- Downsize infrastructure based on performance metrics and consider reserved instances to reduce costs.
+
+**Understand Storage Services**
+
+- Gain a sound understanding of different storage services for optimization.
+- Choose storage based on speed, read/write performance, durability, and retention requirements.
+- Be aware of the correct storage service for specific data needs, such as high-speed access or archival storage.
+
+**Explore 3rd Party Vendors and Tools**
+
+- Partner with 3rd party vendors specializing in identifying low-utilized and redundant resources.
+- Cloud vendors offer tools like AWS Trusted Advisor for optimizing infrastructure.
+- Implement and use these services from the beginning to save costs in the long run.
+
+**Optimize Data Storage**
+
+- Understand different storage mediums and services offered by Cloud vendors.
+- Optimize data storage based on price, durability, and retention perspective.
+- Some storage services are designed for speed, while others are suitable for archiving backups.
+
+**Implement Cost Management Toolsets**
+
+- Leverage tools provided by Cloud vendors and third parties for cost management.
+- Services like AWS Trusted Advisor can monitor and suggest cost improvements based on various metrics.
+- Implementation of these services from the start can lead to significant cost savings over time.
 
 ## Business Continuity in Cloud Environment
 
-One aspect of your migration strategy should include the changes this makes to any business continuity or disaster recovery plans your organization has. The cloud provides a great platform of building resiliency into your business, which can greatly enhance your recovery plans when it comes to a disaster striking in whatever form that may be. This could be anything from a severe earthquake, potentially taking out entire data centers within a geographic region, to a subset of critical systems becoming unavailable due to a configuration change by human error. Whatever the reason and how you cast a service interruption as a disaster is down to you. However, what is essential is that you have a set of policies and procedures that dictate how to recover from such instances.
+Consider the changes to any business continuity or disaster recovery plans your organization has. 
 
-Prior to cloud adoption, you would likely have this set of procedures defined, utilizing off-site premises with capacity to implement and run your key production systems, utilizing back-ups to bring your services and business back to an operational state as soon as possible, with as little data loss as feasibly possible. Now with the adoption of the cloud, should a natural disaster occur and your premises become unusable, you will obviously still need new premises for your employees. However the services hosted within the cloud will be unaffected. Should the disaster occur in the cloud vendor's data center, then you'll experience problems unless you have configured high availability within your environment to handle such an event.
+**Cloud Resilience and Disaster Recovery**
 
-The cloud allows you to deploy applications and services in a highly available and resilient way. Any critical system should be architected with failure in mind, allowing it to continue to function should a major outage occur. One of the best ways to do this is by utilizing multiple geographic locations to run the systems. You're trying to ensure it continues to run even if a complete data center within the vendor is made unavailable.
+- Cloud provides a robust platform for building resiliency into business operations.
+- Essential to have policies and procedures for recovering from disasters, whether natural or system-related.
+- Cloud adoption enhances recovery plans and minimizes data loss.
 
-Some of the vendors offer whitepapers on the best way to achieve DR within their cloud, and the following points and methods are detailed in the AWS DR whitepaper, which can be found here. The models and best practices discussed to help with business continuity, are backup and restore, pilot light, warm standby, and multi-site. Each of these models offer a different RTO, recovery time objective, and RPO, recovery point objective.
+**Traditional Disaster Recovery (Pre-Cloud)**
 
-Before we go on, I just want to explain what each of these are for those unaware.
+- Prior to cloud adoption, off-site premises and backups were used to recover key production systems.
+- Cloud adoption changes the recovery landscape, making services hosted in the cloud unaffected by disasters on-premise.
 
-RTO is defined as the maximum amount of time in which a service can remain unavailable for before it's classed as damaging to the business. For example, if your RTO for a service was two hours, and your outage occurred at 2:00 in the afternoon, then your service must be back up and running by 4:00 in the afternoon, before unacceptable damage to the business was experienced.
+**High Availability and Resilience in Cloud**
 
-RPO is defined as the maximum amount of time for which data could be lost for a service. For example, if you had an RPO of eight hours, and you had an outage at 9:00 p.m., and then resumed your service at 10:00 p.m., you would have to ensure your restore of data was from a backup from 1:00 p.m. or later that day.
+- Cloud allows deployment of highly available and resilient applications.
+- Architect critical systems with failure in mind.
+- Geographic redundancy ensures continuous operation even in the case of a data center outage.
 
-OK, so now I want to give you a high-level overview of the different continuity models, starting with backup and restore.
+**AWS Disaster Recovery Whitepaper Models**
 
-If you're using the cloud to store backups of your on-premise architecture to a highly durable and cost-effective storage solution, then this allows for a rapid access to your backups should a disaster occur. As long as you have an Internet connection, you have the means and ability to perform and restore to any location. However, this is only dependent on the speed of your Internet connection, or any other direct connection that you may have, so bear this in mind. Some providers offer solutions to transport huge datasets physically from the cloud to your data center's door. For example, AWS Import/Export Snowball service. You could also simply restore your backups to some provisioned instances that you may wish to spin up in the cloud to help speed up the recovery process.
+- AWS offers models for disaster recovery, including backup and restore, pilot light, warm standby, and multi-site.
+- Each model has different Recovery Time Objective (RTO) and Recovery Point Objective (RPO).
 
-OK, the next model is the pilot light method. This essentially requires you to have the minimum number of computing database instances required to operate your core services running separately to your production environment. This core set of services would then be replicating data from your production environment, ensuring that the core data is up to date should it ever be required. If a disaster did occur, then this core would then quickly be able to resume the core services whilst you spent time scaling out to support the demands of the rest of your environment, without taking a huge amount of time to restore data.
+**RTO and RPO Definitions**
 
-The warm standby is an extension of the pilot light method. But it's a fully functional system with an increased fleet size compared to that of the pilot light, therefore reducing your RTO. You could even use this warm standby as a testing environment if need be. Again, should a failure occur, this smaller version of your production environment could take the load in services, and then scale up to the full demand of your production environment very quickly.
+- RTO (Recovery Time Objective) - Maximum time a service can remain unavailable without causing damage to the business.**
+- RPO (Recovery Point Objective) - Maximum time for which data could be lost for a service.**
 
-Lastly, multi-site. Multi-site is exactly that, whereby you use the cloud to re-create either your on-premise services within the cloud, replicating data between on-premise and the cloud, or replicating your existing cloud architecture to another region within the cloud. All elements of your infrastructure should be completely replicated to allow a disaster to happen to your on-site infrastructure, but then taken over by those within the cloud. This offers the quickest RTO and RPO from the four methods discussed.
+**Backup and Restore Model**
 
+- Cloud stores backups of on-premise architecture in highly durable and cost-effective storage.
+- Enables rapid access to backups in case of a disaster.
+- Restoration dependent on internet connection speed.
 
-## Migrating to the Cloud: POC
+**Pilot Light Model**
 
-Once you have established your vendor choice, your cloud deployment model, which services you're going to deploy to your design, your deployment options and how you're going to move your data to the cloud, I would recommend that you carry out a proof of concept to demonstrate that you're aiming to achieve is as feasible as you imagined it to be. This would be especially recommended if it was your first experience with your chosen cloud vendor.
+- Requires minimum computing and database instances to operate core services separately.
+- Core services replicate data from the production environment.
+- Quick resumption of core services in case of a disaster, followed by scaling out to support the entire environment.
 
-Create an environment along with any connectivity required to enable you to operate and manage your working solution even though it'll be a scaled down version. However, ensure you test the fundamentals of your solution, such as replication, backups, performance, load testing, updates, and deployments of any applications, communications, and monitoring to name but a few. You need to have enough resources established within your proof of concept environment to make it a viable test and to verify that the solution will be a successful and chosen method of migration.
+**Warm Standby Model**
 
-This would help your engineers and senior management to start seeing the potentials and to grow the confidence of the implementation team on how the solution will be initiated. This proof of concept would also allow for any unexpected issues or errors to be investigated, resolved, and learned from prior to the real full-scale deployment of the production architecture.
+- Extension of the pilot light method with a fully functional system and increased fleet size.
+- Reduces RTO compared to the pilot light.
+- Can be used as a testing environment and quickly scales up to full production demand.
 
+**Multi-Site Model**
 
-## Case Study - expertiseplease.com 
-
-- [Instructor] Hello, and welcome back. In this lecture we're going to introduce you to expertiseplease.com which is a fictitious company that we're going to use as a reference during the course, so this helps us understand how a business goes about a transformation exercise. So have a listen to the following brief so that you're familiar with this when we mention it throughout the course. Legal Advisory International has been running an online digital service, expertiseplease.com for a number of years. The Expertise Please service is used by customers to view and update legal documents that are scanned and stored in digital format. The service attracts a number of customers who find Expertise Please an easy way to have a lawyer amend a legal document. The service also provides some collaborative features such as joint signatures, however it's fallen behind the competition in this area, and the CEO recognizes that expertiseplease.com needs to make it easy for groups of people to collaborate on contracts to grow market share. Expertise Please provides their website www.expertiseplease.com that customers use to manage their accounts and view their documents. The digital legal documents are sourced in two ways. The customer grants Expertise Please the right to scan and digitize their paper based court documents. This is a highly automated process that only requires human intervention in scanning files. Digitized documents are stored in the Expertise Please service. Original documents are archived by a legal processing agency on behalf of the customer. External third party companies send contracts as PDFs directly to Expertise Please customers. PDF files are uploaded via sFTP, and processed in batches during off peak hours. Third party companies can also log in to view contracts, and to check on the status of batch uploads. Most of the documents being stored within the application are sensitive so there are stringent requirements that must be adhered to including security. Documents can only be viewed by the end customer to whom they're addressed. Data must be encrypted in transit and at rest. The service manages subscribers personal information, and it regularly alters it for security vulnerabilities, and must adhere to industry standards, e.g. ISO27001, ISO27018. Digital legal documents are retained for an unlimited period of time, or until a customer deletes a document, or closes the account, However, expertiseplease.com has observed that less than 2% of the documents older than six months are viewed. Expertise Please has to provide highly durable storage of documents. They rely heavily on redundant storage within the data center, and take backups stored in DR locations. End consumers access the application at any time. Current availability SLA is 99.5%, they target to increase to 99.9%. Third parties can deliver digital documents at any time. A 24 hour processing in SLA exists. Customer response time to render documents is less than two seconds. Current SLA is 9.5% of transactions to meet this target. The current architecture is a three tier web application comprising of Apache web server, JBOSS application server and Oracle database. Connectivity, provided by co-location provider. Peak capacity 500 megabits per second. DNS hosted on DNS servers within the same data center CDN, no CDN is used for that. Firewall, clustered firewall appliances. IDS monitoring of traffic, manual implementation of firewall rules to block malicious traffic. Load balancer, front end for mining SL upload. Web servers, Apache 2.2 provides static content and routine to application clusters. Application clusters, JBOSS 7.1. Two clusters providing different functions. Session replication by multicast. sFTP server, receives documents from external third party companies and acts as back submission gateway to the application servers. Database cluster, Oracle database 11G with three notes. Active, standby and DR target using Oracle data guard. Virtual cluster IP using multicast technology. NAS storage, net app appliance with 150 terabytes of stored documents replicated within deep sea. Off site tape back up to DRVC. Storage usage increasing at five terabytes per month with 35 terabyte storage remaining. Hardware security model. Safe net HSM manages and stores encryption master keys for database. Oracle TV, transparent data encryption and file level encryption. Scanning devices and digitizers. Scanning devices are located in the legal support center. Each scanning device is configured with the IP address of both digitizers. Scanning devices communicate with digitizers over a private network to a DC using a custom TCP protocol. Digitizers communicate with the digitizer application module via HTTPS. Expertise Please application is a classic three tier model. Originally custom developed by an external third party, but now maintained in house. It consist of static web content, JAVA modules and a data access service to communicate to the database and underlying final storage. The JAVA modules run on two different applications clusters. External facing modules on cluster one and the internal modules on cluster two providing the following functions. Registration, registers new subscribers and set up unique subscriber encryption keys. Subscribers sign in using their email address. Password is encrypted and store in the database. Login, subscribers or third party company user. Payment, processing modules for subscriptions integrates with third party digit wallet providers via internet API. No credit card data is handled within their service. Doc manager, manages and renders digital documents. Encrypt and decrypt documents using file encryption keys. Presentation, delivers rendered content to subscriber devices. Core, central business processing logic for the application for both subscribers and third party companies. Batch processing, conversion of third party company template and delivery of documents to subscribers. Encryption, interface to HSM to provide access to data encryption keys for file encryption. Administration, back end portal for application administration reporting. Digitizer, ingestion processing workflow module, executes similar functionality as batch processing. Data access service, abstraction layer for database and document storage access. The server and network hardware has reached life and the storage capacity requires an urgent upload. The data center contract for production facility is due for renewal in nine months. Capex costs are driving concerns over the long term service viability based on their current business model. They're looking for a more cost efficient approach. Achieving the current availability SLA is challenging due to a number of operational pain points and maintenance exclusion for data center and current DP provider. Expertiseplease.com needs to increase the availability in SLA to 99.9% as their customers complain about service availability. The infrastructure is able to meet peak demand affecting the ability to meet performance SLA. Reliance on monolithic applications server clusters impacts the ability to maintain and update the application at a quick pace. They're looking for improved agility to support more rapid application future development and deployment. The volume of digital sources is increasing. Third parties are trying to negotiate more real time deliver of documents as part of service contracts. Batch processing is no longer an option. The passive IVS and legacy firewall solution are not effective at handling application that are text. They need to be more secure to be able to detect and mitigate external attacks in real time. For enhanced security, they need to restrict and log management access to the application and infrastructure from a bastion host. Access a lot from the internal network only. Okay, that includes our introduction to the business expertiseplease.com. We'll be referring to this company throughout this course and as we help the work out how they can transform their business to better meet customer expectations and to become more agile.
-
-## Why Consider Migrating Business Applications to Public Cloud Services?
-
-Hello and welcome back. Let's examine some of the benefits and value points of why we might consider migration to a public cloud service. Easy to use is one of the core benefits of cloud computing to any business. The majority of cloud services are managed services, i.e., the infrastructure, provisioning, and scaling of a cloud service is done for you by the cloud provider. Generally, it is easier to implement managed cloud services over provisioning your own hardware and infrastructure, so using cloud services makes it faster and easier to develop or build applications or services. Infrastructure that could normally take a number of weeks to order, be delivered and set up is available immediately, ready to go on a pay per use model. Let's think about this from the perspective of our customer. They are about to run out of storage space in their data center. For expertiseplease.com to add more storage capacity to their current hosting environment, they would most likely require adjustments or adding to their data center contract. Traditional IT provisioning could mean we wait a number of weeks to order and receive new computing resources. Those new resources would then need to be configured and set up to run securely as a public facing service. There may also be additional costs or penalties involved in changing the operational contract with their current provider. Now, compare that to using Amazon S3 for object storage. Amazon S3 is elastic by nature and does not need to be pre-provisioned. With Amazon S3 storage, the capacity is increased automatically to meet demand. So this is far easier for a business, as it reduces the need to estimate, adjust, or renegotiate storage agreements with a provider. This ease of use becomes even more of a benefit when it comes time to add or build new services. Having an environment with multiple regions and availability zones available by default makes it easier to deploy highly available services. Having the virtual private cloud, or VPC, means there is less heavy lifting required to build a new service. And then having access to managed services such as Amazon EC2, Oracle RDS, ElastiCache, AWS Shield, or the serverless computing support we would get with AWS Lambda and Amazon API Gateway. These services make it far easier to iterate or develop new business applications. So the net benefit of these simplifications is that for our customer expertiseplease.com, they can focus on adding business value rather than focusing on the undifferentiated heavy lifting of provisioning IT infrastructure and services. When we use public cloud providers, you can scale services up and down based on demand. The scale and size of a cloud provider like AWS means extra storage capacity can be added on demand. If it is no longer needed, it can be scaled back. The size and scale of AWS, Microsoft Azure, and the Google Cloud platform make scaling to meet demand easier than, say, it might be with a smaller data center that may have one or two data center footprints and finite resources available for expansion. With cloud, you only pay for what you use. You can scale up and down as required, but you only pay for the services that you consume. You don't need to provision and pay for capacity based on a future estimated usage. This means expertiseplese.com will have a lower operating cost by shifting storage and compute services to the public cloud. Shifting their storage and services out of their current data center to a public cloud service will allow the business to get more done with less. Our customers' shift to the cloud can enable their business applications to be iterated on quickly. New features can be added without the need to provision servers or add computing power. Now, this agility is compounded in the number of services that are available as managed services. Amazon EC2, Amazon Dynamo DB, Amazon ElastiCache, Elastic Load Balancing, are all managed services that can be initiated immediately without the need to pre-provision hardware or infrastructure. This means the business can implement services way faster than if they had to build the infrastructure first, install those services, and then run them in a production-ready environment. Public cloud providers run managed services at scale, and so are able to provide a very high service level agreement to their end customers. This is a real benefit as it reduces the likelihood of expertiseplease suffering some type of infrastructure outage that could impact their end customers. This decision does come back to the aspect of scale and focus. It makes more sense to offload infrastructure management to a business that specializes in providing infrastructure at scale. There is no real benefit in building your own infrastructure capacity as it is highly unlikely a business like expertiseplease.com could achieve or maintain the same service level they would get from a public cloud provider. Security is a key priority for all business customers. Expertiseplease needs to keep its operating environment secure and its customer data safe to continue to build a successful business. Cloud providers take an end to end approach to security of cloud services. The physical and operational layers of cloud infrastructure is managed by them for you. The level of effort and focus required to maintain secure IT systems is considerable. Maintaining things such as secure socket layer ciphers, for example, or managing DDOS attacks and outages, are one of those common concerns for IT managers running public services today. Public cloud providers commit significant resources into maintaining a secure infrastructure for their customers, so this aspect takes out some of the undifferentiated heavy lifting that's involved with running a secure online service. Shifting to the public cloud doesn't mean that security concerns diminish in any way. Generally cloud providers run a shared responsibility model. The cloud provider manages security of the cloud, while the customer is expected to mange security in the cloud. So as the customer, we will still be expected to manage users, user access to resources, access control policies, and ensuring that our environment remains secure. Okay, that concludes our short refresher on the benefits of cloud computing. It is important you can articulate these benefits at any time so you can explain them to anyone who may be new to a migration project or initiative.
-
-
-## The Six Common Cloud Migration Strategies
-
-- [Instructor] Hello and welcome back. In this lecture we are going to learn how to recognize and explain the Six Rs, or the Six Common Strategies, used when discussing Cloud Migration projects. In 2011, Gartner Group outlined five common migration strategies, which provided a great benchmark for discussing and defining migration strategy in the early days of public cloud adoption. Over the fullness of time that has evolved into six definitions, which were commonly used when discussing migration to Cloud services. They're commonly called the Six R's and they are Rehost, Replatform, Repurchase, Refactor, Retain and Retire. Let's work through these six strategies, so we're clear on the operational benefits and the business merit of each construct. Just before we start, let's just reaffirm that every migration is going to be unique and that these strategies are not meant to be definitive or mutually exclusive. They should be used as guidelines and discussion starters only, something that can be very helpful when you are running a Cloud transformation workshop or a brainstorming session. And as we will see with the Expertise Please migration project, a migration project can easily include elements of all of these strategies at various stages. So first cab off the rank is Rehost, commonly referred to as lift and shift. Now lift and shift is generally as it sounds. Lifting servers or applications from the current hosting environment and shifting them to infrastructure in the public Cloud. Rehosting and the lift and shift is a very common strategy for organizations starting out on their migration journey. There are significant benefits in running servers on the scalable, pay as you go infrastructure of a public Cloud platform. So it is a relatively low resistance migration strategy and this is a great strategy for working backward from a fixed constraint or a hard deadline. In practice, the application or server will be exported via a third party export tool like VMware's V Center, for example, or created as an image that can be exported to a compute instance or container run on a Cloud compute service. Containerized applications make this process a relatively simple exercise as the operating environment is included in the container's schema. If you are running a monolithic application, then this rehosting can again be a simple way of getting started with Cloud services. Second cab off the rank is Replatforming which is to modify lift and shift. Replatforming involves making some optimizations to the application during the migration stage. So the third R is to Repurchase which is sometimes referred to as drop and shop. And this refers to the decision to move to another product. This may mean ending existing licensing and repurposing services on a new platform or service. Examples of this may be a CRM system or an industry specific application not designed to run on Cloud infrastructures. Now this is often not necessary with bespoke applications written with modern application code as with modern code it is possible to transport the code from one provider to another. The Repurchase strategy is often applied when using a proprietary database platform or proprietary product. Our fourth R is Refactorng or rearchitecting and this strategy is usually driven by a strong desire to improve services. Drivers for this might be that it is difficult to make improvements in the current environment or it may be a requirement to improve availability and reliability immediately, say to meet a specific security or compliance requirement. With refactoring, much depends on the nature of the service you want to refactor. If it is not a mission critical service, then it may be possible to rearchitect a service as required during the migration stage. Refactoring is feasible during the first phase of a migration if you do not have a time constraint. Otherwise, it is most likely better done at a later phase of the project. Okay, so strategy number five is to Retain. You may want to retain portions of your IT portfolio because there are some applications that you are not ready to migrate and feel more comfortable keeping them on premise. With this use case it may make sense to retain aspects of your IT services in the current environment and implement a hybrid or part migration strategy. So this approach makes sense if current regulatory or constitutional rules require you to store or run some aspects of your services or business application on premise or within specific regions. So that brings us to strategy number six which is to retire services. Now this strategy involves identifying assets and services that can be turned off so the business can focus on services that are widely used and of immediate value to the business. So that brings us to the end of our brief summary of the 6 Common Migration Strategies.
-
-
-## The Cloud Transformation Maturity Model - Common Customer Journeys
-
-- [Instructor] Let's now explore the stages we see in the cloud maturity adoption cycle. The first phase is the project phase. In the project phase, you may be running projects to get familiar with cloud services. There is generally limited knowledge of cloud services in the business. This stage is often evidenced by limited ownership or direction evident in the organization. Projects tend to be one-off, potentially run by individuals often operating on their own. In our customer example expertiseplease.com, two people from the operations team have been running tests using Amazon S3 as object storage. They have tested posting objects through Amazon S3 and retrieving them using application calls from their current application. The team members set up an AWS account themselves and while the tests were sanctioned and supported by their sysops team lead, they have been experimenting without a lot of support from the business at this stage. The team had reported back to their sysops team lead on the success they had with using Amazon S3 storage for image objects as a proof of concept. So how can you tell if an organization is at this project stage? Well, a good way to determine the level of experimentation is to run a brief and informal interview with internal teams and ask if they have been experimenting, what they did and what they found out. Try suggesting the idea of them running some proof of concepts to test out the various cloud platforms and gauge their interest and feedback. You can consolidate results into a simple one-pager that summarizes the level of experimentation that appears to exist in the business to date, and that can form a blueprint for further discussions and experimentation. The second phase we see is the foundation stage. So after experiencing the ease of use of cloud services, we often see customers start building the foundations required for cloud adoption. For expertiseplease.com, the operations team lead reported back to the executive on the success of the Amazon S3 proof of concept and asked the executive for support for setting up a structured cloud migration project. At this foundation stage, we might see a corporate or consolidated account being set up and ownership of security and compliance readiness may be evident in some teams. However, this is just as likely to be an unaddressed requirement, and there may be concerns around security and compliance, mainly because the required resources and roles have not been formalized yet. This generally is the result of not having a transformation plan in place. There may be some frustrations and negativity associated with migration projects underway as a result of this. So how can I tell if an organization is at the foundation stage? Well, asking to see the transformation plan can be a great litmus test for defining how far an organization is into this foundation stage. If that plan doesn't exist yet, it is still early days and there is work to be done in getting that transformation plan underway. The third phase we see is the migration stage, and this is where organizations have made the commitment to migrating workloads or to cloud services. And in this stage, there may be some lift and shift of existing applications. Even mission-critical applications or entire data centers could be shifted to the cloud. And projects may be happening independently and somewhat randomly. However, that is not always the case. For expertiseplease.com, they're entering the migration stage, and to get to the stage required the sysops team lead to run a number of cloud-readiness workshops. There were some external influences that helped. The CEO attended a number of executive briefings on business agility and cloud providers provided some proof of concept funding and architecture workshops. The net result is that the executives have committed to transforming the business and the project is owned and supported by the CEO. The key business driver for committing to the migration project, however, is that fixed constraint. The operations team identified that the data center storage was near exhaustion, so something had to be done. How can you tell if an organization has reached this point? You'll know if an organization has reached this point if third-party providers are presenting proposals or there are already a series of migration projects underway. So the next stage is reinvention. And once the majority of business operations are in the cloud, a customer can begin to focus on reinventing by taking advantage of the flexibility and capabilities of cloud providers and using those to transform their business by speeding up time to market and increasing the attention on innovations. For expertiseplease.com, this is a plan to decouple the monolithic business application and redevelop it to use microservices running on managed services. Now, this will enable the various components of the application workload to scale up and down as required. And for the business, it means they can implement new features and functions without having to redeploy an entire application stack. How can I tell if your organization is at this stage? So this phase we'll often see a number of optimizations underway. There's operational efficiencies coming from running in a cloud environment. However, they may not have leveraged the full benefits yet. Okay, so those are our four key stages. So how do we move a customer from one of these stages to the next?
-
-## Strategies and Techniques for Moving an Organization Forward in Cloud Maturity
-
-Once you have identified where you are on the adoption cycle, you can begin to implement a plan for enabling and moving your organization forward into the next stage of maturity. And so, next stage of business value. It's a common situation for a business to get stuck at one of the early stages. It was a situation I would see a lot with partners and with customer engagements when I worked at AWS. So we will discuss and build out an evaluation matrix to help identify and target what activities we can do to move us forward within each of these customer adoption phases. One of the key lessons I have from being involved in cloud migrations is getting a plan in place, is one thing, but getting everyone on board with that plan is quite another. It is often the hardest part, especially if, like me, you are a naturally shy person. You need to ensure that you find and connect with all of the stakeholders who are involved in the process and who may be impacted by a shift or migration to cloud services. A migration plan is nothing without it being an agreed plan. As the cloud ninja, you have to petition and win buy-in from your stakeholders for the migration plan to become a migration plan. But don't worry. I always surprised at how open and enthusiastic people got around this type of project. Just ensure you present the project from each stakeholder's perspective. Focus on how the project migration can benefit them in their role. So, for this reason, we need to temper our enthusiasm for the technology in these first stages of a cloud migration project. While we may all have our own views on tools and technology, and I'm sure we do, you will be more successful with any cloud migration if you can focus on the business and project requirements over the technology in these first stages. We can and should be provider-agnostic. We are focused on building rapport and creating momentum. So we need to maintain a high-level view of the tools and services available at this stage. So you will be able to quickly evaluate, influence, and ideally take a lead in building a bias for action. Moving forward and out from the project stage is often the hardest shift to make. This is where the majority of organizations seem to get stuck. They get a project started, but the opportunity to move it forward is held back by a lack of executive support, budget, or planning. The core component required to move forward is having the business case. The most useful tool in the business case is a proof of concept. Leveraging one or more pilots or proof-of-concept projects to test out cloud services on representative workloads is a really effective way to prove a design concept. The operations team leader ExpertisePlease.com did this by having three key conversations. First, he briefed the executive on the results of a cloud storage proof of concept. Second, he asked the executive for a 10K budget to run a formalized cloud project that would shift some archived images out of the ExpertisePlease.com data center into cloud storage. Third, he asked for permission to host a cloud readiness workshop to increase awareness and knowledge of cloud services within the ExpertisePlease.com wider team. Running a cloud readiness workshop can really help transform and progress cloud adoption. The workshop needs to be an interactive, educational experience where the team can clearly identify business drivers, objectives, and blockers. This format helps you build a cloud adoption roadmap to guide you through the next steps in your journey to the cloud. The sysops team lead also suggested that the exec and CEO attend a series of events run by cloud providers so they could gain a bit of understanding of the business benefits of a shift to the cloud. One of the outcomes of the cloud readiness workshop should be a business value matrix. In this matrix, we want to identify and document all the benefits that we will get from cloud services. They might be, tactical benefits, which would be cost management, prioritization of IT spending, and a system of allocating costs across a portfolio and getting more visibility into those costs. There will be also strategic values, like agility, time to market, having IT infrastructure as a service, and, most importantly, innovation. When we document any plan, we can focus on and prioritize some of these initiatives. With the ExpertisePlease.com plan, the team ran their cloud readiness workshop and they identified that, with cloud services, it would be possible to view specific IT operating costs and system performance data. That meant the business had more visibility into which components were costing what. And so the business will be able to react faster when an issue arises. The ExpertisePlease.com business is not getting this visibility and agility from their current data center solution. Cloud providers also enable allocation to specific business groups of specific applications in near realtime. So what is seen as another major benefit of the business is being able to implement new services and see the cost of those on a day-to-day basis. The last conversations that our sysops team lead had was with the procurement team. He discussed setting up trial cloud provider accounts like his team was currently using and discussed any issues that might arise in setting up and paying for cloud services going forward. This gave the procurement team time to set up the required processes and approvals. So financial and operational issues would not slow down any cloud migration project. The proof of concept is by far the most effective tool for getting executive approval. A proof of concept is a great way of showing that cloud services can do what they say they can do. Most public cloud providers provide support for getting started with a proof-of-concept project. Having the provider involved can really accelerate executive awareness and buy-in. AWS, for example, provides the migration jumpstart accelerator program, along with a number of support programs to provide the end-to-end knowledge transfer with actual workload migrations. You can find out more about these by the websites or attending any of the cloud provider events. As a partner manager, I was able to assist many AWS customers running proof-of-concepts. For more information on becoming an AWS partner or finding one, see the partner funding web page on the AWS website. Once we are in the foundation stages, we want to be looking to build toward establishing a cloud center of excellence within the business. This can become the hub of cloud migration activities and ideally should be built around a core team that will be responsible for defining policies and strategy and building knowledge transfer. Some of the key initiatives for the cloud center of excellence might be providing cloud training and knowledge sharing. It is a crucial success point for all-sized organizations. The organization can only move as fast as the knowledge of its team members. To move forward in the foundations stage, commit a training plan and set rewards and goals around achieving levels of certification or awareness. We can be providing support and guidance to business units who are looking to leverage cloud services in the business. Many teams will be interested but won't know where to start. It is important to provide blueprints, best practices, and expertise to help teams ramp up and quickly adopt cloud services. We can be creating and maintaining security standards. Security policy is a very important factor in any migration plan and subsequent project. Having security standards reduces risks to the business and saves a lot of time and effort. If there is a compliance goal on the horizon, managing and documenting security policies will be a requirement for any compliance audit. So implementing policy and process early should be a priority. We can't be creating and managing common architecture blueprints. This is a very important best practice to help an organization move forward quickly. There is often time lost in the foundations stage by duplicated effort. Two independent teams or individuals may be investing time learning how to do the same thing. The cloud center of excellence should be the go-to place for any cloud project, and a shared library is often also the easiest way to implement standards and best practices, infrastructure scripts, machine images, security policies and roles, all can be stored and made available as time-saving starter packs. We can be creating and managing a consolidated cloud services account, ideally with a consolidated account structure, which enables business units to have autonomy over account services within their corporate security and policy guideline. We need to learn and show people how to structure an account for consolidated billing. How we do that is beyond the scope of this lecture, but please see the recommended next steps for information on how to get started on this topic. So, the outputs we could have for ensuring we keep progressing through the foundations stage could be as follows. Having a clear transformation roadmap. The transformation roadmap establishes a plan, identifies resources, and provides details about migration activities. The roadmap is used to define the priority and process for achieving the goals set out by the cloud center of excellence, your steering committee or even the program lead. It's a must-have. Best practices for security and compliance architecture. A highly scalable best practice architecture design is creating something that supports all policy and regulator compliance requirements going forward. The sooner you have this in place, the better. And we need to have a strong value management plan. Value management determines and describes how you quantify value and change, impacts and improvements, and it identifies the areas where the project teams can and should focus. So how do we shift forward from the migration stage. The migration stage is where an organization has committed to using cloud services, and there is already a bias for action. During this stage, we will have the building blocks such as executive sponsorship, a governance model, and the operating tools in place for managing large-scale migrations. Now, if migration projects are already underway, then your organization is clearly in this stage. However, the migration stage is often where you'll find the most blockers to progress. There is a high level of risk as planning turns to action. Projects and programs can get delayed by unforeseen circumstances, budgets can overrun, and application designs can fail or not work out as expected. So there is a risk, confidence can start to drop at this point in the adoption journey. So our best approach in this stage is to work hard on prioritizing projects and program steps to minimize the risk of failure or impact to the overall success of the migration plan. So the best approach of this stage is try for small steps done often. If you can minimize the amount of scope in each of the steps you take, you reduce the risk of impacting the overall project by having one component fail. The sooner you can start to implement an agile way of working, where we're doing managed sprints and feeding back information from each sprint and informing the next one based on those outcomes, can start to improve your success points. There's a view checkpoints we can use to stop programs running over and causing problems here. Now, the first one is to ensure you have developed an effective and efficient migration strategy. I can't underline that enough. We need to implement a strategy that minimizes risk of project failures and maximizes the return on investment for the business. Most projects fail due to bad strategy and planning. So it's critical to classify, to add sequence, and have an appropriate migration plan for your targeted application workloads. Take small steps, do them often. That's one clear way to ensure success of your overall plan. Another major foul point is not having an agreed or robust migration process in place. So we may have a lot of top-down pressure to start achieving things very quickly, and execution processes need to be put together in a repeatable and sustainable way. So the selection and implementation of proven migration tools and methods is often a key success factor. So that can minimize the risk associated with migrating target application workloads. The more external resources you can include in your planning and architecture stage, the better. If it means bringing in vendors and partners, all the better because they're bringing best practices, they bring in knowledge, and they're gonna help you succeed. Not having the cloud environment set up correctly. So, if we're trying to set things up quickly and we haven't got the right account structure in place, or, for example, accounts doesn't know how to pay the bills, or there's some challenges along the way, those operational roadblocks can really slow down any overall migration plan. Try and leverage the existing tools and processes and to over-communicate any change that's required at the fiscal and financial layers. Pre-warn financial teams that you're going to be setting up a consolidated account, that it needs to be paid monthly, that you pay as you go rather than pay annually, all those things that may be new or unique or may cause blockers when we need to actually execute. Now, the other common one is just going all in. So there's a lot of enthusiasm from the executive just to get started and get in there. This only works effectively where you have top-down sponsorship of all of the components as well as the enthusiasm. So that's the training, it's the best practices, it's setting up the center of excellence, it's setting up security and blueprints, et cetera. All those things have to be done. If they're not, then there's just overwhelming pressure to do things, and if the structures and processes aren't in place already, then there's gonna be technical and project failures, which, of course, undermines morale, and suddenly, the whole project can start to spin out of control. So try small steps done often is a very, very good strategy. Rinse and repeat so that whatever we've done well we do again and we reuse resources as much as possible. And ensure that you do get that executive sponsorship. Ensure that the exec understands it's not just about saying, yes, let's go. You're gonna need resource support to make this program work. Okay, so that brings to a close our lecture on how we can move ourselves from stage to stage. Of course, every situation is unique. If you find yourself challenged and frustrated, then just go back to the basics on what we've covered here today because often there's small problems that manifest themselves later, and getting the basics right upfront can make every other decision easy. Okay, that concludes this lecture.
-
-## Transforming a Business with a Cloud Readiness Workshop, Migration Plan and Roadmap
-
-- [Presenter] Hello and welcome back. Now let's run through the Cloud Readiness Assessment for expertiseplease.com This process will give us a better understanding of how to plan for a Cloud Readiness Assessment Workshop. How to conduct a high level portfolio assessment. Conduct a detailed portfolio assessment. And how to define a migration roadmap using this first and second pass process. Following the success of the proof of concept run by his team, John the Sys Ops Team Lead at expertiseplease.com wanted to move forward with migrating services to the Cloud as quickly as possible. For a migration project to begin, John recognized the need for the business to run a portfolio rationalization exercise. A portfolio assessment will enable a business to identify which applications were ready to be migrated. Which were not, and what dependencies and considerations might need to be addressed to get a cloud migration project started. The portfolio assessment could determine which applications to migrate, replace or in some cases, to eliminate. To achieve this outcome, John our Sys Ops Team Lead took a bias for action. He proposed to the executive team that he'd run a cloud readiness workshop. Once John had agreement from the executive team, John invited the key stakeholders from the business and technical teams, and he set a date for a three hour workshop. John's invite to the team, outlined the key decision points to consider in determining the strategy for moving to a public cloud provider. He stressed that the first decision point is discovery. With this assessment, we need to evaluate our current applications and data services. He explained that this exercise is based on in conjunction with members from the business teams and technical teams to ensure we have a 360 degree view of any impact change might have on all of these teams. To make things easier, John included a simple application register that he had created which listed the current systems known to him from his perspective as the Sys Ops lead. John stressed that this perspective was his and his alone and there may be many more that we need to consider as a group. John outlined the portfolio assessment process. We would first identify the applications, the dependencies and the licensing models in a first pass. This first pass can be used to do a high level portfolio assessment. And for us to roughly group applications together. On the first pass, we should be looking at cloud compatibility, the current licensing models, and any compliance requirements that we might have. Using that assessment criteria, we can make a strategic decision based on business priorities. And ultimately come up with a draft application migration roadmap. On the day of the cloud readiness workshop, the team ran a high level order of all of the systems currently used by the business. And the first 30 or 45 minutes, John outlined the benefits of cloud services to help explain these benefits in terms that would add perspective for the business stakeholders attending the meeting. As an online business, expertiseplease.com already had a relatively high level of knowledge on the benefits of online services. But not everyone was aware of public cloud services. Depending on where your organization is on the experience curve, you may want to add a knowledge sharing session prior to running any practical discussions. I would recommend using the cloudacademy.com courses such as, what is cloud computing to help a wider team get up to speed with cloud computing basics. So then we are roughly on the same level of understanding about cloud computing. What the opportunity was and the objectives of this workshop. The team ran their first pass on a portfolio assessment. In the first pass of the portfolio assessment, the objective was to identify all of the systems currently used by the business. As importantly, identifying the dependencies and indirections of each of those applications. As each application and system was identified and discussed, John would write it on a post-it note and stick it to one side of the whiteboard under the heading current systems. John then drew out four buckets on the other side of the whiteboard and explained each. Cloud native, these are applications that were built in the cloud using cloud architecture patents. They may use microservices, have API-driven interfaces, and they're built with higher availability and fault tolerance design patents. These services would also generally have metrics and monitoring built in and already may have a pay as you go licensing model. Cloud eligible, essentially those systems that could be moved to the public cloud. They may be already running on a virtualized infrastructure using a service such as VMware and they probably have clearly defined boundaries and dependencies. Ideally they will have or may already have a cloud-based licensing model. Bucket number three is cloud friendly. And these are the applications that can scale horizontally and can leverage standards-based interfaces like risk. And can support document formats such as json or xml. And ideally the vendor of the service will have a cloud image that could be purchased or utilized. And our fourth bucket is not cloud ready. This is anything that is not likely to be cloud friendly in the near future. Due to architectural limitations such as perhaps being hardware specific. The systems might run on non x86 architectures. Which are not currently supported by most of the cloud vendors. Or they may have a licensing restriction i.e. be bound to a specific processor or hardware board. An application may also be deemed not cloud ready if it has an on premise dependency. As an example, the scanners expertiseplease.com used to scan documents and legal agencies, are bound to a propriety black box client server application. The team then discussed and evaluate each application under the headings of compliance, licensing models, dependencies, and compatibility. To agree which of the four buckets each application belongs to? As we discuss each, John the team lead moves each of the application post-it notes to one of these four buckets. For most systems, the process of placing applications in one of the four buckets is straightforward. If we don't know enough about the systems yet, then it is best to pause and recommend running a system audit first. Having an application register that can be distributed prior to an assessment workshop really helps. Next we look for a snapshot view. So our buckets and application are collated into a percentage. Which enables the team to make a short assessment of where we are on our cloud readiness journey. We see that 88% of the expertiseplease.com application portfolio, is eligible for cloud transformation. The next step was to run a second pass and qualify each application against the six migration strategies. Rehost, replatform, repurchase, refactor, retain, or retire. John explained that this was not a technical design discussion. The team needed to stay focused on the business priorities and objectives. John wrote the name of the strategy on a new post-it note and stuck it next to each of the application names on the board as the discussion progressed. Lifting and shifting images from NAS storage in the data center to a cloud object store provided a simple rehosting opportunity. That would provide more elasticity, ease of use and cost efficiency. It made sense to rehost the core business application on cloud compute services. So the business had more elasticity, security and flexibility. The team did recognize however, that expertiseplease.com needed to refactor this core business application. If it was to achieve the business goal of launching new services and reacting faster to customer requirements, we needed to re-engineer this monolithic application to use microservices and manage services if we were going to achieve that. That means components of the application could scale up and down rather than us needing to scale horizontally to meet more capacity. Refactoring the application in this way is seen as a priority for ensuring expertiseplease.com getting the most advantage from cloud services. It is however, seen as the most complex part of the project. Rehosting the IDS and IPS services to cloud compute instances could provide us with more security ease of use and cost efficiency. And refactoring, adding a caching layer to optimize the service that improves our elasticity and flexibility. Replatforming the oracle database to a cloud platform could provide more flexibility and elasticity. Repurchasing, if we shift the database from Oracle to an open-source database like PostGres, that could provide significantly more cost efficiency for the business. It would seem as important to retire the monolithic business appy eventually and the proprietary scanning services. That would ensure the expertiseplease.com had few technical dependencies that could restrict who they worked with and how they worked with them in the future. Based just on business priorities, the ML server and the time management system and billing application were all seen as capable of staying where they were. So they sit under the retain strategy. Alright with that process done, John drew out three swim lanes. The first was called quick wins. The second optimization. And the third, transform. The team then reviewed this backlog of apps and strategies and roughly assembled them into these three swim lanes. For quick wins, the team identified the following. Rehosting the image content. Rehosting the core business app to cloud compute. Rehosting the IDS and IPS services to cloud compute. Replatforming the Oracle database to cloud based Oracle instances. In the optimizing swim lane, the team identified the following. Refactoring by adding a caching layer to optimize a service and reduce load on the front end service. Repurchasing by shifting our database from the licensed Oracle version we have, to an open source platform. That would reduce significant costs to the business. And the transformation swim lane, the team identified refactoring the core business application. Now of course there's many, many steps that are involved in that. So at this point, we're just focused on the business priorities. The actual timing and phasing of these three steps can be figured out at our next phases. The objective is to arrange tasks to rough time boxes based on the business priority and complexity. So with these phase roughly assembled, a transformation road map and plan is beginning to take shape. Each of our applications is classified by our migration strategy and grouped in simple priorities swim lanes. So the outcomes of the Cloud Readiness Workshop could include parts or all of the following. A business value matrix. An application register that might also include a system audit. And our first pass portfolio assessment. With our application a cloud native, cloud eligible, cloud friendly, or not cloud ready. This gives us a rough snapshot of how ready our organization is for a cloud transformation project. The second pass of our portfolio assessment provides us with more detail on those applications identified as eligible for migration to public cloud services. Each application is identified as compatible with one of the six common strategies. And we have an outline of the perceived business benefits identified with each of those. So the outputs of the second stage are, a portfolio assessment, evaluating and ratifying each of our identified applications against the six common migration strategies. Rehost, replatform, refactor, repurchase, retain or retire. This analyis helps us prioritize. It provides us with a better understanding of the business value of each strategy. And allows us to quickly group applications together based on complexity. We can then prioritize sprints within the phases based on our business requirements. So what are the next steps after our Cloud Readiness Workshop? It is now possible for the technical teams to further define, quantify and prioritize a task backlog for each of these migration steps we proposed. That detail will help the business make resource and budgeting decisions. If the project is given a green light, the task matrix can be used to evaluate and select public cloud services that can meet these requirements. Now the expertiseplease.com team recognized the need to implement HR methodology to effectively execute and manage the migration of workloads from end to end. Now this requires expertiseplease.com to plan, schedule and execute migrations in repeatable sprints. Incorporating lessons learned after every sprint. Now each migration sprint should go through an appropriate acceptance test and change controlled process. So in addition to the migration strategy, expertiseplease.com needs to develop and implement an effective cloud governance and operating model that addresses access, security, compliance and automation requirements. Now the team know that these things are perhaps a little beyond their current scope of knowledge so the decision is made to involve providers in this next architecture phase. To ensure the best practices adhered to and that the latest technology is and expertise is involved in the design process. So the objectives of these subsequent meetings will be to develop a migration process for each application workload. This process includes application migration tools, identifying data migration tools, validation methods and appointing roles and responsibilities. Okay that brings this lecture to a close. This lecture has given us a better understanding of how to plan for a Cloud Readiness Assessment Workshop. How to conduct a portfolio assessment and how to define a readiness assessment plan.
-
-## Conclusion 
-
-This concludes this Getting Started with Migrating to the Cloud course. I hope you have found the content and format useful and feel more confident with beginning a Cloud Migration project or a business transformation program in your own business or with one of your customers. So let's review the areas we've covered to remind ourselves and help solidify what we have learned in this course. First, we learnt the benefits of migrating to public Cloud Services. The core benefits of public Cloud Services are ease of use. It is just easier to start up new services when you don't need to provision them first. Elasticity; Cloud Services can scale up and down to meet demand. You don't need to provision infrastructure based on estimated usage. Cost efficiency; with Cloud you only pay for what you use. Flexibility; you can add or remove services easily and without delay. And security; Cloud providers manage the security of Cloud Services and encourage security best practices, meaning you can focus on generating business value. Next we explained the six common strategies used when discussing Cloud Migrations. Those were: rehost, replatform, repurchase, refactor, retain and retire. Next we explained the four stages of the Cloud Transformation Maturity Model. The first was the project stage where we have intermittent projects, often with no clear executive support or plan. Then we have the foundation stage where we begin to see the components Cloud Services being put in place but generally there's no clear direction yet. The the migration stage, that's where we have a number of migration projects under way but often independently of each other and often prone to operational blocks such as top down support, coordination or fiscal or financial issues. Then we have our optimization stage. This is where we may even have an all in strategy but often we lack the best practices and resources to be able to ensure we're getting the best from all of those good Cloud Services. Then we explored how to identify which maturity stage and organization may be at in the Cloud adoption cycle using that Cloud Transformation Maturity journey. And we explored some of the techniques we can use to move an organization forward in Cloud Maturity. To move forward from the project stage we looked at running a Cloud Readiness Workshop to clarify business drivers, define strategy and common goals for Migrating to public Cloud Services. We looked at using a Cloud Readiness Assessment to identify the current readiness of applications, to define the requirements required to shift any of those, identify roles and responsibilities and to agree priorities. We looked at the Proof of Concept as a way to increase confidence in Cloud Services and quickly approve viability of services proposed. To move forward from the foundation stage, we explored setting up a Cloud Center of Excellence to capture and encourage organization-wide best practices. We looked at running security all rolls and responsibility workshops. To move forward from the Migration Stage, we discussed running optimization workshops to ensure cost optimizations and we looked at including vendors and partners to ensure best operating practices and the use of the latest optimization tools and features. Then we walked through a Cloud Readiness workshop for Expertiseplease.com. We followed their progress as they ran a Cloud Readiness Assessment and defined a high level migration plan for transforming their business. Here's a quick summary of what they did. Expertiseplease has a storage exhaustion deadline at their current data center. So they needed to find a solution within three months. That fixed constraint made the decision to lift and shift their image storage to Amazon S3 relatively easy. That was the main priority as the exhaustion deadline could not be changed. Proof of Concept proved that the business application could run using images stored in Amazon S3. So the minimal viable solution was simply shifting storage to Amazon S3, however, the brief from the customer was to also try and improve reliability and to make it easier to iterate on new features and services. The need to securely manage customer data is seen as a priority for success going forward. AWS is able to meet more clients' requirements then Expertiseplease could ever do in their current data service. The ability to increase availability by running in multiple availability zones and the option to recover to an entirely different region are very attractive propositions to the Expertise Executive. So it was seen as practical to lift and shift their business applications to Amazon EC2 Instances and their Oracle Database to Amazon RDS. So their Migration Plan is based firmly on priorities. First phase is to shift the image assets as soon as possible to negate the storage exhaustion issue. Now this shift immediately improves scalability, availability and it reduces costs. Further, it reduces the constraint on the business as there will be no need to renegotiate the contract with the data center that's currently being used. The long-term benefits of shifting to the Cloud, to the Expertiseplease business, is the ability to implement new features and service much faster. The CEO recognizes that Expertiseplease needs to innovate quickly to meet customer demands and to keep ahead of the competition. Increasing agility in this way can make a big improvement to the operational success of the expertise business and this is a core driver in that shift to Cloud Services. So to realize this vision it is crucial to prioritize effectively so refactoring the application is proposed in phase three. Now this reduces risk to phase one and ensures that the internal development team are not over-committed during those other phases. The storage exhaustion constraint is the priority. So while there was an appetite for rewriting the way images were posted and returned to the application and to in customers, adding a caching layer to reduce load on the public facing servers and implementing LAM defunctions to decouple the services to add more scalability, the decision to replatform and optimize was moved out to a second phase. Now this is an important decision point you may come across yourself. If you are working to a hard time constraint, aim for the minimal viable migration. Every modification you make increases the risk of a technical complication or time delay. The Oracle Database is migrated as a lift and shift to Oracle RDS running on AWS infrastructure using the Database Migration Service. And then at a future stage it has been proposed to migrate off the Oracle platform to use Postgres, which is a Cloud native of Open Source Relational Database Platform. Now this repurchase strategy will save Expertiseplease considerable costs in annual licensing fees. The monolithic business application is seen as something that needs to be refactored and retired. It is not feasible to redeveloping the whole application each time a new feature is added. Okay, well done, Cloud Ninjas. That brings us to the end of this Getting Started with Migrating to the Cloud Course. You should now feel you have the knowledge to recognize and implement a framework for shifting an organization to the public Cloud. It is amazing what can be achieved with the bias for action, an agreed plan, executive support and taking small steps built on the learnings and feedback from your previous steps. Now, as a next course after this, I suggest following the technical design phase for the Expertiseplease.com migration which is in this learning path. If you have any questions or comments about this course, please reach out to me directly at andrewlarkin@cloudacademy.com or to us, the team at support@cloudacademy.com. Thank you very, very much for your attention. I really hope you enjoyed this course as much as I enjoyed doing it for you and good luck with your migration projects.
-
-## xx
+- Replicates on-premise services within the cloud or replicates existing cloud architecture to another cloud region.
+- Full replication of infrastructure for quick recovery.
+- Offers the quickest RTO and RPO among the discussed methods.
 
 
 
-## xx
+
+
+
+
 
 
 

@@ -51,7 +51,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Challenge-Git](pages/003-Git/050-challenger-1.md)
 
 
-## Cloud - Basics
+## Cloud - Fundamentals
 
 - [Cloud Computing](pages/002-Becoming-a-Cloud-Architect/002-Cloud-Computing.md)
 
@@ -65,6 +65,14 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [Cloud Migration Strategies](pages/002-Becoming-a-Cloud-Architect/007-Cloud-Migrations.md)
 
+    - [Strategy Considerations](pages/002-Becoming-a-Cloud-Architect/007-Cloud-Migrations.md)
+
+    - [Migrating to the Cloud: POC](pages/002-Becoming-a-Cloud-Architect/007-poc.md)
+
+    - [Cloud Migration Strategies](pages/002-Becoming-a-Cloud-Architect/007-cloud-migration-strategies.md)
+
+    - [Case Study: ExpertPlease.com](pages/002-Becoming-a-Cloud-Architect/007-case0study-expertplease.md)
+       
 - [Business Effects of Cloud Migrations](pages/002-Becoming-a-Cloud-Architect/008-Business-Considerations.md) 
 
 - [What is a Cloud Architect](pages/002-Becoming-a-Cloud-Architect/001-What-is-a-Cloud-Architect.md)
@@ -92,7 +100,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     - [Automation](pages/004-AWS/116_automation.md) 
 
     - [Integration and Messaging](pages/004-AWS/117_aws_integration_and_messaging.md) 
-
 
     - [Container Services](pages/004-AWS/118_aws_container_services.md) 
 
