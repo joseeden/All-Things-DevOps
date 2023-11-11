@@ -28,7 +28,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 ## Linux 
 
-- [My Linux Labs](https://github.com/joseeden/All-Things-Linux)
+- [Linux Labs Repo](https://github.com/joseeden/All-Things-Linux)
 
 - [Kodekloud Engineer Labs](https://github.com/joseeden/KodeKloud_Tasks)
 
@@ -80,7 +80,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     - [What is a Cloud Architect](pages/002-Becoming-a-Cloud-Architect/001-What-is-a-Cloud-Architect.md)
 
     - [Being Cloud-Native](pages/020-Cloud-Native/001-Being-Cloud-Native.md)
-    
+
 
 ## Cloud - Amazon Web Services
 

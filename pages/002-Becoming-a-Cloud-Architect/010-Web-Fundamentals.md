@@ -10,126 +10,339 @@
 - [Security Issues and HTTPS](#security-issues-and-https)
 
 
+
 ## Client and Servers 
 
-The internet is a fundamental part of our daily lives, but have you ever wondered how it works? At the core of the internet is the client-server model, which allows billions of people around the world to access the internet easily. The client-server model works by using clients, which are devices that can access the internet, such as computers or smartphones. Clients typically use browsers like Chrome, Safari, or Edge to access the internet.
+<p align=center>
+<img width=500 src="../../Images/web-funda-client-server.png">
+</p>
 
-When you want to access a specific website, you'll open a browser and enter a URL, or Uniform Resource Locator. The URL has several parts, including the transfer protocol, which is either HTTP or HTTPS. The protocol is crucial because it's what makes the request to the server, and without it, you won't be able to access anything. Once the client makes the request, the server responds by sending the information back to the client. This process is how clients access information on the internet.
 
-While clients are any device that can access the internet, servers are specialized pieces of hardware designed to host web applications and websites. A website like Google.com receives tens of thousands of requests to its servers every second. To handle this incredible demand, Google must have exceptionally powerful servers to run and host their flagship website. While you could technically set up any computer to run as a server, most servers are highly specialized and powerful pieces of hardware.
+**Client-Server Model**
+The client-server model is a computing architecture that separates the functions of a computer program into two essential components: the client, which makes requests, and the server, which fulfills those requests.
 
-One crucial difference between clients and servers is that servers need to run web service software like Apache, Nginx, or Microsoft Internet Information Server, IIS. This software handles the HTTP request from the client and sends back the response. The servers also tend to be a lot more powerful than clients, as they need to handle a large number of requests simultaneously.
+- **Clients:** Devices (e.g., computers, smartphones) that access the internet and make requests. Common browsers include Chrome, Safari, or Edge.
+- **Servers:** Specialized hardware designed to host web applications and websites. They respond to client requests and provide the necessary information.
 
-In conclusion, the internet is a network of clients and servers. The servers host the information that clients are looking to access, and clients can access that data if they have a web browser and the right URL. Understanding the basics of the client-server model is essential if you're looking to work in the IT industry, where you'll need to support the ever-changing technology.
+**Accessing Websites**
+Uniform Resource Locator is used to access specific websites. It consists of various parts, including the transfer protocol (HTTP or HTTPS).
+
+**Request-Response Cycle:** 
+- Client makes a request by entering a URL and specifying the transfer protocol.
+- Server responds by sending the requested information back to the client.
+- This cycle is fundamental to how clients access information on the internet.
+
+**Server Software**
+Servers run specialized web service software (e.g., Apache, Nginx, Microsoft IIS) to handle HTTP requests from clients.
+- Servers are powerful and specialized to handle a large number of requests simultaneously.
+
+**Handling Demand**
+Popular websites, like Google.com, face high demand, requiring exceptionally powerful servers to manage the influx of requests. While any computer could be set up as a server, dedicated servers are often highly specialized for performance.
+
+**Key Differences**
+
+- **Functionality:** Clients make requests; servers fulfill requests.
+- **Software:** Servers run web service software; clients use browsers.
+- **Power:** Servers are more powerful, designed to handle concurrent requests.
+- **Specialization:** Servers are dedicated to hosting and responding to requests.
+
+**Importance for IT Professionals**
+
+- **Foundational Knowledge:** Understanding the client-server model is crucial for anyone working in the IT industry.
+- **Supporting Technology:** IT professionals need to support the ever-changing technology associated with the client-server model.
 
 ## URLs 
 
-Uniform Resource Locators, URLs, are at the heart of the web's hypertext system. A URL contains all the information your browser needs to send a request to a server and tells the server what resources you're looking for. So what are the different elements of a URL and how does it work? URLs are divided into two essential parts, separated by a colon. Basic syntax of a URL is scheme:path. The scheme tells the browser which protocol it needs to use to retrieve a resource, and the path gives the location of the server and the resource. Protocols include things like HTTP, HTTPS and FTP, and email protocols like POP3, and IMAP. In this example, the scheme is HTTPS, and the path www.qa.com. The resource is web-development-fundamentals-html-and-css-qahtmlcss. Quite a bit of a mouthful, I know. Of course, it's pretty common not to type the scheme when we enter a URL into our browsers. We might just type the path. Or in our example, www.qa.com. This isn't actually a valid URL but these days, most browsers will just automatically enter the scheme into the syntax for you so that when you type an invalid URL into your browser, it'll still work as you expect. So that's the generic form of URL syntax but HTTP and HTTPS has its own specific syntax which is important because the web uses HTTP to retrieve resources. The HTTP URL syntax is Hostname:Port and Document-Path. The Hostname is always the name of the website you're accessing and while they often start with www, this is actually more of a convention than anything else. Hostnames can be followed by a colon and a port number. Common port numbers include 80, 443 and 8080. And if no port number or protocol is included, URLs will assume you're using HTTP and default to 80. Port numbers are important because they work as a kind of gateway that lets data in or rejects it. Firewalls work with open ports to let data pass through if they're sent to the right port. All data not directed to an open port is rejected. Port 80 is used to allow HTTP data to end, 443 is used to allow HTTPS data and 25 is used to allow email through. 
+Uniform Resource Locators (URLs) are essential for the web's hypertext system. 
 
-![](../../Images/010urlsandfirewalls.png)  
+- They provide the information a browser needs to send a request to a server and specify the desired resource.
+- URLs are divided into two parts separated by a colon: scheme:path.
 
-The document path is the location of the resource in the web service directory. If you leave the document path out of your URL, it will just default the home page of the site. Home pages are server and configuration dependent. And this means they could refer to a document path like index.html or just default.html. And that's it for this video. URLs have a specific kind of syntax that they must always follow if they're gonna work. Same is true of HTML-based URLs, which also have their own unique syntax.
+**URL Elements**
+
+- **Scheme:** Specifies the protocol the browser should use to retrieve the resource. Examples include HTTP, HTTPS, FTP, and email protocols like POP3 and IMAP.
+- **Path:** Gives the location of the server and the resource.
+- Example URL
+    ```bash
+    https:www.qa.com/web-development-fundamentals-html-and-css-qahtmlcss.
+    ```
+- **Scheme:** HTTPS.
+- **Path:** www.qa.com/web-development-fundamentals-html-and-css-qahtmlcss.
+
+**Simplified URL Entry**
+
+- **Common Practice:** When entering URLs into browsers, it's common not to type the scheme. Browsers often add the default scheme (usually HTTP or HTTPS) automatically.
+- **Example:** Typing www.qa.com instead of HTTP:www.qa.com.
+
+**HTTP URL Syntax**
+
+- **HTTP Specifics:** HTTP and HTTPS have their own syntax.
+- **Syntax:** Hostname:Port and Document-Path.
+
+**HTTP URL Components**
+
+- **Hostname:** Represents the name of the accessed website. The convention is to start with www, but it's not mandatory.
+- **Port:** Follows the hostname and may include a port number (e.g., www.example.com:80). Common port numbers include 80, 443, and 8080.
+- **Default Port:** If no port or protocol is specified, URLs assume HTTP and default to port 80.
+
+**Port Numbers Importance**
+
+- **Gateway Function:** Port numbers act as gateways, allowing or rejecting data. Firewalls use open ports to permit data through the right port.
+- **Common Ports:** Port 80 for HTTP, 443 for HTTPS, and 25 for email.
+
+<p align=center>
+<img width=500 src="../../Images/010urlsandfirewalls.png">
+</p>
+
+**Document Path**
+The document path is the location of the resource in the web service directory. 
+
+- If you leave the document path out of your URL, it will just default the home page of the site. 
+- Home pages are server and configuration dependent. 
+- This means they could refer to a document path like index.html or just default.html. 
 
 ## HTTP and its Interactions    
 
-The client server model may be at the heart of how users interact with the internet, but hypertext transfer protocol or HTTP is at the heart of the client server model. So what is it and how does it work? HTTP is a lightweight application level protocol which builds hypermedia or web systems. It's been used since 1990, and is currently on version 1.1. If you're interested in learning more about it, check out this site. HTTP is based on Transmission Control Protocol, or TCP, which is the connection base part of the TCP IP stack. This might sound a little like jargon right now. But all you really need to know is that it's great for HTTP because it means that like TCP, HTTP can handle large amounts of data reliably. Another unique feature of HTTP is that it's stateless. This means that each HTTP request stands alone, and no information is retained about the request in the browser, or on the server. While this is fine for simple document requests, does create problems for applications which need to track a user's identity. When you're trying to access a website, you enter the URL into your browser and hit Enter. And within a few moments, the website loads and it's as easy as that. But what actually happens between your clients and the server during this process? The client connects to the server and sends a request with a method, a Uniform Resource Identifier or URI and the HTTP protocol version. This might look something like this. 
+The client-server model is governed by the Hypertext Transfer Protocol (HTTP). 
 
-![](../../Images/010httpuriinteractions.png)  
+- HTTP is a lightweight application-level protocol established in 1990 and currently at version 1.1 
+- HTTP is based on the Transmission Control Protocol (TCP), ensuring reliable handling of large data volumes. 
+- HTTP is stateless, meaning each request is independent, lacking persistent information on the browser or server. 
 
-The client will also send a mind type header and a message. The server will respond to your client with a status line, including the protocol version and an internet standard error code. Last up, the server sends a mime like message with the requested resource in it. This might look something like this. And that's it for this video. HTTP is incredibly flexible and powerful, and it facilitates the communication between all of our clients and servers.  
+Despite simplicity for document requests, it poses challenges for identity-tracking applications. When accessing a website, the client sends a request to the server comprising:
+
+- the method,
+- a Uniform Resource Identifier (URI), and 
+- the HTTP protocol version.
+
+<p align=center>
+<img width=500 src="../../Images/010httpuriinteractions.png">
+</p>
+
+The client will also send a mind type header and a message. 
+
+- The server will respond to your client with a status line, including the protocol version and an internet standard error code. 
+- The server then sends a mime like message with the requested resource in it. 
 
 ## Client Requests
 
-Client requests are a core part of how HTTP works, and there are sub-components to each of the main parts of the client requests that you do need to know about. HTTP client requests are made up of a method, a URI, the HTTP version and a MIME-like message. 
+Essential Components of HTTP Client Requests
 
-![](../../Images/010clienrequestsformats.png)  
+- HTTP client requests comprise a method, URI, HTTP version, and a MIME-like message.
+- These elements are fundamental to the functionality of HTTP in handling client requests.
 
-There are three common types of method, get, head, and post. Get simply retrieves whatever information the URI identifies, head gets header information about the request URI, and post submits a stream of information to the resource identified by the URI. As you can see, the action the server takes will depend on the URI, so what is a URI? URIs are formatted strings that identify a networked resource. We say resource because HTTP servers can deal with many types of resources not just, for instance, files. There are two types of URI. Absolute and relative. Absolute URIs contain all the information to get to the resource, including the scheme, host name and port number. Relative URIs start with the path and the other elements, like the scheme and host name are taken relative to where the page is hosted. It's best practice to use relative URIs in your own pages when you're trying to point users to a resource within your own site because if anything about the scheme or host name changes, it'll still work. 
+<p align=center>
+<img width=500 src="../../Images/010clienrequestsformats.png">
+</p>
 
-Next up, the HTTP version. HTTP version numbers are made up of a major and a minor part and look like this. Higher MIME numbers basically means it's a more advanced iteration without changing the way in which the request is dealt with. Major numbers, on the other hand, change when the format of the message is changed. 
 
-![](../../Images/010httpversions1-2.png)  
+HTTP defines three common methods: GET, HEAD, and POST.
 
-Versions 1.1 and 2.0 are the most common versions at the moment, with 1.1. being the most popular. Version 0.9, the original version of HTTP, interactions can be thought of as simple requests as you like because only the get method is supported and MIME isn't used at all. Version 2.0 is widely supported by most common browsers and a large number of high-traffic websites. Version 3.0 is being developed. The newer versions make data transfer more efficient and secure. 
+- GET: Retrieves information identified by the URI.
+- HEAD: Fetches header information about the URI.
+- POST: Submits a stream of information to the URI's identified resource.
 
-![](../../Images/010httpv0923.png)  
+Understanding URIs:
 
-Last up, we have MIME-like messages. This contains things like modifiers and forms data. Basically, any other data that is sent as part of the request that isn't in one of the other parts. MIME-like messages allow us to send attachments, like audio, video, images and applications as part of the transfer, so it's a powerful and useful part of a client request. That brings us to the end of this video. Client requests are simple in principle. To let the server know what the user's looking for. In practice though, there are a few parts to them, each with their own deeper levels of detail and as a web developer, it's important that you have at least a basic idea how these all work together.
+- URIs, or Uniform Resource Identifiers, are formatted strings for identifying networked resources.
+- They encompass both absolute and relative types.
+
+URI Types:
+
+- Absolute URIs: Contain all information, including scheme, host name, and port number.
+- Relative URIs: Start with the path; other elements are relative to the hosting page.
+- Best Practice: Use relative URIs when pointing to resources within your site for flexibility amid changes in scheme or host name.
+
+Next up, the HTTP version. HTTP version numbers are made up of a major and a minor part.
+
+- Higher MIME numbers are more advanced iteration without changing the way in which the request is dealt with. 
+- Major numbers change when the format of the message is changed. 
+
+<p align=center>
+<img src="../../Images/010httpversions1-2.png">
+</p>
+
+Versions 1.1 and 2.0 are the most common versions at the moment.
+
+- Version 1.1 is the most popular. 
+- Version 0.9, the original version of HTTP, only supports the GET method and doesn't use MIME
+- Version 2.0 is widely supported by most common browsers and a large number of high-traffic websites. - Version 3.0 is being developed. The newer versions make data transfer more efficient and secure. 
+
+<p align=center>
+<img src="../../Images/010httpv0923.png">
+</p>
+
+Last up, we have MIME-like messages. This contains things like modifiers and forms data. 
+
+- Any other data that is sent as part of the request that isn't in one of the other parts. 
+- MIME-like messages allow us to send attachments, like audio, video, images and applications as part of the transfer, 
+- It's a powerful and useful part of a client request. 
 
 ## Server Response
 
-Once a client makes an HTTP request to a server, that server will send an HTTP response. In this video, we'll focus on the different kinds of response a server can send. And the different elements that make up the response. 
+Once a client makes an HTTP request to a server, that server will send an HTTP response. 
 
 First up, the server can either send a simple or a full response. A simple response happens when the server only supports HTTP 0.9 and would be a file or some data. 
 
-![](../../Images/010svrresponsesimpleresponse.png)  
+<p align=center>
+<img src="../../Images/010svrresponsesimpleresponse.png">
+</p>
 
 In a full response, for a server using HTTP 1.0 and above, the first line will always be a status line. The status line includes three things. 
 
-![](../../Images/010svrresponsefullresponse.png)  
+- The HTTP version, 
+- a standard status code, and 
+- a reason phrase.
 
-The HTTP version, a standard status code and a reason phrase. The HTTP version will be either 1.0, 1.1 or 2.0. The status code will be a standard three-letter internet server format. The reason phrase will just be a textual representation of the code. 
+<p align=center>
+<img src="../../Images/010svrresponsefullresponse.png">
+</p>
 
-![](../../Images/010httpstatuscodes.png)  
+Full response: 
 
-So if a server returned a 404 status code, it's accompanied by a message that says that the resource is not found. Other popular codes are 200, which means the request was OK. 304 which means the resource has not been modified. 403 which means the request was forbidden and 503 which means that the server encountered some form of error processing the request. The second part of a full response is the MIME-like message, which is generated by the server itself. This will have various header fields separated from the message body by a carriage return line feed, or CRLF, pair. 
+- The HTTP version will be either 1.0, 1.1 or 2.0. 
+- The status code will be a standard three-letter internet server format. 
+- The reason phrase will just be a textual representation of the code. 
 
-The header information doesn't relate to the content of the message and gives context to the response. These can describe aspects of the resource, like its content type, which could be text or plain or application, JSON, an expiry date, and the software the server uses. The header type information can be useful in helping security. The message body contains the requested resource. If the resource is an HTML file, the header information can be modified using the meta tag. The MIME message can also be generated dynamically if the resource is a backend server script. These scripts often use information supplied by a client like query parameters or form data, and may interact with other programs or resources running on the web server. 
+<p align=center>
+<img src="../../Images/010httpstatuscodes.png">
+</p>
 
-An example of this is creating new information in a database. It's important to generate a valid MIME message as a response, complete with all the appropriate header fields. So it's necessary to have some knowledge of the MIME message format to write scripts. 
 
-![](../../Images/010examplehttpserverresponsedatabase.png)  
+Status codes:
 
-And that's it for this video. HTTP server responses can either be simple or full. Full responses will always include a status line and MIME-like message.
+- If a server returned a 404 status code, it's accompanied by a message that says that the resource is not found. 
+- 200 OK, which means the request was OK. 
+- 304 which means the resource has not been modified. 
+- 403 which means the request was forbidden 
+- 503 which means that the server encountered some form of error processing the request. 
+
+The second part of a full response is the MIME-like message, which is generated by the server itself. This will have various header fields separated from the message body by a carriage return line feed, or CRLF, pair. 
+
+HTTP Header Information:
+
+- Provides context to the response and doesn't directly relate to the message's content.
+- Describes aspects of the resource, such as content type (e.g., text/plain, application/JSON), expiry date, and server software.
+- Useful for enhancing security measures.
+
+Message Body and MIME:
+
+- Contains the requested resource.
+- For HTML files, header information modification can be done using the meta tag.
+- MIME message can be dynamically generated, especially for backend server scripts.
+- Scripts often use client-supplied information like query parameters or form data.
+- May interact with other programs or resources on the web server.
+
+An example of this is creating new information in a database. It's important to generate a valid MIME message as a response, complete with all the appropriate header fields. 
+
+<p align=center>
+<img src="../../Images/010examplehttpserverresponsedatabase.png">
+</p>
+
 
 ## MIME and HTTP
 
-We often need to be able to send rich media like images and videos through websites. But how do websites actually manage to do this? The answer is Multipurpose Internet Mail Extensions, or MIME. 
+Originally designed for email and adapted for HTTP in web applications, MIME enables the sending of rich media, such as images and videos, through websites.
 
-Let's take a closer look at how this works. Modern day web applications use loads of resources to build rich interactive experiences. These often include things like images, videos and animations. Delivering these assets along with the HTML and CSS, requires the capability to attach them to HTTP requests. Since attaching items of different types is commonplace when sending emails, the technology developed to allow this has been adapted for use with HTTP. Multipurpose Internet Mail Extensions, or MIME, was designed as a flexible message format for sending multimedia objects through email. The HTTP version does add a few features that are different from the email version though. 
+Resource Delivery in Web Applications:
 
-For instance, there isn't a need to send the message body as a seven bit ASCII data as required by some email systems. The MIME message consists of a header, which is made up of a few colon separated fields. 
+- Modern web applications utilize various resources like images, videos, and animations.
+- These assets need to be attached to HTTP requests to deliver a complete interactive experience.
 
-The simplest document could be nothing more than a content-type line, followed by a carriage return line feed, CRLF pair and the message body. The content-type header line identifies the data in the body and it's made up of a type and subtype field. And could be something like content-type, text forward slash HTML. 
+MIME Features in HTTP:
 
-It's used by the browser to select the right application to display the returned data. Official content types are defined by the Internet Assigned Numbers Authority, IANA, and the list is growing all the time. 
+- Adapted from email MIME format for HTTP use.
+- No requirement for the message body to be seven-bit ASCII data, unlike some email systems.
+
+MIME Message Components:
+
+- Consists of a header with colon-separated fields.
+- Simplest document includes a content-type line followed by a CRLF pair and the message body.
+
+Content-Type Header Line:
+
+- Identifies the data in the body.
+- Comprises type and subtype fields, such as content-type: text/html.
+- Used by the browser to select the appropriate application for displaying returned data.
+
+Official Content Types:
+
+- Defined by the Internet Assigned Numbers Authority (IANA).
+- Growing list of content types to accommodate various data formats.
 
 Some of the most common types are application, or JSON, plain, or text, and image, maybe PNG, for instance. 
 
-![](../../Images/0101commontypeofapps.png)  
+<p align=center>
+<img src="../../Images/0101commontypeofapps.png">
+</p>
 
 Experimental content types are normally preceded by letters although as browsers and servers can negotiate acceptable types, this is not enforced. 
 
 MIME also allows the server to send multipart messages. The message body can contain multiple MIME messages, each with a header specifying the type of body data. 
 
-![](../../Images/010mimesenddifftypeofappdata.png)  
+<p align=center>
+<img src="../../Images/010mimesenddifftypeofappdata.png">
+</p>
 
-HTTP usage differs from email in that each submessage can contain a full set of HTTP header fields, not just the content field. For example, if you wanted to upload multiple photos to a website, it will provide the interface to select and upload files. Each file to be uploaded will have its own part of the message to include the file data that is clearly defined. 
 
-Without multipart messages, you'd only be allowed to upload a single photo at a time. And that's it for this video. Understanding how a server provides a response is important because you'll need to be able to decipher what comes back when you make a request to a service. It may be that the service is internal, and you'll be able to go and speak to the team or developer who created the backend service. But if it's an external service, you'll need to be able to know what the server is expecting and what to expect to receive back from different requests.
+Understanding how a server responds is crucial for interpreting requests. Internal services may involve direct communication with the team or developer, while external services require knowledge of expected server responses for different requests.
+
+**HTTP Usage vs. Email**
+
+Header Fields in HTTP Submessages:
+
+- Unlike email, each HTTP submessage can contain a full set of HTTP header fields, not just the content field.
+
+Example Scenario - File Upload:
+
+- Uploading multiple photos to a website involves selecting and uploading files through a dedicated interface.
+- Each file to be uploaded has its own part in the message, clearly defining the file data.
+
+Importance of Multipart Messages:
+
+- Multipart messages enable the uploading of multiple files simultaneously.
+- Without this feature, users would be limited to uploading one file at a time.
 
 ## Security Issues and HTTPS
 
-As the internet has matured, security has become more and more of an issue. But, what are some of the security issues we have to deal with and how is HTTP evolved to stop them? HTTPS is the obvious answer. If a web application simply uses HTTP, then all data sent over the internet can be intercepted and read easily. 
+As the internet has matured, security has become a critical concern. The solution to combat data interception and reading is evident in the form of HTTPS. Without HTTPS, web applications relying solely on HTTP face the risk of exposing data easily over the internet
 
-![](../../Images/010httphttpsdiff.png)  
+<p align=center>
+<img src="../../Images/010httphttpsdiff.png">
+</p>
 
-HTTPS, on the other hand, encrypts the data at the source, which can only be decrypted using the encryption key. To enable HTTPS, web servers have to have a secure socket layer, SSL, certificate purchased from a reputable certification authority, which provide encryption keys. The server holds a private key that is never sent anywhere and a public key, which is returned to any client when a request is made to the server. Further communications can then use the public key on the client to encrypt the data to be sent. 
 
-![](../../Images/010publicprivatekeys.png)  
+HTTPS encrypts the data at the source, which can only be decrypted using the encryption key. 
 
-This can only be decrypted with the use of the private key, which should be safely stored on the server. At the client end, the public key will only decrypt data that has been encrypted by the private key. This means that the client can be sure that the data received has come from the server. Armed with this knowledge, HTTPS helps prevent against eavesdropping, fabrication, which is also known as the man in the middle attack, and impersonation. 
+- To enable HTTPS, web servers have to have a secure socket layer, SSL, certificate purchased from a reputable certification authority, which provide encryption keys. 
+- The server holds a private key that is never sent anywhere and a public key
+- The public key is returned to any client when a request is made to the server. 
+- Further communications can then use the public key on the client to encrypt the data to be sent. 
 
-First up, eavesdropping. Networking communications are typically actually pretty insecure, especially over the internet, where any information may need to pass through any number of unknown and unaudited networks on the way to its destination. 
+<p align=center>
+<img src="../../Images/010publicprivatekeys.png">
+</p>
 
-![](../../Images/010eavesdropping.png)  
+This can only be decrypted with the use of the private key, which should be safely stored on the server. 
 
-Next up, modification or fabrication. Imagine you're trying to send a message to someone, but on the way it's intercepted and changed. Even worse, imagine someone can fabricate a message to make it look like it's come from you to take advantage of someone on your network. 
+- At the client end, the public key will only decrypt data that has been encrypted by the private key. - This means that the client can be sure that the data received has come from the server. 
 
-![](../../Images/010fabrication-mitm.png)  
+Armed with this knowledge, HTTPS helps prevent against eavesdropping, fabrication, which is also known as the man in the middle attack, and impersonation. 
 
-Last up, impersonation. Hackers can sometimes impersonate a system or use it to gain access to resources they aren't actually entitled to. 
+Eavesdropping: Information transmitted over unknown and unaudited networks is susceptible to eavesdropping.
 
-![](../../Images/010impersonations.png)  
+<p align=center>
+<img src="../../Images/010eavesdropping.png">
+</p>
 
-And that's it for this video. HTTP is insecure and has vulnerabilities. HTTPS has been delivered to deal with a few of these and while it's not foolproof, it does add an important layer of defense against hackers and fraudsters.
+Modification or Fabrication: Imagine you're trying to send a message to someone, but on the way it's intercepted and changed. Even worse, imagine someone can fabricate a message to make it look like it's come from you to take advantage of someone on your network. 
+
+<p align=center>
+<img src="">
+</p>
+
+Impersonation: Hackers can sometimes impersonate a system or use it to gain access to resources they aren't actually entitled to. 
+
+<p align=center>
+<img src="../../Images/010impersonations.png">
+</p>
