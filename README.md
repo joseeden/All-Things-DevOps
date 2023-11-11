@@ -55,13 +55,13 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [Cloud Computing](pages/002-Becoming-a-Cloud-Architect/002-Cloud-Computing.md)
 
-- [Cloud Deployment Models](pages/002-Becoming-a-Cloud-Architect/003-Cloud-Deployment-Models.md) 
+    - [Cloud Deployment Models](pages/002-Becoming-a-Cloud-Architect/003-Cloud-Deployment-Models.md) 
 
-- [Cloud Service Models](pages/002-Becoming-a-Cloud-Architect/004-Cloud-Service-models.md)
+    - [Cloud Service Models](pages/002-Becoming-a-Cloud-Architect/004-Cloud-Service-models.md)
 
-- [Common Use Cases of the Cloud](pages/002-Becoming-a-Cloud-Architect/005-Common-Use-Cases-of-the-Cloud.md)
+    - [Common Use Cases of the Cloud](pages/002-Becoming-a-Cloud-Architect/005-Common-Use-Cases-of-the-Cloud.md)
 
-- [Data Center Architecture in the Cloud](pages/002-Becoming-a-Cloud-Architect/006-Data-Center-in-the-Cloud.md)
+    - [Data Center Architecture in the Cloud](pages/002-Becoming-a-Cloud-Architect/006-Data-Center-in-the-Cloud.md)
 
 - [Cloud Migration Strategies](pages/002-Becoming-a-Cloud-Architect/007-Cloud-Migrations.md)
 
@@ -73,11 +73,14 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
     - [Case Study: ExpertPlease.com](pages/002-Becoming-a-Cloud-Architect/007-case0study-expertplease.md)
        
-- [Business Effects of Cloud Migrations](pages/002-Becoming-a-Cloud-Architect/008-Business-Considerations.md) 
+    - [Business Effects of Cloud Migrations](pages/002-Becoming-a-Cloud-Architect/008-Business-Considerations.md) 
 
-- [What is a Cloud Architect](pages/002-Becoming-a-Cloud-Architect/001-What-is-a-Cloud-Architect.md)
+- [Cloud Architecture]()
 
-- [Being Cloud-Native](pages/020-Cloud-Native/001-Being-Cloud-Native.md)
+    - [What is a Cloud Architect](pages/002-Becoming-a-Cloud-Architect/001-What-is-a-Cloud-Architect.md)
+
+    - [Being Cloud-Native](pages/020-Cloud-Native/001-Being-Cloud-Native.md)
+    
 
 ## Cloud - Amazon Web Services
 
@@ -102,9 +105,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     - [Integration and Messaging](pages/004-AWS/117_aws_integration_and_messaging.md) 
 
     - [Container Services](pages/004-AWS/118_aws_container_services.md) 
-
-    
-
 
 - [AWS Networking](pages/004-AWS/51_aws_networking_art.md)
 
