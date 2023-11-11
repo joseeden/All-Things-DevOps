@@ -338,7 +338,7 @@ Eavesdropping: Information transmitted over unknown and unaudited networks is su
 Modification or Fabrication: Imagine you're trying to send a message to someone, but on the way it's intercepted and changed. Even worse, imagine someone can fabricate a message to make it look like it's come from you to take advantage of someone on your network. 
 
 <p align=center>
-<img src="">
+<img src="../../Images/010fabrication-mitm.png">
 </p>
 
 Impersonation: Hackers can sometimes impersonate a system or use it to gain access to resources they aren't actually entitled to. 
