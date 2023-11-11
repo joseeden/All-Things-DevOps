@@ -222,7 +222,7 @@ Amazon Cognito has been built purely to enable the simplification of enabling se
 
 AWS Identity and Access Management os the main service responsible for managing and maintaining what an AWS identity is authorized to access. When an identity is authenticated to AWS, the way in which permissions are given to the identity varies depending on the identities own user permissions and its association with other IAM groups and roles. 
 
-Important concenpts:
+Important concepts:
 
 - IAM Users 
 - IAM Groups 
@@ -230,7 +230,6 @@ Important concenpts:
 - IAM Policies
 
 To lean more, check out: [AWS Identity and Access Management](104_aws_iam.md) 
-
 
 
 ### Amazon S3 

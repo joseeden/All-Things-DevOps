@@ -22,10 +22,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [Containers](pages/002-Becoming-a-Cloud-Architect/013-Containers.md)
 
-- [DevOps](pages/002-Becoming-a-Cloud-Architect/012-Devops.md)
-
-- [Serverless Computing](pages/002-Becoming-a-Cloud-Architect/014-Serverless-Computing.md)
-
 ## Linux 
 
 - [Linux Labs Repo](https://github.com/joseeden/All-Things-Linux)
@@ -96,7 +92,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     
     - [Networking](pages/004-AWS/113_aws_networking.md) 
     
-    - [Security](pages/004-AWS/114_aws_security.md) 
+    - [Security](pages/004-AWS/101_aws_security_start.md) 
     
     - [Serverless](pages/004-AWS/115_aws_serverless.md) 
     
@@ -105,6 +101,8 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     - [Integration and Messaging](pages/004-AWS/117_aws_integration_and_messaging.md) 
 
     - [Container Services](pages/004-AWS/118_aws_container_services.md) 
+    
+    - [Disaster Recovery](pages/004-AWS/119_disaster_recovery.md) 
 
 - [AWS Networking](pages/004-AWS/51_aws_networking_art.md)
 
@@ -143,34 +141,22 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [Ansible](xxx)
 
-- [Work-in-progress...](xxx)
-
-
-## Security 
-
-- [Public Key Infrastructure (PKI)](pages/007-DevSecOps/002-PKI.md)
-
-- [Work-in-progress...](xxx)
-
-
 ## CICD
 
-- [Work-in-progress...](xxx)
-
-<!-- <p>
-<img width=250 src="Images/loadingicon4.png">
-</p> -->
+- [Continuous Integration / Continuous Delivery](pages/007-DevSecOps/010-cicd.md)
 
 
-## Docker and Kubernetes
+## Containers
 
 - [Docker](https://github.com/joseeden/All-Things-Docker-and-Kubernetes) 
 
 - [Kubernetes](https://github.com/joseeden/All-Things-Docker-and-Kubernetes) 
 
-- [Work-in-progress...](xxx)
+## Observability
 
-## Python 
+- [Prometheus](pages/010-Obeservability/001-Prometheus.md)
+
+## Programming 
 
 - [Work-in-progress...](xxx)
 
@@ -178,26 +164,31 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 <img width=250 src="Images/loadingicon4.png">
 </p> -->
 
+## Serverless 
 
-## Observability
-
-- [Work-in-progress...](xxx)
-- [Prometheus](pages/010-Obeservability/001-Prometheus.md)
-
+- [Serverless Computing](pages/002-Becoming-a-Cloud-Architect/014-Serverless-Computing.md)
 
 ## DevSecOps 
 
-- [Adopting DevSecOps](pages/007-DevSecOps/001-DevSecops-Adoption.md) 
+- [What is DevOps](pages/007-DevSecOps/050-what-is-devops.md)
+
+- [Common Tenets of DevOps](pages/007-DevSecOps/051-common-tenets-of-devops.md)
+
+- [Measure Metrics](pages/007-DevSecOps/052-measure-metrics.md)
+
+- [Improving Lead Time, Stability, and Operational Costs ](pages/007-DevSecOps/053-devops-improve-lead-time.md)
+
+- [Companies that practice DevOps](pages/007-DevSecOps/054-companies-practicing-devops.md) 
+
+- [Adopting DevSecOps](pages/007-DevSecOps/100-DevSecops-Adoption.md) 
 
 - [dependency-track](https://github.com/DependencyTrack/dependency-track)
 
-- [Work-in-progress...](xxx)
 
 ## Site Reliability Engineering (SRE) 
 .
 - [Automation](pages/009-SRE/001-Automation.md)
 
-- [Work-in-progress...](xxx)
 
 ## Project Management
 

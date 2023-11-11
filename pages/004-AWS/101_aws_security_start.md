@@ -87,3 +87,28 @@ How data is being encrypted.
     - Dedicated cluster where you can store encrytion keys
     - Isolation up to the physical layer
     - Strong compliance requirement
+
+## Next Steps 
+
+- [AWS IAM](../004-AWS/104_aws_iam.md) 
+- [AWS Organizations](../004-AWS/104_aws_iam.md) 
+- [Amazon Cognito](../004-AWS/104_aws_iam.md) 
+- [Directory Services](../004-AWS/104_aws_iam.md) 
+- [Identity Federation](../004-AWS/104_aws_iam.md) 
+- [AWS Systems Manager (SSM)](../004-AWS/102_infra_security.md)
+- [NACLs and Security Groups](../004-AWS/102_infra_security.md)
+- [Amazon CloudWatch](../004-AWS/103_logging_and_monitoring.md)
+- [Amazon CloudTrail](../004-AWS/103_logging_and_monitoring.md)
+- [AWS Config](../004-AWS/103_logging_and_monitoring.md)
+- [AWS Inspector](../004-AWS/103_logging_and_monitoring.md)
+- [AWS GuardDuty](../004-AWS/103_logging_and_monitoring.md)
+- [AWS Trusted Advisor](../004-AWS/103_logging_and_monitoring.md)
+- [Key Management Service](../004-AWS/105_aws_data_protection.md)
+- [AWS Secrets Manager](../004-AWS/105_aws_data_protection.md)
+- [AWS Systems Manager Parameter Store](../004-AWS/105_aws_data_protection.md)
+- [AWS Macie](../004-AWS/105_aws_data_protection.md)
+- [AWS Artifact](../004-AWS/106_Managing_incident_response.md)
+- [AWS Certificate Manager](../004-AWS/105_aws_data_protection.md)
+- [AWS WAF](../004-AWS/106_Managing_incident_response.md)
+- [AWS Shield](../004-AWS/106_Managing_incident_response.md)
+- [AWS Shield Advanced](../004-AWS/106_Managing_incident_response.md)
