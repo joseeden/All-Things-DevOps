@@ -1,7 +1,7 @@
 
 # Five Pillars of Well-Architected Frameworks 
 
-This is a guide written by aws that helps to describe key concepts for designing and running workloads in the cloud. This helps us determines what to look for in a service, in an architecture, and in the solutions we are building.
+This is a guide written by AWS that helps to describe key concepts for designing and running workloads in the cloud. This helps us determines what to look for in a service, in an architecture, and in the solutions we are building.
 
 - [Operational Excellence](#operational-excellence)
 - [Security](#security)

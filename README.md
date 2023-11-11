@@ -51,7 +51,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Challenge-Git](pages/003-Git/050-challenger-1.md)
 
 
-## Cloud 
+## Cloud - Basics
 
 - [Cloud Computing](pages/002-Becoming-a-Cloud-Architect/002-Cloud-Computing.md)
 
@@ -71,7 +71,9 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [Being Cloud-Native](pages/020-Cloud-Native/001-Being-Cloud-Native.md)
 
-- [Five Pillars of Well-Architected Frameworks](pages/004-AWS/109_well_architected_framework.md)
+## Cloud - Amazon Web Services
+
+- [Five Pillars of Well-Architected Framework](pages/004-AWS/109_well_architected_framework.md)
 
 - [AWS Services](pages/004-AWS/108_aws_services.md) 
 
@@ -87,9 +89,14 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     
     - [Serverless](pages/004-AWS/115_aws_serverless.md) 
     
-    - [Developer Services](pages/004-AWS/116_aws_developer_services.md) 
-    
+    - [Automation](pages/004-AWS/116_automation.md) 
+
     - [Integration and Messaging](pages/004-AWS/117_aws_integration_and_messaging.md) 
+
+
+    - [Container Services](pages/004-AWS/118_aws_container_services.md) 
+
+    
 
 
 - [AWS Networking](pages/004-AWS/51_aws_networking_art.md)
