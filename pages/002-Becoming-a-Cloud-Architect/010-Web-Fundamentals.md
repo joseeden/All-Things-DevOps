@@ -205,7 +205,7 @@ Full response:
 - The reason phrase will just be a textual representation of the code. 
 
 <p align=center>
-<img src="../../Images/010httpstatuscodes.png">
+<img width=500 src="../../Images/010httpstatuscodefixedphoto.png">
 </p>
 
 
@@ -332,17 +332,19 @@ Armed with this knowledge, HTTPS helps prevent against eavesdropping, fabricatio
 Eavesdropping: Information transmitted over unknown and unaudited networks is susceptible to eavesdropping.
 
 <p align=center>
-<img src="../../Images/010eavesdropping.png">
+<img src="../../Images/a010eavesdroppingggg.png">
 </p>
+
 
 Modification or Fabrication: Imagine you're trying to send a message to someone, but on the way it's intercepted and changed. Even worse, imagine someone can fabricate a message to make it look like it's come from you to take advantage of someone on your network. 
 
 <p align=center>
-<img src="../../Images/010fabrication-mitm.png">
+<img src="../../Images/010fabrication-modification.png">
 </p>
+
 
 Impersonation: Hackers can sometimes impersonate a system or use it to gain access to resources they aren't actually entitled to. 
 
 <p align=center>
-<img src="../../Images/010impersonations.png">
+<img src="../../Images/010impoersonationsss.png">
 </p>
