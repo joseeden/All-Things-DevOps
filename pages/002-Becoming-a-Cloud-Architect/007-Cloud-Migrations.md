@@ -13,6 +13,7 @@
 - [Migration and Deployment Options](#migration-and-deployment-options)
 - [Optimization and Cost Management](#optimization-and-cost-management)
 - [Business Continuity in Cloud Environment](#business-continuity-in-cloud-environment)
+- [Resources](#resources)
 
 
 ## The Project Plan and Time Management 
@@ -623,7 +624,9 @@ Consider the changes to any business continuity or disaster recovery plans your 
 - Full replication of infrastructure for quick recovery.
 - Offers the quickest RTO and RPO among the discussed methods.
 
+## Resources 
 
+- [Getting Started with Migrating to AWS](https://cloudacademy.com/learning-paths/cloud-academy-getting-started-with-migrating-to-aws-125/)
 
 
 

@@ -53,3 +53,7 @@ A few notes:
 - Definition: Identify and turn off assets and services to focus on widely used and valuable business services.
 - Benefits: Streamlines business focus and resource allocation.
 - Use Case: Helpful in eliminating redundant or low-value services to optimize resources.
+
+## Resources 
+
+- [Getting Started with Migrating to AWS](https://cloudacademy.com/learning-paths/cloud-academy-getting-started-with-migrating-to-aws-125/)

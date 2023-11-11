@@ -36,6 +36,7 @@
     - [Next Steps After Workshop](#next-steps-after-workshop)
     - [Subsequent Meetings and Architecture Phase](#subsequent-meetings-and-architecture-phase)
     - [Conclusion](#conclusion)
+- [Resources](#resources)
 
 
 ## Introduction 
@@ -522,3 +523,7 @@ It is a best practice for any organization, migrating IT infra, or an app to the
 - Clear understanding of cloud readiness.
 - Prioritized tasks and a roadmap for effective migration.
 - Governance and operating model for sustained success.
+
+## Resources 
+
+- [Getting Started with Migrating to AWS](https://cloudacademy.com/learning-paths/cloud-academy-getting-started-with-migrating-to-aws-125/)
