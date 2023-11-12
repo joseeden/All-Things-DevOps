@@ -38,7 +38,7 @@ Containers offer an efficient means to run multiple computers on a single machin
 
 Containers offer more than just slightly faster run times than virtual machines (VMs). While speed is a benefit, the true advantages of containers extend to streamlining development and operational tasks, enhancing testing, facilitating DevOps practices, and enabling continuous deployment. The key benefits of containers include:
 
-Fast Testing:
+**Fast Testing**
 
 - Containers can be rapidly built and spun up.
 - Code inside a container runs consistently across different computers.
@@ -46,30 +46,30 @@ Fast Testing:
 - Eliminates the need for developers to manage dependencies on their local machines, ensuring consistency between development and production environments.
 - Enables a quick feedback loop, leading to better code quality.
 
-Enhanced Collaboration:
+**Enhanced Collaboration**
 
 - Simplifies sharing and testing of code among developers.
 - Open-source projects can include Dockerfiles in their repositories, allowing anyone to easily set up and test the code.
 
-DevOps Automation:
+**DevOps Automation**
 
 - Supports DevOps processes with close collaboration between development and IT teams.
 - Containers are immutable, making upgrades straightforward.
 - Streamlines continuous deployment by building new container images with updated code and pushing them to the cluster.
 - Automation-friendly design of container systems, particularly Docker, facilitates integration into continuous integration and continuous deployment (CI/CD) processes.
 
-Scalability:
+**Scalability**
 
 - Orchestration software automates scaling based on traffic volume.
 - Efficiently manages resources by spinning up or down containers as needed.
 - Particularly beneficial for microservices-based applications, providing detailed control over individual components.
 
-Efficient Transition:
+**Efficient Transition**
 
 - Ensures a seamless transition during updates, as old containers are gradually phased out.
 - Users experience uninterrupted service during the transition.
 
-Ease of Management:
+**Ease of Management**
 
 - Automated Docker processes ease deployment, testing, and production management.
 - Simplifies scaling based on traffic demands.
