@@ -134,6 +134,19 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 - [Azure Overview](pages/005-Azure/001-azure-overview.md)
 
+- [Azure Services](pages/005-Azure/002-azure-services.md) 
+
+    - [Compute](pages/005-Azure/103_azure_compute.md)
+
+    - [Storage](pages/005-Azure/104_azure_storage.md)
+    
+    - [Databases](pages/005-Azure/105_azure_database.md)
+    
+    - [Networking](pages/005-Azure/106_azure_networking.md)
+    
+    - [Security](pages/005-Azure/107_azure_security.md)
+
+
 
 ## Infrastructure as Code 
 

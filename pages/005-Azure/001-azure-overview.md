@@ -7,7 +7,12 @@
 - [Azure Architecture](#azure-architecture)
     - [Region](#region)
     - [Availability Zone](#availability-zone)
+    - [Management Groups](#management-groups)
+    - [Update Domain](#update-domain)
+    - [Fault Domain](#fault-domain)
 - [Resources](#resources)
+
+
 
 
 ## Overview 
@@ -145,6 +150,21 @@ The following diagram shows an example of creating a hierarchy for governance us
 
 ![](../../Images/azure-fundamentals-mggroups.png)
 
+### Update Domain 
+
+An update domain is a group of virtual machines and underlying physical hardware that can be rebooted at the same time. 
+
+- When planned maintenance is performed, only one update domain is rebooted at a time. 
+- This ensures that all VMs and associated hardware are not taken down at the same time.
+
+### Fault Domain 
+
+A fault domain is a group of virtual machines that shares a common power source and a common network switch. 
+
+- When virtual machines are added to an availability set, they are distributed across up to:
+
+    - three different fault domains in resource manager deployments, 
+    - or across two fault domains in classic deployments.
 
 ## Resources 
 
