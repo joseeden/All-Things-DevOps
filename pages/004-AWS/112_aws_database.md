@@ -1,8 +1,7 @@
 
 # AWS Databases
 
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.</small>
-> <small>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
+> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.<br>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
 
 - [Choosing the Right Database](#choosing-the-right-database)
 - [Database Types on AWS](#database-types-on-aws)
