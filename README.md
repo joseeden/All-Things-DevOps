@@ -201,7 +201,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 
 ## Site Reliability Engineering (SRE) 
-.
+
 - [Automation](pages/009-SRE/001-Automation.md)
 
 
