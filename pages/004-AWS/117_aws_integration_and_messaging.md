@@ -1,7 +1,7 @@
 
 # AWS Integration and Messaging 
 
-> <small>This is not an exhaustive documentation of all the existing AWS Services. This is just my summarized study notes for the AWS Certifications.</small>
+> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.</small>
 > <small>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
 
 - [Integration and Messaging](#integration-and-messaging)
