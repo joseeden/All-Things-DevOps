@@ -1,7 +1,8 @@
 
-# Integration and Messaging 
+# AWS Integration and Messaging 
 
-> This is not an exhaustive documentation of all the existing AWS Services. This is just my quick summarized notes for studying for the AWS Certifications. To see the complete AWS Documentations, please go to: https://docs.aws.amazon.com/
+> <small>This is not an exhaustive documentation of all the existing AWS Services. This is just my quick summarized study notes for the AWS Certifications.</small>
+> <small>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
 
 - [Integration and Messaging](#integration-and-messaging)
 - [SQS - Simple Queue Service](#sqs---simple-queue-service)
