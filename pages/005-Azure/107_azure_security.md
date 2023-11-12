@@ -1,7 +1,7 @@
 
 # Azure Security 
 
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the Azure Certifications.<br>To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)</small>
+> <small>This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.<br>To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)</small>
 
 - [Shared Responsibility Model](#shared-responsibility-model)
 - [Azure Security Services](#azure-security-services)
