@@ -80,7 +80,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 ## Cloud - Amazon Web Services
 
-- [Five Pillars of Well-Architected Framework](pages/004-AWS/109_well_architected_framework.md)
+- [AWS Overview](pages/004-AWS/108_aws_overview.md)
 
 - [AWS Services](pages/004-AWS/108_aws_services.md) 
 
@@ -126,11 +126,13 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
     - [AWS Security Specialty Exam: Resources](pages/004-AWS/999_aws_exam_sec_resources.md)
 
+- [Five Pillars of Well-Architected Framework](pages/004-AWS/109_well_architected_framework.md)
 
-<!-- <p>
-<img width=250 src="Images/loadingicon4.png">
-</p> -->
+- [AWS Cloud Adoption Framework (AWS CAF)](pages/004-AWS/109_aws_caf.md)
 
+## Cloud - Microsoft Azure
+
+- [Azure Overview](pages/005-Azure/001-azure-overview.md)
 
 
 ## Infrastructure as Code 
