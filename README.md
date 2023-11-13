@@ -147,7 +147,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     - [Security](pages/005-Azure/107_azure_security.md)
 
 
-
 ## Infrastructure as Code 
 
 - [Terraform](https://github.com/joseeden/All-Things-Terraform) 

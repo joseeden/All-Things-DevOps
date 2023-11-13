@@ -23,6 +23,8 @@ Azure compute is an on-demand computing service for running cloud-based applicat
 
 This page will be focusing on virtual machines. 
 
+<small>[Back to the top](#azure-compute)</small>
+
 ## Virtual Machines 
 
 Azure Virtual Machines (VMs) let you create and use virtual machines in the cloud. They provide infrastructure as a service (IaaS) in the form of a virtualized server and can be used in many ways.
@@ -43,6 +45,8 @@ Azure Virtual Machines (VMs) let you create and use virtual machines in the clou
 - Determine VM sizing requirements and consider Microsoft Azure's CPU and VM quotas.
 - Decide on the operating system and VM configuration needed for application requirements.
 
+<small>[Back to the top](#azure-compute)</small>
+
 ## Pre-requisite Resources 
 
 To deploy an Azure virtual machine, certain prerequisite resources are essential. Generally, these resources will be automatically created if they do not exist prior to VM creation. Here are the key dependencies:
@@ -62,6 +66,8 @@ To deploy an Azure virtual machine, certain prerequisite resources are essential
 
 - **Data Disks (optional but recommended)**
    While not mandatory, attaching data disks to a virtual machine is advisable to expand storage capabilities, especially if hosting applications.
+
+<small>[Back to the top](#azure-compute)</small>
 
 ## Pricing 
 
@@ -85,6 +91,8 @@ There are multiple purchasing options for Azure virtual machines:
    - Not suitable for workloads that must adhere to strict SLAs.
 
 Each option provides distinct advantages, catering to different usage scenarios and budget considerations.
+
+<small>[Back to the top](#azure-compute)</small>
 
 ## VM Options
 
@@ -117,6 +125,9 @@ Azure virtual machines come in various types, each tailored for specific workloa
 
 Selecting the appropriate virtual machine type depends on the specific workload requirements and performance considerations.
 
+<small>[Back to the top](#azure-compute)</small>
+
+
 ## Availability Sets
 
 ![](../../Images/azure-vms.png) 
@@ -145,6 +156,7 @@ Availability zones protect applications from the failure of an entire Azure data
 **Scale Sets**
 Azure Virtual Machine Scale Sets let you create and manage a group of identical, load balanced VMs.
 
+<small>[Back to the top](#azure-compute)</small>
 
 ## Resources 
 
