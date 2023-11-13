@@ -51,7 +51,7 @@ All strategies are available for Multi-region.
 - Full system is up and running but at a minimal size
 - Upon disaster we can scale to production load
 
-|![](../../aws-warm-standby-drrrr.png)|
+|![](../../Images/aws-warm-standby-drrrr.png)|
 |-|
 
 **Hot Site / Multi Site Approach**
