@@ -77,6 +77,10 @@ To learn more, check out the following links:
 
 - [AWS Compute Services](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/compute-services.html)
 
+
+<small>[Back to the top](#aws-compute)</small>
+
+
 ## Amazon Machine Images (AMIs)
 
 An AMI provides the information required to launch an instance. These are basically "disk images" which is used to spin up the instances.
@@ -86,6 +90,9 @@ Main categories:
 - Community AMIs
 - AWS Marketplace AMIs
 - Custom AMIs
+
+
+<small>[Back to the top](#aws-compute)</small>
 
 
 ## Default Limits 
@@ -103,6 +110,9 @@ Lifecycle hooks per Auto Scaling group | 50 |
 SNS topics per Auto Scaling group | 10 
 Classic Load Balancers per Auto Scaling group | 50 |
 Target groups per Auto Scaling group | 50 |
+
+<small>[Back to the top](#aws-compute)</small>
+
 
 ## Placement Groups 
 
@@ -128,6 +138,9 @@ traffic is between the instances in the group.
 Table:
 
 ![](../../Images/aws-pg.png)
+
+<small>[Back to the top](#aws-compute)</small>
+
 
 ## Status Checks 
 
@@ -165,6 +178,9 @@ Bootstrapping runs the provided script, so anything you can accomplish in a scri
 - Install the most current security updates.
 - Install the current version of the application.
 - Configure Operating System (OS) services.
+
+<small>[Back to the top](#aws-compute)</small>
+
 
 ## EC2 Instance Types 
 
@@ -236,6 +252,8 @@ Features:
 
 To learn more, please see [Dedicated Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html)
 
+<small>[Back to the top](#aws-compute)</small>
+
 
 ## EC2 Networking 
 
@@ -287,6 +305,9 @@ An EFA is similar to ENA but with added capabilities.
 ### ENI vs ENA vs EFA 
 
 ![](../../Images/aws-eni-efa-ena.png)
+
+<small>[Back to the top](#aws-compute)</small>
+
 
 ## EC2 Storage
 
@@ -342,6 +363,8 @@ Amazon EFS provides scalable file storage for use with Amazon EC2. You can use a
 ![](../../Images/aws-efs-filesystem.png)
 
 To learn more, please see [Amazon EFS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEFS.html).
+
+<small>[Back to the top](#aws-compute)</small>
 
 
 ## Auto Scaling Group 
@@ -421,6 +444,9 @@ It is possible to scale an ASG based on CloudWatch alarms which monitors a set m
 
 |![](../../Images/aws-elb-alarms-based-on-cw-alarm.png)|
 |-|
+
+<small>[Back to the top](#aws-compute)</small>
+
 
 ## Elastic Load Balancer
 
@@ -507,3 +533,7 @@ Ensures that load balancer determines which cipher to use for SSL connection. El
 - This ensures that the load balancer determines which cipher is used for SSL connection. 
 
 - If you do not enable Server Order Preference, the order of ciphers presented by the client is used to negotiate connections between the client and the load balancer.
+
+
+<small>[Back to the top](#aws-compute)</small>
+

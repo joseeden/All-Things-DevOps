@@ -66,6 +66,8 @@ AWS Storage | Description |
 | Storage Gateway | Hyrbid cloud storage | 
 | Snowball / Snowmobile | move large data to the cloud, physical |
 
+<small>[Back to the top](#aws-storage)</small>
+
 
 ## Amazon S3 
 
@@ -115,6 +117,9 @@ Data is stored as objects within resources called “buckets”
 - Each object can have tags: unicode key/value par, useful for security, lifecycle. A bucket can have up to 10 tags
 - If versioning is enabled each object has a version ID      
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ### S3 Versioning
 
 When versionining is enabled (at the bucket level),files can have multiple versions.
@@ -158,6 +163,9 @@ When versionining is enabled (at the bucket level),files can have multiple versi
     - We want to list deleted versions
     - We want to add a delete marker to an object
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ### S3 Static Hosting
 
 S3 can host static websites and have them accessible from the internet
@@ -176,6 +184,8 @@ S3 can host static websites and have them accessible from the internet
 - Storing web content
 - Storing backups for Relational DB
 - Storing logs for analytics
+
+<small>[Back to the top](#aws-storage)</small>
 
 
 
@@ -206,6 +216,9 @@ CORS is a web browser based mechanism to allow requests to other origins while v
 - If a client does a cross-origin request on an S3 bucket, the correct CORS headers need to be enabled in order for the request to succeed
 - Request can be allowed for a specified origin (by specifying the URL of the origin) or for all origins (by using *)
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ### S3 Consistency Model
 
 Amazon S3 follows two consistency models: 
@@ -229,6 +242,9 @@ HTTP Code | Description
 - Any request made to S3, from any account, authorized or denied, will be logged into another S3 bucket
 - The data can be analyzed by some data analysis tools or Amazon Athena 
 - We should never set our logging bucket to be the monitored bucket! This may create a logging loop causing the bucket to grow exponentially
+
+<small>[Back to the top](#aws-storage)</small>
+
 
 ### S3 Replication
 
@@ -262,6 +278,9 @@ There are 2 types of replication:
     - Buckets are in the same region
     - Used for: log aggregation, live replication between production and test accounts
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ### S3 Pre-signed URLs
 
 <small>Reference: [Sharing objects with presigned URLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html)</small>
@@ -283,6 +302,8 @@ aws s3 presign s3://myfavoritefilm/Lionking.jpg --expires-in 120 --region ap-sou
 ```    
 
 ![](../../Images/aws-s3-presigned-urls.png)
+
+<small>[Back to the top](#aws-storage)</small>
 
 
 ### S3 Lifecycle Policies
@@ -306,6 +327,9 @@ Expiration actions deletes objects after a given time.
 - Can be used to delete old versions of files if versioning is enabled on the bucket
 - Can be used to clean-up incomplete multi-part uploads
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ### S3 Lock Policies
 
 **S3 Object Lock**
@@ -313,6 +337,9 @@ Implements WORM (Write Once Read Many Model) model, meaning that it guarantees t
 
 **Glacier Vault Lock**
 Same WORM model is implemented, locket file can not be changed as long as the lock is active. Helpful for compliance and data retention
+
+<small>[Back to the top](#aws-storage)</small>
+
 
 ### S3 Event Notifications 
 
@@ -346,6 +373,8 @@ Amazon S3 can send event notification messages to the following destinations.
 - AWS Lambda function
 - Amazon EventBridge
 
+<small>[Back to the top](#aws-storage)</small>
+
 
 ### S3 Security 
 
@@ -361,6 +390,9 @@ Amazon S3 can send event notification messages to the following destinations.
 - An IAM principal can access an S3 object if:
     - The user IAM permission allows it or the resource policy allows it
     - The is no explicit deny
+
+<small>[Back to the top](#aws-storage)</small>
+
 
 #### Bucket Policies
 
@@ -444,6 +476,10 @@ For protecting data at rest in Amazon S3, you have the following options:
 - Most clients for S3 will use HTTPS by default
 - In case of SSE-C encryption HTTPS in mandatory
 
+
+<small>[Back to the top](#aws-storage)</small>
+
+
 ### S3 Storage Classes
 
 - Amazon S3 Standard-General Purpose
@@ -501,6 +537,10 @@ For protecting data at rest in Amazon S3, you have the following options:
     - Standard (12 hours)
     - Bulk (48 hours)
 - Minimum storage duration is 180 days
+
+<small>[Back to the top](#aws-storage)</small>
+
+
 
 ### S3 Performance Optimization
 
@@ -563,6 +603,9 @@ Prefix explained:
 - If encryption is enabled using SSE-KMS, we get additional requests to KMS which will apply to our KMS quota
 - KMS could throttle performance, as of today we can not request a quota increase for it
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ### S3 Select and Glacier Select
 
 This provides a ways to retrieve parts of objects and not the entire object.
@@ -579,6 +622,8 @@ This provides a ways to retrieve parts of objects and not the entire object.
 
 ![](../../Images/aws-s3-select-glacier-select.png)
 
+
+<small>[Back to the top](#aws-storage)</small>
 
 
 
@@ -616,6 +661,9 @@ The source data is stored on S3 and Athena can read from this data. In Athena yo
 - Analytics
 - Reporting
 - Log analysis
+
+<small>[Back to the top](#aws-storage)</small>
+
 
 ## AWS Snowball Family
 
@@ -660,6 +708,9 @@ Portable data center within a shipping container on a truck. This is a special o
 
 ![](../../Images/aws-snowball-comparison.png)
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ## AWS Storage Gateway
 
 ### Hybrid Cloud for Storage
@@ -683,6 +734,7 @@ Bridge between on-premise data and cloud data in S3
 
 |![](../../Images/aws-s3-storage-gw-choices.png)|
 |-|
+
 
 #### File Gateway
 
@@ -721,6 +773,9 @@ Bridge between on-premise data and cloud data in S3
 - It is an actual hardware which can be bought from amazon.com
 - Helpful for daily NFS backup in small data centers
 
+<small>[Back to the top](#aws-storage)</small>
+
+
 ## Amazon FSx
 
 ### Amazon FSx for Windows
@@ -744,6 +799,9 @@ Bridge between on-premise data and cloud data in S3
     - Can "read" S3 as a file system
     - Can write the output of the computations back to S3
 - It can be used with on-premise servers
+
+<small>[Back to the top](#aws-storage)</small>
+
 
 ## AWS DataSync
 
@@ -776,3 +834,6 @@ Location
     - network file systems (NFS), common in Linux or Unix
     - server message block (SMB), common in Windows environments
     - AWS storage services (EFS, FSx, and S3)
+
+<small>[Back to the top](#aws-storage)</small>
+

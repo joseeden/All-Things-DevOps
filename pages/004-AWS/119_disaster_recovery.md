@@ -25,6 +25,9 @@
 - RPO - Recovery Point Objective: How often we create backups. Time between the RPO and the disaster is the data loss
 - RTO - Recovery Time Objective: The point in time when the recovery finishes. The time between the disaster and the RTO is downtime
 
+<small>[Back to the top](#aws-disaster-recovery)</small>
+
+
 ## Disaster Recovery Strategies
 
 |![](../../Images/aws-dr-stratsgies-asterrto.png)|
@@ -61,6 +64,9 @@ All strategies are available for Multi-region.
 |![](../../Images/aws-multisite-approach.png)|
 |-|
 
+<small>[Back to the top](#aws-disaster-recovery)</small>
+
+
 ## Disaster Recovery Tips
 
 **Backups**
@@ -86,6 +92,9 @@ All strategies are available for Multi-region.
 **Chaos**
 - Netflix has a "simian-army" randomly terminating EC2 instances
 
+<small>[Back to the top](#aws-disaster-recovery)</small>
+
+
 ## On-Premise Strategy with AWS
 
 **Download Amazon Linux 2 AMI as a VIM**
@@ -108,6 +117,9 @@ All strategies are available for Multi-region.
 
 **AWS Server Migration Service (SMS)**
 - Incremental replication of on-premise live servers to AWS
+
+<small>[Back to the top](#aws-disaster-recovery)</small>
+
 
 ## DMS - Database Migration Service
 
@@ -141,7 +153,14 @@ All strategies are available for Multi-region.
 - Kinesis Data Streams
 - DocumentDB
 
+<small>[Back to the top](#aws-disaster-recovery)</small>
+
+
 ## AWS Schema Conversion Tool (SCT)
 
 - Converts a database schema form one engine to another. Example: OLTP (SQL Server, Oracle) to MySQL, PostgreSQL, Aurora; OLAP (Teradata or Oracle) to Redshift
 - We do not need to use SCT if we are migration from the same DB engine to the same DB engine
+
+
+<small>[Back to the top](#aws-disaster-recovery)</small>
+

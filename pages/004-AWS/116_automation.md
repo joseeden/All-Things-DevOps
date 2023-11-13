@@ -101,6 +101,9 @@ If you don't specify the aws profile, the commands will be executed to your **de
     ```
 - your IAM user must have the correct permissions to use this command by adding the `STS` service to your policy
 
+<small>[Back to the top](#aws-automation)</small>
+
+
 
 ## SDK: Software Development Kit
 
@@ -140,6 +143,9 @@ Official SDKs:
 
 |![](../../Images/aws-sdk-exponentialbackoff.png)|
 |-|
+
+
+<small>[Back to the top](#aws-automation)</small>
 
 
 ## AWS Elastic Beanstalk
@@ -201,6 +207,9 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 |![](../../Images/aws-elasticbeanstalk-deployment-modes.png)|
 |-|
 
+<small>[Back to the top](#aws-automation)</small>
+
+
 ### Deployment Updates
 
 **All at once**
@@ -259,6 +268,9 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 </p>
 
 
+<small>[Back to the top](#aws-automation)</small>
+
+
 ### Elastic Beanstalk CLI
 
 - We can install an additional CLI called the “EB cli” which makes working with Beanstalk from the CLI easier
@@ -299,6 +311,9 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - Resources managed by .ebextensions get deleted if the environment goes away
 - The .ebextensions folder goes to the root of your project
 
+<small>[Back to the top](#aws-automation)</small>
+
+
 ### Elastic Beanstalk Cloning and Migrations
 
 - We can clone an environment with the exact same configurations
@@ -323,6 +338,9 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
     5. Terminate the old EB stack (RDS wont be deleted because of the protection)
     6. Delete CloudFormation stack (it will be in DELETE_FAILED state)
 
+<small>[Back to the top](#aws-automation)</small>
+
+
 ### Elastic Beanstalk and Docker
 
 - We can run docker container if we provide:
@@ -342,6 +360,9 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
     - Dockerrun.aws.json is used to generate the ECS task definition
     - Docker images should be pre-build and stored in ECR, DockerHub, etc.
 
+<small>[Back to the top](#aws-automation)</small>
+
+
 ### Elastic Beanstalk and HTTPS
 
 - SSL certificate can be loaded from the console (EB console, load balancer configuration) or from the config .ebextensions/securelistener-alb.config
@@ -353,6 +374,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - Or ALB can be configured with a rule as well
 - Health checks should ne be redirected from the ALB
 
+<small>[Back to the top](#aws-automation)</small>
 
 
 

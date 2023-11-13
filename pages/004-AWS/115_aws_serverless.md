@@ -128,6 +128,10 @@ Main ones:
 - SNS and SQS
 - AWS Cognito
 
+
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ### AWS Lambda Pricing
 
 <small>Reference: https://aws.amazon.com/lambda/pricing/</small>
@@ -167,6 +171,10 @@ Configuration | Description
  VPC | Lambda function can be attached to a VPC + security groups |
  IAM Execution Role | IAM Role used by the function |
 
+
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ### Concurrency  
 
 - Concurrency up to 1000 executions
@@ -185,6 +193,10 @@ Configuration | Description
 - DLQ can be an SNS Topic or a SQS Queue 
 - The original event payload is sent to DLQ 
 - This makes it easy to debug what's wrong with the function
+
+
+<small>[Back to the top](#aws-serverless)</small>
+
 
 ### Monitoring and Tracing 
 
@@ -206,6 +218,9 @@ Configuration | Description
 - Minimize your deployment package size to it runtime necessities 
 - Avoid using recursive code 
 - Don't attach a Lambda function to a VPC unless you have to
+
+
+<small>[Back to the top](#aws-serverless)</small>
 
 
 ## AWS Lambda@Edge
@@ -232,6 +247,10 @@ Used for running global Lambda functions alongside edge locations (for CDN for e
 - User authentication and authorization
 - User prioritization
 - User tracking and analytics
+
+
+<small>[Back to the top](#aws-serverless)</small>
+
 
 ## Amazon DynamoDB
 
@@ -282,6 +301,10 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - Throughput can be exceeded temporarily using burst credits
 - If there are no more burst credits, we may get a "_ProvisionedThroughputExceptions_" in which case it is advised to do exponential back-off retry
 
+
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ### DynamoDB DAX - DynamoDB Accelerator
 
 - Seamless cache for DynamoDB, no application re-write
@@ -295,6 +318,10 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 
 |![](../../Images/aws-dynamodb-dax.png)|
 |-|
+
+
+<small>[Back to the top](#aws-serverless)</small>
+
 
 ### DynamoDB Streams
 
@@ -316,6 +343,10 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 
 |![](../../Images/aws-dynamodb-concurrency.png)|
 |-|
+
+
+<small>[Back to the top](#aws-serverless)</small>
+
 
 ### Throttling 
 
@@ -382,6 +413,9 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - For faster performance, use parallel scans 
 
 
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ### Consistency Model 
 
 **Eventually Consistent Read**
@@ -394,6 +428,9 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 
 |![](../../Images/aws-ddb-consistency-model.png)|
 |-|
+
+
+<small>[Back to the top](#aws-serverless)</small>
 
 
 ### Primary Keys 
@@ -419,6 +456,9 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 
 |![](../../Images/aws-ddb-option2.png)|
 |-|
+
+<small>[Back to the top](#aws-serverless)</small>
+
 
 ### New Features
 
@@ -460,6 +500,10 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 
 - DMS can be used to migrate data to DynamoDB (from Mongo, Oracle, MySQL, st3, etc.)
 
+
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ## Amazon API Gateway
 
 Amazon API Gateway is an AWS service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale. 
@@ -499,6 +543,9 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - AWS Lambda in your VPC 
 - EC2 endpoints in yoru VPC 
 
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ### Mapping Templates 
 
 - Can be used to modify requests/responses 
@@ -527,6 +574,10 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 |![](../../Images/aws-apigw-stage-vars.png)|
 |-|
 
+
+<small>[Back to the top](#aws-serverless)</small>
+
+
 #### Canary Deployment
 
 - Can be enabled for any stage (usually prod)
@@ -552,6 +603,10 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 
 |![](../../Images/aws-apigw-cache-api-responses.png)|
 |-|
+
+
+<small>[Back to the top](#aws-serverless)</small>
+
 
 ### Endpoint Types
 
@@ -587,6 +642,9 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - Enable tracing to get extra information about requests 
 - X-Ray + API Gateway + AWS Lambda gives you the full picture 
 
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ### API Gateway - Cross-Origin Resource Sharing 
 
 - CORS must be enabled when you receive API calls from another domain 
@@ -610,6 +668,9 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - Associate with usage plans 
 - Track usage for API keys
 
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ### Security
 
 #### IAM 
@@ -625,6 +686,9 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 |![](../../Images/aws-apigw-sec-iam.png)|
 |-|
 
+<small>[Back to the top](#aws-serverless)</small>
+
+
 #### Lambda Authorizer (Custom Authorizer)
 
 - Great for 3rd party tokens
@@ -639,6 +703,9 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 |![](../../Images/aws-apigw-sec-lambda-auth.png)|
 |-|
 
+<small>[Back to the top](#aws-serverless)</small>
+
+
 #### Cognito User Pools
 
 - Cognito will manage the full user lifecycle
@@ -649,6 +716,9 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 
 |![](../../Images/aws-apigw-congnitouserpools.png)|
 |-|
+
+
+<small>[Back to the top](#aws-serverless)</small>
 
 
 ## AWS Cognito 
@@ -702,6 +772,9 @@ Cognito is used for giving users an identity to be able to communicate with a sy
 - It provides some offline capabilities, synchronization will happen when the device will come online
 - **Requires Federated Identity Pool in Cognito (not User Pool!)**
 - Data is stored in datasets, each dataset can have up to 1MB of data. We can have up to 20 datasets to synchronize
+
+
+<small>[Back to the top](#aws-serverless)</small>
 
 
 ## AWS SAM - Serverless Application Model
@@ -763,6 +836,9 @@ Resources:
 To learn more, please see [What is the AWS Serverless Application Model (AWS SAM)?](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
 
 
+<small>[Back to the top](#aws-serverless)</small>
+
+
 ## Serverless Architecture 
 
 ### Mobile App: MyTodoList 
@@ -794,3 +870,7 @@ To learn more, please see [What is the AWS Serverless Application Model (AWS SAM
 
 |![](../../Images/aws-serverless-solarch6.png)|
 |-|
+
+
+<small>[Back to the top](#aws-serverless)</small>
+

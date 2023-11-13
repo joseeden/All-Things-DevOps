@@ -60,6 +60,9 @@ When we start deploying multiple applications, they will inevitable result in th
     - SNS: pub/sub model
     - Kinesis: real-time streaming model
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ## SQS - Simple Queue Service
 
 |![](../../Images/aws-sqs.png)|
@@ -98,6 +101,9 @@ When we start deploying multiple applications, they will inevitable result in th
 |![](../../Images/aws-sqs-fifo-queueueue.png)|
 |-|
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ### Producing Messages
 
 - Producers send messages to the queue using the SDK (SendMessage API)
@@ -124,6 +130,9 @@ When we start deploying multiple applications, they will inevitable result in th
 |-|
 
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ### Message Visibility Timeout
 
 - After a message is polled by a consumer, it becomes invisible to other consumers
@@ -144,6 +153,9 @@ When we start deploying multiple applications, they will inevitable result in th
 - We have to make sure the messages are processed in DLQ before expiring. It is not a good idea to set a short expiration time for the DLQ
 
 ![](../../Images/aws-sqs-dlqsss.png)
+
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
 
 
 ### Long Polling 
@@ -185,6 +197,9 @@ When the variable goes above the threshold value, then alarms are breached and i
 - Cloudwatch alarm can be assigned with a scaling policy on your ASG. 
 - It can scale your ASG accordingly.
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ### SQS Extended Client 
 
 - Message size limit is 256KB, how to send large messages?
@@ -198,6 +213,9 @@ When the variable goes above the threshold value, then alarms are breached and i
 
 |![](../../Images/aws-sqs-decouple-app-tiers.png)|
 |-|
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
 
 ### Data Ordering in SQS
 
@@ -224,6 +242,9 @@ When the variable goes above the threshold value, then alarms are breached and i
 - Useful for cross-account access to SQS queues
 - Useful for allowing other services (SNS, S3) to write to an SQS queue
 
+
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
 
 
 ## SNS - Simple Notification Service
@@ -253,6 +274,9 @@ When the variable goes above the threshold value, then alarms are breached and i
 - S3 (bucket events)
 - CloudFormation (state changes)
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ### Publishing events 
 
 **How to publish?**
@@ -267,6 +291,9 @@ When the variable goes above the threshold value, then alarms are breached and i
 - Create a platform endpoint
 - Publish to the platform endpoint
 - Works with Google GCM, Apple APNS, Amazon ADM
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
 
 ### SNS + SQS Fan Out
 
@@ -288,6 +315,9 @@ When the variable goes above the threshold value, then alarms are breached and i
 - In case we want to send the same S3 event to many SQS queues, we must use SNS fan-out
 
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ## AWS Kinesis
 
 |![](../../Images/aws-kinesissss.png)|
@@ -302,6 +332,9 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
     - **Kinesis Streams**: low latency streaming ingest at scale
     - **Kinesis Analytics**: perform real-time analytics on streams using SQL
     - **Kinesis Firehose**: load streams into S3, Redshift, ElasticSearch
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
 
 ### Kinesis Streams
 
@@ -325,6 +358,9 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 - The number of shards can evolve over time (reshard/merge)
 - **Records are ordered per shard!**
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ### Kinesis Data Firehose
 
 - Fully managed service, no administration required, provides automatic scaling, it is basically serverless
@@ -347,6 +383,9 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
     - Near real time
     - Scales automatically
     - It provides no data storage
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
 
 ### Kinesis Data Analytics
 
@@ -373,6 +412,9 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 |![](../../Images/aws-kinesis-putrecordsss.png)|
 |-|
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 #### Exceptions
 
 - ProvisionedThroughputException Exceptions:
@@ -391,6 +433,9 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 
 |![](../../Images/aws-kinesis-api-consumers.png)|
 |-|
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
 
 ### AWS Kinesis CLI 
 
@@ -432,6 +477,9 @@ aws kinesis get-records help
 
 |![](../../Images/aws-kinesis-cli-getrecords.png)|
 |-|
+
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
 
 
 ### Security
@@ -482,6 +530,9 @@ aws kinesis get-records help
 - Data expires after X days
 - Must provision throughput
 
+<small>[Back to the top](#aws-integration-and-messaging)</small>
+
+
 ## Amazon MQ 
 
 - SQS and SNS are cloud-native, they are using proprietary protocols from AWS
@@ -491,4 +542,7 @@ aws kinesis get-records help
 - Amazon MQ does not scale as much as SQS/SNS
 - It runs on a dedicated machine, can urn in HA with failover
 - It has both queue anf topic features
+
+
+<small>[Back to the top](#aws-integration-and-messaging)</small>
 

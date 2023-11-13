@@ -146,6 +146,10 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     
     - [Security](pages/005-Azure/107_azure_security.md)
 
+    - [LoadBalancers](pages/005-Azure/108_azure_loadbalancers.md)
+    
+    - [Container Services](pages/005-Azure/109_azure_container.md) 
+
 
 ## Infrastructure as Code 
 
