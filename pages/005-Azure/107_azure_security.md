@@ -232,7 +232,7 @@ Azure Sentinel is a cloud-based security information event management (SIEM) sol
 - Integration with Azure technologies (logic apps, log analytics, AI).
 - Community-provided workbooks, playbooks, hunting queries.
 
-**Onboarding Sentine**
+**Onboarding Sentinel**
 - Connect it first to existing data sources.
 - Available connectors for Microsoft solutions and other sources.
 - After connecting, monitor your data with  .
