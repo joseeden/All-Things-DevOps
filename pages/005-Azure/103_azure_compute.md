@@ -185,6 +185,7 @@ If you need higher availability than a single region can provide, you'll have to
 - If you can’t tolerate almost any downtime, then you could have VMs running in the backup region all the time.
 
 **Regional Pairs**
+
 When choosing a backup region, consider regional pairs for increased reliability.
 - Nearly every one of Azure’s regions is paired with another region. 
 - Some Azure services replicate their data across regional pairs if you choose certain options. 
