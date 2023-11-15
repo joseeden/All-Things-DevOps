@@ -15,10 +15,18 @@
       - [Availability Sets](#availability-sets)
       - [Availability Zones](#availability-zones)
       - [Multi-Region Deployments](#multi-region-deployments)
+      - [Regional Pairs](#regional-pairs)
       - [Scale Sets](#scale-sets)
       - [Scale Set Types](#scale-set-types)
 - [Azure App Service](#azure-app-service)
+   - [Supported languages](#supported-languages)
+   - [App Service Plan](#app-service-plan)
+      - [Pricing Tier](#pricing-tier)
+      - [Scaling](#scaling)
+      - [Considerations](#considerations)
 - [Resources](#resources)
+
+
 
 
 
@@ -184,7 +192,7 @@ If you need higher availability than a single region can provide, you'll have to
 - If the region where your VMs are deployed goes down, you can temporarily bring up replacement VMs in the second region by using your backups. 
 - If you can’t tolerate almost any downtime, then you could have VMs running in the backup region all the time.
 
-**Regional Pairs**
+#### Regional Pairs
 
 When choosing a backup region, consider regional pairs for increased reliability.
 - Nearly every one of Azure’s regions is paired with another region. 
