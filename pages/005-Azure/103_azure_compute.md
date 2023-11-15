@@ -283,16 +283,16 @@ App Service is a platform-as-a-service (PaaS) offering that simplifies web appli
 
 When using Azure App Service, one of the critical decisions is configuring the **App Service Plan**. This defines the type of infrastructure your web application will utilize. The three primary settings to decide in an App Service Plan are the following:
 
-**Operating System**
-- Choose between **Windows or Linux** based on your application's compatibility and requirements.
+- **Operating System**
+   - Choose between **Windows or Linux** based on your application's compatibility and requirements.
 
-**Region**
-- Select the region closest to your target audience for optimal performance.
-- Note: The region is immutable; you can't change it after the plan is created.
+- **Region**
+   - Select the region closest to your target audience for optimal performance.
+   - Note: The region is immutable; you can't change it after the plan is created.
 
-**Pricing Tiers**
-- Pricing tiers determine compute resources, features, and costs associated with the App Service Plan.
-- The tiers include Free, Shared, Basic, Standard, Premium, and Isolated.
+- **Pricing Tiers**
+   - Pricing tiers determine compute resources, features, and costs associated with the App Service Plan.
+   - The tiers include Free, Shared, Basic, Standard, Premium, and Isolated.
 
 Regular assessments of scaling strategies and the chosen pricing tier help maintain application efficiency in response to varying workloads.
 
