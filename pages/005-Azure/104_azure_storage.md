@@ -3,14 +3,26 @@
 
 > <small>This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.<br>To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)</small>
 
+
 - [Benefits of Azure Storage](#benefits-of-azure-storage)
 - [Core Azure Storage Services](#core-azure-storage-services)
 - [Storage Account types](#storage-account-types)
+   - [Key Features](#key-features)
+   - [Important Points](#important-points)
 - [Azure Blob Storage](#azure-blob-storage)
+   - [Key Resources](#key-resources)
+   - [From the UI](#from-the-ui)
 - [Azure Files](#azure-files)
+   - [Management and Operations](#management-and-operations)
+   - [Resilience and Reliability](#resilience-and-reliability)
 - [Azure Queues](#azure-queues)
 - [Azure Table Storage](#azure-table-storage)
+   - [Components](#components)
+   - [Key Relationships](#key-relationships)
 - [Azure Managed Disks](#azure-managed-disks)
+   - [Benefits](#benefits)
+   - [Encryptions](#encryptions)
+   - [Disk Types](#disk-types)
 - [Resources](#resources)
 
 
@@ -48,6 +60,11 @@
 **Azure Table Storage**
 - Ideal for structured NoSQL data with a key/attribute store and a schema-less design.
 
+
+<small>[Back to the top](#azure-storage)</small>
+
+
+
 ## Storage Account types
 
 1. **General-Purpose V2 Account**
@@ -74,18 +91,26 @@
 <img src="../../Images/azure-storage-accountsss.png">
 </p>
 
-**Key Features**
+
+<small>[Back to the top](#azure-storage)</small>
+
+
+### Key Features
 - All storage account types are encrypted using Storage Service Encryption (SSE) for data at rest.
 - Archive storage and blob-level tiering support only block blobs.
 - Zone-Redundant Storage (ZRS) and Geo Zone-Redundant Storage (GZRS) are available for standard general-purpose V2 accounts, block blob accounts, and file storage accounts in certain regions.
 - Premium performance for general-purpose V2 and general-purpose V1 accounts is available for disk storage and page blobs. For block blobs and append blobs, it's exclusive to block blob accounts. Files-only storage accounts support premium performance for files.
 
-**Important Points**
+### Important Points
 - Archive storage and blob-level tiering support only block blobs.
 - ZRS and GZRS are available only for standard general-purpose V2 accounts, block blob accounts, and file storage accounts in certain regions.
 - Premium performance for general-purpose V2 and general-purpose V1 accounts is only for disk storage and page blobs. Block blob accounts support premium performance for block blobs and append blobs, and files-only storage accounts support premium performance for files.
 
 Detailed information on the different storage accounts available at: [https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview).
+
+
+<small>[Back to the top](#azure-storage)</small>
+
 
 ## Azure Blob Storage 
 
@@ -95,7 +120,9 @@ Azure Blob storage is an object storage solution designed for storing massive am
 - Objects in Blob storage can be accessed using HTTP or HTTPS.
 - Accessible through Azure Storage REST API, Azure PowerShell, Azure CLI, or Azure storage client libraries (Java, PHP, .NET, etc.).
 
-**Key Resources**
+Blob data stands for **Binary Large Object** data. Blob data and can represent a wide variety of types of data you normally store on your computer including images, videos, and documents.
+
+### Key Resources
 
 ![](../../Images/azure-blob-storage-key-resources.png)
 
@@ -118,16 +145,84 @@ Azure Blob storage is an object storage solution designed for storing massive am
    - **Page Blobs**
      - Used for storing random access files up to 8 TiB.
      - Ideal for storing VHD files, serving as disks for Azure virtual machines.
+     <br>
 
-<p align=center>
-<img src="![](../../Images/azure-blob-storage-types-block-blobs-append-blobs-page-blobs.png)">
-</p>
+      <p align=center>
+      <img src="../../Images/azure-blob-storage-types-block-blobs-append-blobs-page-blobs.png">
+      </p>
 
 **Resource Relationship**
-- The storage account, containers, and blobs have a hierarchical relationship, forming a structured organization for your data.
+The storage account, containers, and blobs have a hierarchical relationship, forming a structured organization for your data.
 
-**For More Information**
-To learn more about blob storage, refer to the official documentation at [Azure Blob Storage Introduction](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
+
+<small>[Back to the top](#azure-storage)</small>
+
+
+### From the UI  
+
+In the example below, we can see the important details in the **Overview** section of the Storage account. 
+
+|![](../../Images/azure-storage-blob-from-the-ui.png)|
+|-|
+
+- **Disk State** 
+   - Indicates that the storage location is Available. 
+   - In the event of an outage in Azure, you may see a different value here. 
+   
+- **Location** 
+   - Determines the locations of primary and secondary storage location.
+   - This storage account has no secondary storage location, but you can create storage accounts with primary and secondary storage locations. 
+
+- **Performance** 
+   
+   - **Premium Storage** 
+      - Use this when you need guaranteed latency 
+      - Higher storage costs because they use solid-state drives (SSDs) 
+   
+   - S**tandard storage** 
+      - Uses magnetic spinning hard disk drives (HDDs).
+
+- **Replication** 
+   - Sets the durability and availability of the storage. 
+   - The following options are available:
+
+      - **Locally-redundant storage (LRS)** 
+      
+         - The cheapest option and stores the data in a single data center. 
+         - If that data center goes offline you will not be able to access the data.
+
+      - **Zone-redundant storage (ZRS)** 
+      
+         - Stores data across three data centers in a region. 
+         - It can tolerate individual data center outages but not regional outages.
+
+      - **Geo-redundant storage (GRS)** 
+      
+         - Stores data across multiple data centers in two regions, a primary region and a secondary region. 
+         - This option is more expensive but can tolerate entire regional outages. 
+         
+      - **Read-access geo-redundant storage (RA-GRS)** 
+      
+         - Allows you to read from the secondary region compared to GRS which only allows you to access the secondary in the case of a Microsoft-initiated region failover to the secondary.
+
+- **Account kind** 
+
+   - **General-purpose** 
+      
+      - Allow storage of blobs, tables, files, and queues 
+   
+   - **Specialized kinds** 
+   
+      - Only allow one type such as only blob storage. 
+      - There are different pricing models for each account kind so a specialized kind may reduce your costs. 
+      - **StorageV2** is the recommended default.
+
+For more information: [Azure Blob Storage Introduction](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
+
+
+<small>[Back to the top](#azure-storage)</small>
+
+
 
 ## Azure Files 
 
@@ -140,17 +235,21 @@ Azure Files makes file shares available in the cloud, offering a fully managed s
 - Enables control of Azure file share permissions through on-prem Active Directories. 
 - Useful for lifting and shifting applications to the cloud, especially those relying on file shares for data storage.
  
-**Management and Operations**
+### Management and Operations
 - **Fully Managed**: Azure Files is a fully managed service, eliminating concerns about hardware management, OS installation, patching, and security upgrades.
 - **Command Line and Portal Management:**
     - Use familiar PowerShell commands and Azure CLI commands for creating, mounting, and managing Azure file shares.
     - Management through the Azure portal and Azure Storage Explorer is also supported.
 
-**Resilience and Reliability**
+### Resilience and Reliability
 
 - **Built to Be Resilient:** Azure Files is designed with resilience, eliminating worries about file server upgrades, local power outages, and network issues affecting on-prem file shares.
 
 By leveraging Azure Files, organizations can simplify file storage management, enhance accessibility, and ensure reliability without the overhead of traditional on-premises file servers. 
+
+
+<small>[Back to the top](#azure-storage)</small>
+
 
 ## Azure Queues 
 
@@ -178,6 +277,10 @@ Azure Queue Storage provides a scalable and reliable solution for managing messa
     - Messages can be in any format. and can be up to 64 kB in size.
     - Messages play a crucial role in enabling communication between different components of a distributed application.
 
+
+<small>[Back to the top](#azure-storage)</small>
+
+
 ## Azure Table Storage 
 
 Azure Table Storage is a NoSQL datastore, providing a schema-less and flexible approach to storing structured non-relational data. 
@@ -189,7 +292,7 @@ Azure Table Storage is a NoSQL datastore, providing a schema-less and flexible a
 - Useful for scenarios involving large datasets that require fast access without the need for complex relational features. 
 
 
-**Components of Azure Table Storage**
+### Components 
 
 <p align=center>
 <img src="../../Images/azure-table-storage-components-diag.png">
@@ -214,22 +317,31 @@ Azure Table Storage is a NoSQL datastore, providing a schema-less and flexible a
         - row key
         - timestamp
 
-**Key Relationships**
+### Key Relationships
 
 - **Hierarchy:** Storage account > Tables > Entities > Properties.
 - **Access:** The URL serves as the means to access the entire structure.
 
 
+<small>[Back to the top](#azure-storage)</small>
+
+
 ## Azure Managed Disks 
+
+Azure virtual machines (VMs) use Azure disks as their attached disk storage. 
+
+- Azure disks are built-on top of page blobs which are the type of blobs optimized for random access. 
+- When you create Azure disks you can choose to manage the storage account yourself or to use managed disks where Azure manages the storage account for you. 
+- Managed disks are the preferred option.
 
 Azure Managed Disks provide a virtualized, scalable, and highly available storage solution for Azure VMs. 
 
 - Virtualized block-level storage volumes used with Azure VMs and managed by Microsoft Azure.
 - The encryption options (SSE and ADE) enhance data security, and the distinction between data, OS, and temporary disks allows for efficient and purpose-driven disk management within the Azure infrastructure.
 
-![](../../Images/azure-managed-disks-benefits.png)
+   ![](../../Images/azure-managed-disks-benefits.png)
 
-**Benefits**
+### Benefits
 
   1. **Availability**
         - Designed for 99.999% availability with three replicas of data per disk, protecting against two failures of disk replicas.
@@ -247,7 +359,7 @@ Azure Managed Disks provide a virtualized, scalable, and highly available storag
   6. **Upload Ease** 
         - Facilitates the upload of on-prem VMs to Azure through direct upload, streamlining the VHD file transfer process.
 
-**Encryptions**
+### Encryptions
 
   1. **Server-side Encryption (SSE)**
      - Default for all managed disks.
@@ -257,18 +369,18 @@ Azure Managed Disks provide a virtualized, scalable, and highly available storag
      - Uses **BitLocker** for Windows VMs 
      - Used **DM-crypt** for Linux VMs.
 
-**Disk Types**
-
-![](../../Images/azure-managed-disks-disk-roles.png)
+### Disk Types
 
   1. **Data Disks**
      - Attached to a VM to store applications and data.
      - Registered as a SCSI drive, assignable drive letters, 
      - Max capacity of 32 terabytes.
      - Number of data disks depends on VM size.
+
   2. **OS Disks**
      - Deployed with a VM, hosts OS and boot volume.
      - Max capacity of 4 terabytes.
+
   3. **Temporary Disks**
      - Not a managed disk, not intended for important data.
      - Every VM contains a temporary disk, 
@@ -276,6 +388,12 @@ Azure Managed Disks provide a virtualized, scalable, and highly available storag
      - Data may be lost during maintenance events or VM redeployment.
      - Assigned the drive letter D on Windows and 
      - Assigned to /dev/sdb on Azure Linux VMs.
+
+         |![](../../Images/azure-vm-temporary-storage.png)|
+         |-|
+
+
+<small>[Back to the top](#azure-storage)</small>
 
 
 

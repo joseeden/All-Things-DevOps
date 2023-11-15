@@ -1,5 +1,7 @@
 
-# Microsoft Azure - Overview
+# Microsoft Azure Overview
+
+
 
 - [Overview](#overview)
 - [Comparison of AWS and Azure Services](#comparison-of-aws-and-azure-services)
@@ -10,6 +12,7 @@
     - [Management Groups](#management-groups)
     - [Update Domain](#update-domain)
     - [Fault Domain](#fault-domain)
+- [Azure Portal](#azure-portal)
 - [Resources](#resources)
 
 
@@ -52,6 +55,9 @@ Microsoft Azure is a collection of online services for application development a
 **Additional Services:**
 - Beyond core compute, storage, and networking, Azure offers services in areas like artificial intelligence and DevOps.
 
+<small>[Back to the top](#microsoft-azure-overview)</small>
+
+
 ## Comparison of AWS and Azure Services
 
 | TOPIC      | AWS                                      | AZURE                          | FUNCTIONALITY                                                                                                                                                                                                                                         |
@@ -87,7 +93,12 @@ Microsoft Azure is a collection of online services for application development a
 |            | AWS CloudFormation                       | ARM Templates/blueprints       | Creating your resources in the cloud for test purposes is fine                                                                                                                                                                                        |
 |            | AWS Cloud 9                              | Azure console                  | In Azure you have the option to have a bash/Powershell for writing commands, I found that AWS Cloud 9 provides you with a full own mini IDE environment                                                                                               |
 | Monitoring | Cloud Watch                              | Azure Monitor                  | Services need to report metrics, for example, the CPU percentage of the running virtual machines                                                                                                                                                      |
-|            | X-Ray                                    | App Insights                   | what is going on your application, being able to see called requests, response times, success rates and dependency calls.                                                                                                                           
+|            | X-Ray                                    | App Insights                   | what is going on your application, being able to see called requests, response times, success rates and dependency calls.  |
+
+
+<small>[Back to the top](#microsoft-azure-overview)</small>
+
+
 
 ## Billing vs. Subscription vs. Resource Group 
 
@@ -111,6 +122,10 @@ Best practices for resource grouping include:
 
 - Grouping related resources together, like a VM and its associated storage account.
 - Creating and deleting resources in a group simultaneously, especially when components work together to provide a solution.
+
+
+<small>[Back to the top](#microsoft-azure-overview)</small>
+
 
 ## Azure Architecture
 
@@ -165,6 +180,20 @@ A fault domain is a group of virtual machines that shares a common power source 
 
     - three different fault domains in resource manager deployments, 
     - or across two fault domains in classic deployments.
+
+
+<small>[Back to the top](#microsoft-azure-overview)</small>
+
+
+
+## Azure Portal 
+
+The Microsoft Azure portal is a browser-based graphical user interface (GUI) to help you manage resources in Azure. Although there are other ways to manage resources in Azure, such as the application programming interface (API) and command line interface (CLI), the portal is the simplest place to start.
+
+|![](../../Images/azure-portal-screenshot.png)|
+|-|
+
+To login: [Azure Portal](https://go.microsoft.com/fwlink/p?linkid=2165195&clcid=0x409)
 
 ## Resources 
 

@@ -505,8 +505,6 @@ For more information: [Virtual Network Service Endpoints Overview](https://docs.
 
 ## Storage Security
 
-<small>[Back to the top](#azure-security)</small>
-
 These security options collectively enhance the protection, management, and monitoring of data stored in Azure Storage. Each option addresses specific aspects of security, access control, and logging for a comprehensive storage security strategy.
 
 ### Azure Storage Service Encryption
@@ -709,6 +707,9 @@ An example scenario for DDM involves a call center employee who needs to identif
 - **Masking Functions:**
     - Determines how data is exposed under specific conditions.
 
+
+<small>[Back to the top](#azure-security)</small>
+
 ### Masking Functions
 
 | Function            | Description                                             |
@@ -721,6 +722,8 @@ An example scenario for DDM involves a call center employee who needs to identif
 | Social Security Number | Shows the last four digits of a social security number. |
 | Number             | Shows a random portion of a number.                      |
 
+
+<small>[Back to the top](#azure-security)</small>
 
 For more information: [Azure Official Documentation](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started).
 

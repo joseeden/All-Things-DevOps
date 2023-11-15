@@ -429,6 +429,46 @@ For more information: [ExpressRoute FAQ](https://docs.microsoft.com/en-us/azure/
 
 <small>[Back to the top](#azure-networking)</small>
 
+## Application Gateway 
+
+### Enabling WAF 
+
+We can enable the Application Gateway WAF to ensure that it logs any threat that it detects. Using Azure Diagnostics, Application Gateways can store logs in a Storage Account or Log Analytics Workspace.
+
+To enable WAF in the Application Gateway, go to **Application gaetways** page, select your gateway, and click **Web application firewall** on the left-hand side. Toggle the **WAF status.**
+
+![](../../Images/azure-app-gw-enable-waf.png)
+
+**Modes**
+
+- Detection mode monitors and logs all threats and alerts but will not block incoming requests. 
+
+- Prevention mode will additionally action on the threats and alerts and will take measures to block those attacks. 
+
+It's good practice to use detection mode first and then work your way up to prevention.
+
+**Rulesets**
+
+Rule sets are used to protect web applications against common vulnerabilities and exploits. This allows Cloud engineers and developers to keep up with mitigating against the latest attacks. 
+
+![](../../Images/azure-app-gw-enable-waf-rulesets.png)
+
+The OWASP core 3.2 rule set is a new pre-defined rule set that provides a new engine and rule set for defending against Java infections and fixes many false positives.
+
+**Log Destination**
+
+As mentioned above, the logs can be stored in a Storage Account or Log Analytics Workspace. Go to **Diagnostic setting** and add a diagnostic setting. Here we can specify to store both:
+- Logs 
+- Metrics 
+
+For the destination, select between Log Analytics workspace or archive the logs to a storage account.
+
+![](../../Images/azure-enable-waf-store-between-choices.png)
+
+### WAF Policy 
+
+Web Application Firewall policy is a stand-alone resource type that can be used to manage policies for multiple Application Gateways as well as per site or backend pool in each Application Gateway.
+
 ## vNet Peering 
 
 <p align=center>
