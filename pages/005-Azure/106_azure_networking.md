@@ -4,7 +4,11 @@
 > <small>This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.<br>To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)</small>
 
 
+
+
 - [Virtual Networks](#virtual-networks)
+    - [Network Communication](#network-communication)
+    - [Name Resolution in vNets](#name-resolution-in-vnets)
     - [Key Concepts](#key-concepts)
     - [Best Practices for Virtual Networks](#best-practices-for-virtual-networks)
 - [Internet Communication](#internet-communication)
@@ -21,6 +25,9 @@
     - [Security Groups](#security-groups)
     - [Network Virtual Appliances NVA](#network-virtual-appliances-nva)
     - [Route Tables](#route-tables)
+- [vNet Peering](#vnet-peering)
+    - [Key Features](#key-features)
+    - [Types of Peering](#types-of-peering)
 - [VPN Gateway](#vpn-gateway)
 - [Point-to-Site VPNs](#point-to-site-vpns)
     - [Protocols](#protocols)
@@ -28,34 +35,72 @@
     - [Gateway SKUs Supporting P2S VPNs](#gateway-skus-supporting-p2s-vpns)
 - [Site-to-Site VPNs](#site-to-site-vpns)
     - [Creating the Connection](#creating-the-connection)
+- [Routing Options for VPNs](#routing-options-for-vpns)
 - [ExpressRoute](#expressroute)
     - [Connectivity Options](#connectivity-options)
+    - [Ways to Connect to ExpressRoute](#ways-to-connect-to-expressroute)
+    - [Additional Features](#additional-features)
     - [Key Benefits](#key-benefits)
     - [Bandwidth Options](#bandwidth-options)
     - [Billing Models](#billing-models)
     - [ExpressRoute Premium Add-On](#expressroute-premium-add-on)
-- [vNet Peering](#vnet-peering)
-    - [Key Features](#key-features)
-    - [Types of Peering](#types-of-peering)
+- [Private Endpoints](#private-endpoints)
+    - [Benefits of Private Endpoints](#benefits-of-private-endpoints)
+    - [Custom Private Link](#custom-private-link)
+    - [Peered VNets and On-Premises Environments](#peered-vnets-and-on-premises-environments)
 - [Resources](#resources)
 
 
+
 ## Virtual Networks 
+
+In Azure, the equivalent of a local area network is called an Azure Virtual Network or VNet. 
+
+- Unlike traditional LANs, Azure VNets have unique characteristics. 
+- Multiple customers can create VNets within the same Azure datacenter, requiring isolation from one another. 
+- Additionally, not all Azure resources can reside in a VNet. - - These are just a few example of resources that can be created in a vNet:
+  
+  - Virtual machines
+  - firewalls, and
+  - Azure Kubernetes clusters 
+  
+- Whereas the following cannot be created in a vNet:
+
+  - Azure SQL Database instances
+  - Azure Storage containers
+  - Azure Active Directory tenants
 
 Azure Virtual Networks are foundational to Azure resource deployment, providing enhanced scalability, availability, and isolation.
 
 - Enables secure communication across resources.
 - Similar to physical networks but offers improved availability, scalability, and isolation.
 
-**Internet Communication**
+### Network Communication
+
+Resources within the same subnet can communicate via default routes created by Azure. 
+
+- Resources in different subnets via default routes
+- Users can create their own routes, known as **user-defined routes**. 
 - Outbound to the internet is available by default.
 - Inbound from the internet:
   - Assign a public IP address to the resource.
   - Provision a public load balancer.
 
+### Name Resolution in vNets 
+
+While IP addresses are crucial, referring to resources by name is often more practical. Azure provides several options for name resolution:
+
+- **Azure-Provided Name Resolution:** Automatically provided when creating a VNet, enabling communication within the VNet using names.
+
+- **Azure DNS Private Zones:** Used when resources need to resolve names in another virtual network. This service manages name resolution for private virtual networks.
+
+- **Custom DNS Servers:** For resolving names of systems in an on-premises environment, users can utilize their own DNS servers or **Azure DNS**, capable of acting as a full DNS service.
+
+<small>[Back to the top](#azure-networking)</small>
+
 ### Key Concepts
 
-![](../../Images/azure-azure-vnet-key-components.png)
+![](../../Images/azure-simple-vnet-diagram.png)
 
 **Address Space**
 - Defines private or public addresses conforming to RFC 1918.
@@ -123,7 +168,9 @@ For more information: [Private Link Overview](https://docs.microsoft.com/en-us/a
 
 ### vNet Peering
 
-Connect two virtual networks, enabling communication between Azure resources. For more information: [vNet Peering](#vnet-peering)
+Connect two virtual networks, enabling communication between Azure resources. 
+
+For more information: [vNet Peering](#vnet-peering)
 
 <small>[Back to the top](#azure-networking)</small>
  
@@ -226,6 +273,51 @@ Propagates on-prem BGP routes to Azure virtual networks, through the use of:
 For more information: [BGP Routes](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-bgp-overview?toc=/azure/virtual-network/toc.json)
 
 
+<small>[Back to the top](#azure-networking)</small>
+
+## vNet Peering 
+
+<p align=center>
+<img width=900 
+src="../../Images/azure-expressroute-with-border.png">
+</p>
+
+In scenarios requiring seamless connectivity between distinct Azure virtual networks, a solution that you can use is Virtual Network Peering, or **vNet Peering**. 
+
+- Enables smooth integration of different Azure virtual networks, presenting them as a unified entity. 
+- All inter-network traffic utilizes the robust Microsoft backbone infrastructure.
+- Peering can be created without downtime.
+- For vNets in different regions, use **Global vNet Peering.**
+
+### Key Features
+
+- **Compatibility:**
+  - Connects networks created via Azure Resource Manager, including those from the classic deployment model.
+
+- **No Downtime:**
+  - Peering creation and completion cause no downtime for associated resources.
+
+- **Privacy and Security:**
+  - Traffic remains private, bypassing the need for public Internet, gateways, or encryption.
+
+- **Consistent Latency:**
+  - Latency between VMs on peered virtual networks mirrors that within a single virtual network.
+
+- **Security Groups Integration:**
+  - Apply network security groups to control access between peered virtual networks or subnets.
+
+### Types of Peering
+
+1. **Virtual Network Peering**
+   - Connects virtual networks within the same Azure region.
+
+2. **Global Virtual Network Peering**
+   - Links virtual networks deployed in different Azure regions.
+
+Whether opting for local or global peering, both choices offer low-latency, high-bandwidth connectivity. This connectivity spans across virtual networks in diverse Azure subscriptions, Azure Active Directory tenants, and Azure regions.
+
+<small>[Back to the top](#azure-networking)</small>
+
 ## VPN Gateway 
 
 A VPN Gateway is a specialized virtual network gateway used for encrypted network traffic over the public internet, and can be used to connect:
@@ -255,6 +347,7 @@ Once the VPN Gateway is deployed, you can create an IPSec or IKE VPN tunnel betw
 For more information: [Azure VPN Gateway Documentation](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways)
 
 <small>[Back to the top](#azure-networking)</small>
+
 
 ## Point-to-Site VPNs 
 
@@ -349,9 +442,22 @@ When bridging on-premises networks to Azure virtual networks, the go-to solution
 
 <small>[Back to the top](#azure-networking)</small>
 
+## Routing Options for VPNs 
 
+There are two types of routing: 
 
+- **Policy-based**
 
+  - In almost every case, route-based is the right option. 
+  - Not only is it more robust, but it’s the only supported option for point-to-site connections.
+
+- **Route-based** 
+
+  - Doesn not support point-to-site connections from the same VPN Gateway. 
+  - Since only one VPN Gateway is allowed per virtual network, you’d have to create a second virtual network to support the other VPN Gateway. 
+  - his isn’t a common scenario
+
+If you don’t want your connection to go over the internet or you need more bandwidth, then you can set up a direct connection using Azure ExpressRoute.
 
 ## ExpressRoute 
 
@@ -360,21 +466,62 @@ When bridging on-premises networks to Azure virtual networks, the go-to solution
 src="../../Images/azure-expressroute-with-border.png">
 </p>
 
-
 Microsoft ExpressRoute is a powerful solution for extending on-premises networks into Azure, providing a private connection facilitated by third-party connectivity providers. 
 
 Unlike traditional site-to-site connections that traverse the public internet, ExpressRoute ensures enhanced security, reliability, and speed.
 
 ### Connectivity Options
 
-- **Any-to-Any Network:**
+- **Any-to-Any Network**
   - Establish connectivity from any network to Azure.
 
-- **Point-to-Point Ethernet Network:**
+- **Point-to-Point Ethernet Network**
   - Direct, dedicated connection between on-premises and Azure.
 
-- **Virtual Cross-Connection:**
+- **Virtual Cross-Connection**
   - Facilitated through a connectivity provider at a co-location facility.
+
+### Ways to Connect to ExpressRoute 
+
+There are four ways to connect to Azure using ExpressRoute. It all comes down to where you have your IT infrastructure.
+
+![](../../Images/azure-express-route-connection-options.png)
+
+- **ExpressRoute Location:** 
+
+  - Known as **ExpressRoute Direct**.
+  - Many organizations put at least some of their IT systems in a **colocation facility**, which is a datacenter that rents space to multiple customers.
+  - Microsoft has designated some of these colocation facility as an ExpressRoute location
+  - Connect directly to Microsoft's network via a Microsoft Enterprise Edge device.
+  - Supports high bandwidths of 10 or 100 gigabits per second.
+
+- **Cloud Exchange Location:**  
+
+  - Connect through a Service Provider.
+  - If you are in a peering location or a “**cloud exchange**”, but you need less than 10 gigabits per second of bandwidth,
+  - Offers bandwidth options between 50 megabits and 10 gigabits per second, with the service provider managing certain aspects of the connection.
+  - The service provider can also take care of some of the management tasks involved
+  - If not in an ExpressRoute location, connect to Microsoft's network through a service provider. 
+
+- **IPVPN Provider:**  
+  - Some organizations use an IPVPN provider to connect their branch offices and datacenters to their core network. 
+  - This is called **any-to-any connectivity**.
+
+- **Leased Line:**
+
+  - Rent a leased line from a point-to-point Ethernet provider to connect your datacenter to an ExpressRoute location.
+
+### Additional Features
+
+- **Connecting to Microsoft 365:** 
+
+  - ExpressRoute can also be used to connect to Microsoft 365, although direct connection needs are less common than for Azure.
+
+- **ExpressRoute Global Reach:** 
+
+  - Connect branch offices worldwide through the Microsoft network, bypassing the internet. 
+  - Additional costs apply for this feature.
+
 
 ### Key Benefits
 
@@ -428,47 +575,63 @@ For more information: [ExpressRoute FAQ](https://docs.microsoft.com/en-us/azure/
 
 <small>[Back to the top](#azure-networking)</small>
 
-## vNet Peering 
+## Private Endpoints 
 
-<p align=center>
-<img width=900 
-src="../../Images/azure-expressroute-with-border.png">
-</p>
+In the Azure ecosystem, not all resources, such as Azure SQL Database instances and Azure Storage containers, can be directly placed within a virtual network. 
 
-In scenarios requiring seamless connectivity between distinct Azure virtual networks, a solution that you can use is Virtual Network Peering, or **vNet Peering**. 
+As a solution we'll need to us a **private endpoint** which provides a secure and indirect way to integrate these external resources into a virtual network.
 
-- Enables smooth integration of different Azure virtual networks, presenting them as a unified entity. 
-- All inter-network traffic utilizes the robust Microsoft backbone infrastructure.
-- Peering can be created without downtime.
+- Represents a private IP address within a virtual network, establishing a connection to an Azure resource outside of the VNet. 
+- This addresses the security concerns associated with public endpoints, which expose resources to the internet.
 
-### Key Features
+### Benefits of Private Endpoints
 
-- **Compatibility:**
-  - Connects networks created via Azure Resource Manager, including those from the classic deployment model.
+- **Enhanced Security:** By creating a private endpoint for an Azure resource, the associated public endpoint can be disabled, limiting access to the resource to connections over the Microsoft backbone network from the associated VNet.
 
-- **No Downtime:**
-  - Peering creation and completion cause no downtime for associated resources.
+- **Private Link Support:** Not all Azure resources can be connected to a private endpoint. The resource must be hosted by a service supporting **Private Link**, which acts as the underlying technology for connecting private endpoints to services.
 
-- **Privacy and Security:**
-  - Traffic remains private, bypassing the need for public Internet, gateways, or encryption.
+**Sample Scenario:**
 
-- **Consistent Latency:**
-  - Latency between VMs on peered virtual networks mirrors that within a single virtual network.
+![](../../Images/azure-private-endpoints.png)
 
-- **Security Groups Integration:**
-  - Apply network security groups to control access between peered virtual networks or subnets.
+In the example above, we have virtual machine (VM) running an application needs to store data in an Azure SQL Database instance named DB1. 
 
-### Types of Peering
+Here's a step-by-step process:
 
-1. **Virtual Network Peering:**
-   - Connects virtual networks within the same Azure region.
+- **Create a Private Endpoint:** 
 
-2. **Global Virtual Network Peering:**
-   - Links virtual networks deployed in different Azure regions.
+  - Set up a private endpoint, e.g., PrivateSqlEndpoint, in a designated subnet (e.g., Sub1) within the virtual network (e.g., Vnet1).
 
-Whether opting for local or global peering, both choices offer low-latency, high-bandwidth connectivity. This connectivity spans across virtual networks in diverse Azure subscriptions, Azure Active Directory tenants, and Azure regions.
+- **Configure the Private Endpoint:** 
+
+  - Specify the target of the private endpoint to be DB1, connecting the endpoint to the desired Azure resource.
+
+- **Configure Database Connectivity:** 
+
+  - In the configuration of DB1, set its connectivity method to private endpoint. 
+  - Optionally, disable public access to the database to restrict accessibility to the private endpoint.
+
+- **Application Access:** 
+
+  - With this setup, the application on the VM can access DB1 by connecting to the IP address of PrivateSqlEndpoint. 
+  - The Private Link service ensures traffic is securely routed over Microsoft's backbone network from the private endpoint to the database.
+
+### Custom Private Link
+
+Microsoft has extended the utility of private endpoints by allowing the setup of custom Private Link services. This empowers organizations to establish private connections for their own applications, enhancing the versatility of private endpoints.
+
+![](../../Images/azure-custom-private-link-services.png)
+
+### Peered VNets and On-Premises Environments
+
+Whether your VNet is peered to another VNet or connected to an on-premises environment, resources in these networks can securely access external Azure resources through private endpoints.
+
+![](../../Images/azure-peered-vnets-onprem.png)
 
 <small>[Back to the top](#azure-networking)</small>
+
+
+
 
 
 ## Resources 

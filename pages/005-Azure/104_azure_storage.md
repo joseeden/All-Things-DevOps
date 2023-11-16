@@ -11,6 +11,7 @@
    - [Important Points](#important-points)
 - [Azure Blob Storage](#azure-blob-storage)
    - [Key Resources](#key-resources)
+   - [Access Tiers](#access-tiers)
    - [From the UI](#from-the-ui)
 - [Azure Files](#azure-files)
    - [Management and Operations](#management-and-operations)
@@ -23,7 +24,20 @@
    - [Benefits](#benefits)
    - [Encryptions](#encryptions)
    - [Disk Types](#disk-types)
+- [Redundancy Options](#redundancy-options)
+   - [Locally-Redundant Storage LRS](#locally-redundant-storage-lrs)
+   - [Zone-Redundant Storage ZRS](#zone-redundant-storage-zrs)
+   - [Geo-Redundant Storage GRS](#geo-redundant-storage-grs)
+   - [Read-Access Geo-Redundant Storage RA-GRS](#read-access-geo-redundant-storage-ra-grs)
+   - [Geo-Zone-Redundant Storage GZRS](#geo-zone-redundant-storage-gzrs)
+   - [Read-Access Geo-Zone-Redundant Storage RA-GZRS](#read-access-geo-zone-redundant-storage-ra-gzrs)
+- [Redundancy Pricing](#redundancy-pricing)
+- [Performance Levels](#performance-levels)
+- [Data Transfer into Azure Storage](#data-transfer-into-azure-storage)
+- [Migration Tools](#migration-tools)
 - [Resources](#resources)
+
+
 
 
 ## Benefits of Azure Storage 
@@ -102,6 +116,7 @@
 - Premium performance for general-purpose V2 and general-purpose V1 accounts is available for disk storage and page blobs. For block blobs and append blobs, it's exclusive to block blob accounts. Files-only storage accounts support premium performance for files.
 
 ### Important Points
+
 - Archive storage and blob-level tiering support only block blobs.
 - ZRS and GZRS are available only for standard general-purpose V2 accounts, block blob accounts, and file storage accounts in certain regions.
 - Premium performance for general-purpose V2 and general-purpose V1 accounts is only for disk storage and page blobs. Block blob accounts support premium performance for block blobs and append blobs, and files-only storage accounts support premium performance for files.
@@ -110,7 +125,6 @@ Detailed information on the different storage accounts available at: [https://do
 
 
 <small>[Back to the top](#azure-storage)</small>
-
 
 ## Azure Blob Storage 
 
@@ -157,6 +171,29 @@ The storage account, containers, and blobs have a hierarchical relationship, for
 
 <small>[Back to the top](#azure-storage)</small>
 
+### Access Tiers 
+
+- **Hot:** 
+
+   - Intended for frequently accessed data.
+
+- **Cool:** 
+
+   - For infrequently-accessed data.
+   - Optimized for data still needing immediate retrieval.
+   - Lower storage cost but higher cost for reads and writes.
+   - Data must be in cool tier for at least 30 days.
+
+- **Archive:** 
+
+   - Cost-effective for rarely accessed data 
+   - Retrieval times of up to 15 hours.
+   - 5x cheaper than cool tier for storage but much more expensive for reads.
+   - Data must be in archive tier for at least 180 days.
+
+Blob Storage allows setting a default access tier for the entire storage account and supports individual blob tier configurations. 
+
+**Azure Data Lake Storage** Gen2 provides hierarchical storage on top of Blob Storage for specialized use cases.
 
 ### From the UI  
 
@@ -291,7 +328,6 @@ Azure Table Storage is a NoSQL datastore, providing a schema-less and flexible a
 - Suited for scenarios with large amounts of structured data, especially when complex joins, foreign keys, or stored procedures are not necessary.
 - Useful for scenarios involving large datasets that require fast access without the need for complex relational features. 
 
-
 ### Components 
 
 <p align=center>
@@ -396,6 +432,129 @@ Azure Managed Disks provide a virtualized, scalable, and highly available storag
 <small>[Back to the top](#azure-storage)</small>
 
 
+## Redundancy Options 
+
+Azure Storage provides six redundancy options, ranging from locally-redundant to read-access geo-zone-redundant storage. Each option offers different levels of redundancy and pricing. 
+
+![](../../Images/azure-redundancy-options-complete-diagram.png)
+
+Note that not all of these options are available in every region or for every type of data.
+
+
+### Locally-Redundant Storage (LRS)
+
+- **Replication:** Across racks in the same data center.
+- **Disaster Consideration:** Data could be lost in a data center disaster.
+- **Recommendation:** Use only if data reconstruction is easily achievable.
+
+   ![](../../Images/azure-redundancy-lrs.png)
+
+### Zone-Redundant Storage (ZRS)
+
+- **Replication:** Across three zones within one region.
+- **Disaster Consideration:** Ensures data availability even if an entire zone goes down.
+
+   ![](../../Images/azure-redundancy-zrs.png)
+
+### Geo-Redundant Storage (GRS)
+
+- **Replication:** Across two regions.
+- **Disaster Consideration:** Requires geo-failover in the event of a regional disaster to access data in the secondary region.
+
+   ![](../../Images/azure-redundancy-grs.png)
+
+### Read-Access Geo-Redundant Storage (RA-GRS)
+
+- **Replication:** Same as GRS.
+- **Additional Feature:** Allows reading data immediately from the secondary region in case of a disaster in the primary region.
+- **Write Access:** Not available until Microsoft restores availability in the primary region.
+
+   ![](../../Images/azure-redundancy-grs.png)
+
+### Geo-Zone-Redundant Storage (GZRS)
+
+- **Replication:** Across three availability zones in the primary region.
+- **Difference from GRS:** Combines zone-redundant storage and geo-redundant storage.
+
+   ![](../../Images/azure-geo-zone-gzrs.png)
+
+### Read-Access Geo-Zone-Redundant Storage (RA-GZRS)
+
+- **Replication:** Same as GZRS.
+- **Additional Feature:** Allows immediate reading from the secondary region in case of a disaster in the primary region.
+- **Write Access:** Not available until Microsoft restores availability in the primary region.
+
+   ![](../../Images/azure-redundancy-zrs.png)
+
+
+
+## Redundancy Pricing 
+
+Naturally, each of these redundancy options has a different price. 
+
+- Locally-redundant storage being the cheapest and 
+- Read-access geo-zone-redundant storage being the most expensive. 
+- RA-GRS is actually more expensive than GZRS even though it’s less redundant because it provides instant access to your data in the secondary region. 
+
+![](../../Images/azure-cost-redundancy-options-complete.png)
+
+<small>[Back to the top](#azure-storage)</small>
+
+
+
+## Performance Levels
+
+Aside from the redundancy level and the default access tier, there’s yet another option you need to set when you create a storage account: the performance level.
+
+- **Standard (Default)**
+
+   - **Account Type:** General-purpose v2 account.
+   - **Recommendation:** Suitable for most cases.
+
+- **Premium**
+
+   - **Account Type:** Higher-performance option.
+   - **Consideration:** More expensive and limits redundancy options.
+   - **Usage:** Recommended only if significantly faster performance is necessary.
+
+
+## Data Transfer into Azure Storage
+
+- **Azure Portal**
+
+   - **Use:** For uploading a small number of files from the desktop.
+   - **Capability:** Allows file upload and download directly through the portal.
+
+- **AzCopy (Command-Line Utility)**
+
+   - **Use:** For faster upload/download, especially for a large number of files.
+   - **Capability:** Supports file and folder copying, including cross-cloud transfers.
+
+- **Azure Storage Explorer (Graphical User Interface)**
+
+   - **Use:** For managing files, changing access tiers, and copying files using a graphical interface.
+   - **Capability:** Provides file management features beyond simple copying.
+
+- **Azure File Sync**
+
+   - **Use:** Specialized use case for creating a local cache of Azure Files on Windows servers.
+   - **Capability:** Enhances access speed to an Azure file share in an on-premises environment.
+
+## Migration Tools
+
+
+- **Azure Migrate**
+
+   - **Use:** Comprehensive tool for discovering, assessing, and migrating on-premises servers, web apps, and databases to Azure.
+   - **Process:** Discovers on-premises resources, assesses size and cost of equivalent Azure services, facilitates migration.
+
+- **Azure Data Box**
+
+   - **Use:** For sending a large amount of data during migration.
+   - **Process:** Microsoft ships a Data Box storage device, data is copied to the device, shipped back to Microsoft, and data is transferred to the Azure storage account.
+   - **Consideration:** Typically used for data transfers exceeding 40 terabytes due to time and expense involved.
+
+<small>[Back to the top](#azure-storage)</small>
 
 ## Resources 
 
