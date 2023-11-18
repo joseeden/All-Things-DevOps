@@ -256,11 +256,31 @@ Fundamentals:
 - [Becoming a Cloud Architect — Learn the Fundamentals](https://cloudacademy.com/learning-paths/becoming-a-cloud-architect-lets-learn-the-fundamentals-2284/)
 
 
-AWS Security:
+AWS:
 
 - [AWS Certified Security - Specialty](https://www.packtpub.com/product/aws-certified-security-specialty-video/9781838550103)
 
-AWS Networking:
-
 - [Security - Specialty Certification Preparation for AWS](https://cloudacademy.com/learning-paths/security-specialty-certification-preparation-for-aws-201/)
+
+
+Azure: 
+
+- [Learning About Azure](https://cloudacademy.com/learning-paths/learning-about-azure-5663/)
+
+- [AZ-900 Exam Preparation: Microsoft Azure Fundamentals](https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/)
+
+- [Microsoft Azure Administration](https://cloudacademy.com/learning-paths/azure-administration-10873/)
+
+- [Microsoft Learn - AZ-104 Labs](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)
+
+- [Azure Networking](https://cloudacademy.com/learning-paths/azure-networking-3299/) 
+
+- [AZ-400 Exam Prep: Microsoft Azure DevOps Solutions](https://cloudacademy.com/learning-paths/az-400-exam-prep-microsoft-azure-devops-solutions-1-1368/)
+
+- [Azure Services for Security Engineers](https://cloudacademy.com/learning-paths/cloud-academy-azure-services-for-security-engineers-73/)
+
+- [Getting Hands-On with Azure CLI](https://cloudacademy.com/learning-paths/azure-cli-3377/)
+
+Containers and Kubernetes:
+
 
