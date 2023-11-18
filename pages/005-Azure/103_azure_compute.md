@@ -6,6 +6,7 @@
 
 
 
+- [Azure Compute](#azure-compute)
 - [Compute Services](#compute-services)
 - [Virtual Machines](#virtual-machines)
    - [Pre-requisite Resources](#pre-requisite-resources)
@@ -25,8 +26,6 @@
       - [Scaling](#scaling)
       - [Considerations](#considerations)
 - [Resources](#resources)
-
-
 
 
 

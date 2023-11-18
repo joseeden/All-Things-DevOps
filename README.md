@@ -146,9 +146,17 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
     
     - [Security](pages/005-Azure/107_azure_security.md)
 
+    - [Identity and Access Management (IAM)](pages/005-Azure/110_azure_iam.md)
+
     - [LoadBalancers](pages/005-Azure/108_azure_loadbalancers.md)
     
     - [Container Services](pages/005-Azure/109_azure_container.md) 
+
+- [Zero Trust and Defense in Depth](pages/005-Azure/112_azure_zero_trust_defense_in_depth.md)
+
+- [Troubleshooting, Governance, and Compliance](pages/005-Azure/113_azure_tshooting_compliance_governance.md) 
+
+- [Azure Service Level Agreements and Lifecycle](pages/005-Azure/111_azure_sla.md) 
 
 
 ## Infrastructure as Code 

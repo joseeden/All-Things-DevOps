@@ -11,10 +11,6 @@
     - [Azure Monitor](#azure-monitor)
     - [Azure Sentinel](#azure-sentinel)
 - [Identity and Access Management](#identity-and-access-management)
-    - [Role-Based Access Control RBAC](#role-based-access-control-rbac)
-    - [Microsoft Entra ID previously "Azure Active Directory"](#microsoft-entra-id-previously-azure-active-directory)
-    - [Azure AD Services](#azure-ad-services)
-    - [Azure Multi-Factor Authentication MFA](#azure-multi-factor-authentication-mfa)
 - [Networking Security](#networking-security)
     - [Network Security Groups NSG](#network-security-groups-nsg)
     - [Azure VPN Gateway](#azure-vpn-gateway)
@@ -38,6 +34,7 @@
     - [Configuration](#configuration)
     - [Masking Functions](#masking-functions)
 - [Resources](#resources)
+
 
 
 ## Shared Responsibility Model
@@ -244,96 +241,7 @@ Azure Sentinel is a cloud-based security information event management (SIEM) sol
 
 Azure provides a comprehensive suite of access management and identity services, allowing organizations to tailor their security measures based on specific needs. 
 
-- Role-Based Access Control (RBAC) ensures granular control over resource Access.
-- Azure AD facilitates secure identity and access management for users, applications, and external collaborations. 
-- Additionally, services like Azure AD DS and Azure MFA enhance security and streamline authentication processes.
-
-### Role-Based Access Control (RBAC)
-
-RBAC is an authorization system built on Azure Resource Manager, providing fine-grained access management for Azure resources.
-- Manages user access to specific Azure resources, defining their permissions and scope.
-- Enables segregation of duties, granting users the least privilege needed for their tasks.
-- Minimizes security risks by granting least privilege.
-- Effective in complex organizations with diverse resource needs.
-
-**Example Scenario**
-  - Allow different user groups to manage distinct resources (e.g., VMs, virtual networks, SQL databases) based on their roles.
-  - Enables segregation of duties within your organization by allowing only the least amount of access that is needed by users to do their jobs.
-
-![](../../Images/azure-rbac-recommended-by-azure.png)
-
-<small>[Back to the top](#azure-security)</small>
-
-### Microsoft Entra ID (previously "Azure Active Directory")
-
-Cloud-based identity and access management service by Microsoft which allows you to control access to internal and external resources. Applicable to IT Admins, App Developers, and service subscribers.
-
-**Usage**
-
-- IT Admins: 
-   - Control access to applications
-   - Enforce multi-factor authentication
-   - Automate user provisioning.
-
-- App Developers: 
-   - Add single sign-on to applications.
-
-- Subscribers: 
-   - Automatic Azure AD tenants for services like Microsoft 365, Office 365, and Azure.
-
-<small>[Back to the top](#azure-security)</small>
-
-### Azure AD Services
-
-**Azure AD B2B (Business-to-Business)**
-- Enables secure sharing of apps and services with guest users from external organizations, while allowing them to retain control over their data.
-- Provides an easy-to-use invitation and redemption process for external users to use their own credentials to access partner resources.
-
-    ![](../../Images/azure-b2b.png)
-
-**Azure AD B2C (Business-to-Customer)**
-- Offers identity as a service for customer access via single sign-on.
-- Supports standards-based authentication protocols::
-    - OpenID Connect
-    - OAuth 2.0
-    - SAML
-- Integrates with various applications and commercial software.
-
-    ![](../../Images/azure-b2ccc.png)
-
-**Azure AD Domain Services (Azure AD DS)**
-- Cloud offering providing managed domain services compatible with on-prem Active Directory.
-- Eliminates the need for deploying, managing, or patching domain controllers.
-- Access to resources can be controlled through existing groups and user accounts.
-- Replicates identity information from Azure AD or synchronizes from on-prem Active Directory.
-- Use Azure AD Connect to sync on-prem AD with you Azure AD Domain Services.
-- Features include:
-    - Domain Join
-    - LDAP
-    - Kerberos
-    - NTLM Authentication
-    - Group Policy support
-
-    ![](../../Images/azure-adds-sync-onprem-to-azure-ad.png)
-
-<small>[Back to the top](#azure-security)</small>
-
-### Azure Multi-Factor Authentication (MFA)
-
-Two-step verification for enhanced security, requiring multiple authentication methods.
-- Combines the following:
-    - something the user knows (password), 
-    - something they possess (e.g., smartphone), and 
-    - something they are (biometrics).
-- Usage:
-   - Protects data and applications without compromising user experience.
-   - Included in Azure AD Premium, Microsoft 365 Business, Azure AD Free, and standalone Office 365 licenses.
-   - Additional features in premium versions, including Conditional Access policies.
-   <br>
-
-    ![](../../Images/azure-mfa-how-to-get.png)
-
-<small>[Back to the top](#azure-security)</small>
+For more information, please see the [Azure IAM](./110_azure_iam.md) page.
 
 ## Networking Security
 
