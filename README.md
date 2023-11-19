@@ -255,6 +255,8 @@ Fundamentals:
 
 - [Becoming a Cloud Architect — Learn the Fundamentals](https://cloudacademy.com/learning-paths/becoming-a-cloud-architect-lets-learn-the-fundamentals-2284/)
 
+- [Free Project Management Courses](https://www.pmi.org/learning/training-development/free-elearning-courses)
+
 
 AWS:
 
@@ -282,5 +284,7 @@ Azure:
 - [Getting Hands-On with Azure CLI](https://cloudacademy.com/learning-paths/azure-cli-3377/)
 
 Containers and Kubernetes:
+
+- [Certified Kubernetes Administrator (CKA) Exam Preparation](https://cloudacademy.com/learning-paths/certified-kubernetes-administrator-exam-preparation-242/)
 
 
