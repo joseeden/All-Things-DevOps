@@ -7,6 +7,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 ## Notes
 
+- [Notes - Setting Up Development Laptop](pages/001-Notes/002-Setting-up-dev-laptop.md)
 - [Notes - IDE and Terminal](pages/001-Notes/000-IDE.md)
 - [Notes - DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
 
