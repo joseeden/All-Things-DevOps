@@ -1,11 +1,16 @@
 
-# DevOps Projects 
+# DevOps Projects and Labs
 
-> *This is an ongoing list. I am still in the process of compiling all the projects into this repository.*
+> This is an ongoing list. 
+> Currently in the process of compiling all the project files and source code.
 
 
 ## AWS 
 
+- EKS - Deploy EKS Cluster using Terraform 
+- EKS - Deploy EKS Cluster using Terraform with a custom AMI via Packer
+- EKS - Deploy EKS Cluster using Terraform with a custom AMI via AWS Image Builder
+- EKS - Depoy a Web Application using ArgoCD and GitOps 
 - Lambda - Auto-shutdown of AWS Resources 
 - Lambda - Auto-start of AWS Resources 
 - Lambda - Auto-rotate AWS Access Keys 
@@ -16,12 +21,20 @@
 
 ## Azure 
 
-- Synchronize Files across server with Azure File Sync 
-- Azure Key Vault and Disk Encryption 
-- Deploy Custom App Image to Container Apps using Azure Container Registry
-- Deploy and Monitor Azure App Service Web Apps 
-- Backup and Restore VMs using Azure Backup 
-
+- Administration - Managing Microsoft Entra ID Identities
+- Administration - Managing Subscriptions and RBAC
+- Administration - Managing Governance via Azure Policy
+- Administration - Managing Azure resources by Using ARM Templates
+- Administration - Synchronize Files across server with Azure File Sync 
+- Administration - Deploy and Monitor Azure App Service Web Apps 
+- Administration - Backup and Restore VMs using Azure Backup 
+- Security - Azure Key Vault and Disk Encryption 
+- Security - Privileged Identity Management
+- Security - Deploy and Configure Azure Firewall
+- Security - Enabling Microsoft Defender for Azure SQL Database 
+- Security - Azure API Management Policies and Security 
+- Security - Securing Azure Storage Account using Private Endpoints
+- DevOps - Deploy Custom App Image to Container Apps using Azure Container Registry
 
 ## Infrastructure as Code 
 
@@ -38,6 +51,7 @@
 - Deploy PostgreSQL using Ansible
 - Deploy Kafka and Zookeeper using Ansible
 - Deploy Apache Flink using Ansible 
+- Deploy Tomcat Server using Ansible
 - Deploy Graylog using Ansible
 
 ## CICD 
