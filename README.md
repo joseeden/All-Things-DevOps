@@ -1,7 +1,6 @@
 
 # All Things DevOps 
 
-All-in-one stop for all my notes in various DevOps topics. 
 This repository contains various labs, notes, ideas, and lessons that I've gathered over the years working on various DevOps projects. 
 
 
@@ -10,6 +9,10 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Notes - Setting Up Development Laptop](pages/001-Notes/002-Setting-up-dev-laptop.md)
 - [Notes - IDE and Terminal](pages/001-Notes/000-IDE.md)
 - [Notes - DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
+
+## Projects 
+
+The complete list of projects can be found [here](projects/README.md).
 
 ## Foundations 
 
@@ -22,30 +25,6 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Web Basics](pages/002-Becoming-a-Cloud-Architect/010-Web-Fundamentals.md)
 
 - [Containers](pages/002-Becoming-a-Cloud-Architect/013-Containers.md)
-
-## Linux 
-
-- [Linux Labs Repo](https://github.com/joseeden/All-Things-Linux)
-
-- [Kodekloud Engineer Labs](https://github.com/joseeden/KodeKloud_Tasks)
-
-- [Serious Shell Programming](https://freebsdfrau.gitbook.io/serious-shell-programming/)
-
-- [Unofficial Bash Strict Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
-
-- [Filenames and Pathnames in Shell: How to do it Correctly](https://dwheeler.com/essays/filenames-in-shell.html)
-
-- [ShellCheck - A shell script static analysis tool](https://github.com/koalaman/shellcheck)
-
-## Git 
-
-- [Git Basics](pages/003-Git/001-git-basics.md)
-
-- [Branching](pages/003-Git/002-git-branching.md)
-
-- [Top 10 Git Commands](pages/003-Git/003-git-top-10.md)
-
-- [Challenge-Git](pages/003-Git/050-challenger-1.md)
 
 
 ## Cloud - Fundamentals
@@ -160,13 +139,41 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Azure Service Level Agreements and Lifecycle](pages/005-Azure/111_azure_sla.md) 
 
 
+## Linux 
+
+- [All-Things-Linux Projects Repository](https://github.com/joseeden/All-Things-Linux)
+
+- [Kodekloud Engineer Labs](https://github.com/joseeden/KodeKloud_Tasks)
+
+- [Useful Links:](.)
+
+    - [Serious Shell Programming](https://freebsdfrau.gitbook.io/serious-shell-programming/)
+
+    - [Unofficial Bash Strict Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
+
+    - [Filenames and Pathnames in Shell: How to do it Correctly](https://dwheeler.com/essays/filenames-in-shell.html)
+
+    - [ShellCheck - A shell script static analysis tool](https://github.com/koalaman/shellcheck)
+
+## Git 
+
+- [Git Basics](pages/003-Git/001-git-basics.md)
+
+- [Git Branching](pages/003-Git/002-git-branching.md)
+
+- [Git Commands - Top 10](pages/003-Git/003-git-top-10.md)
+
+- [Challenge-Git](pages/003-Git/050-challenger-1.md)
+
+
 ## Infrastructure as Code 
 
-- [Terraform](https://github.com/joseeden/All-Things-Terraform) 
+- [All-Things-Terraform Projects Repository](https://github.com/joseeden/All-Things-Terraform) 
+
+- [All-Things-Ansible Projects Repository](xxx)
 
 - [Terraformer](https://github.com/GoogleCloudPlatform/terraformer)
 
-- [Ansible](xxx)
 
 ## CICD
 

@@ -4,7 +4,6 @@
 > <small>This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.<br>To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)</small>
 
 
-
 - [Benefits of Azure Storage](#benefits-of-azure-storage)
 - [Core Azure Storage Services](#core-azure-storage-services)
 - [Storage Account types](#storage-account-types)
@@ -261,6 +260,52 @@ For more information: [Azure Blob Storage Introduction](https://docs.microsoft.c
 
 <small>[Back to the top](#azure-storage)</small>
 
+### Lifecycle Management 
+
+Effectively configuring Azure Blob Storage lifecycle management policies is crucial for optimizing costs associated with blob access and storage. 
+
+
+#### Setting Up Lifecycle Management Policies
+
+1. **Scenario:**
+   - Optimize costs for monthly reports with varying access patterns over ten years.
+
+2. **Portal Setup:**
+   - Access the Azure portal, select the storage account, and navigate to "Lifecycle management."
+   - Create a new rule named "LifecycleForReports."
+   - Apply the rule to all blobs, specifically "Block blobs."
+   - Define conditions to move blobs across tiers, example:
+      - Move to Cool tier after 30 days
+      - Move to Archive tier after 12 months
+      - Delete after 10 years
+
+3. **Additional Customizations:**
+   - Implement filters based on blob names using blob prefix.
+   - Enable access tracking for last access time-based conditions.
+
+#### Command Line Configuration
+
+1. **JSON File Creation:**
+   - Create a JSON file containing the configured rules in the portal.
+   - The JSON structure includes rule actions and filters.
+
+2. **Uploading to Cloud Shell:**
+   - In Cloud Shell, upload the JSON file.
+   - Utilize Azure CLI commands for management policy creation.
+
+3. **Command Example:**
+   - Use the command: 
+
+      ```bash
+      az storage account management-policy create --account-name YOUR_ACCOUNT_NAME --policy YOUR_JSON_FILE_NAME --resource-group YOUR_RESOURCE_GROUP_NAME  
+      ```
+
+4. **Applying Policies:**
+   - Execute the command to apply the lifecycle policy to the specified storage account.
+   - Policies take up to 24 hours to go into effect.
+
+
+<small>[Back to the top](#azure-storage)</small>
 
 
 ## Azure Files 
@@ -275,6 +320,7 @@ Azure Files makes file shares available in the cloud, offering a fully managed s
 - Useful for lifting and shifting applications to the cloud, especially those relying on file shares for data storage.
  
 ### Management and Operations
+
 - **Fully Managed**: Azure Files is a fully managed service, eliminating concerns about hardware management, OS installation, patching, and security upgrades.
 - **Command Line and Portal Management:**
     - Use familiar PowerShell commands and Azure CLI commands for creating, mounting, and managing Azure file shares.
@@ -432,6 +478,7 @@ Azure Managed Disks provide a virtualized, scalable, and highly available storag
 
 
 <small>[Back to the top](#azure-storage)</small>
+
 
 
 ## Redundancy Options 
