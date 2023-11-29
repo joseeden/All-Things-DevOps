@@ -11,13 +11,17 @@
 - EKS - Deploy EKS Cluster using Terraform with a custom AMI via Packer
 - EKS - Deploy EKS Cluster using Terraform with a custom AMI via AWS Image Builder
 - EKS - Depoy a Web Application using ArgoCD and GitOps 
-- Lambda - Auto-shutdown of AWS Resources 
-- Lambda - Auto-start of AWS Resources 
-- Lambda - Auto-rotate AWS Access Keys 
-- Lambda - Test TCP Connection to EC2 Instance
-- Lambda - Test UDP Connection to EC2 Instance
-- Lambda - Test Connection to S3 Bucket 
-
+- Lambda - Website Monitoring with Aurora
+- Lambda - Custom Logic Workflows wth Step Functions
+- Lambda - Automated Stored Procedures
+- Lambda - Real-Time Data Processing
+- Lambda - ETL Data Pipeline
+- Lambda - Automated Shutdown of AWS Resources 
+- Lambda - Automated Bootup of AWS Resources 
+- Lambda - Automated Rotation of AWS Access Keys 
+- Lambda - TCP Connectivity Test to EC2 Instance
+- Lambda - UDP Connectivity Test to EC2 Instance
+- Lambda - Connectivity Test to S3 Bucket 
 
 ## Azure 
 
