@@ -165,13 +165,12 @@ TODO:
 
 8. In a team setting, a review will be done by another team member before it is merged. The members names will appear in the "Reviewer" section at the left. This is a self project, simply clik the Merge pull request > Confirm merge.
 
-    <p>
-    <img src='../../Images/merging-pull-request-for-self-project.png' style='border: 1px solid black' />
+    |![](../../Images/merging-pull-request-for-self-project.png)|
+    |-|
     </p>
 
-    <p>
-    <img src='../../Images/gcp-devops-project-merged-pull-request-done-self-projectsssss.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-merged-pull-request-done-self-projectsssss.png)|
+    |-|
     
     There is an option to delete the branch after every merge to the master branch, as this is a common practice. Whenever changes are merged to the master branch, it means that all changes have undergone testing, has been reviewed, and no additional change is needed. 
 
@@ -242,9 +241,8 @@ TODO:
     localhost:5000 
     ```
 
-    <p>
-    <img src='../../Images/gcp-devops-project-flask-application-is-alive-can-be-accessed-through-browser.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-flask-application-is-alive-can-be-accessed-through-browser.png)|
+    |-|
 
 12. Since the application is running locally, we can now commit the changes. But first, make sure to check your current branch and verify the changes. Afterwards, commit and push the changes. 
 
@@ -304,26 +302,22 @@ TODO:
 
 13. Back at the Github repo, switch to the feature branch and open a pull request. 
 
-    <p>
-    <img src='../../Images/gcp-devops-project-working-app-pushing-committing-changes-to-github.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-working-app-pushing-committing-changes-to-github.png)|
+    |-|
 
-    <p>
-    <img src='../../Images/gcp-devops-project-opened-pull-requests-for-changes-in-the-flask-app.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-opened-pull-requests-for-changes-in-the-flask-app.png)|
+    |-|
 
     Merge the PR.
 
-    <p>
-    <img src='../../Images/gcp-devops-project-merged-working-changes-to-the-repo.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-merged-working-changes-to-the-repo.png)|
+    |-|
 
 
 14. At this point, we can now safely delete the feature branch. Click Delete branch.
 
-    <p>
-    <img src='../../Images/gcp-devops-project-safely-deletee-feature-branch-sprint-01.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-safely-deletee-feature-branch-sprint-01.png)|
+    |-|
 
 
 </details>
@@ -342,10 +336,8 @@ TODO:
 
 1. Login to your GCP account and go to the GKE menu. Click CREATE > Standard: You manage your cluster > CONFIGURE. 
 
-    <p>
-    <img src='../../Images/gcp-devops-project-create-gke-cluster.png' style='border: 1px solid black' />
-    </p>
-
+    |![](../../Images/gcp-devops-project-create-gke-cluster.png)|
+    |-|
 
 2. Provide the following specifics for the cluster:
 
@@ -355,16 +347,14 @@ TODO:
     - Location type: Zonal 
     - Zone: asia-southeast1-a
 
-    <p>
-    <img src='../../Images/gcp-devops-project-create-gke-cluster-clsuter-1-asia.png' style='border: 1px solid black' />
-    </p>
-    <p>
+    |![](../../Images/gcp-devops-project-create-gke-cluster-clsuter-1-asia.png)
+    |-|
 
 
 3. The cluster creation may take up 5-10 mins. Once done, it should appear in the Clusters menu. Click the clsuter name to see details of the cluster. 
 
-    <img src='../../Images/gcp-devops-project-cluster-1-created-yeyy.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-cluster-1-created-yeyy.png)
+    |-|
 
 4. **Maintenance window**. For production environments, it is recommended to change the maintenance window from Any time to xx.  
 
@@ -373,9 +363,8 @@ TODO:
 
 5. To connect to the cluster, click CONNECT. It will show the available options to connect to the cluster. Click RUN IN CLOUD SHELL. This will open a Linux terminal.
 
-    <p>
-    <img src='../../Images/gcp-devops-project-connect-the-gke-cluster-cluster-1.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-connect-the-gke-cluster-cluster-1.png)
+    |-|
 
     In the "Authorize Cloud Shell" window, click AUTHORIZE. A kubeconfig will then be generated.  
 
@@ -429,10 +418,8 @@ Available GCP Tools:
 
 Architecture:
 
-<p align=center>
-<img src='../../Images/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png'
-style='border: 1px solid black' >
-</p>
+|![](../../Images/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)|
+|-|
 
 </details>
 
@@ -453,30 +440,25 @@ TODO:
 
 In traditional Jenkins, we use **Webhooks** to monitor activities in a repository. The Jenkins job will be triggered when new changes are committed. 
 
-<p>
-<img src='../../Images/gcp-devops-projet-how-traditional-jenkins-works.png' style='border: 1px solid black' />
-</p>
+|![](../../Images/gcp-devops-projet-how-traditional-jenkins-works.png)|
+|-|
 
 In Cloud Build, we can use a **Cloud Build Trigger.** This will be the event that will start the Cloud Build job. This can be any push that is done on the main/master branch. This can also be configured for other branches.
 
-<p>
-<img src='../../Images/gcp-devops-project-how-cloud-buikld-trigger-works.png' style='border: 1px solid black' />
-</p>
+|![](../../Images/gcp-devops-project-how-cloud-buikld-trigger-works.png)|
+|-|
 
 Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain the instructions. This is the CD code.
 
-<p>
-<img src='../../Images/gcp-devops-project-flow-make-code-changes-up-to-storing-docker-image.png' style='border: 1px solid black' />
-</p>
+|![](../../Images/gcp-devops-project-flow-make-code-changes-up-to-storing-docker-image.png)|
+|-|
 
 **Connecting Github repo to Cloud Build**
 
 1. First, search for Cloud Build. If this is the first you've used it, you'll need to enable the Cloud Build API. Refresh the window or try searching Cloud Build from the search bar again. 
 
-    <p>
-    <img src='../../Images/gcp-devops-project-enable-cloudbuild-api.png' style='border: 1px solid black' />
-    </p>
-
+    |![](../../Images/gcp-devops-project-enable-cloudbuild-api.png)|
+    |-|
 
 
 2. In the Cloud Build homepage, go to Triggers > MANAGE REPOSITORIES > CONNECT REPOSITORY.
@@ -571,9 +553,9 @@ TODO:
 
     From the GCP console, go to Workloads > SHOW SYSTEM WORKLOADS > Namespace dropdown bar.
 
-    <p>
-    <img src='../../Images/gcp-devops-proj-create-namspace-gcp-devops-prod.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-proj-create-namspace-gcp-devops-prod.png)|
+    |-|
+
 
 2. Back in your local terminal, create another branch. 
 
@@ -596,11 +578,11 @@ TODO:
 
 5. Commit the code to Github repo. 
 
-```bash
-git add .
-git commit -m "Update the manifest with deployment and service." 
-gt push 
-```
+    ```bash
+    git add .
+    git commit -m "Update the manifest with deployment and service." 
+    gt push 
+    ```
 
 6. Switch to the Github UI and then to the branch. Create a PR and then merge it. Once the changes get merged to the master branch, it will trigger the Cloud Build.
 
