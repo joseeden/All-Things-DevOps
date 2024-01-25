@@ -40,6 +40,10 @@
 - Security - Securing Azure Storage Account using Private Endpoints
 - DevOps - Deploy Custom App Image to Container Apps using Azure Container Registry
 
+## Google Cloud 
+
+- [GCP DevOps Project](03-Google-Cloud/100-GCP-DevOps-Project,md)
+
 ## Infrastructure as Code 
 
 - Setup Development Environment in AWS using Terraform 

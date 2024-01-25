@@ -132,7 +132,13 @@ The complete list of projects can be found [here](projects/README.md).
     
     - [Container Services](pages/005-Azure/109_azure_container.md) 
 
-- [Zero Trust and Defense in Depth](pages/005-Azure/112_azure_zero_trust_defense_in_depth.md)
+- [Azure Security](#all-things-devops) 
+
+    - [AZ-500 Certification Details](pages/005-Azure/115-az-500-certification-details.md)
+
+    - [Zero Trust and Defense in Depth](pages/005-Azure/112_azure_zero_trust_defense_in_depth.md)
+
+    - [Securing Azure Solutions with Azure Active Directory](pages/005-Azure/114-Securing-solution-with-Azure-AD.md) 
 
 - [Troubleshooting, Governance, and Compliance](pages/005-Azure/113_azure_tshooting_compliance_governance.md) 
 

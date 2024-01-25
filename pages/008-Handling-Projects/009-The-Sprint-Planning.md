@@ -30,10 +30,14 @@ Your guidance on the sequencing of work to produce the highest value may be need
 
 ## Good Questions to Ask
 
-* Has the Scrum Master or Disciplined Agile Scrum Master worked with the team to determine the tasks that will be completed during the sprint?
-* Are the user story point estimates in the sprint agreed to by the team members?
-* Does everyone understand the work they need to complete during this upcoming sprint?
-* Does the workload realistically match the team’s capacity?
+- Has the Scrum Master or Disciplined Agile Scrum Master worked with the team to determine the tasks that will be completed during the sprint?
+- Are the user story point estimates in the sprint agreed to by the team members?
+- Does everyone understand the work they need to complete during this upcoming sprint?
+- Does the workload realistically match the team’s capacity? 
+
+## Stages of Sprint Planning 
+
+![](../../Images/stages-of-sptrintplanning-4-stages.png)
 
 ## The Start Of Each Sprint
 

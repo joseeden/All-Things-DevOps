@@ -4,12 +4,11 @@
 > <small>This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.<br>To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)</small>
 
 
-
 - [Identity and Access Management](#identity-and-access-management)
 - [Role-Based Access Control RBAC](#role-based-access-control-rbac)
 - [Microsoft Entra ID (previously Azure Active Directory)](#microsoft-entra-id-previously-azure-active-directory)
 - [Identity Protection](#identity-protection)
-- [Privileged Identity Management PIM](#privileged-identity-management-pim)
+- [Privileged Identity Management (PIM)](#privileged-identity-management-pim)
     - [Access Reviews](#access-reviews)
     - [Just-In-Time Access](#just-in-time-access)
     - [Audit Trail](#audit-trail)
@@ -68,7 +67,7 @@ RBAC is an authorization system built on Azure Resource Manager, providing fine-
 
 ## Microsoft Entra ID (previously "Azure Active Directory")
 
-Cloud-based identity and access management service by Microsoft which allows you to control access to internal and external resources. Applicable to IT Admins, App Developers, and service subscribers.
+Azure Active Directory is a cloud-based identity and access management service by Microsoft which allows you to control access to internal and external resources. 
 
 - It allows you to create and manage user accounts. 
 - Then when a user logs in to one of your IT systems, the system will ask for their username and password and then verify these credentials with Active Directory before letting the user in. 
