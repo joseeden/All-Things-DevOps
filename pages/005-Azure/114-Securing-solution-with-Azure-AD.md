@@ -2,6 +2,17 @@
 # Securing Azure Solutions with Azure Active Directory
 
 
+- [Azure Active Directory](#azure-active-directory)
+- [Azure AD vs. Azure AD DS vs. ADDS](#azure-ad-vs-azure-ad-ds-vs-adds)
+- [Roles in Azure AD](#roles-in-azure-ad)
+    - [Azure AD Specific Roles](#azure-ad-specific-roles)
+    - [Service-Specific Roles](#service-specific-roles)
+    - [Cross-Service Roles](#cross-service-roles)
+- [Built-in Roles](#built-in-roles)
+- [ADDS - Pros and Cons](#adds---pros-and-cons)
+
+
+
 
 
 ## Azure Active Directory 
@@ -45,7 +56,10 @@ To learn more, check out [Azure Identity and Access Management (IAM)](110_azure_
 
 ## Roles in Azure AD 
 
-![](../../Images/azure-active-directory-rolesss.png)
+<p align=center>
+<img src='../../Images/azure-active-directory-rolesss.png'
+style='border: 1px solid black'>
+</p>
 
 
 ### Azure AD Specific Roles
@@ -85,7 +99,7 @@ These are roles that are not confined to a particular service but strethc their 
 ## Built-in Roles 
 
 <p align=center>
-<img width=500 src="../../Images/azure-builtin-rolesss.png">
+<img width=500 src="../../Images/azure-builtin-rolesss.png" style='border: 1px solid black'>
 </p>
 
 
@@ -130,5 +144,4 @@ Cons:
 - Limited network integration 
 - Availability may vary based on regions 
 - Cost considerations 
-
 
