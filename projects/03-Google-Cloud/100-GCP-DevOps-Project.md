@@ -54,10 +54,7 @@ TODO:
 
 1. Create the Github repository. 
     
-    <!-- ![](../../Images/gcp-devops-project-1.png) -->
-    <p>
-    <img src="../../Images/gcp-devops-project-1.png" style="border: 1px solid black" />
-    </p>
+    ![](../../Images/gcp-devops-project-1.png)
 
 2. Clone the repository locally.
 
@@ -90,24 +87,24 @@ TODO:
 
 
     <p>
-    <img width=500  src='../../Images/enable-branch-protection-how.png' style='border: 1px solid black' />
+    <img width=600  src='../../Images/gcp-devops-project-enable-branch-protections-how-it-is.png'>
     </p>
+
+    ![]()
 
     To do this, go back to the Github repo > Settings > Branches > Add branch protection rule
 
-    <p>
-    <img src='../../Images/enable-branch-protection-settings-branches.png' style='border: 1px solid black' />
-    </p>
+
+    ![](../../Images/gcp-devops-projct-enabled-branch-protection-settings.png)
 
     Put in "master" for branch  name and then tick the box for "Require a pull reqeust before merging. Click Create at the bottom.
 
-    <p>
-    <img src='../../Images/enable-branch-protection-require-pull-request.png' style='border: 1px solid black' />
-    </p>
 
-    <p></p>
-    <img src='../../Images/enabled-branch-protection-done.png' style='border: 1px solid black' />
-    </p>
+    ![](../../Images/gcp-devops-project-enabled-branch-protection-require-pull-request-with-borders.png)
+
+
+    ![](../../Images/gcp-devops-project-enabled-branch-protection-doneee.png)
+
 
     **Note**: In a team setting, you may need to add an "Approval" stage so that any changes will be reviewed by another team member before it is pushed to the master branch.
 
@@ -160,13 +157,11 @@ TODO:
 
 7. Back at the Github repo, a new message will appear. Click the "Compare & pull request". The original text and the changes will appear at the bottom, highlighted with red and green. In the "Add a description" box, specify the change made and then click "Create pull request".
 
-    <p>
-    <img src='../../Images/gcp-devops-project-add-simple-change-to-readme.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-add-simple-change-to-readme.png)|
+    |-|
 
-    <p>
-    <img src='../../Images/gcp-devops-project-create-pull-requestsss.png' style='border: 1px solid black' />
-    </p>
+    |![](../../Images/gcp-devops-project-create-pull-requestsss.png)|
+    |-|
 
 8. In a team setting, a review will be done by another team member before it is merged. The members names will appear in the "Reviewer" section at the left. This is a self project, simply clik the Merge pull request > Confirm merge.
 
