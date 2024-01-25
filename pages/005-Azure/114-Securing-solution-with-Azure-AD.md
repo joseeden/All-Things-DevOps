@@ -99,7 +99,7 @@ These are roles that are not confined to a particular service but strethc their 
 ## Built-in Roles 
 
 <p align=center>
-<img width=500 src="../../Images/azure-builtin-rolesss.png" style='border: 1px solid black'>
+<img width=500 src="../../Images/azure-builtin-rolesss.png" >
 </p>
 
 
