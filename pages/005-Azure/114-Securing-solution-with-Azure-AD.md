@@ -56,10 +56,8 @@ To learn more, check out [Azure Identity and Access Management (IAM)](110_azure_
 
 ## Roles in Azure AD 
 
-<p align=center>
-<img src='../../Images/azure-active-directory-rolesss.png'
-style='border:1px solid black'>
-</p>
+
+![](../Images/azure-active-directory-roless-with-border.png)
 
 
 ### Azure AD Specific Roles
