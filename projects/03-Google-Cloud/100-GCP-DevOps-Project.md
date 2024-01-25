@@ -450,7 +450,7 @@ In Cloud Build, we can use a **Cloud Build Trigger.** This will be the event tha
 
 Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain the instructions. This is the CD code.
 
-<p align=center>
+<p>
 <img width=500 src='../../Images/gcp-devops-project-flow-make-code-changes-up-to-storing-docker-image.png'>
 </p>
 
