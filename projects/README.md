@@ -42,7 +42,7 @@
 
 ## Google Cloud 
 
-- [GCP DevOps Project](03-Google-Cloud/100-GCP-DevOps-Project,md)
+- [GCP DevOps Project](03-Google-Cloud/100-GCP-DevOps-Project.md)
 
 ## Infrastructure as Code 
 

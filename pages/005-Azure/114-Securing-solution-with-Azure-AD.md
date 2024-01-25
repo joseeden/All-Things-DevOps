@@ -58,7 +58,7 @@ To learn more, check out [Azure Identity and Access Management (IAM)](110_azure_
 
 <p align=center>
 <img src='../../Images/azure-active-directory-rolesss.png'
-style='border: 1px solid black'>
+style='border:1px solid black'>
 </p>
 
 
