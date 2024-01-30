@@ -14,7 +14,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 The complete list of projects can be found [here](projects/README.md).
 
-## Foundations 
+## Networking
 
 - [IT Fundamentals](pages/002-Becoming-a-Cloud-Architect/020-Fundamentals-of-IT.md)
 
@@ -26,6 +26,9 @@ The complete list of projects can be found [here](projects/README.md).
 
 - [Containers](pages/002-Becoming-a-Cloud-Architect/013-Containers.md)
 
+## Security 
+
+- [Terminologies](pages/030-Security/Terminologies.md)
 
 ## Cloud - Fundamentals
 
