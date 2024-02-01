@@ -14,13 +14,11 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 
 The complete list of projects can be found [here](projects/README.md).
 
-## Networking
+## Foundations
 
 - [IT Fundamentals](pages/002-Becoming-a-Cloud-Architect/020-Fundamentals-of-IT.md)
 
 - [Networking](pages/002-Becoming-a-Cloud-Architect/015-Networking.md) 
-
-- [Security](pages/002-Becoming-a-Cloud-Architect/016-Security.md)
 
 - [Web Basics](pages/002-Becoming-a-Cloud-Architect/010-Web-Fundamentals.md)
 
@@ -28,7 +26,52 @@ The complete list of projects can be found [here](projects/README.md).
 
 ## Security 
 
-- [Terminologies](pages/030-Security/Terminologies.md)
+- [Fundamentals](pages/030-Security/002-Security-Principles.md)
+    
+    - [Security Principles](pages/030-Security/002-Security-Principles.md)
+
+    - [Risk Management](pages/030-Security/003-Risk-Management.md)
+
+    - [Security Controls](pages/030-Security/004-Security-Controls.md)
+
+    - [Governance Elements](pages/030-Security/005-Governance-Elements.md)
+
+- [Incident Response](pages/030-Security/006-Incident-Responses.md)
+
+    - [Incident Response](pages/030-Security/006-Incident-Responses.md)
+
+    - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
+
+    - [Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
+
+- [Managing Access](pages/030-Security/009-Access-Control.md)
+
+    - [Access Control](pages/030-Security/009-Access-Control.md)
+
+    - [Defense in Depth](pages/030-Security/010-Defense-in-Depth.md)
+
+    - [Privileged Access Management](pages/030-Security/011-Privilege-Access-Management.md)
+
+- [Network Security](pages/030-Security/016-Computer-Networking.md)
+
+    - [Computer Networking](pages/030-Security/016-Computer-Networking.md)
+
+    - [Cyber Threats and Attacks](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
+
+    - [Network Security Infrastructure](pages/030-Security/018-Network-Security-Infrastructure.md)
+
+- [Security Operations](pages/030-Security/012-Data-Security.md)
+
+    - [Handling Data](pages/030-Security/012-Data-Security.md)
+
+    - [System Hardening](pages/030-Security/013-System-Hardening.md)
+
+    - [Common Security Policies](pages/030-Security/014-Common-Security-Policies.md)
+
+    - [Security Awareness Training](pages/030-Security/015-Security-Awareness-Training.md)
+
+
+- [Terminologies](pages/030-Security/001-Terminologies.md)
 
 ## Cloud - Fundamentals
 
