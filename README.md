@@ -70,7 +70,6 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Security Awareness Training](pages/030-Security/015-Security-Awareness-Training.md)
 
-
 - [Terminologies](pages/030-Security/001-Terminologies.md)
 
 ## Cloud - Fundamentals

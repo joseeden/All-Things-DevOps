@@ -9,20 +9,24 @@
     - [Threat](#threat)
     - [Threat Actor](#threat-actor)
     - [Threat Vector](#threat-vector)
+    - [Attacker](#attacker)
 - [Likelihood](#likelihood)
-- [Risk Identification](#risk-identification)
-- [Risk Assessment](#risk-assessment)
-- [Risk Treatment](#risk-treatment)
-- [Risk Priorities](#risk-priorities)
+- [Risk Management Process](#risk-management-process)
+    - [Risk Identification](#risk-identification)
+    - [Risk Assessment](#risk-assessment)
+    - [Risk Treatment](#risk-treatment)
+    - [Risk Priorities](#risk-priorities)
+- [Prioritizing RIsks](#prioritizing-risks)
 - [Risk Tolerance](#risk-tolerance)
+- [Annualized Loss Expectancy](#annualized-loss-expectancy)
 
 
 ## Importance of Risk Management 
-
-
 Information assurance and cybersecurity are key for risk management. The required cybersecurity level is determined by the entity's risk tolerance. 
 
-After risk evaluation, security controls are implemented to mitigate risks. These can stem from cyber threats (e.g., malware, social engineering) or environmental factors (e.g., fire, crime). Advanced risk management technologies identify vulnerabilities, assess threats, and quantify potential impacts.
+- Assess and evaluate risks, and then implement security controls  
+- To prioritize risk based on their impact 
+
 
 ## Risk Management Terminologies 
 
@@ -54,7 +58,7 @@ Something or someone aiming to exploit a vulnerability for unauthorized access.
 
 ### Threat Actor  
 
-In the context of cybersecurity, typical threat actors include the following:
+A Threat Actor is defined as an individual or a group posing a threat (according to NIST SP 800-150 under Threat Actor). Typical threat actors include the following:
 
 - Insiders (either deliberately, by simple human error, or by gross incompetence).
 - Outside individuals or informal groups (either planned or opportunistic, discovering vulnerability).
@@ -67,6 +71,16 @@ In the context of cybersecurity, typical threat actors include the following:
 
 The means by which a threat actor carries out their objectives.
 
+### Attacker 
+
+An Attacker is always an individual, but a Threat Actor can be either a group or an entity.
+
+The three most common goals of cybersecurity attackers are DAD:
+
+- Disclosure
+- Alteration
+- Denial
+
 ## Likelihood
 
 - **Likelihood of occurrence** 
@@ -78,7 +92,9 @@ The means by which a threat actor carries out their objectives.
     - Impact is the magnitude of harm resulting from unauthorized actions like disclosure, modification, destruction, or loss of information or system availability.
     - Consideration: Potential results if a threat materializes and an event occurs.  
 
-## Risk Identification 
+## Risk Management Process
+
+### Risk Identification 
 
 - **Risk Identification in Cybersecurity:**
   - Vigilance: Similar to watching for hazards on the street, identifying cyber risks requires constant attention.
@@ -96,7 +112,7 @@ The means by which a threat actor carries out their objectives.
   - Assistance: Assist in system-level risk assessment, focusing on processes, controls, monitoring, or incident response.
   - Opportunities: Contribute to risk management in smaller organizations lacking mitigation plans.
 
-## Risk Assessment 
+### Risk Assessment 
 
 Risk Assessment is the process of identifying, estimating, and prioritizing risks to an organization's operations, assets, individuals, and mission.
 
@@ -115,7 +131,7 @@ Risk Assessment is the process of identifying, estimating, and prioritizing risk
   - Scenario: Management may request detailed assessments.
   - Result: Reports provided for review and approval.
 
-## Risk Treatment 
+### Risk Treatment 
 
 Risk treatment involves deciding on the most appropriate actions based on management's risk attitude and the availability and cost of mitigation measures.
 
@@ -141,7 +157,7 @@ Risk treatment involves deciding on the most appropriate actions based on manage
     - Commonly done through insurance policies.    
 
 
-## Risk Priorities 
+### Risk Priorities 
 
 - **Prioritizing and Analyzing Risks:**
   - Essential step post-risk identification.
@@ -169,6 +185,17 @@ Risk treatment involves deciding on the most appropriate actions based on manage
   - Mitigation costs.
   - Potential losses in case of an incident.
 
+## Prioritizing RIsks 
+
+The highest priority should be given to risks estimated to high impact and low probability over high probability and low impact value (ISC2 Study Guide, Chapter 1, Module 2). 
+
+In qualitative risk analysis, the 'expected probability of occurrence' and the 'frequency of occurrence' refer to the same thing. 
+
+Prioritize: 
+
+- Low frequency of occurrence 
+- High expected impact
+
 ## Risk Tolerance 
 
 - **Risk Perception and Tolerance:**
@@ -189,6 +216,15 @@ Risk treatment involves deciding on the most appropriate actions based on manage
   - Risks vary by location.
   - Low tolerance leads to generator investment.
   - Higher tolerance involves multiple generators for increased assurance.
+
+## Annualized Loss Expectancy
+
+The Annualized Loss Expectancy (ALE) is a standard metric of risk exposure that refers to the expected cost per year of a given risk if it is not mitigated. 
+
+The business impact of a risk is technically considered a loss, and is better captured by a metric called **Single Loss Expectancy** (see ISC2 Study Guide, chapter 1, module 2). 
+
+The probability of a risk coming to pass in a given year is best captured by a metric called Annualized Rate of Occurrence (ARO).
+
 
 
 ----------------------------------------------

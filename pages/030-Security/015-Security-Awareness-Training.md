@@ -1,11 +1,18 @@
 
 # Security Awareness Training
 
-- [The Importance of Security Training](#the-importance-of-security-training)
+- [Learning Activities](#learning-activities)
 - [Examples](#examples)
+- [Exercises](#exercises)
+    - [Walk-Through Exercise](#walk-through-exercise)
+    - [Tabletop Exercise](#tabletop-exercise)
+    - [Simulation Exercise](#simulation-exercise)
+    - [Checklists in Incident Response](#checklists-in-incident-response)
+- [Security Awareness versus Security Training](#security-awareness-versus-security-training)
 
 
-## The Importance of Security Training 
+
+## Learning Activities
 
 Security Awareness Training communicates expectations, responsibilities, and identifies potential risks to align information security goals with the organization's mission and vision.
 
@@ -31,3 +38,32 @@ Security Awareness Training communicates expectations, responsibilities, and ide
 - **Education:** Helping users understand social engineering attacks, engaging them in creating and testing defensive strategies.
 - **Training:** Increasing proficiency in recognizing phishing attempts, practicing correct responses, including simulated phishing emails to test identification skills.
 - **Awareness:** Raising overall awareness of phishing threats, alerting users to new tactics and approaches in phishing, vishing, SMS phishing (smishing).
+
+## Exercises 
+
+### Walk-Through Exercise
+
+- Reviews each step of an incident to ensure team members know what to do.
+- Confirms clarity on actions and procedures.
+
+### Tabletop Exercise
+
+- Involves presenting a scenario, prompting team members to discuss and plan their responses.
+- Focuses on response strategies and relevant tasks.
+- Has the **least impact on system operations** because it does not involve actual disruption or use of resources.
+
+### Simulation Exercise
+
+- Recreates an actual incident to thoroughly test response capabilities.
+- Provides a realistic scenario to assess practical incident handling.
+
+### Checklists in Incident Response
+
+- Essential tools for guiding and ensuring thorough incident response.
+- Not a specific exercise type but a crucial component in the response process.
+
+## Security Awareness versus Security Training 
+
+- **Security Awareness** activities aim to capture the attention of individuals in an organization, making them conscious of security issues or concerns.
+
+- **Security training** is designed to build proficiency in a set of skills or actions in security subjects. It helps employees develop the skills and abilities to protect the organization from threats

@@ -87,7 +87,7 @@ Initiating the change management process with an RFC, including:
 - Formalized management and decision-making
 - Documented results in accounting or log entries
 
-### Approval Process
+### Approval 
 
 Key steps in the approval process involve:
 
@@ -97,7 +97,7 @@ Key steps in the approval process involve:
 - Obtaining necessary approvals or rejections
 - Documenting the approval or rejection status
 
-### Rollback Procedures
+### Rollback 
 
 Addressing the potential need for rollback with activities such as:
 
@@ -114,7 +114,6 @@ Addressing the potential need for rollback with activities such as:
 - **Coordination Responsibility**: Information Security professionals often coordinate and oversee change management.
 - **Departmental Involvement**: It can fall under IT, development, quality, or risk management departments.
 - **Comprehensive Oversight**: Involves input from end users, various IT areas, and management to ensure proper testing, approval, and communication before implementation.
-
 
 
 ----------------------------------------------

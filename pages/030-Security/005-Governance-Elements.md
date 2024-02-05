@@ -52,7 +52,7 @@ Regulations and associated fines and penalties can be imposed by governments at 
 
 ### Standards
 
-Organizations use standards as compliance documents and guidelines, ensuring alignment with regulations and best practices.
+Organizations use standards as compliance documents and guidelines, which defines the specific technical requirements for security controls, including incident response procedures.
 
 - **International Organization for Standardization (ISO):**
   - Develops international standards on various technical subjects, including information systems and security.
@@ -91,7 +91,7 @@ Policies, influenced by laws and standards, provide strategic direction and prio
 
 ### Procedures 
 
-Procedures refers to explicit, repeatable activities for specific tasks.
+Procedures typically contains the detailed steps to complete tasks supporting departmental or organizational policies.
 
 - **Characteristics:**
     - Provide supporting data and decision criteria.

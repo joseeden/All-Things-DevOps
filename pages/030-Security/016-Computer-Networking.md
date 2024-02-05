@@ -6,14 +6,25 @@
 - [Ethernet](#ethernet)
 - [Device Address](#device-address)
 - [Networking Models](#networking-models)
-    - [Open Systems Interconnection OSI Model](#open-systems-interconnection-osi-model)
-    - [Transmission Control Protocol/Internet Protocol TCP/IP](#transmission-control-protocolinternet-protocol-tcpip)
+  - [Open Systems Interconnection OSI Model](#open-systems-interconnection-osi-model)
+  - [Transmission Control Protocol/Internet Protocol TCP/IP](#transmission-control-protocolinternet-protocol-tcpip)
 - [Internet Protocol IPv4 and IPv6](#internet-protocol-ipv4-and-ipv6)
 - [Wifi](#wifi)
 - [Security of the Network](#security-of-the-network)
 - [Ports and Protocols](#ports-and-protocols)
 - [Secure Ports](#secure-ports)
 - [SYN, SYN-ACK, ACK Handshake](#syn-syn-ack-ack-handshake)
+- [Networking Tools](#networking-tools)
+  - [Ping Sweep](#ping-sweep)
+  - [Geolocation](#geolocation)
+  - [Traceroute](#traceroute)
+  - [Wireshark](#wireshark)
+- [Quality of Service QoS](#quality-of-service-qos)
+- [Proxy](#proxy)
+- [SIEM](#siem)
+- [Mobile Data Management MDM](#mobile-data-management-mdm)
+
+
 
 ## Network 
 
@@ -132,9 +143,15 @@ The OSI Model is a conceptual framework for describing the communication structu
 
 - **Application, Presentation, and Session Layers (5-7):** Commonly referred to as data; potential for encapsulation.
   
+  - SNMP (Layer 7)
+
 - **Transport Layer (4):** Manages protocols like TCP/UDP.
 
 - **Network Layer (3):** Handles routing and packet transmission.
+
+  - ICMP 
+  - IGMP 
+  - IP
 
 - **Data Link Layer (2):** Manages frames and devices like switches.
 
@@ -280,6 +297,65 @@ This three-step handshake ensures that both the sender and receiver are ready to
 <img src='../../Images/security-syn-ack-syn.png'>
 </p>
 
+
+## Networking Tools 
+
+### Ping Sweep
+
+- Common method to map live hosts in a network.
+- Involves sending ping messages (ICMP Echo Requests) to a range of IP addresses.
+- Online hosts respond, allowing mapping of live hosts on the network.
+- *Reference:* ISC2 Study Guide, Chapter 4, Module 3.
+
+### Geolocation
+
+- Determines a device or user's physical location based on IP or MAC address.
+
+### Traceroute
+
+- Maps network topology and diagnoses connectivity/routing issues by tracing packet hops to an IP address.
+
+### Wireshark
+
+- Network protocol analyzer tool for viewing and analyzing packet contents, including IP addresses and host names.
+
+## Quality of Service (QoS)
+
+Quality of Service (QoS) refers to the technology that allows the network to prioritize certain types of traffic over others. 
+
+- Prioritizes critical traffic like VoIP or video conferencing.
+- Uses mechanisms like classes of service (CoS), packet classification, and traffic shaping.
+
+## Proxy 
+
+A proxy server acts as an intermediary between a client and the internet.
+
+- Allows clients to make requests to servers while hiding their IP addresses.
+- Receives client requests, forwards them to the server, and returns server responses.
+- Provides additional anonymity by masking the client's IP address during internet access.
+
+
+## SIEM 
+
+A SIEM (Security Information and Event Management) is a comprehensive security solution that collects, correlates, and analyzes log data from various sources across an organization's IT infrastructure.
+
+A SIEM typically provides the following features:
+
+- **Log consolidation**, which consists in collecting logs from various sources (like servers, firewalls or IDS/IPS) and then storing them in one central location.
+
+- **Log retention**, which consists in storing logs for a specific period (like 90 days), so as to allow security analysts to keep track of and investigate past events.
+
+- **Log encryption**, which is an optional feature that safeguards the confidentiality of log data.
+
+- **Log analysis**, which involves identifying patterns, trends and anomalies related to security events, in or close to real time.
+
+## Mobile Data Management MDM
+
+Mobile Data Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
+
+- Enforces security policies to enhance device security.
+- Allows remote management and wiping of devices for data protection.
+- Tracks device usage and location for monitoring and control.
 
 
 ----------------------------------------------

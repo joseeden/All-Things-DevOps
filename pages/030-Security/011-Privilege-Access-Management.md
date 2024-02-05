@@ -99,7 +99,7 @@ Privileged accounts extend beyond regular user permissions, catering to diverse 
 
 Segregation of duties (SoD) ensures that no single person has control over an entire high-risk transaction. It divides transactions into parts, necessitating different individuals for each segment to prevent fraud and errors.
 
-- **Fraud Prevention**
+- **Fraud Detection and Prevention**
   - Ensures different individuals handle distinct transaction phases.
   - Requires managerial approval before critical actions.
 
@@ -113,6 +113,8 @@ Segregation of duties (SoD) ensures that no single person has control over an en
 **Two-Person Integrity**
 
 The two-person rule mandates at least two individuals to be present simultaneously in an area, ensuring increased security, reducing insider threats, and providing assistance during emergencies.
+
+Separation of duties ensures that sensitive administrative tasks are split among multiple individuals to minimize the risk of misuse or fraud.
 
 ## Authorized Versus Unauthorized Personnel
 

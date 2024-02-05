@@ -1,24 +1,32 @@
 
 # Incident Responses
 
-- [Incident Terminologies](#incident-terminology)
-    - [Breach](#breach)
-    - [Event](#event)
-    - [Exploit](#exploit)
-    - [Incident](#incident)
-    - [Intrusion](#intrusion)
-    - [Threat](#threat)
-    - [Vulnerability](#vulnerability)
-    - [Zero Day](#zero-day)
+
+- [Incident Terminology](#incident-terminology)
+  - [Breach](#breach)
+  - [Event](#event)
+  - [Exploit](#exploit)
+  - [Incident](#incident)
+  - [Intrusion](#intrusion)
+  - [Threat](#threat)
+  - [Vulnerability](#vulnerability)
+  - [Zero Day](#zero-day)
+  - [Impact](#impact)
 - [Goal of Incident Response](#goal-of-incident-response)
+- [Conducting regular incident response drills and exercises](#conducting-regular-incident-response-drills-and-exercises)
 - [Components of the Incident Response Plan](#components-of-the-incident-response-plan)
-    - [Preparation](#preparation)
-    - [Detection and Analysis](#detection-and-analysis)
-    - [Containment](#containment)
-    - [Post-Incident Activity](#post-incident-activity)
+  - [Preparation](#preparation)
+  - [Detection and Analysis](#detection-and-analysis)
+  - [Containment](#containment)
+  - [Recovery](#recovery)
 - [Incident Response Team](#incident-response-team)
-    - [Key Points](#key-points)
-    - [Responsibilities](#responsibilities)
+  - [Key Points](#key-points)
+  - [Incident Response Models](#incident-response-models)
+      - [Leveraged Incident Response Model](#leveraged-incident-response-model)
+      - [Dedicated Incident Response Model](#dedicated-incident-response-model)
+      - [Hybrid Incident Response Model](#hybrid-incident-response-model)
+  - [Responsibilities](#responsibilities)
+
 
 
 ## Incident Terminology
@@ -39,7 +47,7 @@ A particular attack. It is named this way because these attacks exploit system v
 
 ### Incident
 
-An event that actually or potentially jeopardizes the confidentiality, integrity or availability of an information system or the information the system processes, stores or transmits.
+An incident is an unplanned event that could impact the confidentiality, integrity, or availability of information or information systems, and requires a response to mitigate or resolve the incident.
 
 ### Intrusion
 
@@ -57,6 +65,10 @@ Weakness in an information system, system security procedures, internal controls
 
 A previously unknown system vulnerability with the potential of exploitation without risk of detection or prevention because it does not, in general, fit recognized patterns, signatures or methods.
 
+### Impact 
+
+The magnitude of the harm expected as a result of the consequences of an unauthorized disclosure, modification, destruction, or loss of information.
+
 ## Goal of Incident Response
 
 - Organizations must prepare for incidents despite preventive measures.
@@ -67,6 +79,10 @@ A previously unknown system vulnerability with the potential of exploitation wit
 - The incident response process aims to minimize impact and resume operations swiftly.
 - It's a subset of the broader business continuity management (BCM).
 
+## Conducting regular incident response drills and exercises
+
+Incident response drills and exercises are conducted to simulate real-world scenarios and test the organization's incident response capabilities. By doing so, vulnerabilities and weaknesses in the security posture can be identified and addressed, enabling the organization to improve its overall resilience against potential cyber threats.
+
 ## Components of the Incident Response Plan
 
 The incident response policy aligns with the plan, outlining procedures and standards. Shaped by the organization's vision, the process defines technical processes and tools used in incident response. 
@@ -76,7 +92,7 @@ Common components in the plan include:
 - [Preparation](#preparation)
 - [Detection and Analysis](#detection-and-analysis)
 - [Containment](#containment)
-- [Post-Incident Activity](#post-incident-activity)
+- [Recovery](#recovery)
 
 ### Preparation
 
@@ -95,17 +111,26 @@ Common components in the plan include:
 3. Prioritize incident response efforts.
 4. Standardize incident documentation.
 
+#### Analysis - Forensic Investigation
+
+The primary purpose of a forensic investigation during the analysis phase of an incident response is to collect and preserve evidence.
+
+- Involves meticulous data collection and handling.
+- Ensure the admissibility of evidence in court.
+- Reference: (ISC2 Study Guide, Module 1, under Incident Response Team).
+
 ### Containment
 
-1. Gather evidence.
-2. Choose an appropriate containment strategy.
-3. Identify the attacker.
-4. Isolate the attack.
+1. Involves taking immediate actions to isolate and contain the incident.
+2. Gather evidence.
+3. Choose an appropriate containment strategy.
+4. Identify the attacker.
 
-### Post-Incident Activity
+### Recovery 
 
-1. Identify evidence that may need to be retained.
-2. Document lessons learned.
+1. Involves restoring affected systems to their normal state after the incident
+2. Identify evidence that may need to be retained.
+2. Document lessons learned, analyzing response actions, and identifying areas for improvement.
 
 ## Incident Response Team
 
@@ -121,6 +146,26 @@ Establishing a Security Operations Center (SOC) necessitates the creation of an 
   - Legal Experts
   - Public Affairs/Communications Representatives
   - Engineering Representatives (System and Network)
+
+### Incident Response Models 
+
+#### Leveraged Incident Response Model
+
+   - Outsourcing incident response capabilities to external experts.
+   - Leverages third-party services or partnerships for specialized support.
+   - Allows organizations to benefit from external expertise and resources.
+
+#### Dedicated Incident Response Model
+
+   - Establishes an in-house incident response team.
+   - Team members are dedicated solely to handling and mitigating incidents.
+   - Enables a rapid and focused response to security events.
+
+#### Hybrid Incident Response Model
+
+   - Combines internal and external resources for incident response.
+   - Utilizes both in-house teams and external support as needed.
+   - Offers flexibility and scalability in managing incidents effectively.
 
 ### Responsibilities
 

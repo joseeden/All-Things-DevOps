@@ -1,20 +1,29 @@
 
 # Data Security
 
-
 - [Data Handling](#data-handling)
-    - [Identify and Assess Data](#identify-and-assess-data)
+   - [Identify and Assess Data](#identify-and-assess-data)
 - [Data Handling Practices](#data-handling-practices)
-    - [Classification](#classification)
-    - [Labeling](#labeling)
-    - [Retention](#retention)
-    - [Destruction](#destruction)
+   - [Classification](#classification)
+   - [Labeling](#labeling)
+   - [Retention](#retention)
+      - [Common mistake in record retention](#common-mistake-in-record-retention)
+   - [Destruction](#destruction)
+- [PHI and PII](#phi-and-pii)
+- [The Right to be Forgotten](#the-right-to-be-forgotten)
 - [Logging and Monitoring Security Events](#logging-and-monitoring-security-events)
 - [Event Logging Best Practices](#event-logging-best-practices)
-    - [Ingress Monitoring](#ingress-monitoring)
-    - [Egress Monitoring](#egress-monitoring)
+   - [Ingress Monitoring](#ingress-monitoring)
+   - [Egress Monitoring](#egress-monitoring)
 - [Encryption](#encryption)
-- [Hardening](#hardening)
+- [Cryptography](#cryptography)
+- [Cryptographic Hash Function](#cryptographic-hash-function)
+- [Digital Signatures](#digital-signatures)
+- [Message Digests](#message-digests)
+- [Message Authentication Code](#message-authentication-code)
+- [Cybersquatting](#cybersquatting)
+- [Data Loss Prevention](#data-loss-prevention)
+
 
 
 ## Data Handling
@@ -139,9 +148,17 @@ It is the responsibility of the organization to establish and enforce a comprehe
    - Dispose of records not mandated for retention.
    - Adhere to enterprise policies and legal requirements in the destruction process.
 
+
+#### Common mistake in record retention 
+
+A common mistake in record retention is applying the longest retention period without taking into account the sensitivity or importance of the corresponding information. 
+
+Retaining unnecessary data has considerable costs in terms of storage and management. Less important or sensitive information can have shorter retention periods, thereby allowing longer retention periods for more important or sensitive information (see ISC2 Study Guide, chapter 5, module 1).
+
+
 ### Destruction
 
-Data remanence, or residual data left on media after deletion, poses a security risk. Mitigation strategies include:
+**Data remanence**, or residual data left on media after deletion, poses a security risk. Mitigation strategies include:
 
 1. **Clearing**
    - Involves overwriting with random patterns.
@@ -157,10 +174,25 @@ Data remanence, or residual data left on media after deletion, poses a security 
    - Involves shredding, chopping, burning, or etching.
    - Remains disposed of in protected landfills.
 
+## PHI and PII 
+
+- PHI is Protected Health Information
+
+- PII is Personal Identifiable Information
+
+## The Right to be Forgotten 
+
+The right to be forgotten is a principle under the General Data Protection Regulation (GDPR).
+
+- Individuals can request erasure of personal data.
+- Empowers control over online presence.
+- Involves removing outdated or excessive information from online platforms.
 
 ## Logging and Monitoring Security Events
 
 Logging is critical for capturing events and ensuring accountability. 
+
+According to the ISC2 Study Guide (chapter 5, module 1, under Data Handling Practices), logging and monitoring systems are characterized as being "Essential to identifying inefficient performing systems, detecting compromises, and providing a record of how systems are used".
 
 - **Event Logging**
    - Records measurable changes caused by system events.
@@ -209,6 +241,8 @@ Logging is critical for capturing events and ensuring accountability.
 - **IDS/IPS Tools**
    - Intrusion Detection Systems/Intrusion Prevention Systems.
    - Identify and prevent unauthorized access with logging and alert features.
+   - IPS monitors network traffic and detects potential threats.
+   - IPS then takes action to prevent unauthorized or malicious activities.
 
 - **SIEM Solutions**
    - Security Information and Event Management.
@@ -240,7 +274,7 @@ Logging is critical for capturing events and ensuring accountability.
 
 ## Encryption 
 
-Cryptography is essential in our digital era, ensuring security and authenticity in various online activities:
+Encryption is essential for data security as it ensures that sensitive information remains secure and unreadable to unauthorized individuals, both while stored and during transmission over networks.
 
 - **Encryption for Transactions**
    - Safeguards personal and business transactions.
@@ -254,7 +288,7 @@ Cryptography is essential in our digital era, ensuring security and authenticity
    - Enables the exchange of digitally signed contracts.
    - Validates the binding nature and authenticity of digital contracts.
 
-**Cryptography Services**
+## Cryptography
 Cryptography is a versatile tool, providing crucial services like confidentiality and integrity for enhanced system security.
 
 - **Confidentiality**
@@ -270,6 +304,70 @@ Cryptography is a versatile tool, providing crucial services like confidentialit
     <img width=700 src='../../Images/security-encryption-cryptograpghy.png'>
     </p>
 
+## Cryptographic Hash Function 
+
+A hash function is a mathematical function that takes an input or 'message' and generates an output or 'hash value', usually much smaller than the original message, typically of a fixed-size (see ISC2 Study Guide, Module 1, under Encryption Overview).
+
+Hash functions are used to generate unique representations of data or verify data integrity and are a crucial element of cryptographic systems.
+
+A cryptographic hash function should have the following characteristic: 
+
+- unique 
+- deterministic
+- useful 
+- tamper-evident 
+- non-reversible
+
+## Digital Signatures 
+
+A digital signature is the result of a cryptographic transformation of data which is useful for providing: 
+- data origin authentication
+- data integrity
+- non-repudiation of the signer 
+
+See NIST SP 800-12 Rev. 1 under Digital Signature.
+
+However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
+
+## Message Digests 
+
+Message digesting ensures data integrity by maintaining accuracy and consistency.
+
+- It uses cryptographic hash functions like MD5 or SHA-256.
+- Creates a unique, fixed-length "digest" of the original message data.
+- When downloading a file, a Web site may provide a hash value.
+- Users can perform the same hash function on the downloaded file.
+- Matching digests confirm the file's integrity, indicating no alteration during transmission.
+
+## Message Authentication Code 
+
+A Message Authentication Code (MAC) does not guarantee anonymity. MAC is a cryptographic function that guarantees a message's:
+
+- integrity,
+- authenticity, and 
+- non-repudiation.
+
+On the other hand, **anonymity is not a guaranteed by a MAC.**
+
+## Cybersquatting
+
+Cybersquatting involves speculatively registering and selling domain names for profit.
+
+- Intent is to profit from someone else's trademark.
+- Example: Registering "mycompany.com" to sell it to the trademark owner.
+- Can cause confusion and damage to the trademark owner's brand.
+- Generally considered unethical and deceptive.
+- Illegal under the United States' Anticybersquatting Consumer Protection Act (ACPA) and similar laws in other countries.
+
+## Data Loss Prevention 
+
+DLP is a technology used to identify, monitor, and protect sensitive data to prevent unauthorized access, use, or transmission.
+
+- Prevents unauthorized access, use, or transmission of sensitive data.
+- Safeguards against accidental or malicious data sharing.
+- Uses policies, monitoring, and enforcement to mitigate potential breaches.
+- Protects against data leakage across channels like email, web, and endpoints.
+- Involves content discovery, classification, encryption, and policy enforcement.
 
 
 ----------------------------------------------

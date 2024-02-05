@@ -105,6 +105,7 @@ Additionally:
 - **Joint Operating Agreements (JOA)**
   - Competing entities collaborate for shared continuity during disruptions.
   - Focus on safety and security collaboration rather than competition.
+  - Both outline responsibilities in sharing information, resources, or collaborative efforts, including security responsibilities.
 
 - **Regulatory and Industry Guidelines**
   - Agreements may be mandated by regulations or industry guidelines.
