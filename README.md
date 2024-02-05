@@ -1,5 +1,5 @@
 
-# All Things DevOps 
+<!-- # All Things DevOps  -->
 
 This repository contains various labs, notes, ideas, and lessons that I've gathered over the years working on various DevOps projects. 
 
