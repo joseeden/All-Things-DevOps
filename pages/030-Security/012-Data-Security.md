@@ -9,6 +9,7 @@
    - [Retention](#retention)
       - [Common mistake in record retention](#common-mistake-in-record-retention)
    - [Destruction](#destruction)
+- [Overwriting](#overwriting)
 - [PHI and PII](#phi-and-pii)
 - [The Right to be Forgotten](#the-right-to-be-forgotten)
 - [Logging and Monitoring Security Events](#logging-and-monitoring-security-events)
@@ -23,6 +24,8 @@
 - [Message Authentication Code](#message-authentication-code)
 - [Cybersquatting](#cybersquatting)
 - [Data Loss Prevention](#data-loss-prevention)
+
+
 
 
 
@@ -173,6 +176,12 @@ Retaining unnecessary data has considerable costs in terms of storage and manage
    - Ultimate remedy for data remanence.
    - Involves shredding, chopping, burning, or etching.
    - Remains disposed of in protected landfills.
+
+## Overwriting 
+
+Overwriting involves writing multiple patterns across all storage media (see ISC2 Study Guide, Chapter 5, Module 1). This method ensures that the original data cannot be recovered. 
+
+For example, if an organization wants to repurpose a hard drive, they can overwrite the drive with multiple data patterns to ensure that the original data is completely erased and cannot be recovered.
 
 ## PHI and PII 
 

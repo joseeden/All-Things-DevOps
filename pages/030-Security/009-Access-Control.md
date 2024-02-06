@@ -1,35 +1,37 @@
 
 # Access Control
 
+
 - [Security Control](#security-control)
 - [Elements of Access Control](#elements-of-access-control)
-  - [Subjects](#subjects)
-  - [Objects](#objects)
-  - [Rules](#rules)
+    - [Subjects](#subjects)
+    - [Objects](#objects)
+    - [Rules](#rules)
 - [Controls Assessment](#controls-assessment)
 - [Privileged Access Management](#privileged-access-management)
 - [Trust but Verify](#trust-but-verify)
 - [Physical Access Controls](#physical-access-controls)
-  - [What it is](#what-it-is)
-  - [Types of Physical Access Controls](#types-of-physical-access-controls)
-  - [Monitoring](#monitoring)
-      - [Cameras](#cameras)
-      - [Logs](#logs)
-      - [Alarm Systems](#alarm-systems)
-      - [Security Guards](#security-guards)
-  - [Visitor Management Policy](#visitor-management-policy)
+    - [What it is](#what-it-is)
+    - [Types of Physical Access Controls](#types-of-physical-access-controls)
+    - [Monitoring](#monitoring)
+        - [Cameras](#cameras)
+        - [Logs](#logs)
+        - [Alarm Systems](#alarm-systems)
+        - [Security Guards](#security-guards)
+    - [Visitor Management Policy](#visitor-management-policy)
+    - [Considerations on Choosing an Access Control System](#considerations-on-choosing-an-access-control-system)
+    - [Site Assessment](#site-assessment)
 - [Logical Access Controls](#logical-access-controls)
-  - [What it is](#what-it-is)
-  - [Discretionary Access Control DAC](#discretionary-access-control-dac)
-  - [Mandatory Access Control MAC](#mandatory-access-control-mac)
-      - [Bell and LaPadula access control model](#bell-and-lapadula-access-control-model)
-  - [Role-Based Access Control RBAC](#role-based-access-control-rbac)
+    - [What it is](#what-it-is)
+    - [Discretionary Access Control DAC](#discretionary-access-control-dac)
+    - [Mandatory Access Control MAC](#mandatory-access-control-mac)
+        - [Bell and LaPadula access control model](#bell-and-lapadula-access-control-model)
+    - [Role-Based Access Control RBAC](#role-based-access-control-rbac)
 - [Need to Know](#need-to-know)
 - [Account Review](#account-review)
 - [Privilege creep](#privilege-creep)
 - [Decentralized Access Control](#decentralized-access-control)
 - [Self-service Password Reset](#self-service-password-reset)
-
 
 
 ## Security Control 
@@ -260,6 +262,45 @@ A visitor management policy is a vital component of physical access controls, as
   - *Reference:* ISC2 Study Guide, Module 2, Physical Access Controls.
   
 
+### Considerations on Choosing an Access Control System
+
+- Performance is primary factor.
+- Includes control effectiveness, reliability, scalability, and compatibility.
+- Critical factor is the system's ability to perform its intended function effectively and reliably.
+
+Example: 
+
+- Choosing a biometric system for higher security performance despite complexity.
+- Simplicity and efficiency are secondary considerations.
+- Aesthetic appeal is irrelevant to the primary function of access control.
+
+**Primary consideration when choosing physical access controls**
+
+The primary consideration when selecting physical access controls should be the security of personnel. 
+
+- While building, equipment, and network security matter, personnel security is the top priority.
+- Examples of Controls: Locks, security cameras, and security personnel.
+- Designed to safeguard both people and assets.
+- Security cameras and personnel to deter and respond to threats like theft, violence, and unauthorized access.
+  
+**Reference:** ISC2 Study Guide, Chapter 3, Module 2.
+
+### Site Assessment 
+
+- **Factors Considered:**
+  - Sensitivity of protected information, 
+  - cost of scanners, and 
+  - impact on employees and operations.
+
+- **Primary Consideration:**
+  - The result of the site assessment.
+  - This is a critical factor when implementing access controls for a physical site
+
+- **Example**:
+  - Biometric scanners installed based on sensitivity; needed for server rooms, executive offices, but not break rooms or supply closets.
+
+- **Reference**: ISC2 Study Guide, Chapter 3, Module 1.
+
 ## Logical Access Controls
 
 ### What it is 
@@ -304,6 +345,8 @@ Mandatory Access Control (MAC) ensures a uniform policy across an information sy
 **MAC in the Workplace**
 Determines access uniformly based on policies, often associated with government agencies.
 
+- Goal is to prevent the unauthorized disclosure of classified information
+- "No read up, no write down" rule
 - Security clearance dictates access.
 - Access determined by government policy.
 - Limited individual decision-making.

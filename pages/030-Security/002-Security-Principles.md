@@ -1,26 +1,29 @@
 
 # Security Principles
 
-
 - [CIA Triad](#cia-triad)
-  - [Confidentiality](#confidentiality)
-  - [Integrity](#integrity)
-  - [Availability](#availability)
+    - [Confidentiality](#confidentiality)
+    - [Integrity](#integrity)
+    - [Availability](#availability)
 - [Relationship between Confidentiality and Integrity](#relationship-between-confidentiality-and-integrity)
 - [Sensitivity](#sensitivity)
 - [Authentication](#authentication)
-  - [Methods of Authentication](#methods-of-authentication)
-  - [Common Authentication Techniques](#common-authentication-techniques)
-  - [Token-based Authentication](#token-based-authentication)
-      - [Synchronous](#synchronous)
-      - [Asynchronous](#asynchronous)
-  - [Best Practices](#best-practices)
+    - [Methods of Authentication](#methods-of-authentication)
+    - [Common Authentication Techniques](#common-authentication-techniques)
+    - [Token-based Authentication](#token-based-authentication)
+        - [Synchronous](#synchronous)
+        - [Asynchronous](#asynchronous)
+    - [Best Practices](#best-practices)
 - [Non-repudiation](#non-repudiation)
 - [Privacy](#privacy)
 - [Principle of Least Privilege](#principle-of-least-privilege)
 - [Segregation of Duties](#segregation-of-duties)
 - [Trust but Verify](#trust-but-verify)
 - [Due Care](#due-care)
+- [Collusion](#collusion)
+
+
+
 
 ## CIA Triad 
 
@@ -245,6 +248,9 @@ In cybersecurity, 'due care' means taking reasonable steps to secure and protect
 - Specific tasks like patching and security practices are part of due care.
 - *Reference:* ISC2 Study Guide, Chapter 1, Module 5.
 
+## Collusion 
+
+Collusion occurs when two or more individuals work together to circumvent the segregation of duties for fraudulent purposes.
 
 ----------------------------------------------
 
