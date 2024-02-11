@@ -8,19 +8,21 @@
 - [Tools](#tools)
 - [IP Network Attack](#ip-network-attack)
 - [Other Attacks](#other-attacks)
-  - [Side Channel Attacks](#side-channel-attacks)
-  - [Replay Attack](#replay-attack)
-  - [Rainbow Table Attack](#rainbow-table-attack)
-  - [Dictionary Attack](#dictionary-attack)
-  - [Brute Force Attack](#brute-force-attack)
-  - [Buffer Overflow Attack](#buffer-overflow-attack)
+    - [Side Channel Attacks](#side-channel-attacks)
+    - [Replay Attack](#replay-attack)
+    - [Rainbow Table Attack](#rainbow-table-attack)
+    - [Dictionary Attack](#dictionary-attack)
+    - [Brute Force Attack](#brute-force-attack)
+    - [Buffer Overflow Attack](#buffer-overflow-attack)
+    - [Birthday Attack](#birthday-attack)
+    - [Spoofing Attack](#spoofing-attack)
+    - [On-Path Attack](#on-path-attack)   
 - [Logic Bomb](#logic-bomb)
 - [Advanced Persistent Threat](#advanced-persistent-threat)
-- [On-Path Attack](#on-path-attack)
 - [Identify Threats](#identify-threats)
 - [Intrusion Detection System IDS](#intrusion-detection-system-ids)
-  - [Host-based IDS HIDS](#host-based-ids-hids)
-  - [Network-based IDS NIDS](#network-based-ids-nids)
+    - [Host-based IDS HIDS](#host-based-ids-hids)
+    - [Network-based IDS NIDS](#network-based-ids-nids)
 - [Preventing Threats](#preventing-threats)
 
 
@@ -161,6 +163,53 @@ This type of attack takes advantage of programming errors in applications or sys
 - Restrict code execution in specific memory areas.
 - Keep software current to address vulnerabilities.
 
+### Birthday Attack 
+
+Cybercriminals use birthday attacks to trick systems by cracking digital authentication methods.
+
+**The Birthday Paradox**
+The probability that at least two will share a birthday in a random group of people. 
+
+**Birthday Attack in Cybersecurity**
+A birthday attack is a brute force attack that exploits the exponentially growing probability of collision. In cybersecurity, collision attacks aim to find a clash of the hash function outcomes. The goal of the birthday attack is often to gain system access by forging security certificates or cracking passwords.
+
+**Finding the collision**
+Hackers have learned from the birthday problem that finding two colliding results of different inputs is much easier than generating all possible outputs.
+
+1. A program repeatedly runs the hash function on randomly chosen inputs 
+2. Every input-output pair is stored in some databases. 
+3. Every output is checked until a collision of the same outputs with different inputs is found. 
+4. The hacker can use the hash collision to trick the system into treating two different messages as the same.
+
+<small>Reference: https://atlasvpn.com/blog/birthday-attack</small>
+
+### Spoofing Attack 
+
+Cybercriminals impersonate a familiar or trusted source to interact with targets, aiming to steal information, extort money, or install malicious software on their devices.
+
+Example of spoofing attacks:
+
+- Email Spoofing
+- Caller ID Spoofing
+- Website/Domain Spoofing
+- IP Spoofing
+- ARP Spoofing
+- GPS Spoofing
+- Facial Spoofing
+- Man-in-the-middle attack 
+
+
+<small>Reference: https://www.crowdstrike.com/cybersecurity-101/spoofing-attacks/</small>
+
+
+### On-Path Attack 
+
+An on-path Attack is an attack that attempts to position between two devices (e.g., web browser and server) to intercept or modify information.
+
+- Passive attack with no direct interaction with the target system.
+- Differs from DDoS attacks involving numerous unsuspecting secondary victims.
+- Primary goal is to gain system access by impersonating a legitimate user or device.
+
 ## Logic Bomb 
 
 A logic bomb is a piece of malicious code intentionally inserted into a software system that triggers a negative function when certain conditions are met. 
@@ -176,14 +225,6 @@ A Highly sophisticated and hard to detect. typically orchestrated by well-funded
 - Aims to steal sensitive information or disrupt operations.
 - Attack could span months or even years. 
 - *Reference:* ISC2 Study Guide, Chapter 4, Module 2.
-
-## On-Path Attack 
-
-An on-path Attack is an attack that attempts to position between two devices (e.g., web browser and server) to intercept or modify information.
-
-- Passive attack with no direct interaction with the target system.
-- Differs from DDoS attacks involving numerous unsuspecting secondary victims.
-- Primary goal is to gain system access by impersonating a legitimate user or device.
 
 ## Identify Threats
 
