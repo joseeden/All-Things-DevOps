@@ -5,14 +5,16 @@
 - [Security Control](#security-control)
 - [System-specific, Common, and Hybrid Controls](#system-specific-common-and-hybrid-controls)
 - [Types of Cybersecurity Controls](#types-of-cybersecurity-controls)
+    - [Physical Controls](#physical-controls)
+    - [Technical Controls](#technical-controls)
+    - [Administrative Controls](#administrative-controls)
+        - [Procedural Controls](#procedural-controls)
+        - [Legal or Regulatory Controls](#legal-or-regulatory-controls)
     - [Preventative Controls](#preventative-controls)
     - [Detective Controls](#detective-controls)
     - [Deterrent Controls](#deterrent-controls)
     - [Compensating Controls](#compensating-controls)
     - [Corrective Security Controls](#corrective-security-controls)
-    - [Physical Controls](#physical-controls)
-    - [Technical Controls](#technical-controls)
-    - [Administrative Controls](#administrative-controls)
 - [Administrative versus Technical](#administrative-versus-technical)
 
 
@@ -35,52 +37,6 @@ Controls ensure the confidentiality, integrity, and availability of an organizat
 
 ## Types of Cybersecurity Controls 
 
-### Preventative Controls
-
-Preventative controls aim to avoid loss or errors and include measures such as hardening, security awareness training, change management, and account disable policies.
-
-- Hardening
-- Security awareness training
-- Change management
-- Account disable policy.
-
-### Detective Controls
-
-Detective controls use internal controls to identify errors through methods like:
-
-- Log monitoring
-- SIEM
-- Trend analysis
-- Security audits
-- Video surveillance
-- Motion detection
-
-
-### Deterrent Controls
-
-Deterrent controls, often tangible objects or persons, reduce deliberate attacks through measures like:
-
-- Cable locks
-- Hardware locks
-- Video surveillance
-- Guards
-
-### Compensating Controls
-
-Compensating controls offer alternative methods to meet security requirements when standard measures are impractical or financially challenging.
-
-- Time-based OTP (One-time password)
-
-### Corrective Security Controls 
-
-Corrective security controls are measures used to address security vulnerabilities or weaknesses already identified. Backups, patches, and Disaster Recovery Plans are all corrective security controls (see ISC2 Study Guide, chapter 3, module 2). 
-
-- Backups can help ensure that important information is not lost in the event of an incident. 
-
-- Patches can help fix vulnerabilities and improve security. 
-- Disaster Recovery Plans are administrative security controls that establish the corrective measures to be implemented in case of a disaster. 
-
-Bollards are not typically considered a corrective security control.
 
 ### Physical Controls
 
@@ -136,7 +92,7 @@ Also termed "logical controls", Technical controls are implemented directly by c
 
 ### Administrative Controls
 
-Also known as "managerial controls", Administrative controls refers to directives, guidelines, or advisories for organization members.
+Also known as **managerial controls**, administrative controls refers to directives, guidelines, or advisories for organization members.
 
 - **Purpose**
   - Establish frameworks, constraints, and standards for human behavior.
@@ -158,6 +114,63 @@ Also known as "managerial controls", Administrative controls refers to directive
   - Acceptable Use Policy 
   - Emergency Operations Procedures 
   - Employee Awareness Training
+
+
+#### Procedural Controls
+
+Controls that are initiated by the organization.
+
+#### Legal or Regulatory Controls
+
+Controls mandated by the law.
+
+### Preventative Controls
+
+Preventative controls aim to avoid loss or errors and include measures such as hardening, security awareness training, change management, and account disable policies.
+
+- Hardening
+- Security awareness training
+- Change management
+- Account disable policy.
+
+### Detective Controls
+
+Detective controls use internal controls to identify errors through methods like:
+
+- Log monitoring
+- SIEM
+- Trend analysis
+- Security audits
+- Video surveillance
+- Motion detection
+
+
+### Deterrent Controls
+
+Deterrent controls, often tangible objects or persons, reduce deliberate attacks through measures like:
+
+- Cable locks
+- Hardware locks
+- Video surveillance
+- Guards
+
+### Compensating Controls
+
+Compensating controls offer alternative methods to meet security requirements when standard measures are impractical or financially challenging.
+
+- Time-based OTP (One-time password)
+
+### Corrective Security Controls 
+
+Corrective security controls are measures used to address security vulnerabilities or weaknesses already identified. Backups, patches, and Disaster Recovery Plans are all corrective security controls (see ISC2 Study Guide, chapter 3, module 2). 
+
+- Backups can help ensure that important information is not lost in the event of an incident. 
+
+- Patches can help fix vulnerabilities and improve security. 
+- Disaster Recovery Plans are administrative security controls that establish the corrective measures to be implemented in case of a disaster. 
+
+Bollards are not typically considered a corrective security control.
+
 
 ## Administrative versus Technical 
 

@@ -1,18 +1,20 @@
 
 # Security Principles
 
+
+- [Information Security](#information-security)
+- [Information Systems Security](#information-systems-security)
 - [CIA Triad](#cia-triad)
     - [Confidentiality](#confidentiality)
     - [Integrity](#integrity)
     - [Availability](#availability)
 - [Relationship between Confidentiality and Integrity](#relationship-between-confidentiality-and-integrity)
 - [Sensitivity](#sensitivity)
+- [AAA of Security](#aaa-of-security)
 - [Authentication](#authentication)
     - [Methods of Authentication](#methods-of-authentication)
     - [Common Authentication Techniques](#common-authentication-techniques)
     - [Token-based Authentication](#token-based-authentication)
-        - [Synchronous](#synchronous)
-        - [Asynchronous](#asynchronous)
     - [Best Practices](#best-practices)
 - [Non-repudiation](#non-repudiation)
 - [Privacy](#privacy)
@@ -21,9 +23,18 @@
 - [Trust but Verify](#trust-but-verify)
 - [Due Care](#due-care)
 - [Collusion](#collusion)
+- [Zero Trust](#zero-trust)
 
 
 
+## Information Security 
+
+Act of protecting data and information from unauthorized access, unlawful modification and disruption, disclosure, corruption, and desctruction.
+
+## Information Systems Security
+
+Act of protecting the systems that hold and process our critical data.
+That can be a computer, server, etc.
 
 ## CIA Triad 
 
@@ -109,6 +120,28 @@ Confidentiality and integrity are separate but complementary security concepts. 
 ## Sensitivity 
 
 Sensitivity is also defined as the measure of the importance assigned to information by its owner, or the purpose of representing its need for protection (see the ISC2 study guide, module 1, under CIA Deep Dive).
+
+## AAA of Security 
+
+- **Authentication**
+  When a person’s identity is established with proof and confirmed by a
+  system
+    - Something you know
+    - Something you are
+    - Something you have
+    - Something you do
+    - Somewhere you are
+
+- **Authorization**
+  
+  - Occurs when a user is given access to a certain piece of data or certain
+areas of a building
+
+- **Accounting**
+
+  - Tracking of data, computer usage, and network resources
+  - Non-repudiation occurs when you have proof that someone has taken an
+  action
 
 ## Authentication 
 
@@ -251,6 +284,26 @@ In cybersecurity, 'due care' means taking reasonable steps to secure and protect
 ## Collusion 
 
 Collusion occurs when two or more individuals work together to circumvent the segregation of duties for fraudulent purposes.
+
+## Zero Trust 
+
+Security model that operates on the principle that no one, whether inside or outside the organization, should be trusted by default and verification is required for everybody.
+
+To achieve zero trust, we need:
+
+**Control Plane**
+
+- Adaptive identity
+- Threat scope reduction 
+- Policy-driven access control 
+- Secured zones
+
+**Data Plane**
+
+- Subject/system 
+- Policy engine
+- Policy administrator 
+- Establishing Policy enforcement points 
 
 ----------------------------------------------
 

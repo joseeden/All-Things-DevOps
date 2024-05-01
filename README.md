@@ -56,9 +56,24 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Computer Networking](pages/030-Security/016-Computer-Networking.md)
 
-    - [Cyber Threats and Attacks](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
+    - [Intrusion Detection Systems](pages/030-Security/024-IDS.md)
 
     - [Network Security Infrastructure](pages/030-Security/018-Network-Security-Infrastructure.md)
+
+- [Cyber Threats and Attacks](pages/030-Security/017-Cyber-Threats-and-Attacks.md) 
+
+    - [Cyber Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
+
+    - [Threat Intelligence and Sources](pages/030-Security/019-Threat-Intelligence-and-Sources.md)
+
+    - [Threat Hunting](pages/030-Security/020-Threat-Hunting.md)
+
+    - [Threat Prevention](pages/030-Security/021-Threat-Prevention.md)
+
+    - [Attack Frameworks](pages/030-Security/022-Attack-Frameworks.md)
+
+    - [Attacks](pages/030-Security/023-Attacks.md)
+
 
 - [Security Operations](pages/030-Security/012-Data-Security.md)
 

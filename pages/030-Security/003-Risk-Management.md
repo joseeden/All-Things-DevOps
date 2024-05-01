@@ -67,6 +67,8 @@ A Threat Actor is defined as an individual or a group posing a threat (according
 - Intelligence or information gatherers (could be any of the above).
 - Technology (such as free-running bots and artificial intelligence , which could be part of any of the above).
 
+For more details, please see [Cyber Threat and Attacks.](./017-Cyber-Threats-and-Attacks.md)
+
 ### Threat Vector
 
 The means by which a threat actor carries out their objectives.
