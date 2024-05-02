@@ -114,14 +114,13 @@ Also known as **managerial controls**, administrative controls refers to directi
   - Emergency Operations Procedures 
   - Employee Awareness Training
 
+Types of Administrative Controls: 
 
-#### Procedural Controls
+- **Procedural Controls**
+  Controls that are initiated by the organization.
 
-Controls that are initiated by the organization.
-
-#### Legal or Regulatory Controls
-
-Controls mandated by the law.
+- **Legal or Regulatory Controls**
+  Controls mandated by the law.
 
 ### Preventative Controls
 
