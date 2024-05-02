@@ -1,24 +1,69 @@
 
 # Security Policies
 
+
 - [Common Security Policies](#common-security-policies)
+    - [Employee/Contractor Hiring](#employeecontractor-hiring)
     - [Data Handling Policy](#data-handling-policy)
     - [Password Policy](#password-policy)
-    - [Acceptable Use Policy AUP](#acceptable-use-policy-aup)
-    - [Bring Your Own Device BYOD](#bring-your-own-device-byod)
+    - [Acceptable Use Policy (AUP)](#acceptable-use-policy-aup)
+    - [Bring Your Own Device (BYOD)](#bring-your-own-device-byod)
     - [Privacy Policy](#privacy-policy)
     - [Change Management Policy](#change-management-policy)
 - [Change Management Components](#change-management-components)
-    - [Request for Change RFC](#request-for-change-rfc)
-    - [Approval Process](#approval-process)
-    - [Rollback Procedures](#rollback-procedures)
+    - [Request for Change (RFC)](#request-for-change-rfc)
+    - [Approval](#approval)
+    - [Rollback](#rollback)
 - [Continuous Change Management Cycle](#continuous-change-management-cycle)
+
 
 
 
 ## Common Security Policies
 
 Every policy should align with the organization's regulatory and contractual obligations. Balancing comprehensiveness with user-friendly simplicity can be challenging.
+
+### Employee/Contractor Hiring 
+
+**Hiring phase:**
+
+- Social media analysis
+- Web search 
+- Background check 
+    - Criminal record
+    - Unpaid fines
+    - Credit check
+    - Interview with references 
+
+**User Onboarding:**
+
+- Signing NDAs 
+- Security POlicy Awareness 
+- User account and resource access 
+- Issuance of security badge and smart cards
+
+**User Habits:**
+
+- Clean desk policies 
+- Shredding of sensitive documents
+- Secure personally-owned devices 
+- MDM (Mobile Device Management)
+- BYOD (Bring your own device)
+
+**User Training:**
+
+- Ongoing, role-based
+- Computer-based training 
+- Gamification like CTF contests 
+- Phishing campaigns/simulations
+
+**User Offboarding:**
+
+- Termination Letter 
+- Exit Interview 
+- Return of equipment
+- Knowledge Transfer
+- Disable and delete accounts
 
 ### Data Handling Policy
 

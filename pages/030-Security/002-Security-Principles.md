@@ -1,7 +1,6 @@
 
 # Security Principles
 
-
 - [Information Security](#information-security)
 - [Information Systems Security](#information-systems-security)
 - [CIA Triad](#cia-triad)
@@ -23,7 +22,14 @@
 - [Trust but Verify](#trust-but-verify)
 - [Due Care](#due-care)
 - [Collusion](#collusion)
+- [Gap Analysis](#gap-analysis)
+    - [Steps](#steps)
+    - [Technical Gap Analysis](#technical-gap-analysis)
+    - [Business Gap Analysis](#business-gap-analysis)
 - [Zero Trust](#zero-trust)
+    - [Control Plane](#control-plane)
+    - [Data Plane](#data-plane)
+
 
 
 
@@ -127,10 +133,8 @@ Sensitivity is also defined as the measure of the importance assigned to informa
   When a person’s identity is established with proof and confirmed by a
   system
     - Something you know
-    - Something you are
     - Something you have
-    - Something you do
-    - Somewhere you are
+    - Something you are
 
 - **Authorization**
   
@@ -285,25 +289,49 @@ In cybersecurity, 'due care' means taking reasonable steps to secure and protect
 
 Collusion occurs when two or more individuals work together to circumvent the segregation of duties for fraudulent purposes.
 
+## Gap Analysis
+
+Process of evaluating the differences betweenan organization's current performance and its desired performance. 
+
+### Steps
+
+1. Define the scope of analysis.
+2. Gather data on the current state of the organization.
+3. Analyze the data to identify the gaps.
+4. Develop a plan to bridge the gap.
+
+### Technical Gap Analysis
+
+- Focuses on IT systems, infrastructure, and technical skills to identify areas for improvement.
+- Aims to find gaps in technology, security, or technical competencies that affect operations.
+- Common in IT audits, technology upgrades, cybersecurity assessments, and technical training.
+
+### Business Gap Analysis
+
+- Examines business processes, strategy, and organizational goals to find discrepancies.
+- Aims to identify gaps between current practices and business objectives or market demands.
+- Useful for business strategy planning, process improvements, and customer satisfaction analysis.
+
+
 ## Zero Trust 
 
 Security model that operates on the principle that no one, whether inside or outside the organization, should be trusted by default and verification is required for everybody.
 
-To achieve zero trust, we need:
+### Control Plane
+Define, manage, and enforce the policies related to user and system access 
 
-**Control Plane**
+- **Adaptive identity** - rely on real-time validation.
+- **Threat scope reduction** - limit user's access to only what they need.
+- **Policy-driven access control** - enforce user access policies based on their roles
+- **Secured zones** - isolated environments within a network that is designed to house sensitive data.
 
-- Adaptive identity
-- Threat scope reduction 
-- Policy-driven access control 
-- Secured zones
+### Data Plane
+Ensures that the policies and procedures are properly executed.
 
-**Data Plane**
-
-- Subject/system 
-- Policy engine
-- Policy administrator 
-- Establishing Policy enforcement points 
+- **Subject/system** - individual or entity attempting to gain access.
+- **Policy engine** - cross-references the access request with its pre-defined policies.
+- **Policy administrator** - establish and manage the access policies.
+- **Policy enforcement points** - acts as gatekeeper which allow or restrict access.
 
 ----------------------------------------------
 

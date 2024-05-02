@@ -4,18 +4,18 @@
 
 - [Security Control](#security-control)
 - [System-specific, Common, and Hybrid Controls](#system-specific-common-and-hybrid-controls)
-- [Types of Cybersecurity Controls](#types-of-cybersecurity-controls)
+- [Main Types of Cybersecurity Controls](#types-of-cybersecurity-controls)
     - [Physical Controls](#physical-controls)
     - [Technical Controls](#technical-controls)
     - [Administrative Controls](#administrative-controls)
-        - [Procedural Controls](#procedural-controls)
-        - [Legal or Regulatory Controls](#legal-or-regulatory-controls)
+- [Other Types](#security-controls)
     - [Preventative Controls](#preventative-controls)
     - [Detective Controls](#detective-controls)
     - [Deterrent Controls](#deterrent-controls)
     - [Compensating Controls](#compensating-controls)
     - [Corrective Security Controls](#corrective-security-controls)
 - [Administrative versus Technical](#administrative-versus-technical)
+
 
 
 ## Security Control 
@@ -36,7 +36,6 @@ Controls ensure the confidentiality, integrity, and availability of an organizat
 - **Hybrid controls** have characteristics of both system-specific and common controls.
 
 ## Types of Cybersecurity Controls 
-
 
 ### Physical Controls
 
@@ -158,7 +157,9 @@ Deterrent controls, often tangible objects or persons, reduce deliberate attacks
 
 Compensating controls offer alternative methods to meet security requirements when standard measures are impractical or financially challenging.
 
+- "Second-pick", if designed control is too expensive or will take long to implement.
 - Time-based OTP (One-time password)
+- Network isolation for IoT devices
 
 ### Corrective Security Controls 
 

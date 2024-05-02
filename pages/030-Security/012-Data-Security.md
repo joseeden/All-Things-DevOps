@@ -1,45 +1,96 @@
 
 # Data Security
 
-- [Data Handling](#data-handling)
-   - [Identify and Assess Data](#identify-and-assess-data)
+- [Data Classification](#data-classification)
+- [Data Roles and Responsibilities](#data-roles-and-responsibilities)
+- [Data Lifecycle](#data-lifecycle)
+- [Identify and Assess Data](#identify-and-assess-data)
+- [Data Sovereignty](#data-sovereignty)
 - [Data Handling Practices](#data-handling-practices)
    - [Classification](#classification)
    - [Labeling](#labeling)
    - [Retention](#retention)
-      - [Common mistake in record retention](#common-mistake-in-record-retention)
    - [Destruction](#destruction)
-- [Overwriting](#overwriting)
-- [PHI and PII](#phi-and-pii)
-- [The Right to be Forgotten](#the-right-to-be-forgotten)
+- [Destroying Data](#destroying-data)
+   - [Data Media Sanitization](#data-media-sanitization)
+   - [Overwriting](#overwriting)
+   - [Cryptographic Erasures](#cryptographic-erasures)
+   - [The Right to be Forgotten](#the-right-to-be-forgotten)
 - [Logging and Monitoring Security Events](#logging-and-monitoring-security-events)
 - [Event Logging Best Practices](#event-logging-best-practices)
    - [Ingress Monitoring](#ingress-monitoring)
    - [Egress Monitoring](#egress-monitoring)
-- [Encryption](#encryption)
-- [Cryptography](#cryptography)
-- [Cryptographic Hash Function](#cryptographic-hash-function)
-- [Digital Signatures](#digital-signatures)
-- [Message Digests](#message-digests)
-- [Message Authentication Code](#message-authentication-code)
-- [Cybersquatting](#cybersquatting)
+- [Protecting Data](#protecting-data)
+   - [Anonymization](#anonymization)
+   - [Pseudo-Anonymization](#pseudo-anonymization)
+   - [Data Minimization](#data-minimization)
+   - [Tokenization](#tokenization)
+   - [Data Masking](#data-masking)
+   - [Encryption](#encryption)
+   - [Cryptography](#cryptography)
+   - [Cryptographic Hash Function](#cryptographic-hash-function)
+   - [Digital Signatures](#digital-signatures)
+   - [Message Digests](#message-digests)
+   - [Message Authentication Code](#message-authentication-code)
+- [Mishandling Data](#mishandling-data)
+   - [Cybersquatting](#cybersquatting)
 - [Data Loss Prevention](#data-loss-prevention)
 
 
 
+## Data Classification 
+
+Data can be classified as:
+
+- PII (Personally identifiable information)
+- PHI (Protected health information)
+- Proprietary or trade secret
+- Public/private 
+- Critical 
+- Financial
 
 
-## Data Handling
+## Data Roles and Responsibilities
 
-Data undergoes a life cycle encompassing creation, usage, sharing, and modification. Various models exist, sharing common operational steps. The data security life cycle model aligns with diverse roles and aids in understanding data states: in use, at rest, and in motion.
+- **Owner**
 
-1. **Create** 
+   - Legal data owner 
+   - Sets policies on how data will be managed 
+
+- **Controller**
+
+   - Ensure data complies with regulations
+
+- **Processor**
+
+   - Processes data while adhering to laws and regulations
+   - Handle data according to guidelines
+
+- **Custodian/Steward**
+
+   - Day-to-day management of data
+   - Permissions, backup, etc.
+   - Is aligned with policies set by data owner 
+   - Owner sets rules, custodian enacts the rules
+
+- **Data Privacy Officer (DPO)**
+
+   - Important data role 
+   - Ensure data privacy regulationcompliance such as GDPR
+
+
+
+## Data Lifecycle
+
+Data undergoes a life cycle encompassing creation, usage, sharing, and modification. Various models exist, sharing common operational steps. 
+
+1. **Collect/Create** 
    - Creating the knowledge, which is usually tacit knowledge at this point.
 
 2. **Store** 
    - Storing or recording it in some fashion (which makes it explicit).
 
-3. **Use** 
+3. **Use/Process** 
    - Using the knowledge, which may cause the information to be modified, supplemented or partially deleted.    
 
 4. **Share** 
@@ -52,7 +103,7 @@ Data undergoes a life cycle encompassing creation, usage, sharing, and modificat
    - Destroying the data when it is no longer needed.
 
 
-### Identify and Assess Data
+## Identify and Assess Data
 
 1. **Identification of Valuable Assets**
    - Recognize assets based on their value to the data owner.
@@ -80,6 +131,14 @@ Data undergoes a life cycle encompassing creation, usage, sharing, and modificat
 7. **Compliance Protocols**
     - Follow specific protocols and processes for regulatory compliance.
     - Ensure data is irreversibly destroyed as required.
+
+## Data Sovereignty  
+
+Location of the data and the laws that apply to it.
+
+- Where did the data originate?
+- Where does the data reside?
+- Which laws and regulations apply?
 
 ## Data Handling Practices
 
@@ -177,19 +236,33 @@ Retaining unnecessary data has considerable costs in terms of storage and manage
    - Involves shredding, chopping, burning, or etching.
    - Remains disposed of in protected landfills.
 
-## Overwriting 
 
-Overwriting involves writing multiple patterns across all storage media (see ISC2 Study Guide, Chapter 5, Module 1). This method ensures that the original data cannot be recovered. 
+## Destroying Data 
 
-For example, if an organization wants to repurpose a hard drive, they can overwrite the drive with multiple data patterns to ensure that the original data is completely erased and cannot be recovered.
+### Data Media Sanitization
 
-## PHI and PII 
+Ensures that data is completely destroyed.
 
-- PHI is Protected Health Information
+- Data could still be recovered if not sanitized 
+- Use disk wiping tools such as performing:
+   - Multiple pass disk overwrites (SSD and HDD)
+   - Degaussing (HDD)
 
-- PII is Personal Identifiable Information
+### Overwriting 
 
-## The Right to be Forgotten 
+Overwriting involves writing multiple patterns across all storage media (see ISC2 Study Guide, Chapter 5, Module 1). 
+
+- Ensures that the original data cannot be recovered. 
+- To repurpose a hard drive,overwrite the drive with multiple data patterns to ensure that the original data is completely erased.
+
+### Cryptographic Erasures 
+
+Destorying the decryption key to ensure that the encrypted data cannot be decrypted.
+
+- Ensures data becomes inaccessible
+- Useful for self-encrypting drives (SEDs)
+
+### The Right to be Forgotten 
 
 The right to be forgotten is a principle under the General Data Protection Regulation (GDPR).
 
@@ -281,7 +354,41 @@ According to the ISC2 Study Guide (chapter 5, module 1, under Data Handling Prac
    - DLP solutions regulate data leaving the organization through applications and APIs.
    - Monitor and prevent unauthorized data access and transmission.
 
-## Encryption 
+## Protecting Data 
+
+### Anonymization 
+
+
+Anonymization of data is the process of removing or altering personally identifiable information (PII) to ensure that the data cannot be traced back to specific individuals.
+
+- Anonymized data has limited marketing value
+- GDPR allows anonymized data collection and use without user consent 
+
+### Pseudo-Anonymization 
+
+Replacing unique identifiers (such as PII) with fake identifiers.
+
+- Information can also be selectively removed. 
+
+### Data Minimization 
+
+Refers to limiting the amount of data that is stored or retained.
+
+- Example is PCI DSS 
+- Merchants doesn't need to retain the customers' credit card details 
+- Retain only what's legally allowed.
+
+### Tokenization 
+
+Using a service or app that creates a unique token that authorizes the access instead of using the original credentials. 
+
+### Data Masking 
+
+Refers to hiding sensitive data from unauthorized users.
+
+- Masked out credit card number digits on receipts
+
+### Encryption 
 
 Encryption is essential for data security as it ensures that sensitive information remains secure and unreadable to unauthorized individuals, both while stored and during transmission over networks.
 
@@ -297,7 +404,7 @@ Encryption is essential for data security as it ensures that sensitive informati
    - Enables the exchange of digitally signed contracts.
    - Validates the binding nature and authenticity of digital contracts.
 
-## Cryptography
+### Cryptography
 Cryptography is a versatile tool, providing crucial services like confidentiality and integrity for enhanced system security.
 
 - **Confidentiality**
@@ -313,7 +420,7 @@ Cryptography is a versatile tool, providing crucial services like confidentialit
     <img width=700 src='../../Images/security-encryption-cryptograpghy.png'>
     </p>
 
-## Cryptographic Hash Function 
+### Cryptographic Hash Function 
 
 A hash function is a mathematical function that takes an input or 'message' and generates an output or 'hash value', usually much smaller than the original message, typically of a fixed-size (see ISC2 Study Guide, Module 1, under Encryption Overview).
 
@@ -327,7 +434,7 @@ A cryptographic hash function should have the following characteristic:
 - tamper-evident 
 - non-reversible
 
-## Digital Signatures 
+### Digital Signatures 
 
 A digital signature is the result of a cryptographic transformation of data which is useful for providing: 
 - data origin authentication
@@ -338,7 +445,7 @@ See NIST SP 800-12 Rev. 1 under Digital Signature.
 
 However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
 
-## Message Digests 
+### Message Digests 
 
 Message digesting ensures data integrity by maintaining accuracy and consistency.
 
@@ -348,7 +455,7 @@ Message digesting ensures data integrity by maintaining accuracy and consistency
 - Users can perform the same hash function on the downloaded file.
 - Matching digests confirm the file's integrity, indicating no alteration during transmission.
 
-## Message Authentication Code 
+### Message Authentication Code 
 
 A Message Authentication Code (MAC) does not guarantee anonymity. MAC is a cryptographic function that guarantees a message's:
 
@@ -358,7 +465,9 @@ A Message Authentication Code (MAC) does not guarantee anonymity. MAC is a crypt
 
 On the other hand, **anonymity is not a guaranteed by a MAC.**
 
-## Cybersquatting
+## Mishandling Data 
+
+### Cybersquatting
 
 Cybersquatting involves speculatively registering and selling domain names for profit.
 

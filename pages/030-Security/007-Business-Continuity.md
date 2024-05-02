@@ -1,11 +1,15 @@
 
 # Business Continuity
 
-
 - [Business Continuity Plan](#business-continuity-plan)
 - [Components of a Business Continuity Plan](#components-of-a-business-continuity-plan)
     - [Risk Assessment](#risk-assessment)
-    - [Business Impact Analysis (BIA)](#business-impact-analysis-bia)
+    - [Business Impact Analysis BIA](#business-impact-analysis-bia)
+        - [Business Impact](#business-impact)
+        - [Failed Component Impact](#failed-component-impact)
+        - [Locating Critical Sources](#locating-critical-sources)
+        - [Recovery Point Objective](#recovery-point-objective)
+        - [Recovery Time Objective](#recovery-time-objective)
     - [Emergency Response Plan](#emergency-response-plan)
     - [Crisis Management Plan](#crisis-management-plan)
     - [Backup and Recovery Strategies](#backup-and-recovery-strategies)
@@ -19,6 +23,9 @@
 - [How often should an organization test its business continuity plan?](#how-often-should-an-organization-test-its-business-continuity-plan)
 - [Business Continuity in Action](#business-continuity-in-action)
 - [Business Continuity versus Disaster Recovery](#business-continuity-versus-disaster-recovery)
+
+
+
 
 
 ## Business Continuity Plan 
@@ -57,7 +64,8 @@ Business continuity planning (BCP) involves proactively developing procedures to
 
 ### Risk Assessment
 
-- Identify potential threats and vulnerabilities.
+Identify potential threats and vulnerabilities.
+
 - Assess the impact of disruptions on business operations.
 - When assessing risks that considers tangible and intangible assets, the recommended approach is a combination of:
 
@@ -66,9 +74,86 @@ Business continuity planning (BCP) involves proactively developing procedures to
 
 ### Business Impact Analysis (BIA)
 
+Prioritize mission-critical processes:
+
 - Determine critical business functions, processes, and their dependencies.
 - Quantify the impact of disruptions on these functions.
 - Helps prioritize recovery efforts and allocate resources effectively.
+
+Assess risks:
+
+- Identify sensitive data 
+- Identify single points of failure
+
+#### Business Impact
+
+Could be financial or reputation:
+
+- Fines 
+- Loss of contracts
+- Reputation Loss
+- Data Loss
+    - Breach notification 
+    - Escalation requirements 
+    - Data exfiltration
+
+#### Failed Component Impact
+
+- **Mean Time Between Failures (MTBF)**
+
+    - Average time a system or component operates without failure
+    - Calculated by dividing the total operational time by the number of failures over a given period. 
+    - Higher MTBF values indicate greater reliability 
+
+
+- **Mean Time To Failure (MTTF)** 
+
+    - Average time a non-repairable system or component operates before it permanently fails. 
+
+    - Assess the expected lifespan or reliability of products 
+
+    - Calculated by dividing the total operational time by the number of failures
+
+    - Applies to **non-repairable components**
+
+- **Mean Time To Repair (MTTR)** 
+
+    - Measures the average time required to repair a failed system or component.
+    - Calculated by dividing the total repair time by the number of repair events within a specific period.
+
+    - Used to evaluate maintenance efficiency and system reliability,
+    
+    - Lower MTTR = faster repair times.
+
+#### Locating Critical Sources 
+
+- **Data discovery and classifications** 
+    
+    - Where is our sensitive data?
+    - On-premise or in the cloud?
+
+- **Privacy Threshold Assessment (PTA)**    
+
+    - First step, determine nature of sensitive data
+    - Understand first, before taking steps to protect the data
+
+- **Privacy Impact Assessment (PIA)**
+
+    - If exfiltrated or data fell to wrong hands
+    - Determine impact and how to respond+
+
+
+#### Recovery Point Objective
+
+- Maximum amount of data loss that is acceptable during a disruption, usually expressed in time (e.g., 4 hours).
+- Related to backup and data replication strategies 
+- Backups ensure critical data can be restored without exceeding the acceptable loss.
+
+#### Recovery Time Objective 
+
+- Maximum amount of time tolerable for system recovery after a disruption or failure.
+- Helps determine the urgency and resources needed to restore operations within a timeframe.
+
 
 ### Emergency Response Plan
 

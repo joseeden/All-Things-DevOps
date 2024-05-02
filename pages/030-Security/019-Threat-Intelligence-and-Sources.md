@@ -1,13 +1,17 @@
 
 # Threat Intelligence and Sources
 
+
 - [Quality of Intelligence](#quality-of-intelligence)
 - [Types of intelligence](#types-of-intelligence)
     - [Proprietary](#proprietary)
     - [Closed-Source](#closed-source)
     - [Open-Source](#open-source)
     - [Open-Source Intelligence OSINT](#open-source-intelligence-osint)
+    - [Dark Web](#dark-web)
 - [Implicit and Explicit Knowledge](#implicit-and-explicit-knowledge)
+- [Automated Indicator Sharing](#automated-indicator-sharing)
+
 
 
 ## Quality of Intelligence 
@@ -57,12 +61,32 @@ Data that is available to use without subscription, which may include threat fee
 
 Methods of obtaining information about a person or organization through public records, websites, and social media.
 
+### Dark Web 
+
+The Dark Web is a part of the internet that is intentionally hidden and requires special software like Tor to access.
+- It is a segment of the Deep Web, but  is often associated with illegal or illicit activities.
+- Often monitored by law enforcement due to its association with cybercrime and illegal trade.
+- Contents are not indexed by search engine like Google
+- Uses Tor network, which is sits over standard internet protocol.
+- Encrypted anonymous connections
+
+How it works:
+
+![](../../Images/sec+-darkweb-darknet-how-it-works.png)
+
 ## Implicit and Explicit Knowledge 
 
 All of the threat feeds mentioned previously as intelligence sources are considered **explicit knowledge**, but **explicit knowledge** comes from years of experience. 
 
+## Automated Indicator Sharing 
 
+Uses a specialized format called **Structured Threat Information Expression (STiX)** to package threat intelligence information.
 
+- Exchange of cybersecurity intelligence between entities
+
+- Uses **Trusted Automated Exchange of Intelligence Information (TAXII)** to transmit the packaged information 
+- TAXII is like an RSS feed
+- Normally built-in on security monitoring tools
 
 
 

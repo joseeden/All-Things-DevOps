@@ -116,6 +116,9 @@ Additionally:
   - SLA delves into granular details, specifying service intricacies.
   - Caution required in cloud-based outsourcing, thorough legal review recommended.
 
+
+To learn more about other agreement types, please see [Risk Management ](./003-Risk-Management.md#agreement-types)
+
 ## Cloud 
 
 Associated with internet-based computing resourcesm it is sold as services by Cloud Service Providers (CSPs).
