@@ -61,123 +61,122 @@ Information assurance and cybersecurity are key for risk management. The require
 
 ## Risk Management Terminologies 
 
-### Asset
+- **Asset**
 
-An asset is something in need of protection.
+  - An asset is something in need of protection.
 
-### Vulnerability
+- **Vulnerability**
 
-Gap or weakness in protecting valuable assets, including information.
+  - Gap or weakness in protecting valuable assets, including information.
+  - Example: IT environment vulnerable to flooding during a major storm.
 
-- Example: IT environment vulnerable to flooding during a major storm.
+- **Threat**
 
-### Threat
+  - Something or someone aiming to exploit a vulnerability for unauthorized access.
 
-Something or someone aiming to exploit a vulnerability for unauthorized access.
+  - Example: Natural disaster threatening utility power supply, impacting IT asset availability.
 
-- Example: Natural disaster threatening utility power supply, impacting IT asset availability.
+  - **Harm by Exploitation:**
 
-**Harm by Exploitation:**
+    - Exploiting a vulnerability allows threats to harm assets.
+    - Example: Storm cutting off power, rendering IT components unusable.
 
-  - Exploiting a vulnerability allows threats to harm assets.
-  - Example: Storm cutting off power, rendering IT components unusable.
+  - **Mitigation and Risk Evaluation:**
 
-**Mitigation and Risk Evaluation:**
+    - Evaluate event likelihood and take actions to mitigate risks.
+    - Example: Assessing storm risk and implementing measures to protect IT assets.
 
-  - Evaluate event likelihood and take actions to mitigate risks.
-  - Example: Assessing storm risk and implementing measures to protect IT assets.
+- **Threat Actor**  
 
-### Threat Actor  
+  - An individual or a group posing a threat (according to NIST SP 800-150 under Threat Actor). 
+  - Typical threat actors include the following:
+    - Insiders (either deliberately, by simple human error, or by gross incompetence).
+    - Outside individuals or informal groups (either planned or opportunistic, discovering vulnerability).
+    - Formal entities that are nonpolitical (such as business competitors and cybercriminals).
+    - Formal entities that are political (such as terrorists, nation-states, and hacktivists).
+    - Intelligence or information gatherers (could be any of the above).
+    - Technology (such as free-running bots and artificial intelligence , which could be part of any of the above).
 
-A Threat Actor is defined as an individual or a group posing a threat (according to NIST SP 800-150 under Threat Actor). Typical threat actors include the following:
+  - For more details, please see [Cyber Threat and Attacks.](./017-Cyber-Threats-and-Attacks.md)
 
-- Insiders (either deliberately, by simple human error, or by gross incompetence).
-- Outside individuals or informal groups (either planned or opportunistic, discovering vulnerability).
-- Formal entities that are nonpolitical (such as business competitors and cybercriminals).
-- Formal entities that are political (such as terrorists, nation-states, and hacktivists).
-- Intelligence or information gatherers (could be any of the above).
-- Technology (such as free-running bots and artificial intelligence , which could be part of any of the above).
+- **Threat Vector**
 
-For more details, please see [Cyber Threat and Attacks.](./017-Cyber-Threats-and-Attacks.md)
+  - The means by which a threat actor carries out their objectives.
 
-### Threat Vector
+- **Attacker**
 
-The means by which a threat actor carries out their objectives.
+  - An Attacker is always an individual, but a Threat Actor can be either a group or an entity.
 
-### Attacker 
+  - The three most common goals of cybersecurity attackers are DAD:
 
-An Attacker is always an individual, but a Threat Actor can be either a group or an entity.
-
-The three most common goals of cybersecurity attackers are DAD:
-
-- Disclosure
-- Alteration
-- Denial
-
-
-### Attack Vectors 
-
-Pathways to gain access to infrastructure. 
-
-- Weak configurations 
-- Open firewall ports 
-- Lack of user security awareness 
-- Lack of MFA
-- Missing patches 
-- Infected USB drive 
-
-### Supply-Chain Attacks 
-
-Anyone or anything that allows you to deliver a product or a service:
-
-- Manufacturers 
-- Contractors
-- Outsourced personnel 
-
-As owners of the contractual agreement, we have the **right to audit** the third-party systems any time to make sure they're compliant with standards and regulations.
-
-### Likelihood
-
-- **Likelihood of occurrence** 
-
-    - This is the weighted factor based on a subjective analysis of the probability that a given threat or set of threats is capable of exploiting a given vulnerability or set of vulnerabilities.
-
-- **Assessing Impact:**
-
-    - Impact is the magnitude of harm resulting from unauthorized actions like disclosure, modification, destruction, or loss of information or system availability.
-    - Consideration: Potential results if a threat materializes and an event occurs.  
+    - Disclosure
+    - Alteration
+    - Denial
 
 
-### Shadow IT  
+- **Attack Vectors** 
 
-Shadow IT is the use of unapproved technology, software, or hardware by employees without authorization from IT or security teams. 
+  - Pathways to gain access to infrastructure. 
 
-- It poses risks like data breaches, compliance issues, and other security vulnerabilities. 
+    - Weak configurations 
+    - Open firewall ports 
+    - Lack of user security awareness 
+    - Lack of MFA
+    - Missing patches 
+    - Infected USB drive 
 
-- Focus is on identifying, managing, and mitigating these risks through effective policies, detection methods, and user education.
+- **Supply-Chain Attacks** 
 
-### State Actor 
+  - Anyone or anything that allows you to deliver a product or a service:
 
-State actors work for or represent a government or nation-state, often with cyber-focused goals.
+    - Manufacturers 
+    - Contractors
+    - Outsourced personnel 
 
-- They have extensive resources and technical skills for complex cyber operations.
-- Common targets include government, military, critical infrastructure, and major corporations.
-- Effective responses require strong cybersecurity, intelligence sharing, and international cooperation.
+  - As owners of the contractual agreement, we have the **right to audit** the third-party systems any time to make sure they're compliant with standards and regulations.
 
-### Advanced Persistent Threat
+- **Likelihood**
 
-An Advanced Persistent Threat (APT) is a sophisticated and stealthy cyber attack.
-- Usually conducted by organized groups, often linked to nation-states.
-- They focus on maintaining long-term access to a target's network.
-- APTs often aim to gather intelligence, steal data, or disrupt operations.
+  - **Likelihood of occurrence** 
 
-### Advance Tactics, Techniques, and Procedures
+      - This is the weighted factor based on a subjective analysis of the probability that a given threat or set of threats is capable of exploiting a given vulnerability or set of vulnerabilities.
 
-Advanced Tactics, Techniques, and Procedures (TTP) describe the behaviors and methods used by threat actors in cyber attacks.
+  - **Assessing Impact:**
 
-- **Tactics** refer to the high-level goals or strategies that threat actors aim to achieve.
-- **Techniques** involve the specific ways or approaches attackers use to execute tactics.
-- **Procedures** describe detailed steps or sequences used to carry out techniques consistently.
+      - Impact is the magnitude of harm resulting from unauthorized actions like disclosure, modification, destruction, or loss of information or system availability.
+      - Consideration: Potential results if a threat materializes and an event occurs.  
+
+
+- **Shadow IT**  
+
+  - Shadow IT is the use of unapproved technology, software, or hardware by employees without authorization from IT or security teams. 
+
+  - It poses risks like data breaches, compliance issues, and other security vulnerabilities. 
+
+  - Focus is on identifying, managing, and mitigating these risks through effective policies, detection methods, and user education.
+
+- **State Actor** 
+
+  - State actors work for or represent a government or nation-state, often with cyber-focused goals.
+
+  - They have extensive resources and technical skills for complex cyber operations.
+  - Common targets include government, military, critical infrastructure, and major corporations.
+  - Effective responses require strong cybersecurity, intelligence sharing, and international cooperation.
+
+- **Advanced Persistent Threat**
+
+  - An Advanced Persistent Threat (APT) is a sophisticated and stealthy cyber attack.
+  - Usually conducted by organized groups, often linked to nation-states.
+  - They focus on maintaining long-term access to a target's network.
+  - APTs often aim to gather intelligence, steal data, or disrupt operations.
+
+- **Advance Tactics, Techniques, and Procedures**
+
+  - Advanced Tactics, Techniques, and Procedures (TTP) describe the behaviors and methods used by threat actors in cyber attacks.
+
+    - **Tactics** refer to the high-level goals or strategies that threat actors aim to achieve.
+    - **Techniques** involve the specific ways or approaches attackers use to execute tactics.
+    - **Procedures** describe detailed steps or sequences used to carry out techniques consistently.
 
 ## Risk Management Frameworks 
 
