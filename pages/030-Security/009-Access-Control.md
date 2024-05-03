@@ -9,29 +9,32 @@
     - [Rules](#rules)
 - [Controls Assessment](#controls-assessment)
 - [Privileged Access Management](#privileged-access-management)
-- [Trust but Verify](#trust-but-verify)
 - [Physical Access Controls](#physical-access-controls)
     - [What it is](#what-it-is)
-    - [Types of Physical Access Controls](#types-of-physical-access-controls)
-    - [Monitoring](#monitoring)
-        - [Cameras](#cameras)
-        - [Logs](#logs)
-        - [Alarm Systems](#alarm-systems)
-        - [Security Guards](#security-guards)
+    - [Physical Security](#physical-security)
+    - [Securing Facilities](#securing-facilities)
+    - [Surveillance System](#surveillance-system)
+    - [Logging](#logging)
+    - [Alarm Systems](#alarm-systems)
     - [Visitor Management Policy](#visitor-management-policy)
     - [Considerations on Choosing an Access Control System](#considerations-on-choosing-an-access-control-system)
     - [Site Assessment](#site-assessment)
+    - [Physical Attacks](#physical-attacks)
 - [Logical Access Controls](#logical-access-controls)
     - [What it is](#what-it-is)
-    - [Discretionary Access Control DAC](#discretionary-access-control-dac)
-    - [Mandatory Access Control MAC](#mandatory-access-control-mac)
-        - [Bell and LaPadula access control model](#bell-and-lapadula-access-control-model)
-    - [Role-Based Access Control RBAC](#role-based-access-control-rbac)
-- [Need to Know](#need-to-know)
-- [Account Review](#account-review)
-- [Privilege creep](#privilege-creep)
-- [Decentralized Access Control](#decentralized-access-control)
-- [Self-service Password Reset](#self-service-password-reset)
+    - [Discretionary Access Control (DAC)](#discretionary-access-control-dac)
+    - [Mandatory Access Control (MAC)](#mandatory-access-control-mac)
+    - [Attribute-Based Access Control (ABAC)](#attribute-based-access-control-abac)
+    - [Role-Based Access Control (RBAC)](#role-based-access-control-rbac)
+    - [Rule-Based Access Control (RBAC)](#rule-based-access-control-rbac)
+- [Other Concepts](#other-concepts)
+    - [Trust but Verify](#trust-but-verify)
+    - [Need to Know](#need-to-know)
+    - [Account Review](#account-review)
+    - [Privilege creep](#privilege-creep)
+    - [Decentralized Access Control](#decentralized-access-control)
+    - [Self-service Password Reset](#self-service-password-reset)
+
 
 
 ## Security Control 
@@ -52,19 +55,19 @@ Access controls involve more than just limiting access; they also encompass faci
 Subjects are the active initiators of service requests.
 
 - Types: Users, processes, clients, programs, devices (endpoints, smartphones, etc.).
-- Activity: Actively initiate access requests to resources or services.
-- Interaction: Request services from objects.
-- Clearance: Require suitable clearance (permissions) for accessing services or resources.
+- Actively initiate access requests to resources or services.
+- Request services from objects.
+- Require suitable clearance (permissions) for accessing services or resources.
 
 ### Objects
 
 By definition, anything that a subject attempts to access is referred to as an object. 
 
 - Types: Buildings, computers, files, databases, printers, servers, memory blocks, etc.
-- Role: Passive responders to subject-initiated service requests.
-- Logic: Lack their own access control logic, relying on integrated systems.
-- Ownership: Access is often recorded in rule bases or access control lists.
-- Classification: May be classified based on access rules.
+- Passive responders to subject-initiated service requests.
+- Lack their own access control logic, relying on integrated systems.
+- Access is often recorded in rule bases or access control lists.
+- May be classified based on access rules.
 
 ### Rules 
 
@@ -108,13 +111,6 @@ To ensure confidentiality, integrity, and availability of information, the Princ
   - Multi-factor authentication for critical access.
 
 
-## Trust but Verify 
-
-The "Trust but verify" model is a method of threat protection that involves granting privileged accounts access to the network and other resources, while at the same time verifying their actions and activities. 
-
-- Limitations in this model expose organizations to security threats.
-- Increasingly abandoned in favor of the Zero Trust model.
-- Other options are considered best practices in access management.
 
 
 ## Physical Access Controls
@@ -124,6 +120,7 @@ The "Trust but verify" model is a method of threat protection that involves gran
 Physical access controls are tangible security measures designed to prevent, monitor, or detect direct contact with systems or specific areas within a facility.
 
 **Examples of Physical Access Controls**
+
 - Security Guards
 - Fences
 - Motion Detectors
@@ -140,119 +137,170 @@ Physical access controls are tangible security measures designed to prevent, mon
 - Alarms
 
 **Priority in Deployment**
-When implementing physical access controls, the paramount concern is the safety and security of personnel, followed by the protection of other physical assets belonging to the company.
 
+- Biggest concern is the safety and security of personnel, followed by the protection of other physical assets belonging to the company.
+- Various physical access control mechanisms can be deployed to manage and monitor access to a facility, ranging from deterrents to detection systems. Each area requires distinct physical access controls, monitoring, and preventive measures.
 
-### Types of Physical Access Controls
+### Physical Security
 
-Various physical access control mechanisms can be deployed to manage and monitor access to a facility, ranging from deterrents to detection systems. Each area requires distinct physical access controls, monitoring, and preventive measures.
-
-1. **Badge Systems and Gate Entry**
+- **Badge Systems and Gate Entry**
    - Examples are Turnstiles, mantraps, remotely/system-controlled door locks.
-   - Access Control Device: Badges with employee identifiers.
    - Access control devices are assigned and activated 
    - Include biometric characteristics in high-security environments.
    - System compares individual's badge against a verified database.
    - For card types: Bar code, magnetic stripe, proximity, smart, hybrid.
 
-2. **Environmental Design**
+- **Environmental Design**
    - Crime Prevention through Environmental Design (CPTED) focuses on passive design elements.
    - Directing flow, signaling authorized spaces, providing visibility to reduce the likelihood of criminal activities.
 
-3. **Biometrics**
-   - **Authentication Process**
-     - User's registered biometric code stored in the system or on a smart card.
-     - User presents biometric data for comparison with the stored code.
-   - **Types**
-     - **Physiological** 
-        - Fingerprint, iris scan, retinal scan, palm scan, venous scan.
-     - **Behavioral** 
-        - Voiceprints, signature dynamics, keystroke dynamics.
-   - **Considerations** High accuracy, potential expense, user discomfort, privacy concerns, device sanitization challenges.
+- **Biometrics**
+   - User's registered biometric code stored in the system or on a smart card.
+   - User presents biometric data for comparison with the stored code.
+   - High accuracy, potential expense, user discomfort, privacy concerns, device sanitization challenges.
+   
+- **Biometric Types**
+    - **Physiological** 
+      - Fingerprint, iris scan, retinal scan, palm scan, venous scan.
+    - **Behavioral** 
+      - Voiceprints, signature dynamics, keystroke dynamics.
+
+### Securing Facilities
+
+- **Fences**
+  - Structure that encloses an area using interconnected panels or posts.
+  - Crafted with materials such as wood, metal, wiremesh, concrete, etc.
+  - Visual deterrent, shows where property starts and ends.
+  - Delays intruders, providing security personnel longer time to react.
+
+    <p>
+    <img width=500 src='../../Images/sec+-enter-facilities-fencesss.png'>
+    </p>
+
+- **Bollards**
+
+  - A bollard is a short post embedded into a street or sidewalk. 
+  - These posts are common in city and building designs
+  - Boundary markings or protective barriers, redirecting vehicular traffic
+
+    <p>
+    <img width=500 src='../../Images/security-bollards.png'>
+    </p>
 
 
-### Monitoring 
+- **Mantrap** 
 
-Implementing physical access controls, monitoring personnel and equipment movements, and maintaining detailed audit logs for all physical events are essential components in upholding comprehensive organizational security.
+  - A Mantrap is a small room with an entry door on one wall and an exit door on the opposite wall. One door of a mantrap cannot be unlocked and opened until the opposite door has been closed and locked. Mantraps are often used in physical security to separate non-secure areas from secure areas and prevent unauthorized access.
 
-#### Cameras 
-
-Effective security involves the integration of cameras and diverse sensors for comprehensive monitoring and detection.
-
-1. **Cameras**
-    - Deter criminal activity.
-    - Serve as forensic tools.
-    - Centrally monitored for swift response.
-
-2. **Motion Sensors**
-    - Infrared, microwave, and laser technologies.
-    - Augment external perimeter monitoring.
-
-3. **Integrated Sensors**
-    - Deployed in doors, gates, and turnstiles.
-    - Strain-sensitive cables and vibration sensors.
-    - Detect and respond to potential breaches.
+    <p>
+    <img width=500 src='../../Images/security-mantrap.png'>
+    </p>
 
 
-#### Logs 
+- **Access Control Vestibules**
+
+  - Double-door system with two electroniccally-controlled doors that ensure only one door is open at any given time.
+  - Like a mantrap, a security vestibule consists of a small space between two sets of doors, but it may be larger and more open.
+  - It can serve multiple purposes, such as controlling foot traffic, reducing drafts, or creating a barrier for noise.
+  - Prevents the following:
+    - **Piggybacking** 
+      - Involves two people, with and without access, entering a secure area.
+      - Intentionally allowing the second person to enter. 
+
+    - **Tailgating**
+      - Unauthorized person closely follows someone with access without their knowledge and consent.
+  
+    <p>
+    <img width=500 src='../../Images/sec+-security-vestibules-photo.png'>
+    </p>
+
+
+- **Door Locks**      
+  - Padlocks 
+  - Simple pin and tumbler locks
+  - Numeric locks 
+  - Wireless locks 
+  - Biometric locks
+  - Cipher locks
+
+### Surveillance System 
+
+Organized strategy or setup designed to observe and report activities in a given area.
+
+- **Security Guards**
+  - Security guards discourage individuals from attempting unauthorized access.
+  - Acts as a visible deterrent against impersonation or tailgating.
+
+- **Video/Cameras (CCTV)**
+  - Deter criminal activity.
+  - Serve as forensic tools.
+  - Centrally monitored for swift response.
+  - Features:
+    - Motion detection 
+    - Night vision
+    - Facial recognition 
+    - Remote access
+    - Pan-tilt-zoom (PTZ)
+
+- **Lighting**
+  - Proper lighting is crucial for an effective surveillance system.
+  - Well-lit areas can also deter criminals
+  - Can be integrated with motion sensors  - lights on when motion is detected.
+
+- **Motion Sensors**
+  - Detect and respond to external changes in the environment.
+  - Categories:
+    - Infrared Sensors 
+    - Pressure sensors
+    - Microwave sensors
+    - Ultrasonic sensors
+
+- **Integrated Sensors**
+  - Deployed in doors, gates, and turnstiles.
+  - Strain-sensitive cables and vibration sensors.
+  - Detect and respond to potential breaches.
+
+
+### Logging
 
 This includes physical logs, such as sign-in sheets or electronic access system logs. It emphasizes the importance of logs in supporting business needs, compliance, and forensic investigations.
 
-- Record of events, vital for business requirements.
-- Captured by security guards or electronic access systems.
+- **Log Protection**
+  - Essential for legal and business reasons.
+  - Safeguarded against manipulation and unauthorized disclosure.
 
-**Log Protection**
-- Essential for legal and business reasons.
-- Safeguarded against manipulation and unauthorized disclosure.
+- **Review and Retention**
+  - Regular log review integral to the security program.
+  - Established guidelines for log retention aligned with policy.
 
-**Review and Retention**
-- Regular log review integral to the security program.
-- Established guidelines for log retention aligned with policy.
+- **Log Anomalies**
+  - Identification of unusual occurrences crucial.
+  - Key step in security issue detection during audits or routine monitoring.
 
-**Log Anomalies**
-- Identification of unusual occurrences crucial.
-- Key step in security issue detection during audits or routine monitoring.
-
-**Business and Legal Variances**
-- Varying requirements for log retention.
-- Compliance influenced by legal guidelines and industry standards.
+- **Business and Legal Variances**
+  - Varying requirements for log retention.
+  - Compliance influenced by legal guidelines and industry standards.
 
 
-#### Alarm Systems
+### Alarm Systems
 
 Alarm systems aim to promptly notify relevant authorities in case of unexpected events.
 
-**Basic Functionality**
-- Commonly on doors/windows, designed to signal unexpected openings.
-- Simplest form alerts appropriate personnel when unauthorized access occurs.
+- **Basic Functionality**
+  - Commonly on doors/windows, designed to signal unexpected openings.
+  - Simplest form alerts appropriate personnel when unauthorized access occurs.
 
-**Access Control**
-- Authorized access (e.g., code/badge) does not trigger an alarm.
-- Unauthorized access (e.g., forced entry) activates the alarm.
+- **Access Control**
+  - Authorized access (e.g., code/badge) does not trigger an alarm.
+  - Unauthorized access (e.g., forced entry) activates the alarm.
 
-**Fire Alarm Systems**
-- Activated by heat or smoke sensors.
-- Audible warnings safeguard lives and notify local response teams.
+- **Fire Alarm Systems**
+  - Activated by heat or smoke sensors.
+  - Audible warnings safeguard lives and notify local response teams.
 
-**Emergency Response**
-- Panic buttons serve as a quick alert mechanism.
-- When activated, alerts police or security personnel for immediate response.
-
-#### Security Guards
-
-Security guards act as an effective deterrent to unauthorized access and ensuring the prevention of theft and misuse of assets.
-
-**Deterrence**
-- Security guards discourage individuals from attempting unauthorized access.
-- Acts as a visible deterrent against impersonation or tailgating.
-
-**Complement to Access Control**
-- Regardless of access control methods, guards reinforce security measures.
-- Monitoring systems and guards work synergistically to enhance overall security.
-
-**Preventing Theft and Abuse**
-- Guards contribute to preventing theft and abuse of equipment or sensitive information.
-- Their presence adds an extra layer of protection to physical assets.
+- **Emergency Response**
+  - Panic buttons serve as a quick alert mechanism.
+  - When activated, alerts police or security personnel for immediate response.
 
 ### Visitor Management Policy 
 
@@ -263,6 +311,8 @@ A visitor management policy is a vital component of physical access controls, as
   
 
 ### Considerations on Choosing an Access Control System
+
+The following are some considerations:
 
 - Performance is primary factor.
 - Includes control effectiveness, reliability, scalability, and compatibility.
@@ -276,9 +326,7 @@ Example:
 
 **Primary consideration when choosing physical access controls**
 
-The primary consideration when selecting physical access controls should be the security of personnel. 
-
-- While building, equipment, and network security matter, personnel security is the top priority.
+- While building, equipment, and network security matter, **personnel security is the top priority.**
 - Examples of Controls: Locks, security cameras, and security personnel.
 - Designed to safeguard both people and assets.
 - Security cameras and personnel to deter and respond to threats like theft, violence, and unauthorized access.
@@ -287,19 +335,46 @@ The primary consideration when selecting physical access controls should be the 
 
 ### Site Assessment 
 
-- **Factors Considered:**
+- **Factors Considered**
   - Sensitivity of protected information, 
   - cost of scanners, and 
   - impact on employees and operations.
 
-- **Primary Consideration:**
+- **Primary Consideration**
   - The result of the site assessment.
   - This is a critical factor when implementing access controls for a physical site
 
-- **Example**:
+- **Example**
   - Biometric scanners installed based on sensitivity; needed for server rooms, executive offices, but not break rooms or supply closets.
 
 - **Reference**: ISC2 Study Guide, Chapter 3, Module 1.
+
+### Physical Attacks
+
+**Attacking with Brute Force**
+
+- Forcible entry like disabling locks
+- Tampering with security devices 
+- Confronting or attacking the security personnel
+- Ramming a barrier with a vehicle
+
+**Bypassing surveillance systems**
+
+- Visual obstructions 
+- Blinding sensors and Cameras
+- Interfering with acoustics
+- Electronic interference 
+- Physical environment attack, e.g. causing fire
+
+**Access badge cloning**
+
+- Refers to copying data from a badge to a blank device
+- Cloned badge can then be used to trick the system
+- How attackers clone badges:
+  - Scanning 
+  - Data exfiltration 
+  - Writing to a new card 
+  - Using a cloned access badge
 
 ## Logical Access Controls
 
@@ -325,24 +400,25 @@ Discretionary Access Control (DAC) is an access control policy governing subject
 - Assigns permissions based on data owners' decisions
 
 **DAC in the Workplace**
-In a DAC system, users can share or pass files at their discretion. Asset owners decide access permissions, from digital file-sharing to low-tech measures like visitor's badges issued at the security desk.
 
-
+- In a DAC system, users can share or pass files at their discretion. 
+- Asset owners decide access permissions, from digital file-sharing to low-tech measures like visitor's badges issued at the security desk.
 
 ### Mandatory Access Control (MAC)
 
-Mandatory Access Control (MAC) ensures a uniform policy across an information system, restricting specific actions to trusted security administrators. Unlike Discretionary Access Control (DAC), MAC mandates access rights rather than relying on owner discretion.
+Mandatory Access Control (MAC) ensures a uniform policy across an information system, restricting specific actions to trusted security administrators. 
+
+Unlike Discretionary Access Control (DAC), MAC mandates access rights rather than relying on owner discretion.
 
 - Relies on the user's clearance and security classification 
 - Only trusted admins modify security rules.
 - Subjects have restricted privileges.
-- Prevents unauthorized information sharing.
 - Restricts granting of privileges.
-- Controls changes to security attributes.
 - Governs security attributes of new objects.
-- Manages rules for access control.
+- Resources are labelled and permissions are based on the assigned labels
 
 **MAC in the Workplace**
+
 Determines access uniformly based on policies, often associated with government agencies.
 
 - Goal is to prevent the unauthorized disclosure of classified information
@@ -353,7 +429,7 @@ Determines access uniformly based on policies, often associated with government 
 - Separation of duties is common.
 - Role-based access control often utilized.
 
-#### Bell and LaPadula access control model
+**Bell and LaPadula access control modeel**
 
 The Bell and LaPadula access control model arranges subjects and objects into security levels and defines access specifications, whereby subjects can only access objects at certain levels based on their security level.
 
@@ -364,6 +440,14 @@ The Bell and LaPadula access control model arranges subjects and objects into se
 - Commonly used in military and government contexts.
 - Limitations: Primarily addresses confidentiality, can be complex to implement.
 
+
+
+### Attribute-Based Access Control (ABAC)
+
+Attribute-Based Access Control (ABAC) manages access based on user, resource, and environmental attributes.
+- Supports flexible and dynamic access policies.
+- Ideal for complex access control needs where role-based models are insufficient.
+- Examples: roles, departments, security clearances, and factors like time and location.
 
 ### Role-Based Access Control (RBAC) 
 
@@ -376,6 +460,7 @@ Assigns user permissions based on predefined roles, streamlining access manageme
 - Enhances security and reduces complexity.
 
 **RBAC in the Workplace**
+
 Role-based access control tailors user privileges based on their organizational roles, ensuring appropriate access.
 
 - HR staff access personnel files.
@@ -388,8 +473,28 @@ Role-based access control tailors user privileges based on their organizational 
 - Standard roles for new user creation to avoid issues.
 - Ensures employees have necessary access for their roles.
 
+Role-Based Access Control (RBAC) defines user access based on roles, while Rule-Based Access Control defines access based on rules. Here's a distinction between the two:
 
-## Need to Know 
+### Rule-Based Access Control (RBAC)
+
+Grants or restricts access based on a set of rules or conditions, rather than roles.
+
+- Rules can include attributes like time, location, IP addresses, or specific security clearances.
+- Useful for more dynamic access control scenarios, where rules can be applied to various users or roles.
+- Offers greater flexibility and contextual access management.
+- Example: MFA, Device types, Location
+
+## Other Concepts 
+
+### Trust but Verify 
+
+The "Trust but verify" model is a method of threat protection that involves granting privileged accounts access to the network and other resources, while at the same time verifying their actions and activities. 
+
+- Limitations in this model expose organizations to security threats.
+- Increasingly abandoned in favor of the Zero Trust model.
+- Other options are considered best practices in access management.
+
+### Need to Know 
 
 Need to know is a principle that limits access to information to only those who require it to perform their job duties (see ISC2 Study Guide, Chapter 3, Module 1). 
 
@@ -401,7 +506,7 @@ Example:
 - Upholds data confidentiality and restricts access based on job roles.
 - Ensures adherence to security principles.
 
-## Account Review 
+### Account Review 
 
 Account review is a process used to verify that employees have the necessary privileges considering their roles within the organization
   - Verifies employees' privileges align with their roles within the organization.
@@ -419,11 +524,11 @@ Account review is a process used to verify that employees have the necessary pri
 - *Reference:* ISC2 Study Guide, Module 1, under Privileged Access Management.
 
 
-## Privilege creep 
+### Privilege creep 
 
 Privilege creep occurs when an individual accumulates access rights beyond what is necessary for their current job responsibilities, often as a result of changing roles within an organization.
 
-## Decentralized Access Control
+### Decentralized Access Control
 
 Decentralized access control means that access permissions and management are scattered across different departments or systems within an organization.
 
@@ -437,7 +542,7 @@ Example:
 - Varying access controls between departments pose security risks.
 - Inconsistencies may lead to unauthorized access, breaches, and challenges in auditing.
 
-## Self-service Password Reset
+### Self-service Password Reset
 
 - Decreases help desk cases related to password changes.
 - Allows users to reset passwords without help desk assistance.

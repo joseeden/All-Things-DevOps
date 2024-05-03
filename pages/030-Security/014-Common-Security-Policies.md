@@ -1,22 +1,20 @@
 
 # Security Policies
 
-
 - [Common Security Policies](#common-security-policies)
     - [Employee/Contractor Hiring](#employeecontractor-hiring)
+    - [Accounts/Credential Policy](#accountscredential-policy)
     - [Data Handling Policy](#data-handling-policy)
     - [Password Policy](#password-policy)
-    - [Acceptable Use Policy (AUP)](#acceptable-use-policy-aup)
-    - [Bring Your Own Device (BYOD)](#bring-your-own-device-byod)
+    - [Acceptable Use Policy AUP](#acceptable-use-policy-aup)
+    - [Bring Your Own Device BYOD](#bring-your-own-device-byod)
     - [Privacy Policy](#privacy-policy)
     - [Change Management Policy](#change-management-policy)
 - [Change Management Components](#change-management-components)
-    - [Request for Change (RFC)](#request-for-change-rfc)
+    - [Request for Change RFC](#request-for-change-rfc)
     - [Approval](#approval)
     - [Rollback](#rollback)
 - [Continuous Change Management Cycle](#continuous-change-management-cycle)
-
-
 
 
 ## Common Security Policies
@@ -65,6 +63,24 @@ Every policy should align with the organization's regulatory and contractual obl
 - Knowledge Transfer
 - Disable and delete accounts
 
+### Accounts/Credential Policy 
+
+Defines who get access to what. 
+
+- Employees
+- Contractors
+- Devices 
+- Service Accounts 
+- Administrators/Root accounts
+- PAM
+
+**Geolocation:**
+
+- Allowing access based on user's location 
+- **Geofencing** - user geolocation determines resource access 
+- **Geotagging** - adding location metadata to files 
+- **Impossible travel time** - if user is in one location, he can't be signed in on another location, but can be bypassed by VPN or Tor.
+
 ### Data Handling Policy
 
 A critical policy ensuring proper data use, including:
@@ -83,6 +99,21 @@ Every organization requires a comprehensive password policy for secure data acce
 - Leadership commitment
 - Password formulation standards
 - Designated policy enforcers
+
+Password Security:
+
+- **Length** 
+    - Recommended 12-16 characters 
+- **Complexity** 
+    - Alphanumeric + symbols
+- **Reuse** 
+    - If one account is compromised, another account is also compromised
+- **Expiration** 
+    - Change password every 90 days
+- **Password age** 
+    - Minimum number of days before user needs to change password again
+- **Risky logins**
+    - Locking accounts after a number of incorrect attempts 
 
 ### Acceptable Use Policy (AUP)
 

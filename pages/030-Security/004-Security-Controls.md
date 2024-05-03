@@ -56,17 +56,7 @@ Physical controls addresses security needs with hardware like badge readers and 
     - door release mechanisms
     - access control systems 
 
-#### Bollards 
-
-A bollard is a short post embedded into a street or sidewalk. These posts are common in city and building designs, acting as boundary markings or protective barriers.
-
-![](../../Images/security-bollards.png)
-
-#### Mantrap 
-
-A Mantrap is a small room with an entry door on one wall and an exit door on the opposite wall. One door of a mantrap cannot be unlocked and opened until the opposite door has been closed and locked. Mantraps are often used in physical security to separate non-secure areas from secure areas and prevent unauthorized access.
-
-![](../../Images/security-mantrap.png)
+To learn more, please see [Physical Security.](./009-Access-Control.md#physical-access-controls)
 
 
 ### Technical Controls

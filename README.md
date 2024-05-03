@@ -24,68 +24,6 @@ The complete list of projects can be found [here](projects/README.md).
 
 - [Containers](pages/002-Becoming-a-Cloud-Architect/013-Containers.md)
 
-## Security 
-
-- [Fundamentals](pages/030-Security/002-Security-Principles.md)
-    
-    - [Security Principles](pages/030-Security/002-Security-Principles.md)
-
-    - [Risk Management](pages/030-Security/003-Risk-Management.md)
-
-    - [Security Controls](pages/030-Security/004-Security-Controls.md)
-
-    - [Governance Elements](pages/030-Security/005-Governance-Elements.md)
-
-- [Incident Response](pages/030-Security/006-Incident-Responses.md)
-
-    - [Incident Response](pages/030-Security/006-Incident-Responses.md)
-
-    - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
-
-    - [Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
-
-- [Managing Access](pages/030-Security/009-Access-Control.md)
-
-    - [Access Control](pages/030-Security/009-Access-Control.md)
-
-    - [Defense in Depth](pages/030-Security/010-Defense-in-Depth.md)
-
-    - [Privileged Access Management](pages/030-Security/011-Privilege-Access-Management.md)
-
-- [Network Security](pages/030-Security/016-Computer-Networking.md)
-
-    - [Computer Networking](pages/030-Security/016-Computer-Networking.md)
-
-    - [Intrusion Detection Systems](pages/030-Security/024-IDS.md)
-
-    - [Network Security Infrastructure](pages/030-Security/018-Network-Security-Infrastructure.md)
-
-- [Cyber Threats and Attacks](pages/030-Security/017-Cyber-Threats-and-Attacks.md) 
-
-    - [Cyber Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
-
-    - [Threat Intelligence and Sources](pages/030-Security/019-Threat-Intelligence-and-Sources.md)
-
-    - [Threat Hunting](pages/030-Security/020-Threat-Hunting.md)
-
-    - [Threat Prevention](pages/030-Security/021-Threat-Prevention.md)
-
-    - [Attack Frameworks](pages/030-Security/022-Attack-Frameworks.md)
-
-    - [Attacks](pages/030-Security/023-Attacks.md)
-
-
-- [Security Operations](pages/030-Security/012-Data-Security.md)
-
-    - [Handling Data](pages/030-Security/012-Data-Security.md)
-
-    - [System Hardening](pages/030-Security/013-System-Hardening.md)
-
-    - [Common Security Policies](pages/030-Security/014-Common-Security-Policies.md)
-
-    - [Security Awareness Training](pages/030-Security/015-Security-Awareness-Training.md)
-
-- [Terminologies](pages/030-Security/001-Terminologies.md)
 
 ## Cloud - Fundamentals
 
@@ -203,6 +141,75 @@ The complete list of projects can be found [here](projects/README.md).
 - [Troubleshooting, Governance, and Compliance](pages/005-Azure/113_azure_tshooting_compliance_governance.md) 
 
 - [Azure Service Level Agreements and Lifecycle](pages/005-Azure/111_azure_sla.md) 
+
+
+## Security 
+
+- [Fundamentals](pages/030-Security/002-Security-Principles.md)
+    
+    - [Security Principles](pages/030-Security/002-Security-Principles.md)
+
+    - [Risk Management](pages/030-Security/003-Risk-Management.md)
+
+    - [Security Controls](pages/030-Security/004-Security-Controls.md)
+
+    - [Governance Elements](pages/030-Security/005-Governance-Elements.md)
+
+- [Incident Response](pages/030-Security/006-Incident-Responses.md)
+
+    - [Incident Response](pages/030-Security/006-Incident-Responses.md)
+
+    - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
+
+    - [Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
+
+- [Managing Access](pages/030-Security/009-Access-Control.md)
+
+    - [Access Control](pages/030-Security/009-Access-Control.md)
+
+    - [Defense in Depth](pages/030-Security/010-Defense-in-Depth.md)
+
+    - [Privileged Access Management](pages/030-Security/011-Privilege-Access-Management.md)
+
+- [Cyber Threats and Attacks](pages/030-Security/017-Cyber-Threats-and-Attacks.md) 
+
+    - [Cyber Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
+
+    - [Threat Actors](pages/030-Security/026-Threat-Actors.md)
+
+    - [Threat Vectors and Attack Surfaces](pages/030-Security/027-Threat-vectors-and-attack-surfaces.md)
+
+    - [Threat Intelligence and Sources](pages/030-Security/019-Threat-Intelligence-and-Sources.md)
+
+    - [Threat Hunting](pages/030-Security/020-Threat-Hunting.md)
+
+    - [Threat Prevention](pages/030-Security/021-Threat-Prevention.md)
+
+    - [Attack Frameworks](pages/030-Security/022-Attack-Frameworks.md)
+
+    - [Attacks](pages/030-Security/023-Attacks.md)
+
+- [Security Architecture](#security-architecture)
+
+    - [Computer Networking](pages/030-Security/016-Computer-Networking.md)
+
+    - [Network Authentication](pages/030-Security/025-Network-Authentication-Protocols.md) 
+
+    - [Intrusion Detection Systems](pages/030-Security/024-IDS.md)
+
+    - [Network Security Infrastructure](pages/030-Security/018-Network-Security-Infrastructure.md)
+
+- [Security Operations](pages/030-Security/012-Data-Security.md)
+
+    - [Handling Data](pages/030-Security/012-Data-Security.md)
+
+    - [System Hardening](pages/030-Security/013-System-Hardening.md)
+
+    - [Common Security Policies](pages/030-Security/014-Common-Security-Policies.md)
+
+    - [Security Awareness Training](pages/030-Security/015-Security-Awareness-Training.md)
+
+- [Terminologies](pages/030-Security/001-Terminologies.md)
 
 
 ## Linux 

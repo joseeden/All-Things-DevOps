@@ -2,34 +2,123 @@
 # Attacks 
 
 - [Attacks](#attacks)
-  - [Side Channel Attacks](#side-channel-attacks)
-  - [Replay Attack](#replay-attack)
-  - [Rainbow Table Attack](#rainbow-table-attack)
-  - [Dictionary Attack](#dictionary-attack)
-  - [Brute Force Attack](#brute-force-attack)
-  - [Buffer Overflow Attack](#buffer-overflow-attack)
-  - [Birthday Attack](#birthday-attack)
-  - [Spoofing Attack](#spoofing-attack)
-  - [On-Path Attack](#on-path-attack)
-  - [Logic Bomb](#logic-bomb)
+- [Password Attacks](#password-attacks)
+    - [Brute Force Attack](#brute-force-attack)
+    - [Dictionary Attack](#dictionary-attack)
+    - [Password Spraying](#password-spraying)
+    - [Hybrid Attack](#hybrid-attack)
+- [Other Attacks](#other-attacks)
+    - [Denial of Service DoS and DDoS](#denial-of-service-dos-and-ddos)
+    - [Man-in-the-Middle MitM](#man-in-the-middle-mitm)
+    - [Spoofing](#spoofing)
+    - [Packet Sniffing](#packet-sniffing)
+    - [Spoofing Attack](#spoofing-attack)
+    - [DNS Spoofing](#dns-spoofing)
+    - [IP Address Spoofing](#ip-address-spoofing)
+    - [Oversized Packet Attack](#oversized-packet-attack)
+    - [Fragmented Packet Attack](#fragmented-packet-attack)
+    - [Side Channel Attacks](#side-channel-attacks)
+    - [Replay Attack](#replay-attack)
+    - [Rainbow Table Attack](#rainbow-table-attack)
+    - [Buffer Overflow Attack](#buffer-overflow-attack)
+    - [Birthday Attack](#birthday-attack)
+    - [On-Path Attack](#on-path-attack)
+    - [Logic Bomb](#logic-bomb)
 - [Tools](#tools)
+
+
 
 ## Attacks 
 
 An attempt to compromise the security, availability, or integrity of an IP (Internet Protocol) network.
 
-| Attack Type                               | Description                                                      |
-|-------------------------------------------|------------------------------------------------------------------|
-| Denial of Service (DoS) and DDoS           | Overloading a network or website with traffic to make it unavailable. |
-| Man-in-the-Middle (MitM)                   | Intercepting and possibly altering communication between two parties. |
-| Spoofing                                   | Faking the source address of network packets to deceive the recipient. |
-| Packet Sniffing                           | Illegally intercepting and examining unencrypted data packets.     |
-| DNS Spoofing                               | Redirecting DNS queries to malicious sites.                       |
-| IP Address Spoofing                        | Impersonating a trusted IP address to gain unauthorized access.    |
-| Oversized Packet Attacks                   | Oversized packet attacks involve sending data packets that exceed the maximum allowable size, exploiting vulnerabilities in network protocols.            |
-| Fragmented Packet Attacks                  | Fragmented packet attacks involve breaking down data into smaller fragments to bypass network security measures, exploiting vulnerabilities in reassembly processes.            |
-|           |             |
+## Password Attacks 
 
+### Brute Force Attack 
+
+A brute force attack uses every possible combination of letters, numbers, and symbols to guess a user's password.
+
+**Mitigation** 
+
+  - Enforce strong and complex password creation policies.
+  - Temporarily lock accounts after a certain number of unsuccessful login attempts.
+  - Restrict the number of login attempts within a specific time frame.
+  - Keep systems and software up-to-date to address vulnerabilities.
+
+### Dictionary Attack 
+
+A dictionary attack is a type of attack that uses a list of common words to guess a user's password. 
+
+**Mitigation** 
+
+  - Enforce strong and complex password creation policies.
+  - Temporarily lock accounts after a certain number of unsuccessful login attempts.
+  - Keep systems and software up-to-date to address vulnerabilities.
+
+### Password Spraying 
+
+A form of brute force attack that involves trying a small number of commonly used passwords against a large number of username and accounts. 
+
+- Effective, can avoid triggering account lockouts from too many failed login attempts. 
+- In a large group of user, there's a good chance some of them uses very common and weak passwords.
+
+### Hybrid Attack 
+
+Blends brute force and dictionary techniques by using common passwords with variations, such as adding numbers and special characters.
+
+
+## Other Attacks 
+
+### Denial of Service (DoS) and DDoS  
+
+Overloading a network or website with traffic to make it unavailable.
+
+### Man-in-the-Middle (MitM) 
+
+Intercepting and possibly altering communication between two parties.
+
+### Spoofing
+
+Faking the source address of network packets to deceive the recipient.
+
+### Packet Sniffing
+
+Illegally intercepting and examining unencrypted data packets.
+
+### Spoofing Attack 
+
+Cybercriminals impersonate a familiar or trusted source to interact with targets, aiming to steal information, extort money, or install malicious software on their devices.
+
+Example of spoofing attacks:
+
+- Email Spoofing
+- Caller ID Spoofing
+- Website/Domain Spoofing
+- IP Spoofing
+- ARP Spoofing
+- GPS Spoofing
+- Facial Spoofing
+- Man-in-the-middle attack 
+
+
+<small>Reference: https://www.crowdstrike.com/cybersecurity-101/spoofing-attacks/</small>
+
+
+### DNS Spoofing
+
+Redirecting DNS queries to malicious sites.
+
+### IP Address Spoofing
+
+Impersonating a trusted IP address to gain unauthorized access. 
+
+### Oversized Packet Attack 
+
+Oversized packet attacks involve sending data packets that exceed the maximum allowable size, exploiting vulnerabilities in network protocols.   
+
+### Fragmented Packet Attack 
+
+Fragmented packet attacks involve breaking down data into smaller fragments to bypass network security measures, exploiting vulnerabilities in reassembly processes.
 
 ### Side Channel Attacks 
 
@@ -61,27 +150,7 @@ A rainbow table attack uses precomputed hashes to find a matching hash value for
   - Stay current with advancements, adopting newer, more secure hash functions.
   - Implement Two-Factor Authentication (2FA)
 
-### Dictionary Attack 
 
-A dictionary attack is a type of attack that uses a list of common words to guess a user's password. 
-
-**Mitigation** 
-
-  - Enforce strong and complex password creation policies.
-  - Temporarily lock accounts after a certain number of unsuccessful login attempts.
-  - Keep systems and software up-to-date to address vulnerabilities.
-
-
-### Brute Force Attack 
-
-A brute force attack uses a combination of letters, numbers, and symbols to guess a user's password.
-
-**Mitigation** 
-
-  - Enforce strong and complex password creation policies.
-  - Temporarily lock accounts after a certain number of unsuccessful login attempts.
-  - Restrict the number of login attempts within a specific time frame.
-  - Keep systems and software up-to-date to address vulnerabilities.
 
 ### Buffer Overflow Attack 
 
@@ -119,23 +188,6 @@ Hackers have learned from the birthday problem that finding two colliding result
 
 <small>Reference: https://atlasvpn.com/blog/birthday-attack</small>
 
-### Spoofing Attack 
-
-Cybercriminals impersonate a familiar or trusted source to interact with targets, aiming to steal information, extort money, or install malicious software on their devices.
-
-Example of spoofing attacks:
-
-- Email Spoofing
-- Caller ID Spoofing
-- Website/Domain Spoofing
-- IP Spoofing
-- ARP Spoofing
-- GPS Spoofing
-- Facial Spoofing
-- Man-in-the-middle attack 
-
-
-<small>Reference: https://www.crowdstrike.com/cybersecurity-101/spoofing-attacks/</small>
 
 
 ### On-Path Attack 
