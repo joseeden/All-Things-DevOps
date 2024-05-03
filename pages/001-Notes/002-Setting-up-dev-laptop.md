@@ -47,7 +47,7 @@ Start > Settings > Accounts > Sign-in options > Password > Change and follow dir
 
 - Visual Studio Code 
 - Windows Terminal 
-- Adobe Acroba Reader DC 
+- Adobe Acrobat Reader DC 
 
 ### Install via Website 
 
