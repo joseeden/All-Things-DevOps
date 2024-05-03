@@ -18,17 +18,13 @@
 
 Consider and measure the quality of intelligence.
 
-- **Timeliness**
-    Property of an intelligence source that ensures it is up-to-date.
+- **Timeliness** - Property of an intelligence source that ensures it is up-to-date.
 
-- **Relevancy**
-    Property of an intelligence source that ensures it matches the use cases intended for it.
+- **Relevancy** - Property of an intelligence source that ensures it matches the use cases intended for it.
 
-- **Accuracy**
-    Property of an intelligence source that ensures it produces effective results.Information needs to be valid and true.
+- **Accuracy** - Property of an intelligence source that ensures it produces effective results.Information needs to be valid and true.
 
-- **Confidence Levels**
-    Property of an intelligence source that ensures it produces qualified statements about reliability.
+- **Confidence Levels** - Property of an intelligence source that ensures it produces qualified statements about reliability.
 
 ## Types of intelligence
 

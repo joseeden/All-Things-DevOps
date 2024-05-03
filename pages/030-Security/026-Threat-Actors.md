@@ -56,10 +56,15 @@ Some common motivations are:
   - The attacker can threaten to release the information to the public unless certain conditions are met.
   - Demands often involve financial transactions, typically in the form of cryptocurrencies. 
 
-- **Service Disruption**
+- **Service Disruptions**
 
   - Overwhelming the organization's network through DDoS attack.
   - Often done to cause chaos or make a statement.
+
+- **Chaos or Curiosity**
+
+  - Motivated by the thrill of hacking, seeing it as a challenge, a way to prove their technical skills or simply to cause harm.
+  - Common among certain hacking groups or individuals exploring the limits of technology.
 
 - **Philosopical or Political Beliefs**
 
@@ -74,11 +79,6 @@ Some common motivations are:
 - **Revenge**
 
   - Similar to personal vendettas, this motivation involves retaliating against someone or something that the threat actor feels has harmed them or their interests.
-
-- **Disruption or Chaor**
-
-  - Motivated by the thrill of hacking, seeing it as a challenge, a way to prove their technical skills or simply to cause harm.
-  - Common among certain hacking groups or individuals exploring the limits of technology.
 
 - **Espionage**
 
