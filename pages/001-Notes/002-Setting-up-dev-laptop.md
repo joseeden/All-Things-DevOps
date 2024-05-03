@@ -147,9 +147,9 @@ alias gitst='git status'
 # alias prodeks='export AWS_PROFILE=specify-name-here'  
 alias addalias='vi ~/.bashrc'
 alias sr='source ~/.bashrc'
-alias dtop='cd /mnt/c/Users/Eden/Desktop'
-alias dloads='cd /mnt/c/Users/Eden/Downloads'
-alias gitdir='cd /mnt/c/Users/Eden/Desktop/Git'
+alias dtop='cd /mnt/c/Users/johnsmith/Desktop'
+alias dloads='cd /mnt/c/Users/johnsmith/Downloads'
+alias gitdir='cd /mnt/c/Users/johnsmith/Desktop/Git'
 alias awscreds="sudo vi ~/.aws/credentials"
 alias k="kubectl"
 
@@ -175,13 +175,14 @@ complete -C /usr/local/bin/terraform terraform
 ## Sync VS Code Settings
 
 Use built-in **Settings Sync** in VS Code. 
-Link: [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync#:~:text=You%20can%20turn%20on%20Settings,and%20UI%20State%20are%20supported)
 
 For the account, use Github account. 
 
+Link: [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync#:~:text=You%20can%20turn%20on%20Settings,and%20UI%20State%20are%20supported)
 
 
 ## Set Default Browser 
 
 Set Google Chrome as default browser. 
+
 Link: [Make Chrome your default browser](https://support.google.com/chrome/answer/95417?hl=en&co=GENIE.Platform=Desktop)
