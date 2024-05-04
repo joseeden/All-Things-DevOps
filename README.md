@@ -145,7 +145,7 @@ The complete list of projects can be found [here](projects/README.md).
 
 ## Security 
 
-- [Fundamentals](pages/030-Security/002-Security-Principles.md)
+- [Fundamentals](#fundamentals)
     
     - [Security Principles](pages/030-Security/002-Security-Principles.md)
 
@@ -155,7 +155,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Governance Elements](pages/030-Security/005-Governance-Elements.md)
 
-- [Incident Response](pages/030-Security/006-Incident-Responses.md)
+- [Incident Response](#incident-response)
 
     - [Incident Response](pages/030-Security/006-Incident-Responses.md)
 
@@ -163,7 +163,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
 
-- [Managing Access](pages/030-Security/009-Access-Control.md)
+- [Managing Access](#managing-access)
 
     - [Access Control](pages/030-Security/009-Access-Control.md)
 
@@ -171,7 +171,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Privileged Access Management](pages/030-Security/011-Privilege-Access-Management.md)
 
-- [Cyber Threats and Attacks](pages/030-Security/017-Cyber-Threats-and-Attacks.md) 
+- [Cyber Threats and Attacks](#cyber-threat-and-attacks) 
 
     - [Cyber Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
 
@@ -189,6 +189,14 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Attacks](pages/030-Security/023-Attacks.md)
 
+- [Cryptography](#cryptography)    
+
+    - [Cryptography Basics](pages/030-Security/028-Cryptography-Basics.md) 
+
+    - [Symmetric Encryption](pages/030-Security/029-Symmetric-Encryption.md)
+    
+    - [Asymmetric Encryption](pages/030-Security/030-Asymmetric-Encryption.md)
+
 - [Security Architecture](#security-architecture)
 
     - [Computer Networking](pages/030-Security/016-Computer-Networking.md)
@@ -199,7 +207,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Network Security Infrastructure](pages/030-Security/018-Network-Security-Infrastructure.md)
 
-- [Security Operations](pages/030-Security/012-Data-Security.md)
+- [Security Operations](#security-operations)
 
     - [Handling Data](pages/030-Security/012-Data-Security.md)
 

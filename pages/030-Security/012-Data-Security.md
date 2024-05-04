@@ -1,6 +1,16 @@
 
 # Data Security
 
+- [Data Types](#data-types)
+   - [Data at Rest](#data-at-rest)
+   - [Data in Use](#data-in-use)
+   - [Data in Transit](#data-in-transit)
+- [Other Data Types](#other-data-types)
+   - [By Nature](#by-nature)
+   - [By Format](#by-format)
+   - [By Use](#by-use)
+   - [By Sensitivity](#by-sensitivity)
+   - [By Origin](#by-origin)
 - [Data Classification](#data-classification)
 - [Data Roles and Responsibilities](#data-roles-and-responsibilities)
 - [Data Lifecycle](#data-lifecycle)
@@ -36,6 +46,89 @@
    - [Cybersquatting](#cybersquatting)
 - [Data Loss Prevention](#data-loss-prevention)
 
+
+
+## Data Types 
+
+### Data at Rest
+
+Data stored in a physical location, such as a hard drive, database, or cloud storage. 
+
+- Vulnerable to physical theft, unauthorized access, or attacks that compromise storage systems.
+- It is not actively moving or being transferred between systems.
+- Security measures include physical security, access controls, and monitoring.
+
+### Data in Use
+
+Data currently being processed, manipulated, or accessed by an application or user.
+
+- Data being analyzed by software, accessed by a user, or used by a running application or service.
+- Vulnerable to unauthorized access, application-level attacks, memory-based exploits, and insider threats.
+- Application security, user authentication, authorization controls, data masking, and memory protection techniques (e.g., address space layout randomization)
+
+### Data in Transit
+
+Data actively moving between locations or systems, such as over networks, between servers, or through communication channels.
+
+- Sent via email, the internet, or communication between networked devices.
+- Data remains unreadable without the proper decryption key. 
+- TLS (Transport Layer Security) and VPNs (Virtual Private Networks) 
+- Data in transit is susceptible to interception and eavesdropping. 
+
+
+## Other Data Types 
+
+### By Nature
+
+- **Structured Data**
+    -  Data organized into a defined format, such as tables or databases, where elements are easily identifiable (e.g., Excel spreadsheets, SQL databases).
+
+- **Unstructured Data**
+    -  Data without a specific structure, making it harder to organize and analyze (e.g., text documents, emails, images).
+
+- **Semi-structured Data**
+    -  Data with some organization but not fully structured, often containing metadata (e.g., JSON, XML).
+
+### By Format
+
+- **Text Data**
+    -  Information stored in a text-based format, such as documents, emails, or code.
+
+- **Numeric Data**
+    -  Data represented by numbers, like financial data, statistics, or sensor readings.
+
+- **Binary Data**
+    -  Data represented in binary form, including computer files, images, videos, or audio.
+
+### By Use
+
+- **Operational Data**
+    -  Data used in day-to-day operations, like customer records, sales transactions, or inventory information.
+
+- **Analytical Data**
+    -  Data used for analysis and business intelligence, often derived from operational data.
+
+- **Master Data**
+    -  Core business data that remains consistent across different systems, such as customer or product information.
+
+- **Metadata**
+    -  Data about data, providing information on the properties or structure of data.
+
+### By Sensitivity
+
+- **Sensitive Data**
+    -  Data that requires special protection due to privacy or security concerns (e.g., personal identifiable information, financial records).
+
+- **Non-sensitive Data**
+    -  Data that does not require stringent security measures, generally considered public or low-risk.
+
+### By Origin
+
+- **Primary Data**
+    -  Data collected directly from original sources through surveys, experiments, or direct observations.
+
+- **Secondary Data**
+    -  Data derived from existing sources, such as reports, studies, or databases. 
 
 
 ## Data Classification 
@@ -211,7 +304,7 @@ It is the responsibility of the organization to establish and enforce a comprehe
    - Adhere to enterprise policies and legal requirements in the destruction process.
 
 
-#### Common mistake in record retention 
+**Common mistake in record retention**
 
 A common mistake in record retention is applying the longest retention period without taking into account the sensitivity or importance of the corresponding information. 
 
