@@ -53,7 +53,9 @@ A dictionary attack is a type of attack that uses a list of common words to gues
 
   - Enforce strong and complex password creation policies.
   - Temporarily lock accounts after a certain number of unsuccessful login attempts.
+  - Use a secure hashing algorithm with a unique salt for each password.
   - Keep systems and software up-to-date to address vulnerabilities.
+  - Add an additional authentication layer - MFA
 
 ### Password Spraying 
 
@@ -62,10 +64,24 @@ A form of brute force attack that involves trying a small number of commonly use
 - Effective, can avoid triggering account lockouts from too many failed login attempts. 
 - In a large group of user, there's a good chance some of them uses very common and weak passwords.
 
+**Mitigation:**
+
+- Rate limiting on login attempts to slow down brute force attacks.
+- Regular password changes to minimize risks from compromised accounts.
+- Ensure users create complex passwords to avoid common and weak ones.
+- Monitor for unusual login attempts or patterns.
+
 ### Hybrid Attack 
 
 Blends brute force and dictionary techniques by using common passwords with variations, such as adding numbers and special characters.
 
+**Mitigation:**
+
+- Encourage complex passwords - less susceptible to variations.
+- Recommend long, randomly generated passwords.
+- Lock accounts after repeated failed attempts.
+- Implement rate limiting to slow down hybrid attacks.
+- Educate users about secure password practices.
 
 ## Other Attacks 
 
@@ -73,17 +89,47 @@ Blends brute force and dictionary techniques by using common passwords with vari
 
 Overloading a network or website with traffic to make it unavailable.
 
+**Mitigation** 
+
+- **Load Balancers**: Distribute traffic across multiple servers.
+- **Rate Limiting**: Limit requests per user or IP address.
+- **CDNs**: Disperse network traffic.
+- **DDoS Protection**: Use specialized services for DDoS mitigation.
+- **Firewalls and IPS**: Detect and block DoS patterns.
+
 ### Man-in-the-Middle (MitM) 
 
 Intercepting and possibly altering communication between two parties.
+
+**Mitigation** 
+
+- **Encryption**: Use HTTPS, SSL/TLS, and VPNs.
+- **Public Key Infrastructure (PKI)**: Verify certificate authenticity.
+- **Secure Authentication**: Implement multifactor authentication.
+- **Network Segmentation**: Limit access to sensitive systems.
+- **IDS/IPS**: Monitor for suspicious network activity.
 
 ### Spoofing
 
 Faking the source address of network packets to deceive the recipient.
 
+**Mitigation** 
+
+- **Email Security**: Use SPF, DKIM, and DMARC.
+- **Secure Routing**: Implement SBGP or similar protocols.
+- **Network Access Control (NAC)**: Restrict unauthorized devices.
+- **IDS/IPS**: Detect spoofing patterns.
+
 ### Packet Sniffing
 
 Illegally intercepting and examining unencrypted data packets.
+
+**Mitigation** 
+
+- **Encryption**: Secure data in transit with HTTPS or VPNs.
+- **Secure Wi-Fi**: Use WPA3 for wireless networks.
+- **Network Segmentation**: Restrict access to sensitive data.
+- **Network Monitoring**: Detect unauthorized packet sniffing.
 
 ### Spoofing Attack 
 
@@ -100,6 +146,12 @@ Example of spoofing attacks:
 - Facial Spoofing
 - Man-in-the-middle attack 
 
+**Mitigation** 
+
+- **Email Authentication**: Implement SPF, DKIM, DMARC.
+- **User Training**: Educate on recognizing suspicious communications.
+- **Secure Authentication**: Use multifactor authentication.
+- **Access Controls**: Limit sensitive system access.
 
 <small>Reference: https://www.crowdstrike.com/cybersecurity-101/spoofing-attacks/</small>
 
@@ -108,17 +160,48 @@ Example of spoofing attacks:
 
 Redirecting DNS queries to malicious sites.
 
+**Mitigation** 
+
+- **DNSSEC**: Ensure DNS integrity and authenticity.
+- **Secure DNS Servers**: Use trusted DNS providers.
+- **Regular Updates**: Keep DNS software current.
+- **Network Monitoring**: Detect unusual DNS query patterns.
+
+
 ### IP Address Spoofing
 
 Impersonating a trusted IP address to gain unauthorized access. 
+
+**Mitigation** 
+
+- **Packet Filtering**: Block spoofed IP addresses.
+- **Secure Routing**: Use SBGP to validate routing.
+- **NAC**: Restrict unauthorized devices from network access.
+- **IDS/IPS**: Monitor for spoofing patterns.
+
 
 ### Oversized Packet Attack 
 
 Oversized packet attacks involve sending data packets that exceed the maximum allowable size, exploiting vulnerabilities in network protocols.   
 
+**Mitigation** 
+
+- **Packet Size Limits**: Enforce maximum packet sizes.
+- **Network Monitoring**: Detect oversized packet patterns.
+- **Rate Limiting**: Limit large packets.
+- **Firewall Rules**: Block unusually large packets.
+
+
 ### Fragmented Packet Attack 
 
 Fragmented packet attacks involve breaking down data into smaller fragments to bypass network security measures, exploiting vulnerabilities in reassembly processes.
+
+**Mitigation** 
+
+- **Reassembly Timeouts**: Set timeouts for reassembly.
+- **Fragmentation Limits**: Limit fragment size and count.
+- **IDS/IPS**: Detect unusual fragmentation.
+- **Secure Protocols**: Use protocols that handle fragmentation securely.
 
 ### Side Channel Attacks 
 
@@ -128,7 +211,8 @@ Examples: Timing attacks, power analysis attacks, and electromagnetic analysis a
 
 **Mitigation** 
 
-- Implement countermeasures like constant-time algorithms, noise injection, and secure hardware design to reduce the risk of information leakage from side channels. Regularly update and patch systems to address potential vulnerabilities.
+- Constant-time algorithms, noise injection, and secure hardware design.
+- This countermeasures reduce the risk of information leakage from side channels. - Regularly update and patch systems to address potential vulnerabilities.
 
 ### Replay Attack 
 
@@ -136,7 +220,7 @@ A replay attack is when an attacker captures and resends (i.e. "replays") authen
 
 **Mitigation** 
 
-- An IPSec VPN can prevent a replay attack because it tracks packet sequencing and includes the sender's signature on all packets; therefore preventing forged packages. 
+- IPSec VPN tracks packet sequencing and includes the sender's signature on all packets; therefore preventing forged packages. 
 
 ### Rainbow Table Attack 
 
@@ -151,12 +235,13 @@ A rainbow table attack uses precomputed hashes to find a matching hash value for
   - Implement Two-Factor Authentication (2FA)
 
 
-
 ### Buffer Overflow Attack 
 
 A Buffer Overflow attack is a type of attack that involves sending malicious data to an application or system, causing it to crash or become unresponsive. 
 
-This type of attack takes advantage of programming errors in applications or systems that allow attackers to send malicious data that exceeds the size of the allocated memory buffer, causing the application or system to crash or become unresponsive.
+- Takes advantage of programming errors in applications or systems.
+- Allow attackers to send malicious data that exceeds the size of the allocated memory buffer.
+- Causes the application or system to crash or become unresponsive.
 
 **Mitigation** 
 
@@ -173,12 +258,16 @@ This type of attack takes advantage of programming errors in applications or sys
 Cybercriminals use birthday attacks to trick systems by cracking digital authentication methods.
 
 **The Birthday Paradox**
-The probability that at least two will share a birthday in a random group of people. 
+
+  - The probability that at least two will share a birthday in a random group of people. 
 
 **Birthday Attack in Cybersecurity**
-A birthday attack is a brute force attack that exploits the exponentially growing probability of collision. In cybersecurity, collision attacks aim to find a clash of the hash function outcomes. The goal of the birthday attack is often to gain system access by forging security certificates or cracking passwords.
+
+  - Exploits the exponentially growing probability of collision. 
+  - Goal is to gain system access by forging security certificates or cracking passwords.
 
 **Finding the collision**
+
 Hackers have learned from the birthday problem that finding two colliding results of different inputs is much easier than generating all possible outputs.
 
 1. A program repeatedly runs the hash function on randomly chosen inputs 
@@ -198,20 +287,40 @@ An on-path Attack is an attack that attempts to position between two devices (e.
 - Differs from DDoS attacks involving numerous unsuspecting secondary victims.
 - Primary goal is to gain system access by impersonating a legitimate user or device.
 
+**Mitigation** 
+
+- **Encryption**: Use HTTPS, SSL/TLS to protect data.
+- **Network Segmentation**: Limit access to critical systems.
+- **IDS/IPS**: Detect suspicious traffic patterns.
+- **Secure Routing**: Ensure routing data is accurate and secure.
+
+
 ### Logic Bomb 
 
 A logic bomb is a piece of malicious code intentionally inserted into a software system that triggers a negative function when certain conditions are met. 
 
 An infection does not typically install logic bombs, they are planted by someone with inside access to the system, such as a disgruntled employee.
 
+**Mitigation** 
+
+- **Access Controls**: Restrict system access to authorized personnel.
+- **Code Reviews**: Regularly review code for malicious inserts.
+- **IDS/IPS**: Monitor for unusual system behavior.
+- **Employee Training**: Educate on cybersecurity best practices.
 
 ## Tools 
 
-- **John the Ripper** is a famous Open Source password security auditing and password recovery tool. 
+- **John the Ripper**
 
-- **Burp Suite** is a well-known set of tools for vulnerability scanning, penetration testing, and web app security (not for cracking passwords). The remaining options are both network analysis tools. 
+  - Famous Open Source password security auditing and password recovery tool. 
 
-- **Wireshark** is the most used network protocol analyzer in the world. Nslookup is a network administration command-line tool for querying the Domain Name System to obtain the mapping between the domain name, IP address, or other DNS records.
+- **Burp Suite** 
+
+  - Well-known set of tools for vulnerability scanning, penetration testing, and web app security (not for cracking passwords). 
+
+- **Wireshark** 
+
+  - Most used network protocol analyzer in the world. 
 
 
 

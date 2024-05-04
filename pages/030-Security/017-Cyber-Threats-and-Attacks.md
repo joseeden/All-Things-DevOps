@@ -13,6 +13,8 @@
     - [Elite](#elite)
     - [Script kiddies](#script-kiddies)
 
+
+
 ## Types of Threats 
 
 There are many types of cyber threats to organizations. Below are several of the most common types: 

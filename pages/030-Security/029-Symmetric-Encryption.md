@@ -3,6 +3,8 @@
 
 
 - [Symmetric Cryptosystems](#symmetric-cryptosystems)
+    - [Block Algorithms](#block-algorithms)
+    - [RC Cipher Suites](#rc-cipher-suites)
 - [Symmetric Block Modes](#symmetric-block-modes)
     - [Electronic Codebook](#electronic-codebook)
     - [Cipher Block Chaining CBC](#cipher-block-chaining-cbc)
@@ -12,23 +14,62 @@
     - [Galois/Counter Mode GCM](#galoiscounter-mode-gcm)
 
 
+
+
 ## Symmetric Cryptosystems 
 
-Block Algorithms: 
+Symmetric cryptography uses the same key for both encryption and decryption. The sender and receiver must share this key, keeping it secret from others.
 
-Algorithm                           | Cipher Type  | Block Size         | Number of rounds      | Key size                  |  
-------------------------------------|--------------|--------------------|-----------------------|---------------------------|
-DES (Data Encryption Standard)      | Block Cipher | 64-bit             | 16 rounds             | 56-bit                    |  
-3DES (Triple DES)                   | Block Cipher | 64-bit             | 48 rounds (3x16)      | 168-bit                   | 
-Blowfish                            | Block Cipher | 64-bit             | 16 rounds             | 32-448 bit (variable)     | 
-AES (Advanced Encryption Standard)  | Block Cipher | 128-bit            | 10/12/14 rounds       | 128/192/256-bit           |  
+- **Session key** - single key is used to encrypt and decrypt data. 
+- Both parties must have this key.
 
-A few notes: 
+Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.
 
-- 64-bit block size, but in reality its 56-bits because 8-bits is for overhead.
+<p align=center>
+<img width=650 src='../../Images/sec+-symmetric-encryption-example-photo.png'>
+</p>
+
+### Block Algorithms
+
+| Algorithm                                             | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                               |
+|-------------------------------------------------------|---------------|-------------------|-----------------------|---------------------------|-------------------------------------------------------------------------------------------|
+| DES (Data Encryption Standard)                        | Block Cipher  | 64-bit            | 16 rounds             | 56-bit                    | Legacy block cipher; once widely used but now considered insecure.                        |
+| 3DES (Triple DES)                                     | Block Cipher  | 64-bit            | 48 rounds (3x16)      | 168-bit                   | 3DES repeats DES process 3 times, hence 56*3 = 168-bit key size.                          |
+| IDEA (International Data Encryption Algorithm)        | Block Cipher  | 64-bit            | 8 rounds              | 128-bit                   | 128-bit key size makes it harder to break, but is not widely utilized.                    |
+| AES (Advanced Encryption Standard)                    | Block Cipher  | 128-bit           | 10/12/14 rounds       | 128/192/256-bit           | Current encryption standard; highly secure and widely used.                               |
+| Blowfish                                              | Block Cipher  | 64-bit            | 16 rounds             | 32-448 bit (variable)     | Developed as DES replacement; fast and flexible block cipher with variable key length.    |
+| Twofish                                               | Block Cipher  | 128-bit           | 16 rounds             | 128/192/256-bit           | A finalist in the AES competition, released as open source along with Blowfish.           |
+
+**A few notes:** 
+
+- 64-bit block size, but in reality its 56-bits because 8-bits is for overhead/parity.
 - The larger the block size, the faster the encryption.
 - Number of rounds refers to how many rounds the data went through encryption. It is a pretty good clue as to how robust encryption is.
-- 3DES repeats DES process 3 times, hence 56*3 = 168-bit key size.
+- Blowfish and twofish were both released as open source products.
+
+### RC Cipher Suites 
+
+The RC suite comprises a range of ciphers, from block to stream, with varying levels of flexibility and security. 
+
+- Rivest Cipher, created by Ron Rivest.
+- Some are now considered insecure (like RC4)
+- Others have had broader applications in encryption history (like RC5 and RC6).
+
+
+| Algorithm  | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                                                   |
+|------------|---------------|-------------------|-----------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
+| RC2        | Block Cipher  | 64-bit            | Variable rounds       | 8-128 bit (variable)      | Early block cipher; adjustable key size, mostly used in legacy applications.                                  |
+| RC4        | Stream Cipher | N/A               | Variable              | 40-2048 bit (variable)    | Used in SSL and WEP; now considered insecure due to vulnerabilities in key scheduling.   |
+| RC5        | Block Cipher  | 32/64/128-bit     | Variable rounds       | 0-2040 bit (variable)     | Highly flexible block cipher with variable block size, key size, and rounds.                                  |
+| RC6        | Block Cipher  | 128-bit           | 20 rounds             | 128/192/256-bit           | Extended version of RC5; designed for high security and was a finalist in the AES competition.                |
+
+A few notes:
+
+- RC1 was never published.
+- RC2 was considered weak and was skipped over.
+- RC3 was cracked before it was even released to the public.
+- RC4, RC5, and RC6 are commonly used in networks today.
+
 
 ## Symmetric Block Modes 
 
@@ -159,3 +200,9 @@ Combines CTR mode with a message authentication code (MAC) to ensure data integr
 
 - More complex implementation
 - Requires careful management of IVs and counters
+
+
+
+----------------------------------------------
+
+[Back to main page](../../README.md#security)    
