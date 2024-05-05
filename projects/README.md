@@ -2,43 +2,56 @@
 # DevOps Projects and Labs
 
 > This is an ongoing list. 
-> Currently in the process of compiling all the project files and source code.
+> Currently compiling all the project files and source code.
 
 
 ## AWS 
 
-- EKS - Deploy EKS Cluster using Terraform 
-- EKS - Deploy EKS Cluster using Terraform with a custom AMI via Packer
-- EKS - Deploy EKS Cluster using Terraform with a custom AMI via AWS Image Builder
-- EKS - Depoy a Web Application using ArgoCD and GitOps 
-- Lambda - Website Monitoring with Aurora
-- Lambda - Custom Logic Workflows wth Step Functions
-- Lambda - Automated Stored Procedures
-- Lambda - Real-Time Data Processing
-- Lambda - ETL Data Pipeline
-- Lambda - Automated Shutdown of AWS Resources 
-- Lambda - Automated Bootup of AWS Resources 
-- Lambda - Automated Rotation of AWS Access Keys 
-- Lambda - TCP Connectivity Test to EC2 Instance
-- Lambda - UDP Connectivity Test to EC2 Instance
-- Lambda - Connectivity Test to S3 Bucket 
+**Amazon EKS**
+
+- Deploy EKS Cluster using Terraform 
+- Deploy EKS Cluster using Terraform with a custom AMI via Packer
+- Deploy EKS Cluster using Terraform with a custom AMI via AWS Image Builder
+- Depoy a Web Application using ArgoCD and GitOps 
+
+**Lambda**
+
+- Website Monitoring with Aurora
+- Custom Logic Workflows wth Step Functions
+- Automated Stored Procedures
+- Real-Time Data Processing
+- ETL Data Pipeline
+- Automated Shutdown of AWS Resources 
+- Automated Bootup of AWS Resources 
+- Automated Rotation of AWS Access Keys 
+- TCP Connectivity Test to EC2 Instance
+- UDP Connectivity Test to EC2 Instance
+- Connectivity Test to S3 Bucket 
 
 ## Azure 
 
-- Administration - Managing Microsoft Entra ID Identities
-- Administration - Managing Subscriptions and RBAC
-- Administration - Managing Governance via Azure Policy
-- Administration - Managing Azure resources by Using ARM Templates
-- Administration - Synchronize Files across server with Azure File Sync 
-- Administration - Deploy and Monitor Azure App Service Web Apps 
-- Administration - Backup and Restore VMs using Azure Backup 
-- Security - Azure Key Vault and Disk Encryption 
-- Security - Privileged Identity Management
-- Security - Deploy and Configure Azure Firewall
-- Security - Enabling Microsoft Defender for Azure SQL Database 
-- Security - Azure API Management Policies and Security 
-- Security - Securing Azure Storage Account using Private Endpoints
-- DevOps - Deploy Custom App Image to Container Apps using Azure Container Registry
+**Administration**
+
+- Managing Microsoft Entra ID Identities
+- Managing Subscriptions and RBAC
+- Managing Governance via Azure Policy
+- Managing Azure resources by Using ARM Templates
+- Synchronize Files across server with Azure File Sync 
+- Deploy and Monitor Azure App Service Web Apps 
+- Backup and Restore VMs using Azure Backup 
+
+**Security**
+
+- Azure Key Vault and Disk Encryption 
+- Privileged Identity Management
+- Deploy and Configure Azure Firewall
+- Enabling Microsoft Defender for Azure SQL Database 
+- Azure API Management Policies and Security 
+- Securing Azure Storage Account using Private Endpoints
+
+**DevOps**
+
+- Deploy Custom App Image to Container Apps using Azure Container Registry
 
 ## Google Cloud 
 
@@ -46,23 +59,29 @@
 
 ## Infrastructure as Code 
 
-- Setup Development Environment in AWS using Terraform 
-- Setup Development Environment in Azure using Terraform 
-- Setup Development Environment for Docker and Kubernetes using Terraform 
-- Setup Development Environment for Red Hat Linux (RHEL) Labs using Terraform
-- Setup Development Environment for AWS IoT Greengrass using Terraform 
+**Dev Environments**
+
+- Setup Dev Environment in AWS using Terraform 
+- Setup Dev Environment in Azure using Terraform 
+- Setup Dev Environment for Docker and Kubernetes using Terraform 
+- Setup Dev Environment for Red Hat Linux (RHEL) Labs using Terraform
+- Setup Dev Environment for AWS IoT Greengrass using Terraform 
 
 ## Configuration Management 
 
-- Deploy MongoDB using Ansible
-- Deploy Percona MongoDB using Ansible
-- Deploy PostgreSQL using Ansible
-- Deploy Kafka and Zookeeper using Ansible
-- Deploy Apache Flink using Ansible 
-- Deploy Tomcat Server using Ansible
-- Deploy Graylog using Ansible
+**Ansible**
+
+- Deploy MongoDB
+- Deploy Percona MongoDB
+- Deploy PostgreSQL
+- Deploy Kafka and Zookeeper
+- Deploy Apache Flink 
+- Deploy Tomcat Server
+- Deploy Graylog
 
 ## CICD 
+
+**Jenkins**
 
 - Continuous Integration using Jenkins, Nexus, Sonarqube, and Slack
 - Continuous Integration on AWS Cloud
@@ -71,6 +90,8 @@
 - Continuous Delivery of AWS Cloud (Java Application)
 
 ## Log Management 
+
+**Graylog**
 
 - Sending CloudTrail Logs to Graylog 
 - Sending CloudWatch Logs to Graylog
