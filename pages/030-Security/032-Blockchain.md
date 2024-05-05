@@ -24,6 +24,9 @@
 
 Blockchain is a distributed ledger technology that creates a secure and tamper-resistant way to record and verify transactions. 
 
+<p align=center>
+<img width=700 src='../../Images/sec+-blockchain-diagram.png'>
+</p>
 
 ## Key Concepts
 

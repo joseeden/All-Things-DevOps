@@ -94,7 +94,8 @@ Then check the properties of the original photo and the encoded photo. We can se
 
 <p align=center>
 <img width=700 src='../../Images/sec+-encoded-image-changed-size.png'>
-</p
+</p>
+
 
 ### Tokenization
 
