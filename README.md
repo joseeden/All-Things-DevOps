@@ -199,9 +199,10 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Hashing](pages/030-Security/031-Hashing.md)
 
+    - [Encryption Tools](pages/030-Security/033-Encryption-Tools.md)
+    
     - [Blockchain](pages/030-Security/032-Blockchain.md)
 
-    - [Encryption Tools](pages/030-Security/033-Encryption-Tools.md)
 
 - [Security Architecture](#security-architecture)
 
