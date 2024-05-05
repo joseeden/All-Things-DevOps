@@ -3,7 +3,7 @@
 
 
 
-## WHat it is
+## What it is
 
 A user story is a tool used in agile software development to capture a description of a software feature from an end-user perspective.
 
