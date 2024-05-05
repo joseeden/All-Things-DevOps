@@ -1,15 +1,11 @@
 
 # Business Continuity
 
+
 - [Business Continuity Plan](#business-continuity-plan)
 - [Components of a Business Continuity Plan](#components-of-a-business-continuity-plan)
     - [Risk Assessment](#risk-assessment)
     - [Business Impact Analysis BIA](#business-impact-analysis-bia)
-        - [Business Impact](#business-impact)
-        - [Failed Component Impact](#failed-component-impact)
-        - [Locating Critical Sources](#locating-critical-sources)
-        - [Recovery Point Objective](#recovery-point-objective)
-        - [Recovery Time Objective](#recovery-time-objective)
     - [Emergency Response Plan](#emergency-response-plan)
     - [Crisis Management Plan](#crisis-management-plan)
     - [Backup and Recovery Strategies](#backup-and-recovery-strategies)
@@ -85,9 +81,7 @@ Assess risks:
 - Identify sensitive data 
 - Identify single points of failure
 
-#### Business Impact
-
-Could be financial or reputation:
+**Business Impact:**
 
 - Fines 
 - Loss of contracts
@@ -97,7 +91,7 @@ Could be financial or reputation:
     - Escalation requirements 
     - Data exfiltration
 
-#### Failed Component Impact
+**Failed Component Impact:**
 
 - **Mean Time Between Failures (MTBF)**
 
@@ -125,7 +119,7 @@ Could be financial or reputation:
     
     - Lower MTTR = faster repair times.
 
-#### Locating Critical Sources 
+**Locating Critical Sources:**
 
 - **Data discovery and classifications** 
     
@@ -143,13 +137,13 @@ Could be financial or reputation:
     - Determine impact and how to respond+
 
 
-#### Recovery Point Objective
+**Recovery Point Objective**
 
 - Maximum amount of data loss that is acceptable during a disruption, usually expressed in time (e.g., 4 hours).
 - Related to backup and data replication strategies 
 - Backups ensure critical data can be restored without exceeding the acceptable loss.
 
-#### Recovery Time Objective 
+**Recovery Time Objective** 
 
 - Maximum amount of time tolerable for system recovery after a disruption or failure.
 - Helps determine the urgency and resources needed to restore operations within a timeframe.

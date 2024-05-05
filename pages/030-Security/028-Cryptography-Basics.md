@@ -1,8 +1,13 @@
 
 # Cryptography Basics
 
-
 - [Cryptography](#cryptography)
+- [Obfuscation](#obfuscation)
+    - [Data Masking or Obfuscation](#data-masking-or-obfuscation)
+    - [Steganography](#steganography)
+    - [Tokenization](#tokenization)
+    - [Diffusion](#diffusion)
+    - [Confusion](#confusion)
 - [Types of Encryption](#types-of-encryption)
     - [Symmetric Encryption](#symmetric-encryption)
     - [Asymmetric Encryption](#asymmetric-encryption)
@@ -15,49 +20,122 @@
     - [Cease Cipher](#cease-cipher)
     - [Vigenere Cipher](#vigenere-cipher)
     - [Exlusive OR XOR](#exlusive-or-xor)
-- [Hashing](#hashing)
-    - [Digital Signature](#digital-signature)
-    - [Digital Signature Standard DSS](#digital-signature-standard-dss)
-    - [Code Signing](#code-signing)
-- [Hash Functions](#hash-functions)
-    - [MD5](#md5)
-    - [SHA Family](#sha-family)
-    - [RIPEMD](#ripemd)
-    - [HMAC](#hmac)
-
-
 
 
 ## Cryptography
 
 The science and practice of securing communication and information through encoding, ensuring only authorized parties can access it. Its purpose is to protect data integrity, confidentiality, and authenticity.
 
-
-- **Steganography**
-    - Hiding secret data within ordinary, non-secret files or messages.
-    - Purpose is to avoid detection.
-
-- **Masking/Obfuscation**
-    - Take an information and hide it so that it doesn't make sense to external observer.
-
-- **Diffusion**
-    - Making the information less visible, less obvious.
-    - Example is blurring an image.
-
-- **Confusion**
-    - Changing a property of the data and make it more difficult to interpret, more unintelligible.
-    - Confusion works alongside diffusion to create robust encryption schemes.
-    - Example is scrambling or changing the pixels of an image.
-
-- **Tokenization**
-    - Substituting sensitive data elements with non-sensitive equivalents called **tokens.**
-    - Tokens have no intrinsic or exploitable meaning.
-
 - **Encryption**
     - Transforming plaintext into ciphertext using an algorithm and a key.
 
 - **Decryption**
     - Converting ciphertext back to plaintext with the appropriate key.
+
+## Obfuscation 
+
+### Data Masking or Obfuscation 
+
+Obfuscation is a technique to make code, data, or communications harder to understand or analyze. 
+
+- Protect intellectual property, sensitive information.
+- Protect sensitive data from being easily understood or extracted.
+- Prevent unauthorized reverse engineering or tampering with software.
+
+**How It Works**
+  - Code or data is transformed into a form that is functionally equivalent but difficult for humans to read or interpret.
+  - Common methods include:
+    - renaming variables and functions with meaningless names
+    - removing comments
+    - reordering code structures.
+    
+**Considerations**
+  - Obfuscation is not foolproof.
+  - Skilled attackers can often reverse-engineer obfuscated code.
+  - Over-obfuscation can complicate legitimate debugging and maintenance.
+  - Not a replacement for proper encryption and other security practices.
+
+### Steganography
+
+Steganography and obfuscation are techniques used to conceal information, but they differ in their methods and objectives.
+
+- Steganography hides a message within another medium to keep its existence secret.
+- Obfuscation makes code or information difficult to understand
+
+Derived from Greek word, meaning "covered writing", Steganography hides secret data within ordinary, non-secret files or messages. Its purpose is not to prevent unauthorized access, but to avoid suspicions.
+
+We can try this at [Steganography Online.](https://stylesuxx.github.io/steganography/). We'll use the sample photo below:
+
+<p align=center>
+<img width=500 src='../../Images/penguins.png'>
+</p>
+
+The message that we want to hide in the image:
+
+```bash
+All right men, commence Operation: Special Delivery! 
+```
+
+Upload the photo and enter the message in the field. Click Encode.
+
+<p align=center>
+<img width=650 src='../../Images/sec+-steganography-penguins.png'>
+</p>
+
+It will generate the encoded image. 
+
+<p align=center>
+<img width=500 src='../../Images/sec+-steganography-encoded-imagess.png'>
+</p>
+
+
+Right-click on the third image > Save as.
+Then check the properties of the original photo and the encoded photo. We can see that the size changed.
+
+<p align=center>
+<img width=700 src='../../Images/sec+-encoded-image-changed-size.png'>
+</p
+
+### Tokenization
+
+Tokenization replaces sensitive information with non-sensitive tokens, enhancing data security by removing direct exposure to confidential data.
+
+  **How It Works**
+
+- Sensitive data is swapped for unique tokens stored in a secure token vault.
+- The original data is stored somewehere.
+- The original data can only be retrieved through secure processes with proper access.
+- If data breach occurs, attackers will only find the useless tokens.
+
+**Applications**
+
+  - Used in payment systems for credit card security.
+  - Applied in healthcare to protect patient information.
+  - Employed in databases to secure sensitive data.
+  - Supports compliance with data protection regulations.
+  
+**Considerations**
+  - The token vault must be securely protected.
+  - Tokenization should be part of a comprehensive security strategy.
+
+
+### Diffusion
+
+Diffusion spreads the effect of a single input across many output elements, thus obscuring patterns.
+
+- Makes the information less visible, less obvious.
+- In block ciphers, diffusion is achieved through operations like permutations and mixing.
+- Example is blurring an image.
+
+### Confusion
+
+Confusion creates complex relationships between the key and ciphertext, making it difficult to infer the key.
+
+- Changing a property of the data and make it more difficult to interpret, more unintelligible.
+- Confusion works alongside diffusion to create robust encryption schemes.
+- Example is scrambling or changing the pixels of an image.
+
+
 
 ## Types of Encryption 
 
@@ -278,172 +356,6 @@ Exclusive OR (XOR) is a binary operation used extensively in cybersecurity and c
     - If the key is reused or predictable, XOR-based encryption is susceptible to various attacks, including known-plaintext attacks.
 
 
-
-## Hashing
-
-Hashing is a process of converting data (like a file or a message) into a fixed-size value or string, typically using a hash function.
-
-- Used for data integrity checks, digital signatures, password storage, and more.
-- The same input always produces the same hash output.
-- **Fixed Size**: Hash outputs are of fixed length, regardless of input size.
-- **Fast Computation**: Hash functions are designed to be quick to compute.
-- **Irreversible**: Not feasible to reverse-engineer the original input from the hash.
-- **Collision Resistance**: Unlikely for two different inputs to produce the same hash (a "collision").
-  
-**Common Uses**
-- Verify data hasn't been altered (e.g., checksums).
-- Securely store passwords, often with added salt.
-- Create digital signatures by compressing data before signing.
-- Used in various cryptographic operations, including blockchains.
-
-
-### Digital Signature
-
-The digital signature is the encrypted hash which is sent along with the message to prove the integrity of the message.
-
-- Uses a private key to create the signature and a public key to verify it.
-- The digital signature confirms the sender's identity.
-- This ensures the message hasn't been altered.
-- **Non-repudiation** - signer can't deny signing because there's proof.
-
-To learn more, please see [Digital Signatures in Asymmetric Encryptions.](./030-Asymmetric-Encryption.md)
-
-
-
-### Digital Signature Standard (DSS)
-
-DSS, or the Digital Signature Standard, is a cryptographic standard used for generating and verifying digital signatures. 
-
-- Established by the **National Institute of Standards and Technology (NIST)** in the United States.
-- Ensures authenticity, integrity, and non-repudiation for digital data through digital signatures.
-- Relies upon a 160-bit message digest created by the Digital Signature Algorithm (DSA)
-
-
-**How it works:**
-
-  - Public-private key pairs is created for signing and verifying.
-  - Private key is used to generate a digital signature from a message hash.
-  - The public key verifies the digital signature and check the message's integrity.
-
-
-### Code Signing
-
-Code signing is the process of digitally signing software code or executables to verify their origin and ensure their integrity.
-
-- Verifies that the code is from a trusted developer or publisher.
-- Ensures the code hasn't been modified since it was signed.
-- Protects users from malicious software and unauthorized code changes.
-
-**How It Works**:
-
-  - A software developer uses a private key to create a digital signature for their code.
-  - The digital signature is attached to the code, forming a certificate.
-  - A user or system uses the public key to verify the signature.
-  - The public key confirms the software's source and that it hasn't been tampered with.
-
-**Use Cases**:
-  - Software distribution, ensuring safe installation of programs and updates.
-  - Application stores, confirming that apps meet security standards.
-  - Operating systems, allowing signed drivers and system software.
-
-**Common Tools**:
-
-  - **Certificate Authorities (CAs)**: Organizations that issue digital certificates to verify the identity of the signer.
-  - **Code Signing Certificates**: Certificates issued to developers for signing their code.
-
-**Challenges**:
-
-  - **Certificate Management**: Properly handling and securing code signing certificates.
-  - **Revocation**: Handling compromised or invalid certificates.
-  - **Cost**: Obtaining code signing certificates from reputable CAs can be expensive.
-  
-
-
-## Hash Functions 
-
-Hash functions convert input data into a fixed-size hash value. Below are some of the common algorithms used for hashing.
-
-### MD5
-
-An older hash function, MD5 is now considered insecure due to known collisions.
-
-- Creates a 128-bit hash value unique to the input file.
-- 128-bits long means it can only create limited values, which can lead to collisions.
-- **Collisions** - when two distinct inputs produce the same hash.
-- Despite its insecurities, it's still used for checksums and non-security-sensitive applications.
-
-
-### SHA Family  
-
-A family of cryptographic hash functions designed by the National Security Agency (NSA).
-
-- **SHA-1**: 
-    
-    - Creates a 160-bit hash digest, reducing chance of collisions.
-    - More secure than MD5, but also deprecated due to vulnerabilities.
-    - Formerly used for digital signatures; now discouraged.
-
-- **SHA-2**: 
-
-    - Hash family containing longer hash digests.
-    - Includes:
-        - SHA-224
-        - SHA-256
-        - SHA-384
-        - SHA-512
-
-- **SHA-256**: 
-
-   - Part of the SHA-2 family, SHA-256 offers a 256-bit output.
-   - Stronger security, highly collision-resistant, and a commonly used standard.
-   - Secure communication, SSL/TLS, and blockchain.
-
-- **SHA-3**: 
-
-   - A newer family of hash functions
-   - Hash digest can go between **224 to 512 bits.**
-   - Uses **120 rounds of computations** to create the message digest.
-   - SHA-3 uses a different underlying algorithm (Keccak).
-   - Designed to provide high security and flexibility.
-   - Used in applications requiring a strong hash function with versatility.
-
-
-### RIPEMD
-
-
-RIPEMD stands for **Race Integrity Primitives Evaluation Message Digest.** It is a family of cryptographic hash functions designed to ensure data integrity and secure hashing.
-
-- A family of cryptographic hash functions developed in Europe.
-- Comes in **160/256/320-bit versions**
-- **RIPEMD-160** is the most known, with a 160-bit output.
-- Offers strong security and is used as an alternative to SHA-1.
-
-### HMAC
-
-Stands for "Hash-based Message Authentication Code", HMAC uses a hash function combined with a secret key to generate a message authentication code (MAC).
-
-- Uses a hash function and secret key for message authentication.
-- HMAC provides message integrity and authentication.
-- Ensures that a message has not been tampered with and verifies identity of the sender.
-
-Commonly paired with other algorithms for additional security:
-
-
-- **HMAC-MD5**: 
-
-    - Historically used for message authentication and checksum verification.
-    - Now considered insecure due to the vulnerabilities in MD5
-
-- **HMAC-SHA1**: 
-
-    - Offers more security than HMAC-MD5.
-    - SHA-1 is now deprecated due to known vulnerabilities and potential collision attacks.
-
-- **HMAC-SHA256**: 
-
-    - Offers stronger security and used widely in modern cryptographic applications.
-  
-    - Most recommended for secure applications.
 
 
 ----------------------------------------------

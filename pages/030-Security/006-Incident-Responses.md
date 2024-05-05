@@ -2,36 +2,38 @@
 # Incident Responses
 
 
-- [Incident Terminology](#incident-terminology)
-  - [Breach](#breach)
-  - [Event](#event)
-  - [Exploit](#exploit)
-  - [Incident](#incident)
-  - [Intrusion](#intrusion)
-  - [Threat](#threat)
-  - [Vulnerability](#vulnerability)
-  - [Zero Day](#zero-day)
-  - [Impact](#impact)
+- [Terminologies](#terminologies)
+    - [Breach](#breach)
+    - [Event](#event)
+    - [Exploit](#exploit)
+    - [Incident](#incident)
+    - [Intrusion](#intrusion)
+    - [Threat](#threat)
+    - [Vulnerability](#vulnerability)
+    - [Zero Day](#zero-day)
+    - [Impact](#impact)
 - [Goal of Incident Response](#goal-of-incident-response)
 - [Conducting regular incident response drills and exercises](#conducting-regular-incident-response-drills-and-exercises)
 - [Components of the Incident Response Plan](#components-of-the-incident-response-plan)
-  - [Preparation](#preparation)
-  - [Detection and Analysis](#detection-and-analysis)
-  - [Containment](#containment)
-  - [Recovery](#recovery)
+    - [Preparation](#preparation)
+    - [Detection and Analysis](#detection-and-analysis)
+        - [Analysis - Forensic Investigation](#analysis---forensic-investigation)
+    - [Containment](#containment)
+    - [Recovery](#recovery)
+- [Incident Response Models](#incident-response-models)
+    - [Leveraged Incident Response Model](#leveraged-incident-response-model)
+    - [Dedicated Incident Response Model](#dedicated-incident-response-model)
+    - [Hybrid Incident Response Model](#hybrid-incident-response-model)
 - [Incident Response Team](#incident-response-team)
-  - [Key Points](#key-points)
-  - [Incident Response Models](#incident-response-models)
-      - [Leveraged Incident Response Model](#leveraged-incident-response-model)
-      - [Dedicated Incident Response Model](#dedicated-incident-response-model)
-      - [Hybrid Incident Response Model](#hybrid-incident-response-model)
-  - [Responsibilities](#responsibilities)
+    - [Key Points](#key-points)
+    - [Responsibilities](#responsibilities)
 
 
 
-## Incident Terminology
 
-Security professionals work to prevent malicious attacks and human errors, but incidents still happen. They also act as first responders. Understanding incident response begins with knowing the terms for various cyberattacks.
+## Terminologies
+
+Understanding incident response begins with knowing the terms for various cyberattacks.
 
 ### Breach
 
@@ -132,6 +134,27 @@ The primary purpose of a forensic investigation during the analysis phase of an 
 2. Identify evidence that may need to be retained.
 2. Document lessons learned, analyzing response actions, and identifying areas for improvement.
 
+
+## Incident Response Models 
+
+### Leveraged Incident Response Model
+
+   - Outsourcing incident response capabilities to external experts.
+   - Leverages third-party services or partnerships for specialized support.
+   - Allows organizations to benefit from external expertise and resources.
+
+### Dedicated Incident Response Model
+
+   - Establishes an in-house incident response team.
+   - Team members are dedicated solely to handling and mitigating incidents.
+   - Enables a rapid and focused response to security events.
+
+### Hybrid Incident Response Model
+
+   - Combines internal and external resources for incident response.
+   - Utilizes both in-house teams and external support as needed.
+   - Offers flexibility and scalability in managing incidents effectively.
+
 ## Incident Response Team
 
 Establishing a Security Operations Center (SOC) necessitates the creation of an efficient incident response team. This team, whether dedicated, leveraged, or a blend of both, is crucial for addressing security incidents promptly and effectively.
@@ -147,25 +170,6 @@ Establishing a Security Operations Center (SOC) necessitates the creation of an 
   - Public Affairs/Communications Representatives
   - Engineering Representatives (System and Network)
 
-### Incident Response Models 
-
-#### Leveraged Incident Response Model
-
-   - Outsourcing incident response capabilities to external experts.
-   - Leverages third-party services or partnerships for specialized support.
-   - Allows organizations to benefit from external expertise and resources.
-
-#### Dedicated Incident Response Model
-
-   - Establishes an in-house incident response team.
-   - Team members are dedicated solely to handling and mitigating incidents.
-   - Enables a rapid and focused response to security events.
-
-#### Hybrid Incident Response Model
-
-   - Combines internal and external resources for incident response.
-   - Utilizes both in-house teams and external support as needed.
-   - Offers flexibility and scalability in managing incidents effectively.
 
 ### Responsibilities
 

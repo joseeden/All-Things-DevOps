@@ -5,24 +5,27 @@
 - [Disaster Recovery in the Real World](#disaster-recovery-in-the-real-world)
 - [Financial Department is rarely involved](#financial-department-is-rarely-involved)
 - [Components of a Disaster Recovery Plan](#components-of-a-disaster-recovery-plan)
-    - [Data Backups](#data-backups)
-        - [Full Backup](#full-backup)
-        - [Incremental Backup](#incremental-backup)
-        - [Differential Backup](#differential-backup)
-        - [Mirror Backup](#mirror-backup)
-        - [Snapshot Backup](#snapshot-backup)
-        - [Cloud Backup](#cloud-backup)
-    - [Failover](#failover)
-    - [Disaster Recovery Sites](#disaster-recovery-sites)
-        - [Warm Site](#warm-site)
-        - [Hot Site](#hot-site)
-        - [Cold Site](#cold-site)
-    - [Disaster Recovery Tests](#disaster-recovery-tests)
-        - [Parallel Test](#parallel-test)
-        - [Full Interruption Test](#full-interruption-test)
-        - [Checklist Reviews](#checklist-reviews)
-        - [Tabletop Exercises](#tabletop-exercises)
+- [Data Backups](#data-backups)
+    - [Full Backup](#full-backup)
+    - [Incremental Backup](#incremental-backup)
+    - [Differential Backup](#differential-backup)
+    - [Mirror Backup](#mirror-backup)
+    - [Snapshot Backup](#snapshot-backup)
+    - [Cloud Backup](#cloud-backup)
+- [Failover](#failover)
+- [Disaster Recovery Sites](#disaster-recovery-sites)
+    - [Warm Site](#warm-site)
+    - [Hot Site](#hot-site)
+    - [Cold Site](#cold-site)
+- [Disaster Recovery Tests](#disaster-recovery-tests)
+    - [Parallel Test](#parallel-test)
+    - [Full Interruption Test](#full-interruption-test)
+    - [Checklist Reviews](#checklist-reviews)
+    - [Tabletop Exercises](#tabletop-exercises)
 - [Business Continuity versus Disaster Recovery](#business-continuity-versus-disaster-recovery)
+
+
+
 
 
 
@@ -75,63 +78,63 @@ Organizations often maintain diverse documents for different audiences in their 
   - IT personnel
   - Managers and public relations personnel
 
-### Data Backups 
+## Data Backups 
 
 Data Backup involves creating duplicate copies of critical data and storing them off-site. These backups serve as a safeguard in case the primary data becomes unavailable due to a disaster or incident.
 
-#### Full Backup
+### Full Backup
 - Copies all selected files and data.
 - Provides a complete snapshot at a specific point in time.
 
-#### Incremental Backup
+### Incremental Backup
 - Copies only the data that has changed since the last backup.
 - Efficient in terms of storage space but may require multiple backups for a complete restore.
 
-#### Differential Backup
+### Differential Backup
 - Copies all the data that has changed since the last full backup.
 - Requires less time for restoration compared to incremental backups.
 
-#### Mirror Backup
+### Mirror Backup
 - Creates an exact copy of the source data.
 - Ensures a one-to-one replica of the original but may not offer versioning.
 
-#### Snapshot Backup
+### Snapshot Backup
 - Captures the state of the system or data at a specific point in time.
 - Provides a consistent view for backup purposes without affecting ongoing operations.
 
-#### Cloud Backup
+### Cloud Backup
 - Involves storing data in an offsite cloud environment.
 - Enhances data accessibility and provides a secure offsite backup solution.
 
 
-### Failover 
+## Failover 
 
 Failover involves establishing an alternate location, such as a secondary data center or cloud infrastructure, where critical business functions can continue in case the primary site becomes unavailable due to a disaster or incident.
 
 
-### Disaster Recovery Sites 
+## Disaster Recovery Sites 
 
-#### Warm Site
+### Warm Site
 
   - Has necessary systems but lacks current data for immediate operations.
   - Hardware and connectivity are in place.
   - Data is restored from backups, which may not be up-to-date.
   - Example: A financial services company with a warm site in another city.
 
-#### Hot Site
+### Hot Site
 
   - Fully operational duplicate of the primary site.
   - Real-time data replication for immediate takeover.
   
-#### Cold Site
+### Cold Site
 
   - Basic facility with power and cooling.
   - No pre-installed hardware or data.
   - Requires significant time to become operational.
 
-### Disaster Recovery Tests 
+## Disaster Recovery Tests 
 
-#### Parallel Test
+### Parallel Test
 
 - Runs primary and alternate processing facilities simultaneously.
 - Primary site continues normal operations while alternate site processes backup transactions.
@@ -139,16 +142,16 @@ Failover involves establishing an alternate location, such as a secondary data c
 - Least disruptive and time-consuming among disaster recovery tests.
 - *Reference:* ISC2 Study Guide, Module 3, Disaster Recovery Tests.
 
-#### Full Interruption Test
+### Full Interruption Test
 
 - Shuts down primary site, relies entirely on the alternate site.
 - More disruptive and costly compared to a parallel test.
 
-#### Checklist Reviews
+### Checklist Reviews
 
 - Evaluates procedures and protocols, not technical recovery aspects.
 
-#### Tabletop Exercises
+### Tabletop Exercises
 
 - Focuses on assessing procedures and protocols rather than technical recovery.
 

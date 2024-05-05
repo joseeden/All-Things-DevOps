@@ -197,6 +197,12 @@ The complete list of projects can be found [here](projects/README.md).
     
     - [Asymmetric Encryption](pages/030-Security/030-Asymmetric-Encryption.md)
 
+    - [Hashing](pages/030-Security/031-Hashing.md)
+
+    - [Blockchain](pages/030-Security/032-Blockchain.md)
+
+    - [Encryption Tools](pages/030-Security/033-Encryption-Tools.md)
+
 - [Security Architecture](#security-architecture)
 
     - [Computer Networking](pages/030-Security/016-Computer-Networking.md)

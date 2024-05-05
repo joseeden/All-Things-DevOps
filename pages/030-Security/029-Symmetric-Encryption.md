@@ -1,7 +1,6 @@
 
 # Symmetric Encryption
 
-
 - [Symmetric Cryptosystems](#symmetric-cryptosystems)
     - [Block Algorithms](#block-algorithms)
     - [RC Cipher Suites](#rc-cipher-suites)
