@@ -269,7 +269,7 @@ The complete list of projects can be found [here](projects/README.md).
 
 ## Observability
 
-- [Prometheus](pages/010-Obeservability/001-Prometheus.md)
+- [Prometheus](pages/010-Observability/001-Prometheus.md)
 
 ## Programming 
 
