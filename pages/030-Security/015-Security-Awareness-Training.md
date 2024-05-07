@@ -1,15 +1,17 @@
 
 # Security Awareness Training
 
+
+
 - [Learning Activities](#learning-activities)
 - [Examples](#examples)
-- [Exercises](#exercises)
+- [Incident Response Exercises](#incident-response-exercises)
     - [Walk-Through Exercise](#walk-through-exercise)
     - [Tabletop Exercise](#tabletop-exercise)
+    - [Penetration Testing Exercise](#penetration-testing-exercise)
     - [Simulation Exercise](#simulation-exercise)
     - [Checklists in Incident Response](#checklists-in-incident-response)
 - [Security Awareness versus Security Training](#security-awareness-versus-security-training)
-
 
 
 ## Learning Activities
@@ -39,23 +41,37 @@ Security Awareness Training communicates expectations, responsibilities, and ide
 - **Training:** Increasing proficiency in recognizing phishing attempts, practicing correct responses, including simulated phishing emails to test identification skills.
 - **Awareness:** Raising overall awareness of phishing threats, alerting users to new tactics and approaches in phishing, vishing, SMS phishing (smishing).
 
-## Exercises 
+## Incident Response Exercises
+
+To learn more about Incident Response, please see [Incident Response Plan.](./006-Incident-Responses.md)
+
 
 ### Walk-Through Exercise
 
 - Reviews each step of an incident to ensure team members know what to do.
 - Confirms clarity on actions and procedures.
 
-### Tabletop Exercise
+### Tabletop Exercise 
 
-- Involves presenting a scenario, prompting team members to discuss and plan their responses.
+- Presenting a scenario, prompting team members to discuss and plan their responses.
 - Focuses on response strategies and relevant tasks.
-- Has the **least impact on system operations** because it does not involve actual disruption or use of resources.
+- **Least impact on system operations** - does not involve actual disruption or cost-effective.
+
+### Penetration Testing Exercise 
+
+- Actually getting people on the network.
+- Simulate network intrusion based on threat scenarios.
+- There's a **specific goal in mind.**
+- Agree on methodology and rules of engagement before performing pentests.
 
 ### Simulation Exercise
 
 - Recreates an actual incident to thoroughly test response capabilities.
 - Provides a realistic scenario to assess practical incident handling.
+- Sample scenarios:
+    - Phishing or ransomware
+    - Multi-stage attacks 
+    - data breaches
 
 ### Checklists in Incident Response
 

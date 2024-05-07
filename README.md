@@ -159,6 +159,8 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Incident Response](pages/030-Security/006-Incident-Responses.md)
 
+    - [Digital Forensics](pages/030-Security/034-Digital-Forensics.md)
+
     - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
 
     - [Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
