@@ -7,10 +7,20 @@
     - [Dictionary Attack](#dictionary-attack)
     - [Password Spraying](#password-spraying)
     - [Hybrid Attack](#hybrid-attack)
+    - [Birthday Attack](#birthday-attack)
 - [Cryptographic Attacks](#cryptographic-attacks)
     - [Downgrade Attacks](#downgrade-attacks)
     - [Collision Attacks](#collision-attacks)
     - [Quantum Computing](#quantum-computing)
+    - [Rainbow Table Attack](#rainbow-table-attack)
+    - [Pass the Hash Attack](#pass-the-hash-attack)
+- [Social Engineering Attacks](#social-engineering-attacks)
+    - [Website Redirection](#website-redirection)
+    - [Watering Hole Attack](#watering-hole-attack)
+    - [Adversarial Artificial Intelligence](#adversarial-artificial-intelligence)
+    - [Spam](#spam)
+    - [Phishing](#phishing)
+    - [Typosquatting](#typosquatting)   
 - [Other Attacks](#other-attacks)
     - [Denial of Service DoS and DDoS](#denial-of-service-dos-and-ddos)
     - [Man-in-the-Middle MitM](#man-in-the-middle-mitm)
@@ -22,10 +32,7 @@
     - [Fragmented Packet Attack](#fragmented-packet-attack)
     - [Side Channel Attacks](#side-channel-attacks)
     - [Replay Attack](#replay-attack)
-    - [Rainbow Table Attack](#rainbow-table-attack)
     - [Buffer Overflow Attack](#buffer-overflow-attack)
-    - [Birthday Attack](#birthday-attack)
-    - [Pass the Hash Attack](#pass-the-hash-attack)
     - [On-Path Attack](#on-path-attack)
     - [Logic Bomb](#logic-bomb)
 - [Tools](#tools)
@@ -86,6 +93,35 @@ Blends brute force and dictionary techniques by using common passwords with vari
 - Lock accounts after repeated failed attempts.
 - Implement rate limiting to slow down hybrid attacks.
 - Educate users about secure password practices.
+
+### Birthday Attack 
+
+Cybercriminals use birthday attacks to trick systems by cracking digital authentication methods.
+
+**The Birthday Paradox**
+
+  - High odds of at least two will share a birthday in a random group of people. 
+  - Easier to find two colliding results of different inputs than generating all possible outputs.
+
+**Birthday Attack in Cybersecurity**
+
+  - Attackers aim to find hash collisions to break security. 
+  - Used to crack weak hash functions or forge digital signatures.
+
+**Finding the Collision**
+
+  1. A program repeatedly runs the hash function on randomly selected inputs.
+  2. Every input-output pair is stored in a database.
+  3. Each output is checked to find collisions (different inputs produce the same output).
+  4. Attackers then exploit hash collisions to trick the system into treating different messages as identical.
+
+**Mitigation**
+  
+  - Use hash functions with large bit sizes; avoid outdated algorithms.
+
+
+<small>Reference: https://atlasvpn.com/blog/birthday-attack</small>
+
 
 ## Cryptographic Attacks 
 
@@ -210,8 +246,113 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
 
   - Keep informed about developments in quantum computing and adapt security strategies accordingly.
 
+### Rainbow Table Attack 
+
+A rainbow table attack uses precomputed hashes to find a matching hash value for a user's password (see ISC2 Study Guide, Module 2, under Types of Threats). 
+
+**Mitigation** 
+
+  - Add a unique random value (salt) to each password before hashing.
+  - Choose robust cryptographic hash functions resistant to rainbow tables.
+  - Enforce strong and complex password creation policies.
+  - Stay current with advancements, adopting newer, more secure hash functions.
+  - Implement Two-Factor Authentication (2FA)
 
 
+### Pass the Hash Attack
+
+A "pass the hash" attack involves using a hashed password to gain unauthorized access to a system, bypassing the need for the plaintext password. Attackers obtain the hash and use it to authenticate without knowing the actual password.
+
+- Attackers steal password hashes from compromised systems.
+- They use these hashes to authenticate, avoiding password-based checks.
+- Common in Windows environments with NTLM authentication.
+
+
+**Mimikatz**
+
+  - An open-source tool for security testing and penetration testing.
+  - Extracts plaintext passwords, hashes, and Kerberos tickets from memory.
+  - Enables "pass the hash" and "pass the ticket" attacks.
+  - Manipulates Windows authentication tokens.
+
+**Common Use Cases of Mimikatz**
+
+  - Used by penetration testers to assess security on Windows systems.
+  - Often exploited by hackers for unauthorized access.
+
+**Mitigation Measures**
+
+  - Apply multi-factor authentication.
+  - Keep Windows systems updated with security patches.
+  - Limit administrative access and use secure password management.
+  - Ensure only trusted OS are allowed to connect to your servers.
+  - Implement least privilege for all user accounts.
+
+
+## Social Engineering Attacks 
+
+### Website Redirection
+
+Redirecting users from legitimate websites to malicious ones without their knowledge or consent.
+
+  - Often achieved through compromised websites, phishing emails, or malicious scripts injected into web pages.
+  - Can lead to phishing attacks, malware installation, or theft of sensitive information.
+  - Targets users' trust in familiar websites to deceive them into visiting malicious domains.
+  - **DNS Poisoning** - compromising a DNS server and create fake domains
+  - **URL Hijacking** - Redirects traffic from legitimate URLs to malicious or fraudulent websites.
+
+Mitigation:
+
+- Implementing secure coding practices
+- Regular website security audits
+- User education about potential risks
+
+### Watering Hole Attack
+
+Considered as a passive attack, Watering Hole attacks target websites that are frequently visited by a specific group of users, such as employees of a company or members of a community.
+
+- Exploits vulnerabilities in these websites to launch phishing attacks against the targeted group.
+- Often used to compromise organizations by infecting their employees' devices or stealing sensitive information.
+- Mimics the behavior of predators waiting near water sources to ambush prey, hence "watering hole" attack.
+  
+Mitigation:
+
+- Regularly updating website software
+- Implementing web application firewalls
+- Educating users about the risks of visiting untrusted websites.
+
+### Adversarial Artificial Intelligence
+
+AI systems designed to deceive, manipulate, or exploit vulnerabilities in other AI systems or human users.
+
+- Uses advanced algorithms to generate realistic fake content or manipulate data for malicious purposes.
+- Using algorithm functionalities which can improve themselves over time based on data.
+- Example: Analyzing user's habit, Gathering history of compromises, etc.
+
+### Spam 
+
+Spam refers to mass mailing of unsolicited messages.
+
+- Usually used to promote products or services or collect information.
+- Can also be used to trick users into clicking links.
+
+### Phishing
+
+Sending deceptive emails or messages to trick recipients into divulging personal information or clicking malicious links.
+
+- Intentionally deceiving people to create a sense of urgency or legitimacy.
+- **Smishing** - Phishing through SMS text messages.
+- **Vishing** - Phishing over the phone or through call.
+- **Spear Phishing** - Targeted phishing on certain individuals.
+- **Whaling** - Spear phishing, but for high-ranking people.
+
+### Typosquatting   
+
+Attacker registers a domain name similar to a popular website. The "copycat" domain name usually contains some kind of common typographical errors.
+
+- Goal is to victimize users who might accidentally mistype a URL.
+- Can trick users pretty easily, if they're not looking carefully at the URL.
+- Example: Registering "gnail.com" to impersonate gmail.com
 
 ## Other Attacks 
 
@@ -345,19 +486,6 @@ A replay attack is when an attacker captures and resends (i.e. "replays") authen
 
 - IPSec VPN tracks packet sequencing and includes the sender's signature on all packets; therefore preventing forged packages. 
 
-### Rainbow Table Attack 
-
-A rainbow table attack uses precomputed hashes to find a matching hash value for a user's password (see ISC2 Study Guide, Module 2, under Types of Threats). 
-
-**Mitigation** 
-
-  - Add a unique random value (salt) to each password before hashing.
-  - Choose robust cryptographic hash functions resistant to rainbow tables.
-  - Enforce strong and complex password creation policies.
-  - Stay current with advancements, adopting newer, more secure hash functions.
-  - Implement Two-Factor Authentication (2FA)
-
-
 ### Buffer Overflow Attack 
 
 A Buffer Overflow attack is a type of attack that involves sending malicious data to an application or system, causing it to crash or become unresponsive. 
@@ -375,64 +503,6 @@ A Buffer Overflow attack is a type of attack that involves sending malicious dat
 - Deploy canaries for early detection of buffer overflows.
 - Restrict code execution in specific memory areas.
 - Keep software current to address vulnerabilities.
-
-### Birthday Attack 
-
-Cybercriminals use birthday attacks to trick systems by cracking digital authentication methods.
-
-**The Birthday Paradox**
-
-  - High odds of at least two will share a birthday in a random group of people. 
-  - Easier to find two colliding results of different inputs than generating all possible outputs.
-
-**Birthday Attack in Cybersecurity**
-
-  - Attackers aim to find hash collisions to break security. 
-  - Used to crack weak hash functions or forge digital signatures.
-
-**Finding the Collision**
-
-  1. A program repeatedly runs the hash function on randomly selected inputs.
-  2. Every input-output pair is stored in a database.
-  3. Each output is checked to find collisions (different inputs produce the same output).
-  4. Attackers then exploit hash collisions to trick the system into treating different messages as identical.
-
-**Mitigation**
-  
-  - Use hash functions with large bit sizes; avoid outdated algorithms.
-
-
-<small>Reference: https://atlasvpn.com/blog/birthday-attack</small>
-
-
-### Pass the Hash Attack
-
-A "pass the hash" attack involves using a hashed password to gain unauthorized access to a system, bypassing the need for the plaintext password. Attackers obtain the hash and use it to authenticate without knowing the actual password.
-
-- Attackers steal password hashes from compromised systems.
-- They use these hashes to authenticate, avoiding password-based checks.
-- Common in Windows environments with NTLM authentication.
-
-
-**Mimikatz**
-
-  - An open-source tool for security testing and penetration testing.
-  - Extracts plaintext passwords, hashes, and Kerberos tickets from memory.
-  - Enables "pass the hash" and "pass the ticket" attacks.
-  - Manipulates Windows authentication tokens.
-
-**Common Use Cases of Mimikatz**
-
-  - Used by penetration testers to assess security on Windows systems.
-  - Often exploited by hackers for unauthorized access.
-
-**Mitigation Measures**
-
-  - Apply multi-factor authentication.
-  - Keep Windows systems updated with security patches.
-  - Limit administrative access and use secure password management.
-  - Ensure only trusted OS are allowed to connect to your servers.
-  - Implement least privilege for all user accounts.
 
 ### On-Path Attack 
 

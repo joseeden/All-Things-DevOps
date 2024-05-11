@@ -173,6 +173,23 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Privileged Access Management](pages/030-Security/011-Privilege-Access-Management.md)
 
+- [Cryptography](#cryptography)    
+
+    - [Cryptography Basics](pages/030-Security/028-Cryptography-Basics.md) 
+
+    - [Symmetric Encryption](pages/030-Security/029-Symmetric-Encryption.md)
+    
+    - [Asymmetric Encryption](pages/030-Security/030-Asymmetric-Encryption.md)
+
+    - [Hashing](pages/030-Security/031-Hashing.md)
+
+    - [Encryption Tools](pages/030-Security/033-Encryption-Tools.md)
+    
+    - [Blockchain](pages/030-Security/032-Blockchain.md)
+
+    - [Public Key Infrastructure](pages/030-Security/035-PKI.md)
+
+
 - [Cyber Threats and Attacks](#cyber-threat-and-attacks) 
 
     - [Cyber Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
@@ -191,20 +208,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Attacks](pages/030-Security/023-Attacks.md)
 
-- [Cryptography](#cryptography)    
-
-    - [Cryptography Basics](pages/030-Security/028-Cryptography-Basics.md) 
-
-    - [Symmetric Encryption](pages/030-Security/029-Symmetric-Encryption.md)
-    
-    - [Asymmetric Encryption](pages/030-Security/030-Asymmetric-Encryption.md)
-
-    - [Hashing](pages/030-Security/031-Hashing.md)
-
-    - [Encryption Tools](pages/030-Security/033-Encryption-Tools.md)
-    
-    - [Blockchain](pages/030-Security/032-Blockchain.md)
-
+    - [Social Engineering](pages/030-Security/036-Social-Engineering.md)
 
 - [Security Architecture](#security-architecture)
 
@@ -224,7 +228,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Common Security Policies](pages/030-Security/014-Common-Security-Policies.md)
 
-    - [Security Awareness Training](pages/030-Security/015-Security-Awareness-Training.md)
+    - [Security Awareness](pages/030-Security/015-Security-Awareness-Training.md)
 
 - [Terminologies](pages/030-Security/001-Terminologies.md)
 
