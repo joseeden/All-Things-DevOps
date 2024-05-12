@@ -1,22 +1,8 @@
 
-# Data Security
+# Data Security 
 
-- [Data Types](#data-types)
-   - [Data at Rest](#data-at-rest)
-   - [Data in Use](#data-in-use)
-   - [Data in Transit](#data-in-transit)
-- [Other Data Types](#other-data-types)
-   - [By Nature](#by-nature)
-   - [By Format](#by-format)
-   - [By Use](#by-use)
-   - [By Sensitivity](#by-sensitivity)
-   - [By Origin](#by-origin)
-- [Data Classification](#data-classification)
-- [Data Roles and Responsibilities](#data-roles-and-responsibilities)
-- [Data Lifecycle](#data-lifecycle)
-- [Identify and Assess Data](#identify-and-assess-data)
-- [Data Sovereignty](#data-sovereignty)
-- [Data Handling Practices](#data-handling-practices)
+
+- [Data Security](#data-security)
    - [Classification](#classification)
    - [Labeling](#labeling)
    - [Retention](#retention)
@@ -26,10 +12,6 @@
    - [Overwriting](#overwriting)
    - [Cryptographic Erasures](#cryptographic-erasures)
    - [The Right to be Forgotten](#the-right-to-be-forgotten)
-- [Logging and Monitoring Security Events](#logging-and-monitoring-security-events)
-- [Event Logging Best Practices](#event-logging-best-practices)
-   - [Ingress Monitoring](#ingress-monitoring)
-   - [Egress Monitoring](#egress-monitoring)
 - [Protecting Data](#protecting-data)
    - [Anonymization](#anonymization)
    - [Pseudo-Anonymization](#pseudo-anonymization)
@@ -42,198 +24,21 @@
    - [Digital Signatures](#digital-signatures)
    - [Message Digests](#message-digests)
    - [Message Authentication Code](#message-authentication-code)
+- [Data Encryption](#data-encryption)
+   - [Data-at-Rest Encryption](#data-at-rest-encryption)
+   - [Data-in-Transit Encryption](#data-in-transit-encryption)
+   - [Data-in-Use Encryption](#data-in-use-encryption)
 - [Mishandling Data](#mishandling-data)
    - [Cybersquatting](#cybersquatting)
 - [Data Loss Prevention](#data-loss-prevention)
+   - [Endpoint DLP System](#endpoint-dlp-system)
+   - [Network DLP System](#network-dlp-system)
+   - [Storage DLP](#storage-dlp)
+   - [Cloud-based DLP](#cloud-based-dlp)
 
 
 
-## Data Types 
-
-### Data at Rest
-
-Data stored in a physical location, such as a hard drive, database, or cloud storage. 
-
-- Vulnerable to physical theft, unauthorized access, or attacks that compromise storage systems.
-- It is not actively moving or being transferred between systems.
-- Security measures include physical security, access controls, and monitoring.
-
-### Data in Use
-
-Data currently being processed, manipulated, or accessed by an application or user.
-
-- Data being analyzed by software, accessed by a user, or used by a running application or service.
-- Vulnerable to unauthorized access, application-level attacks, memory-based exploits, and insider threats.
-- Application security, user authentication, authorization controls, data masking, and memory protection techniques (e.g., address space layout randomization)
-
-### Data in Transit
-
-Data actively moving between locations or systems, such as over networks, between servers, or through communication channels.
-
-- Sent via email, the internet, or communication between networked devices.
-- Data remains unreadable without the proper decryption key. 
-- TLS (Transport Layer Security) and VPNs (Virtual Private Networks) 
-- Data in transit is susceptible to interception and eavesdropping. 
-
-
-## Other Data Types 
-
-### By Nature
-
-- **Structured Data**
-    -  Data organized into a defined format, such as tables or databases, where elements are easily identifiable (e.g., Excel spreadsheets, SQL databases).
-
-- **Unstructured Data**
-    -  Data without a specific structure, making it harder to organize and analyze (e.g., text documents, emails, images).
-
-- **Semi-structured Data**
-    -  Data with some organization but not fully structured, often containing metadata (e.g., JSON, XML).
-
-### By Format
-
-- **Text Data**
-    -  Information stored in a text-based format, such as documents, emails, or code.
-
-- **Numeric Data**
-    -  Data represented by numbers, like financial data, statistics, or sensor readings.
-
-- **Binary Data**
-    -  Data represented in binary form, including computer files, images, videos, or audio.
-
-### By Use
-
-- **Operational Data**
-    -  Data used in day-to-day operations, like customer records, sales transactions, or inventory information.
-
-- **Analytical Data**
-    -  Data used for analysis and business intelligence, often derived from operational data.
-
-- **Master Data**
-    -  Core business data that remains consistent across different systems, such as customer or product information.
-
-- **Metadata**
-    -  Data about data, providing information on the properties or structure of data.
-
-### By Sensitivity
-
-- **Sensitive Data**
-    -  Data that requires special protection due to privacy or security concerns (e.g., personal identifiable information, financial records).
-
-- **Non-sensitive Data**
-    -  Data that does not require stringent security measures, generally considered public or low-risk.
-
-### By Origin
-
-- **Primary Data**
-    -  Data collected directly from original sources through surveys, experiments, or direct observations.
-
-- **Secondary Data**
-    -  Data derived from existing sources, such as reports, studies, or databases. 
-
-
-## Data Classification 
-
-Data can be classified as:
-
-- PII (Personally identifiable information)
-- PHI (Protected health information)
-- Proprietary or trade secret
-- Public/private 
-- Critical 
-- Financial
-
-
-## Data Roles and Responsibilities
-
-- **Owner**
-
-   - Legal data owner 
-   - Sets policies on how data will be managed 
-
-- **Controller**
-
-   - Ensure data complies with regulations
-
-- **Processor**
-
-   - Processes data while adhering to laws and regulations
-   - Handle data according to guidelines
-
-- **Custodian/Steward**
-
-   - Day-to-day management of data
-   - Permissions, backup, etc.
-   - Is aligned with policies set by data owner 
-   - Owner sets rules, custodian enacts the rules
-
-- **Data Privacy Officer (DPO)**
-
-   - Important data role 
-   - Ensure data privacy regulationcompliance such as GDPR
-
-
-
-## Data Lifecycle
-
-Data undergoes a life cycle encompassing creation, usage, sharing, and modification. Various models exist, sharing common operational steps. 
-
-1. **Collect/Create** 
-   - Creating the knowledge, which is usually tacit knowledge at this point.
-
-2. **Store** 
-   - Storing or recording it in some fashion (which makes it explicit).
-
-3. **Use/Process** 
-   - Using the knowledge, which may cause the information to be modified, supplemented or partially deleted.    
-
-4. **Share** 
-   - Sharing the data with other users, whether as a copy or by moving the data from one location to another.
-
-5. **Archive** 
-   - Archiving the data when it is temporarily not needed.
-
-6. **Destroy** 
-   - Destroying the data when it is no longer needed.
-
-
-## Identify and Assess Data
-
-1. **Identification of Valuable Assets**
-   - Recognize assets based on their value to the data owner.
-
-2. **Risk Assessment**
-   - Evaluate risks concerning data compromise, destruction, or alteration.
-   - Identify vulnerabilities in the data life cycle.
-
-3. **Data Life Cycle Stages**
-   - Understand data handling practices from creation to destruction.
-   - Recognize diverse risks and practices at each stage.
-
-4. **Regulatory Compliance**
-   - Adhere to government standards and regulations.
-   - Examples include OSHA, HIPAA, PCI DSS, and GDPR.
-
-5. **Geographic Considerations**
-   - Be aware of regulations across different geographic areas.
-   - Ensure compliance with multiple jurisdictional rules.
-
-6. **Technical Considerations**
-   - Be cautious about relying on virtual trash cans for data deletion.
-   - Use appropriate tools for secure destruction, considering recovery possibilities.
-
-7. **Compliance Protocols**
-    - Follow specific protocols and processes for regulatory compliance.
-    - Ensure data is irreversibly destroyed as required.
-
-## Data Sovereignty  
-
-Location of the data and the laws that apply to it.
-
-- Where did the data originate?
-- Where does the data reside?
-- Which laws and regulations apply?
-
-## Data Handling Practices
+## Data Security
 
 ### Classification
 
@@ -363,94 +168,9 @@ The right to be forgotten is a principle under the General Data Protection Regul
 - Empowers control over online presence.
 - Involves removing outdated or excessive information from online platforms.
 
-## Logging and Monitoring Security Events
-
-Logging is critical for capturing events and ensuring accountability. 
-
-According to the ISC2 Study Guide (chapter 5, module 1, under Data Handling Practices), logging and monitoring systems are characterized as being "Essential to identifying inefficient performing systems, detecting compromises, and providing a record of how systems are used".
-
-- **Event Logging**
-   - Records measurable changes caused by system events.
-   - Imposes computational cost but aids in accountability.
-
-- **Framework Emphasis**
-   - Major controls frameworks stress organizational logging practices.
-   - Relevant information includes user IDs, system activities, key event timestamps, and more.
-
-- **Monitoring Health**
-   - Essential for identifying system inefficiencies and compromises.
-   - Enables correlation of information for a comprehensive understanding of activities.
-
-- **Log Reviews**
-   - Crucial for security assessment, incident identification, and audits.
-   - Supports forensic analysis, helping determine if vulnerabilities were exploited.
-
-- **Log Management Infrastructure**
-   - Components define how interactions occur.
-   - Preserves log data integrity and confidentiality.
-
-- **Control Implementation**
-   - Protects against unauthorized log changes.
-   - Ensures adherence to retention policies and addresses storage capacity issues.
-
-- **Preservation of Evidence**
-   - Policies should preserve original logs.
-   - Protects log data from malicious use and maintains confidentiality.
-
-## Event Logging Best Practices
-
-### Ingress Monitoring
-
-- **Firewalls**
-   - Surveillance and assessment of inbound communications traffic.
-   - Logging and alerting capabilities for monitoring access attempts.
-
-- **Gateways**
-   - Control points for monitoring and regulating inbound traffic.
-   - Provide logging and alerting features to enhance security.
-
-- **Remote Authentication Servers**
-   - Monitor and authenticate inbound access attempts.
-   - Offer logging and alerting functionalities for enhanced security.
-
-- **IDS/IPS Tools**
-   - Intrusion Detection Systems/Intrusion Prevention Systems.
-   - Identify and prevent unauthorized access with logging and alert features.
-   - IPS monitors network traffic and detects potential threats.
-   - IPS then takes action to prevent unauthorized or malicious activities.
-
-- **SIEM Solutions**
-   - Security Information and Event Management.
-   - Centralized platform for comprehensive security monitoring and logging.
-
-- **Anti-Malware Solutions**
-   - Monitor and block malicious activities from inbound traffic.
-   - Logging and alerting capabilities to enhance threat detection.
-
-### Egress Monitoring
-
-- **Email Content and Attachments**
-   - DLP solutions inspect outgoing emails for sensitive data.
-
-- **Copy to Portable Media**
-   - Monitor and control data transfer to external devices.
-   - DLP solutions ensure sensitive data is not copied without authorization.
-
-- **File Transfer Protocol (FTP)**
-   - Monitor data transfers via FTP to prevent unauthorized outbound data flow.
-
-- **Posting to Web Pages/Websites**
-   - Control and inspect data postings to external web pages.
-   - DLP ensures compliance with data protection policies.
-
-- **Applications/APIs**
-   - DLP solutions regulate data leaving the organization through applications and APIs.
-   - Monitor and prevent unauthorized data access and transmission.
-
 ## Protecting Data 
 
 ### Anonymization 
-
 
 Anonymization of data is the process of removing or altering personally identifiable information (PII) to ensure that the data cannot be traced back to specific individuals.
 
@@ -498,6 +218,7 @@ Encryption is essential for data security as it ensures that sensitive informati
    - Validates the binding nature and authenticity of digital contracts.
 
 ### Cryptography
+
 Cryptography is a versatile tool, providing crucial services like confidentiality and integrity for enhanced system security.
 
 - **Confidentiality**
@@ -558,6 +279,84 @@ A Message Authentication Code (MAC) does not guarantee anonymity. MAC is a crypt
 
 On the other hand, **anonymity is not a guaranteed by a MAC.**
 
+
+## Data Encryption 
+
+### Data-at-Rest Encryption
+
+Each type of data encryption serves a specific purpose and can be used individually or in combination to protect sensitive information from unauthorized access or disclosure.
+
+- **FDE (Full Disk Encryption):**
+  - Encrypts entire hard drive, including OS and user data.
+  - Data is encrypted when off, decrypted when turned on and used by user.
+  - Guards against unauthorized access if device is lost.
+  - Examples: BitLocker (Windows), FileVault (macOS).
+
+- **Partition Encryption**
+  - Encrypts specific drive partitions.
+  - Allows selective encryption, leaving other partitions unencrypted.
+  - Useful for targeted data protection.
+
+- **File Encryption**
+  - Encrypts individual files or folders.
+  - Enables secure storage and sharing.
+  - Examples: VeraCrypt, AES Crypt.
+
+- **Volume Encryption**
+  - Encrypts entire volumes or logical drives.
+  - Shields multiple partitions. 
+  - Common in enterprise setups.
+
+- **Database Encryption**
+  - Encrypts data within databases.
+  - Protects against unauthorized access. 
+  - Can be done at the column, row, or table level.
+  - Assists with GDPR, HIPAA compliance.
+
+- **Record Encryption**
+  - Encrypts individual database records or fields.
+  - Useful: multiple users with unequal permissions are accessing the same database.
+  - Offers precise data protection.
+  - Often used for compliance requirements.
+
+### Data-in-Transit Encryption
+
+Secures data while it's being transmitted over networks to prevent interception or eavesdropping.
+
+- **SSL/TLS**
+  - Establish secure connections between clients and servers over the internet.
+  - Encrypts data exchange to ensure confidentiality and integrity.
+  - Securing web traffic (HTTPS), email (SMTPS, IMAPS), and other internet protocols.
+
+- **VPNs (Virtual Private Networks)**
+  - Encrypted tunnel between a user's device and a remote server or network.
+  - Encrypts all traffic going through the tunnel, prevents interception or monitoring.
+  - Remote access to corporate networks or for securing public Wi-Fi environments.
+
+- **IPSec (Internet Protocol Security)**
+  - Suite of protocols; secure IP communications by encrypting and authenticating data packets.
+  - End-to-end security for IP traffic, ensuring confidentiality, integrity, and authenticity.
+  - Often used with VPNs to encrypt traffic between network segments.
+
+### Data-in-Use Encryption
+
+Protects data while it's being accessed or used by applications or users.
+
+- **Application level**
+  - Encryption implemented within applications.
+  - Protect sensitive data during processing or manipulation.
+  
+- **Access Control**
+  - Controls access to data based on user permissions and authentication.
+  
+- **Secure Enclaves**
+  - Hardware-based secure areas for processing sensitive data.
+  - Ensures isolation from other system components.
+  
+- **Intel Software Guard Extensions (SGX)**
+  - Hardware-based security technology for creating secure enclaves within the CPU.
+  - Protect data from unauthorized access or modification.
+
 ## Mishandling Data 
 
 ### Cybersquatting
@@ -570,6 +369,8 @@ Cybersquatting involves speculatively registering and selling domain names for p
 - Generally considered unethical and deceptive.
 - Illegal under the United States' Anticybersquatting Consumer Protection Act (ACPA) and similar laws in other countries.
 
+
+
 ## Data Loss Prevention 
 
 DLP is a technology used to identify, monitor, and protect sensitive data to prevent unauthorized access, use, or transmission.
@@ -580,7 +381,33 @@ DLP is a technology used to identify, monitor, and protect sensitive data to pre
 - Protects against data leakage across channels like email, web, and endpoints.
 - Involves content discovery, classification, encryption, and policy enforcement.
 
+### Endpoint DLP System 
 
-----------------------------------------------
+An Endpoint Data Loss Prevention (DLP) system is a security solution designed to monitor and control data transfers on endpoint devices such as laptops, desktops, smartphones, and tablets.
 
-[Back to main page](../../README.md#security)    
+  - Detects sensitive data based on predefined rules.
+  - Prevents unauthorized data transfers.
+  - Enforces data security policies consistently.
+  - Works like an IDS/IPS but for data 
+  - Can be set to **detection mode** or **prevention mode**
+
+### Network DLP System 
+
+A Network Data Loss Prevention (DLP) system is a piece of software or hardware that monitors and control data transfers within a network infrastructure.
+
+- Placed at the perimeter of the network.
+- Detects **data-in-transit**; focused on things going out of the network.
+
+### Storage DLP
+
+A Storage Data Loss Prevention (DLP) system is a software installed on a server in a datacenter that inspects the data-at-rest.
+
+- Safeguard sensitive **data stored** across different storage platforms.
+- Ensure compliance with security policies and regulations.
+
+### Cloud-based DLP
+
+A DLP usually offered as a SaaS and is part of the cloud service and storage needs.
+
+- Data stored in the cloud services are protected.
+- Example: Google Drive

@@ -2,6 +2,7 @@
 # Business Continuity
 
 
+- [Disaster Types ](#disaster-types)
 - [Business Continuity Plan](#business-continuity-plan)
 - [Components of a Business Continuity Plan](#components-of-a-business-continuity-plan)
     - [Risk Assessment](#risk-assessment)
@@ -22,6 +23,10 @@
 
 
 
+
+## Disaster Types 
+
+![](../../Images/sec+-bcp-disaster-types.png)
 
 
 ## Business Continuity Plan 

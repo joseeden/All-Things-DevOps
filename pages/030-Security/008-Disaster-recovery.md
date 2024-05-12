@@ -6,6 +6,7 @@
 - [Financial Department is rarely involved](#financial-department-is-rarely-involved)
 - [Components of a Disaster Recovery Plan](#components-of-a-disaster-recovery-plan)
 - [Data Backups](#data-backups)
+- [Data Backup Types](#data-backup-types)
     - [Full Backup](#full-backup)
     - [Incremental Backup](#incremental-backup)
     - [Differential Backup](#differential-backup)
@@ -14,8 +15,8 @@
     - [Cloud Backup](#cloud-backup)
 - [Failover](#failover)
 - [Disaster Recovery Sites](#disaster-recovery-sites)
-    - [Warm Site](#warm-site)
     - [Hot Site](#hot-site)
+    - [Warm Site](#warm-site)
     - [Cold Site](#cold-site)
 - [Disaster Recovery Tests](#disaster-recovery-tests)
     - [Parallel Test](#parallel-test)
@@ -23,8 +24,6 @@
     - [Checklist Reviews](#checklist-reviews)
     - [Tabletop Exercises](#tabletop-exercises)
 - [Business Continuity versus Disaster Recovery](#business-continuity-versus-disaster-recovery)
-
-
 
 
 
@@ -78,9 +77,26 @@ Organizations often maintain diverse documents for different audiences in their 
   - IT personnel
   - Managers and public relations personnel
 
-## Data Backups 
+## Data Backups
 
 Data Backup involves creating duplicate copies of critical data and storing them off-site. These backups serve as a safeguard in case the primary data becomes unavailable due to a disaster or incident.
+
+Considerations:
+
+- On-premises 
+  - Tape 
+  - Network-Attached Storage (NAS) 
+  - Storage Area Network (SAN)
+- Offsite 
+  - Cloud
+- Compression 
+- Encryption 
+- Type of Backup
+- Virtual Machines  
+  - Snapshots 
+  - Custom images
+
+## Data Backup Types
 
 ### Full Backup
 - Copies all selected files and data.
@@ -103,6 +119,7 @@ Data Backup involves creating duplicate copies of critical data and storing them
 - Provides a consistent view for backup purposes without affecting ongoing operations.
 
 ### Cloud Backup
+
 - Involves storing data in an offsite cloud environment.
 - Enhances data accessibility and provides a secure offsite backup solution.
 
@@ -114,23 +131,27 @@ Failover involves establishing an alternate location, such as a secondary data c
 
 ## Disaster Recovery Sites 
 
+
+### Hot Site
+
+  - **Fully operational duplicate** of the primary site.
+  - Quickest switchover time, but most expensive.
+  - Real-time data replication for immediate takeover.
+
 ### Warm Site
 
-  - Has necessary systems but lacks current data for immediate operations.
+  - Has **necessary systems but lacks current data** for immediate operations.
+  - Longer switchover but less expensive 
   - Hardware and connectivity are in place.
   - Data is restored from backups, which may not be up-to-date.
   - Example: A financial services company with a warm site in another city.
 
-### Hot Site
-
-  - Fully operational duplicate of the primary site.
-  - Real-time data replication for immediate takeover.
-  
 ### Cold Site
 
   - Basic facility with power and cooling.
-  - No pre-installed hardware or data.
   - Requires significant time to become operational.
+  - No hardware, software, data, personnel
+  - Longest switchover, but cheapest option.
 
 ## Disaster Recovery Tests 
 

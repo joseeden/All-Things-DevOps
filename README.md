@@ -212,7 +212,9 @@ The complete list of projects can be found [here](projects/README.md).
 
 - [Security Architecture](#security-architecture)
 
-    - [Computer Networking](pages/030-Security/016-Computer-Networking.md)
+    - [Security Architecture](pages/030-Security/039-Security-Architecture.md)   
+
+    - [Network Infrastructure](pages/030-Security/016-Computer-Networking.md)
 
     - [Network Authentication](pages/030-Security/025-Network-Authentication-Protocols.md) 
 
@@ -222,7 +224,9 @@ The complete list of projects can be found [here](projects/README.md).
 
 - [Security Operations](#security-operations)
 
-    - [Handling Data](pages/030-Security/012-Data-Security.md)
+    - [Data Handling](pages/030-Security/012-Data-Handling.md)
+
+    - [Data Security](pages/030-Security/038-Data-Security.md)
 
     - [System Hardening](pages/030-Security/013-System-Hardening.md)
 

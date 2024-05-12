@@ -24,7 +24,8 @@
 - [Preserving the Evidence](#preserving-the-evidence)
     - [Legal Hold](#legal-hold)
     - [Preservation](#preservation)
-    - [Electronic Discovery](#electronic-discovery)
+    - [E-Discovery](#electronic-discovery)
+    - [Mobile Devices ](#mobile-devices)
 - [Code of Ethics](#code-of-ethics)
     - [Avoid Bias](#avoid-bias)
     - [Repeatable Actions](#repeatable-actions)
@@ -167,6 +168,14 @@ Tools used:
     - network traffic logs 
     - videos (for CCTV)
 
+- Analyze disk images, recover data:
+    - Autopsy 
+    - WinHex
+
+- RAM Memory dumps:
+    - Memdump
+    - HELIX
+
 ### File Carving 
 
 File carving is a technique used to extract files from a disk image without relying on file system structures. It is often used to recover deleted or fragmented files.
@@ -213,7 +222,19 @@ Commonly known as **eDiscovery**, Electronic Discovery is the process of identif
 - **Collaboration with Legal Teams**: Coordination between IT, legal, and compliance teams.
 - **Chain of Custody**: Maintains a clear record of evidence handling to ensure integrity and admissibility in court.
 
+### Mobile Devices 
 
+Mobile device forensics involves the investigation and analysis of digital evidence stored on mobile devices, such as smartphones, tablets, and other portable electronics.
+
+- Prevent wirelesss communications 
+- Enable airplane mode 
+- Faraday bag/cage 
+- Keep devices charged to preserve battery
+
+Analysis:
+
+- GPS Tagging - when/where pictures and videos taken
+- Social media posts
 
 ## Code of Ethics 
 

@@ -3,7 +3,9 @@
 
 
 - [Terminologies](#terminologies)
+- [Indicator of Compromise](#indicator-of-compromise)
 - [Goal of Incident Response](#goal-of-incident-response)
+- [Incident Response Lifecycle](#incident-response-lifecycle)
 - [Incident Response Plan](#incident-response-plan)
     - [Preparation](#preparation)
     - [Detection](#detection)
@@ -22,14 +24,13 @@
 - [Incident Response Exercises](#incident-response-exercises)
     - [Training](#training)
     - [Testing](#testing)
-
+- [SOAR](#soar)
 
 
 ## Terminologies
 
 Understanding incident response begins with knowing the terms for various cyberattacks.
 
-Here's a shortened version of the descriptions in the table:
 
 | Terminology         | Description                                                                                                                                                                   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,6 +44,20 @@ Here's a shortened version of the descriptions in the table:
 | **Zero Day**        | An unknown system vulnerability that could be exploited without typical detection or prevention.                                                                              |
 | **Impact**          | The expected harm from unauthorized data disclosure, modification, or loss.                                                                                                   |
 
+## Indicator of Compromise 
+
+ndicators of Compromise (IOCs) are evidence or clues that suggest a computer system or network has been breached or compromised by malicious actors. These indicators can take various forms and are used by cybersecurity professionals to detect, investigate, and respond to security incidents. 
+
+- Malware Signatures
+- Anomalous Network Traffic
+- Unauthorized Access Attempts
+- Unusual File or System Modifications
+- Abnormal User Behavior
+- Phishing or Social Engineering Indicators
+- Security Alerts or Warnings
+- Unusual System Performance
+- Suspicious File Attachments or Downloads
+- IoT Device Anomalies
 
 ## Goal of Incident Response
 
@@ -55,6 +70,14 @@ The objectives of Incident Response:
 - An incident response plan ensures business viability.
 - The incident response process aims to minimize impact and resume operations swiftly.
 - It's a subset of the broader business continuity management (BCM).
+
+## Incident Response Lifecycle
+
+<p>
+<!-- <p align=center> -->
+<img width=500 src='../../Images/sec+-irp-lifecycle.png'>
+</p>
+
 
 ## Incident Response Plan
 
@@ -279,6 +302,32 @@ This is the practical exercise of incident response procedures.
 - Simulating an incident, can cost time and money
 
 To learn more, please see [Security Awareness.](./015-Security-Awareness-Training.md#incident-response-exercises)
+
+## SOAR 
+
+SOAR stands for Security Orchestration, Automation, and Response. It refers to a set of practices, processes, and technologies used by cybersecurity teams to streamline and enhance their incident response capabilities.
+
+- Typically integrate with a variety of security tools and technologies, such as SIEM
+- Provide centralized dashboards and workflows for managing security incidents
+- Built-in capabilities for automation and orchestration
+
+Here's a breakdown of each component:
+
+- **Security Orchestration**
+  - Coordinating and managing security processes and tools.
+  - Defining workflows and assigning tasks across teams.
+  
+- **Automation**
+  - Using technology to automate repetitive tasks.
+  - Improving response times and reducing human error.
+  - Use playbooks to automate:
+    - Firewall rules, content filters
+    - Application Allow/Deny Lists
+    - Revoke certificates
+  
+- **Response**
+  - Taking actions to investigate, contain, and mitigate security incidents.
+  - Blocking malicious activities and implementing remediation measures.
 
 
 ----------------------------------------------
