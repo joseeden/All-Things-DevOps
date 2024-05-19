@@ -1,6 +1,5 @@
 
-# Network Infrastructure
-
+# Networking Basics
 
 - [Network](#network)
     - [Types of Networks](#types-of-networks)
@@ -9,22 +8,13 @@
     - [Device Address](#device-address)
     - [Internet Protocol IPv4 and IPv6](#internet-protocol-ipv4-and-ipv6)
     - [Wifi](#wifi)
-- [Networking Models](#networking-models)
-    - [Open Systems Interconnection OSI Model](#open-systems-interconnection-osi-model)
-    - [Transmission Control Protocol/Internet Protocol TCP/IP](#transmission-control-protocolinternet-protocol-tcpip)
-- [SYN, SYN-ACK, ACK Handshake](#syn-syn-ack-ack-handshake)
-- [Ports and Protocols](#ports-and-protocols)
-    - [Types of Ports](#types-of-ports)
-    - [Secure Ports](#secure-ports)
-- [Securing the Network](#securing-the-network)
-    - [Physical vs Logical Separation](#physical-vs-logical-separation)
-    - [Networking Tools](#networking-tools)
-    - [Quality of Service QoS](#quality-of-service-qos)
+    - [Quality of Service](#quality-of-service)
     - [Proxy](#proxy)
-    - [SIEM](#siem)
-    - [Mobile Data Management MDM](#mobile-data-management-mdm)
-- [Software Defined Networking](#software-defined-networking)
-    - [SDN Components](#sdn-components)
+    - [Networking Tools](#networking-tools)
+- [Networking Models](#networking-models)
+    - [OSI Model](#osi-model)
+    - [TCP/IP](#tcpip)
+- [SYN, SYN-ACK, ACK Handshake](#syn-syn-ack-ack-handshake)
 
 
 
@@ -113,6 +103,46 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 
 ![](../../Images/security-wifi.png)
 
+
+
+
+
+### Quality of Service 
+
+Quality of Service (QoS) refers to the technology that allows the network to prioritize certain types of traffic over others. 
+
+- Prioritizes critical traffic like VoIP or video conferencing.
+- Uses mechanisms like classes of service (CoS), packet classification, and traffic shaping.
+
+### Proxy 
+
+A proxy server acts as an intermediary between a client and the internet.
+
+- Allows clients to make requests to servers while hiding their IP addresses.
+- Receives client requests, forwards them to the server, and returns server responses.
+- Provides additional anonymity by masking the client's IP address during internet access.
+
+### Networking Tools 
+
+- **Ping Sweep**
+
+  - Common method to map live hosts in a network.
+  - Involves sending ping messages (ICMP Echo Requests) to a range of IP addresses.
+  - Online hosts respond, allowing mapping of live hosts on the network.
+  - *Reference:* ISC2 Study Guide, Chapter 4, Module 3.
+
+- **Geolocation**
+
+  - Determines a device or user's physical location based on IP or MAC address.
+
+- **Traceroute**
+
+  - Maps network topology and diagnoses connectivity/routing issues by tracing packet hops to an IP address.
+
+- **Wireshark**
+
+  - Network protocol analyzer tool for viewing and analyzing packet contents, including IP addresses and host names.
+
 ## Networking Models
 
 Various models, architectures, and standards facilitate the interconnection of hardware and software systems for sharing information and coordinating activities. The integration includes communication devices, storage, processing, security, input/output devices, operating systems, software, services, data, and people.
@@ -160,9 +190,9 @@ In the most basic form, a network model has at least two layers:
     - Adds route data to frames to create packets
     - Preparation for further management and processing by the upper layer
 
-### Open Systems Interconnection (OSI) Model
+### OSI Model
 
-The OSI Model is a conceptual framework for describing the communication structure of interconnected computer systems, comprising seven layers. 
+The Open Systems Interconnection (OSI) Model is a conceptual framework for describing the communication structure of interconnected computer systems, comprising seven layers. 
 
 - **Application, Presentation, and Session Layers (5-7)** - Commonly referred to as data; potential for encapsulation.
   
@@ -188,9 +218,9 @@ The encapsulation/de-encapsulation process is best depicted visually below:
 ![](../../Images/security-encap-deencap-diagram.png)
 
 
-### Transmission Control Protocol/Internet Protocol (TCP/IP)
+### TCP/IP
 
-TCP/IP is platform-independent but resource-intensive and designed for ease of use rather than security. It predates the OSI model.
+Transmission Control Protocol/Internet Protocol (TCP/IP) is platform-independent but resource-intensive and designed for ease of use rather than security. It predates the OSI model.
 
   - **Application Layer** - Defines transport layer protocols.
 
@@ -253,154 +283,6 @@ This three-step handshake ensures that both the sender and receiver are ready to
 
 
 
-
-
-## Ports and Protocols 
-
-### Types of Ports 
-
-There are physical ports that you connect wires to and logical ports that determine where the data/traffic goes. 
-
-- **Physical Ports**
-    - Refer to the connection points on networking devices like routers, switches, servers, and computers where various cables, such as fiber optic or Cat5 cables, are plugged in to establish a network.
-
-- **Logical Ports**
-    - When establishing communication between systems, logical ports, or sockets, are used as address numbers for data transfer. Ports enable a single IP address to support multiple simultaneous communications, each using a different port number. 
-
-        | Protocol     | Port    | Security |
-        |--------------|---------|----------|
-        | HTTP         | 80      | Insecure |
-        | HTTPS        | 443     | Secure   |
-        | RADIUS auth  | 1812    | -        |
-        | SQL Server   | 1433/1434| -        |
-        | Docker API   | 2375/2376| -        |
-
-
-### Secure Ports
-
-
-- **Well-known ports (0–1023)** - Core protocols in the TCP/IP model, such as DNS and SMTP.
-- **Registered ports (1024–49151)** - Associated with proprietary applications, officially approved by IANA.
-- **Dynamic or private ports (49152–65535)** - Used for sessions associated with well-known or registered ports, dynamically assigned and released.
-
-
-Below are some examples: 
-
-| Port | Service/Protocol       | Description                          |
-|------|------------------------|--------------------------------------|
-| 443  | HTTPS (HTTP Secure)     | Secure web traffic                   |
-| 636  | LDAPS (LDAP Secure)     | Secure version of LDAP (Lightweight Directory Access Protocol) |
-| 993  | IMAPS (Internet Message Access Protocol Secure) | Secure email retrieval using IMAP  |
-| 995  | POP3S (Post Office Protocol 3 Secure) | Secure email retrieval using POP3  |
-| 8443 | HTTPS-alt               | Alternative port for secure web traffic |
-
-
-## Securing the Network 
-
-TCP/IP’s vulnerabilities are numerous. Improperly implemented TCP/IP stacks in various operating systems are vulnerable to various attacks:
-
-- DoS/DDoS attacks
-- fragment attacks
-- oversized packet attacks
-- spoofing attacks
-- man-in-the-middle attacks
-
-TCP/IP (as well as most protocols) is also subject to passive attacks via monitoring or sniffing. Network monitoring, or sniffing, is the act of monitoring traffic patterns to obtain information about a network. 
-
-### Physical vs Logical Separation
-
-- **Physical Separation (Air-gapping)**
-
-  - Usually called "air-gapping"
-  - Physically isolates critical components.
-  - Prevents unauthorized access.
-  - Common in high-security environments.
-
-- **Logical Separation**
-  - Uses virtualization or segmentation techniques.
-  - Separates network traffic or user groups.
-  - Implemented with VLANs, VPNs, or SDN.
-
-
-### Networking Tools 
-
-- **Ping Sweep**
-
-  - Common method to map live hosts in a network.
-  - Involves sending ping messages (ICMP Echo Requests) to a range of IP addresses.
-  - Online hosts respond, allowing mapping of live hosts on the network.
-  - *Reference:* ISC2 Study Guide, Chapter 4, Module 3.
-
-- **Geolocation**
-
-  - Determines a device or user's physical location based on IP or MAC address.
-
-- **Traceroute**
-
-  - Maps network topology and diagnoses connectivity/routing issues by tracing packet hops to an IP address.
-
-- **Wireshark**
-
-  - Network protocol analyzer tool for viewing and analyzing packet contents, including IP addresses and host names.
-
-### Quality of Service (QoS)
-
-Quality of Service (QoS) refers to the technology that allows the network to prioritize certain types of traffic over others. 
-
-- Prioritizes critical traffic like VoIP or video conferencing.
-- Uses mechanisms like classes of service (CoS), packet classification, and traffic shaping.
-
-### Proxy 
-
-A proxy server acts as an intermediary between a client and the internet.
-
-- Allows clients to make requests to servers while hiding their IP addresses.
-- Receives client requests, forwards them to the server, and returns server responses.
-- Provides additional anonymity by masking the client's IP address during internet access.
-
-
-### SIEM 
-
-A SIEM (Security Information and Event Management) is a comprehensive security solution that collects, correlates, and analyzes log data from various sources across an organization's IT infrastructure.
-
-A SIEM typically provides the following features:
-
-- **Log consolidation**, which consists in collecting logs from various sources (like servers, firewalls or IDS/IPS) and then storing them in one central location.
-
-- **Log retention**, which consists in storing logs for a specific period (like 90 days), so as to allow security analysts to keep track of and investigate past events.
-
-- **Log encryption**, which is an optional feature that safeguards the confidentiality of log data.
-
-- **Log analysis**, which involves identifying patterns, trends and anomalies related to security events, in or close to real time.
-
-### Mobile Data Management MDM
-
-Mobile Data Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
-
-- Enforces security policies to enhance device security.
-- Allows remote management and wiping of devices for data protection.
-- Tracks device usage and location for monitoring and control.
-
-## Software Defined Networking
-
-Software Defined Networking (SDN) is a networking approach that centralizes network control, enabling programmability and automation for improved network management and efficiency.
-
-### SDN Components
-
-- **Data Plane**
-  - Handles the **actual forwarding of data** packets within the network.
-  - Performs packet switching or routing based on instructions received from the control plane.
-  - Consists of switches, routers, and other network devices.
-
-- **Control Plane**
-  - Centralized controller that manages the behavior of the data plane.
-  - Responsible for **making forwarding decisions** and configuring network devices.
-  - Uses software-based algorithms and protocols to communicate with network devices.
-
-- **Application Plane**
-  - Interfaces with the control plane to define network policies and configurations.
-  - Enables network administrators to deploy applications for specific network functions.
-  - Examples include network monitoring, security, and traffic optimization applications.
 
 
 ----------------------------------------------

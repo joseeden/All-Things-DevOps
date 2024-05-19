@@ -163,8 +163,6 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
 
-    - [Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
-
 - [Managing Access](#managing-access)
 
     - [Access Control](pages/030-Security/009-Access-Control.md)
@@ -192,7 +190,6 @@ The complete list of projects can be found [here](projects/README.md).
 
 - [Cyber Threats and Attacks](#cyber-threat-and-attacks) 
 
-    - [Cyber Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
 
     - [Threat Actors](pages/030-Security/026-Threat-Actors.md)
 
@@ -204,23 +201,30 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Threat Prevention](pages/030-Security/021-Threat-Prevention.md)
 
-    - [Attack Frameworks](pages/030-Security/022-Attack-Frameworks.md)
+    - [Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
 
     - [Attacks](pages/030-Security/023-Attacks.md)
 
     - [Social Engineering](pages/030-Security/036-Social-Engineering.md)
+    
+    - [Attack Frameworks](pages/030-Security/022-Attack-Frameworks.md)
+
 
 - [Security Architecture](#security-architecture)
 
     - [Security Architecture](pages/030-Security/039-Security-Architecture.md)   
 
-    - [Network Infrastructure](pages/030-Security/016-Computer-Networking.md)
+    - [Networking Basics](pages/030-Security/016-Computer-Networking.md)
+
+    - [Ports and Protocols](pages/030-Security/041-Ports-and-Protocols.md)
+
+    - [Securing the Network](pages/030-Security/042-Securing-the-Network.md)
 
     - [Network Authentication](pages/030-Security/025-Network-Authentication-Protocols.md) 
 
-    - [Intrusion Detection Systems](pages/030-Security/024-IDS.md)
+    - [Embedded Systems](pages/030-Security/040-Embedded-Systems.md)
 
-    - [Network Security Infrastructure](pages/030-Security/018-Network-Security-Infrastructure.md)
+    - [Cyber Resilience and Redundancy](pages/030-Security/008-Disaster-recovery.md)
 
 - [Security Operations](#security-operations)
 

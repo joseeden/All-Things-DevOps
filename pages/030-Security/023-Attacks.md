@@ -20,10 +20,10 @@
     - [Adversarial Artificial Intelligence](#adversarial-artificial-intelligence)
     - [Spam](#spam)
     - [Phishing](#phishing)
-    - [Typosquatting](#typosquatting)   
+    - [Typosquatting](#typosquatting)
 - [Other Attacks](#other-attacks)
-    - [Denial of Service DoS and DDoS](#denial-of-service-dos-and-ddos)
-    - [Man-in-the-Middle MitM](#man-in-the-middle-mitm)
+    - [Denial of Service and DDoS](#denial-of-service-and-ddos)
+    - [Man-in-the-Middle](#man-in-the-middle)
     - [Packet Sniffing](#packet-sniffing)
     - [Spoofing Attack](#spoofing-attack)
     - [DNS Spoofing](#dns-spoofing)
@@ -34,7 +34,9 @@
     - [Replay Attack](#replay-attack)
     - [Buffer Overflow Attack](#buffer-overflow-attack)
     - [On-Path Attack](#on-path-attack)
-    - [Logic Bomb](#logic-bomb)
+    - [SQL Injection](#sql-injection)
+    - [Zero-Day Exploit](#zero-day-exploit)
+    - [Cross-Site Scripting](#cross-site-scripting)
 - [Tools](#tools)
 
 
@@ -44,6 +46,8 @@
 An attempt to compromise the security, availability, or integrity of an IP (Internet Protocol) network.
 
 ## Password Attacks 
+
+Attempts to gain unauthorized access by cracking or stealing passwords.
 
 ### Brute Force Attack 
 
@@ -356,11 +360,11 @@ Attacker registers a domain name similar to a popular website. The "copycat" dom
 
 ## Other Attacks 
 
-### Denial of Service (DoS) and DDoS  
+### Denial of Service and DDoS  
 
 Overloading a network or website with traffic to make it unavailable.
 
-**Mitigation** 
+Mitigation:
 
 - **Load Balancers**: Distribute traffic across multiple servers.
 - **Rate Limiting**: Limit requests per user or IP address.
@@ -368,11 +372,11 @@ Overloading a network or website with traffic to make it unavailable.
 - **DDoS Protection**: Use specialized services for DDoS mitigation.
 - **Firewalls and IPS**: Detect and block DoS patterns.
 
-### Man-in-the-Middle (MitM) 
+### Man-in-the-Middle
 
 Intercepting and possibly altering communication between two parties.
 
-**Mitigation** 
+Mitigation:
 
 - **Encryption**: Use HTTPS, SSL/TLS, and VPNs.
 - **Public Key Infrastructure (PKI)**: Verify certificate authenticity.
@@ -520,18 +524,22 @@ An on-path Attack is an attack that attempts to position between two devices (e.
 - **Secure Routing**: Ensure routing data is accurate and secure.
 
 
-### Logic Bomb 
+### SQL Injection
 
-A logic bomb is a piece of malicious code intentionally inserted into a software system that triggers a negative function when certain conditions are met. 
+Exploiting vulnerabilities in SQL databases to manipulate or retrieve data.  
 
-An infection does not typically install logic bombs, they are planted by someone with inside access to the system, such as a disgruntled employee.
+### Zero-Day Exploit
 
-**Mitigation** 
+Targeting vulnerabilities unknown to software developers.    
 
-- **Access Controls**: Restrict system access to authorized personnel.
-- **Code Reviews**: Regularly review code for malicious inserts.
-- **IDS/IPS**: Monitor for unusual system behavior.
-- **Employee Training**: Educate on cybersecurity best practices.
+- Exploiting a flaw before a patch is released.
+
+### Cross-Site Scripting
+
+Injecting malicious scripts into webpages viewed by others.                  
+
+- Script injection in online forms           
+
 
 ## Tools 
 

@@ -2,7 +2,6 @@
 # Threat Vectors and Attack Surfaces
 
 
-- [Definitions](#definitions)
 - [Threat Vectors](#threat-vectors)
     - [Messages](#messages)
     - [Images](#images)
@@ -11,10 +10,10 @@
     - [Removable Devices](#removable-devices)
     - [Unsecure Networks](#unsecure-networks)
     - [Bluetooth Exploits](#bluetooth-exploits)
+- [Attack Vectors](#attack-vectors)
 
-
-
-## Definitions
+    
+## Threat Vectors
 
 - **Threat Vectors**
 
@@ -27,9 +26,6 @@
     - Various points where an unauthorized user can try to enter data to or extract data from an environment.
 
     - The "**Where**" of the attack
-
-
-## Threat Vectors
 
 ### Messages 
 
@@ -126,6 +122,20 @@
     - Overloads a target device with excessive or malformed Bluetooth packets, causing it to crash or become unresponsive.
     - Can disrupt Bluetooth-enabled services and other connected devices.
 
+## Attack Vectors 
+
+Difference between attack vectors and threat vectors:
+
+- **Threat Vector**
+
+    - How the attacker plans to break into the system.
+    - Example: A computer missing a critical security patch -> Vulnerability -> Threat vector
+
+- **Attack Vector**
+
+    - How the attacker plans to break into the system.
+    - How the attacker can infect the system
+    - Example: Attacker scans the network for computers missing the critical security patch, then uses a known exploit to break in and gain control.
 
 
 ----------------------------------------------
