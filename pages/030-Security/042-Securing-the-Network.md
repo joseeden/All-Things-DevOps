@@ -2,18 +2,34 @@
 # Securing the Network
 
 
-- [Securing the Network](#securing-the-network)
+- [Securing the Infrastructure](#securing-the-infrastructure)
+    - [Infrastructure Considerations](#infrastructure-considerations)
     - [Physical vs Logical Separation](#physical-vs-logical-separation)
     - [Network Segmentation](#network-segmentation)
     - [Demilitarized Zone](#demilitarized-zone)
     - [Virtual Local Network](#virtual-local-network)
-    - [Virtual Private Network](#virtual-private-network)
-    - [Defense in Depth](#defense-in-depth)
-    - [Network Access Control](#network-access-control)
-    - [Zero Trust](#zero-trust)
     - [Microsegmentation](#microsegmentation)
-    - [SIEM](#siem)
-    - [Mobile Data Management](#mobile-data-management)
+    - [Network Access Control](#network-access-control)
+- [Selecting Infrastructure Controls](#selecting-infrastructure-controls)
+    - [Defense in Depth](#defense-in-depth)
+    - [Zero Trust Model](#zero-trust-model)
+    - [Risk-Based Approach](#risk-based-approach)
+    - [Lifecycle Management](#lifecycle-management)
+    - [Open Design Principle](#open-design-principle)
+- [Methods and Practices for Effective Controls](#methods-and-practices-for-effective-controls)
+    - [Selection Process](#selection-process)
+    - [Best Practices](#best-practices)
+- [Virtual Private Network](#virtual-private-network)
+    - [VPN Configurations](#vpn-configurations)
+    - [Tunnel Configurations](#tunnel-configurations)
+- [TLS](#tls)
+    - [TCP](#tcp)
+    - [DTLS](#dtls)
+- [IPSec](#ipsec)
+    - [Steps in Establishing IPSec Tunnel](#steps-in-establishing-ipsec-tunnel)
+    - [Data Transfer Modes](#data-transfer-modes)
+    - [Authentication Header](#authentication-header)
+    - [Encapsulating Security Payload](#encapsulating-security-payload)
 - [Firewall](#firewall)
     - [Types of Firewall](#types-of-firewall)
     - [Evolution of Firewalls](#evolution-of-firewalls)
@@ -23,11 +39,15 @@
     - [Difference between IDS and IPS](#difference-between-ids-and-ips)
     - [Types of IDS/IPS](#types-of-idsips)
     - [IDS Detection Methods](#ids-detection-methods)
-- [Software Defined Networking](#software-defined-networking)
-    - [SDN Components](#sdn-components)
+- [Evolution of Network Security](#evolution-of-network-security)
+    - [SIEM](#siem)
+    - [Mobile Data Management](#mobile-data-management)
+    - [Software Defined Networking](#software-defined-networking)
 
 
-## Securing the Network 
+
+
+## Securing the Infrastructure 
 
 TCP/IP’s vulnerabilities are numerous. Improperly implemented TCP/IP stacks in various operating systems are vulnerable to various attacks:
 
@@ -38,7 +58,6 @@ TCP/IP’s vulnerabilities are numerous. Improperly implemented TCP/IP stacks in
 - man-in-the-middle attacks
 
 TCP/IP (as well as most protocols) is also subject to passive attacks via monitoring or sniffing. Network monitoring, or sniffing, is the act of monitoring traffic patterns to obtain information about a network. 
-
 
 ### Infrastructure Considerations
 
@@ -109,57 +128,51 @@ Infrastructure considerations play a pivotal role in the efficiency and security
   - Separates network traffic or user groups.
   - Implemented with VLANs, VPNs, or SDN.
 
-
 ### Network Segmentation
 
-  - Controls traffic among networked devices.
-  - Involves isolating a network from outside communications.
+Involves isolating a network from outside communications.
+
+- Controls traffic among networked devices.
 
 ### Demilitarized Zone
-  - Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
-  - Hosts public servers like web, email, and files.
 
-    <p align=center>
-    <img width=350 src='../../Images/security-dmz-simplified-dmz-diagrammm.png'>
-    </p>
+Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
+
+- Also called as **"screened subnets"**
+- Hosts public servers like web, email, and files.
+
+<p align=center>
+<img width=350 src='../../Images/security-dmz-simplified-dmz-diagrammm.png'>
+</p>
 
 ### Virtual Local Network
 
-  - VLANs are logically segments a network without altering physical topology.
-  - Created by switches.
-  - Examples of VLAN Segmentation:
-    
-    - **Corporate Network:**
-        - Departments like HR, Finance, and IT each on separate VLANs.
-    - **Guest Wi-Fi:**
-        - Isolate guest devices from internal network using a dedicated VLAN.
-    - **Voice over IP (VoIP):**
-        - Separate VLAN for VoIP traffic to prioritize voice communication.
-    - **Server Farm:**
-        - Different VLANs for web servers, database servers, ensuring segmentation.
+VLANs are created by switches to logically segments a network without altering physical topology. 
 
-    <p align=center>
-    <img width=800 src='../../Images/security-vlan-simplifieddd.png'>
-    </p>
+- **Corporate Network:**
+    - Departments like HR, Finance, and IT each on separate VLANs.
+- **Guest Wi-Fi:**
+    - Isolate guest devices from internal network using a dedicated VLAN.
+- **Voice over IP (VoIP):**
+    - Separate VLAN for VoIP traffic to prioritize voice communication.
+- **Server Farm:**
+    - Different VLANs for web servers, database servers, ensuring segmentation.
 
-### Virtual Private Network
+  <p align=center>
+  <img width=800 src='../../Images/security-vlan-simplifieddd.png'>
+  </p>
 
-  - Communication tunnel for point-to-point transmission.
-  - Secures authentication and data traffic over untrusted networks.
+### Microsegmentation 
 
-### Defense in Depth
-  - Utilizes multiple access controls in layers.
-  - Avoids a monolithic security stance.
+Microsegmentation addresses modern cyber threats exploiting traditional security models by focusing on protection requirements for traffic within a data center and to/from the internet.
+
+  - Adversaries use polymorphic tools to bypass static controls.
+  - Shifts away from infrastructure-centric design paradigms.
+  - Aims for increased efficiency in service delivery within the data center.
+  - Enhances detection and prevention of advanced persistent threats.
+
 
 ### Network Access Control 
-
-- **Overview**
-  - Network access is a critical asset, requiring control for both insiders and outsiders.
-  - Shift from limited internal access to extended access, including remote connections, BYOD, and IoT.
-
-- **Scope of IoT Devices**
-  - Diverse range of devices within an organization, from HVAC systems to security sensors and cameras.
-  - Need for NAC solution to identify and control access to these devices.
 
 - **Role of NAC Device**
   - Enforces organization's access control and security policies.
@@ -179,63 +192,210 @@ Infrastructure considerations play a pivotal role in the efficiency and security
 - **Onboarding Process Importance**
   - Emphasizes the importance of an onboarding process for all mobile devices.
   - Device identification and interrogation to ensure compliance with organization policies during network connection.
-  
-### Zero Trust 
 
-- **Microsegmentation in Zero Trust Networks**
-  - Networks are microsegmented with firewalls at each connection point.
-  - Focuses on encapsulating information assets and their security properties.
 
-- **Enhanced Security Measures**
-  - Recognizes vulnerabilities even in robust access control systems.
+
+## Selecting Infrastructure Controls
+
+### Defense in Depth
+
+Defense in Depth is an approach in cybersecurity in which a series of defensive mechanisms are layered in order to protect valuable data and information. 
+
+- Utilizes multiple access controls in layers.
+- Avoids a monolithic security stance.
+- If one mechanism fails, the next layer steps up and stops attack
+
+### Zero Trust Model 
+
+The Zero Trust Model, also known as **Perimeterless security**, focuses on "**Never trust, always verify** concept whereby users and devices should not be trusted by default.
+
   - Adds defenses at the user, asset, and data levels.
-
-- **Frequent Re-authentication**
-  - Microsegmented networks enforce frequent user re-authentication.
-  - Validates user identity at various checkpoints within the network.
-
-- **Beyond Perimeter Defense**
+  - Recognizes vulnerabilities even in robust access control systems.
   - Shifts from reliance on perimeter defense to asset and data protection.
   - Emphasizes authentication and authorization for every user action.
 
-- **Analogous to Concert Access**
-  - Traditional controls are like showing a ticket at the gate for free venue access.
-  - Zero trust adds multiple checkpoints, validating identity at different levels similar to accessing backstage areas at a concert.
+**Microsegmentation in Zero Trust Networks**
 
-### Microsegmentation 
+  - Networks are microsegmented with firewalls at each connection point.
+  - Focuses on encapsulating information assets and their security properties.
+  - Microsegmented networks enforce frequent user re-authentication.
+  - Validates user identity at various checkpoints within the network.
 
-- **Microsegmentation**
-  - Addresses modern cyber threats exploiting traditional security models.
-  - Adversaries use polymorphic tools to bypass static controls.
-  - Focuses on protection requirements for traffic within a data center and to/from the internet.
+**Analogy: Concert Access**
+  - Traditional controls: showing a ticket at the gate for free venue access.
+  - Zero trust: Multiple checkpoints at different levels, e.g. accessing backstage areas
 
-- **Design Requirement of Microsegmentation**
-  - Shifts away from infrastructure-centric design paradigms.
-  - Aims for increased efficiency in service delivery within the data center.
-  - Enhances detection and prevention of advanced persistent threats.
+### Risk-Based Approach 
+
+Prioritizes controls based on potential risks and vulnerabilities specific to the infrastructure to make efficient use of resources.
+
+### Lifecycle Management
+
+Involves regular reviewing, updating, and retiring controls to adapt to evolving threat landscapes.
+
+### Open Design Principle 
+
+Ensures transparency and accountability through rigorous testing and scrutiny of infrastructure and controls.
+
+## Methods and Practices for Effective Controls
+
+### Selection Process
+
+1. Assess the current state.
+2. Conduct gap analysis.
+3. Setting clear objective.
+4. Benchmarking against industry best practices.
+5. Conduct cost-benefit analysis.
+6. Ensure stakeholder involvement.
+7. Implement monitoring and feedback loops.
+
+### Best Practices 
+
+- Conduct a recurring comprehensive risk assessment.
+- Align control selection with established frameworks.
+- Customize framework controls for your own usage.
+- Emphasize stakeholder engagement and training.
 
 
-### SIEM 
+## Virtual Private Network
 
-A SIEM (Security Information and Event Management) is a comprehensive security solution that collects, correlates, and analyzes log data from various sources across an organization's IT infrastructure.
+A Virtual Private Network or VPN extends a private network over a public one, enabling users to securely send and receive data.
 
-A SIEM typically provides the following features:
+- Communication tunnel for point-to-point transmission.
+- With VPN, users can work from remote or different locaions.
+- Secures authentication and data traffic over untrusted networks.
 
-- **Log consolidation**, which consists in collecting logs from various sources (like servers, firewalls or IDS/IPS) and then storing them in one central location.
+### VPN Configurations
 
-- **Log retention**, which consists in storing logs for a specific period (like 90 days), so as to allow security analysts to keep track of and investigate past events.
+- **Site-to-site**
+  - Connects multiple networks over the internet.
+  - Commonly used for linking branch offices to headquarters.
+  - Secures traffic, but can slow down users due to extra hops
+  - Requires compatible hardware at each site.
 
-- **Log encryption**, which is an optional feature that safeguards the confidentiality of log data.
+- **Client-to-site**
+  - Connects individual devices to a remote network.
+  - Ideal for remote or mobile workers.
+  - Requires VPN client software on the user's device.
+  - Uses strong authentication and encryption methods.
 
-- **Log analysis**, which involves identifying patterns, trends and anomalies related to security events, in or close to real time.
+- **Clientless**
+  - Provides secure access via a web browser.
+  - No need for VPN software installation on client devices.
+  - Ideal for temporary or unmanaged devices.
+  - Access is typically limited to specific web applications.
 
-### Mobile Data Management 
+### Tunnel Configurations
 
-Mobile Data Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
+Both tunnel configurations can be used for site-to-site or client-to-site VPNs.
 
-- Enforces security policies to enhance device security.
-- Allows remote management and wiping of devices for data protection.
-- Tracks device usage and location for monitoring and control.
+- **Full Tunnel**
+  - All network traffic is routed through the VPN.
+  - Ensures all internet activity is monitored and controlled.
+  - Maximum security, but slower internet speeds due to traffic routing.
+  - Ideal for environments requiring strict security.
+  - Most organizations used this by default.
+
+- **Split Tunnel**
+  - Only specific traffic is routed through the VPN.
+  - Non-critical traffic uses the local internet connection.
+  - Improves internet speed by reducing VPN load.
+  - Useful for accessing local resources and internet simultaneously.
+  - Requires careful configuration to avoid security risks.
+
+
+## TLS 
+
+TLS or Transport Layer Security is a protocol that provides cryptography security for secure data transmission between clients and servers.
+
+- Verifies the identities of communicating parties.
+- Ensures data has not been tampered with during transit.
+- Commonly used for securing web traffic (HTTPS).
+- Works with multiple protocols like HTTP, SMTP, and IMAP.
+
+### TCP 
+
+TLS uses the Transmission Control Protocol (TCP) to establish secure communications between a client and a server.
+
+- TCP has a lot of overhead than UDP connections.
+- This can slow down connection.
+
+### DTLS 
+
+Datagram TLS is a UDP-version of TLS protocol that offers that same security level as TLS while maintaining faster operations.
+
+- Less overhead in the UDP protocol.
+- Ideal for video streaming over a secure and encrypted tunnel.
+
+## IPSec 
+
+IPSec (Internet Protocol Security) is the most famous protocol used today for establishing VPNs because of its confidentiality, integrity, authentication, and anti-replay operations.
+
+- Encrypts IP packets to secure data transmission.
+- Confirms the identity of communicating devices.
+- Protects against data modification during transit.
+- an be used for site-to-site and client-to-site VPNs.
+- Supports secure communication between hosts (transport) and networks (tunnel).
+
+### Steps in Establishing IPSec Tunnel
+
+1. Request to start Internet Key Exchange (IKE).
+    - PC1 Initiates trafffic to PC2.
+    - This triggers IPSec tunnel creation by router 1
+
+2. IKE Phase 1 
+    - Router 1 and router 2 negotiates security associations for IKE Phase 1.
+    - Also known as **ISAKMP Tunnel**
+
+3. IKE Phase 2 
+    - Establishes a tunnel within the tunnel.
+
+4. Data Transfer
+    - Data can now be securely transferred between PC1 and PC2.
+
+5. Tunnel Termination
+    - Tunnel is torn down, deleting IPSec security associations
+
+### Data Transfer Modes 
+
+- **Transport Mode**
+  - Employs the original IP header, keeping it intact.
+  - Encrypts only the payload of the IP packet.
+  - Works well when you want to increase packet size, exceeding the MTU size
+  - **Max Transmission Size (MTU)** - set at only 1500 bytes
+  - Anything beyond MTU, packet gets fragmented and causes VPN problems.
+  - Used for end-to-end communication between hosts, e.g. client-to-site VPNs
+  
+- **Tunneling Mode**
+  - Commonly used for site-to-site VPNs
+  - Packets are encapsulated within new ones, increasing the actual packet size.
+  - **Workaround for the packetsize:**
+    - Drop Max MTU size to 1400 bytes on inner router, then connect to VPN
+    - Allow jumbo frames, bigger thatn 1500 bytes
+    - Adjust MTU size to 9000 bytes, not recommended for internet use due to latency issues
+  - **At source and destination:**
+    - **Source side:** Encapsulates the encrypted packet within a new IP packet.
+    - **Destination side:** VPN concentrator removes outer header, decrypts content, and routes internally.
+
+### Authentication Header 
+
+Authentication Header (AH) offers connectionless data integrity and data origin authentication for IP datagrams using cryptographic hash as identification information.
+
+- Provides protection against replay attacks
+- Does not provide confidentiality of the data itself 
+
+### Encapsulating Security Payload 
+
+ESP provides authentication, integrity, replay protection, and data confidentiality by encrypting the packet's payload.
+
+- Payload can be rewritten inside of an encrypted format.
+- Only protect confidentiality of the payload contained within the packet, not the headers.
+
+In tunneling mode, ESP can be used along with authentication headers.
+
+- New IP header is added in front of the packet to cover the hops.
+- AH provides integrity for TCP header, ESP encrypts TCP header and payload.
+
 
 ## Firewall 
 
@@ -478,12 +638,34 @@ Both IDS and IPS have similar types based on how they are deployed.
 
 
 
+## Evolution of Network Security 
 
-## Software Defined Networking
+### SIEM 
+
+A SIEM (Security Information and Event Management) is a comprehensive security solution that collects, correlates, and analyzes log data from various sources across an organization's IT infrastructure.
+
+A SIEM typically provides the following features:
+
+- **Log consolidation**, which consists in collecting logs from various sources (like servers, firewalls or IDS/IPS) and then storing them in one central location.
+
+- **Log retention**, which consists in storing logs for a specific period (like 90 days), so as to allow security analysts to keep track of and investigate past events.
+
+- **Log encryption**, which is an optional feature that safeguards the confidentiality of log data.
+
+- **Log analysis**, which involves identifying patterns, trends and anomalies related to security events, in or close to real time.
+
+### Mobile Data Management 
+
+Mobile Data Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
+
+- Enforces security policies to enhance device security.
+- Allows remote management and wiping of devices for data protection.
+- Tracks device usage and location for monitoring and control.
+
+
+### Software Defined Networking
 
 Software Defined Networking (SDN) is a networking approach that centralizes network control, enabling programmability and automation for improved network management and efficiency.
-
-### SDN Components
 
 - **Data Plane**
   - Handles the **actual forwarding of data** packets within the network.
@@ -499,6 +681,9 @@ Software Defined Networking (SDN) is a networking approach that centralizes netw
   - Interfaces with the control plane to define network policies and configurations.
   - Enables network administrators to deploy applications for specific network functions.
   - Examples include network monitoring, security, and traffic optimization applications.
+
+
+
 
 ----------------------------------------------
 

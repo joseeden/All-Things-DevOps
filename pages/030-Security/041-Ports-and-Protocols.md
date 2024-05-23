@@ -62,7 +62,7 @@ Grouping of Ports:
   - Can be used by any application without the need to be registered with IANA.
   - Commonly used in gaming, instant messaging, and chat for connections.
 
-## Ports and Protocol Reference Sheet 
+### Ports and Protocol Reference Sheet 
 
 Certainly! Here is a comprehensive reference sheet for ports and protocols that you need to study for CompTIA Security+ SY0-701:
 Certainly! Here is the modified reference sheet with an additional column indicating whether the protocol uses UDP, TCP, or both:
@@ -116,6 +116,8 @@ Certainly! Here is the modified reference sheet with an additional column indica
 | 6514 | TCP     | Syslog over TLS                                 | Secure system logging                                           |
 | 8443 | TCP     | HTTPS-alt                                       | Alternative port for secure web traffic                         |
 
+
+## Port Security 
 
 
 ----------------------------------------------
