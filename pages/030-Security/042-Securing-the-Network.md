@@ -39,6 +39,62 @@ TCP/IP’s vulnerabilities are numerous. Improperly implemented TCP/IP stacks in
 
 TCP/IP (as well as most protocols) is also subject to passive attacks via monitoring or sniffing. Network monitoring, or sniffing, is the act of monitoring traffic patterns to obtain information about a network. 
 
+
+### Infrastructure Considerations
+
+Infrastructure considerations play a pivotal role in the efficiency and security of a network environment.
+
+- **Correct placement of devices**
+  - Location influences security and performance.
+  - Proper placement ensure optimal data flow and minimized latency
+  - If placed in the wrong places, it can lead to:
+    - Network bottlenecks 
+    - Vulnerability points 
+    - Areas without connectivity
+- **Security Zones and Screened subnets** 
+  - **Security zones** - Isolating or segmenting networks 
+  - **Screened subnet** - previously referred to as **Demilitarized Zone (DMS)**
+- **Understanding attack surface**
+  - **Attack Surface** - all points that an unauthorized user can try to enter.
+  - The more complex a network becomes, the wider the attack surface becomes.
+  - Implement proper controls to mitigate the risk.
+- **Determine connectivity methods**
+  - Wired networks provide stabiilty and speed, but restrictive in terms of mobility.
+  - Wirelss connections offer greater levels of flexibility and scalability.
+  - Hybrid methods can be used to combine both.
+  - When deciding for connectivity methods to user, consider:
+    - scalability
+    - Speed requirements
+    - Security considerations 
+    - Budgetary constraints
+- **Understand device attributes**
+  - Whether a device is active or passive, and it it'll be inline or tap-based.
+  - **Active**
+    - Monitor and act on suspicious network traffic by influencing data flows
+    - Makes real-time decisions based on the network's current state
+    - Example: IPS 
+  - **Passive**
+    - Simply observe and report on network traffic without actively intervening
+    - Example: IDS 
+  - **Inline** 
+    - Positioned directly in the path of the network traffic
+    - Can influence or block traffic as it passes through the device
+    - Filters malicious traffic and optimize data flow
+    - Example: Firewall, routers, IPS
+  - **Tap-based**  
+    - Discreet; placed outside of the direct network path
+    - Configured to only listen to network activity
+    - Captures data for analysis without impacting the actual traffic
+- **Configure the failure mode**
+  - Failover mode determines how devices will act in case something goes wrong.
+  - **Fail-open**
+    - Allows all traffic to pass through in the event of failure
+    - Will not inspect or filter, ensuring no disruption to the network service
+  - **Fail-closed**
+    - Blocks all traffic in the event of failure.
+    - Ensure security of the network is intact, but will impact network connectivity.
+
+
 ### Physical vs Logical Separation
 
 - **Physical Separation (Air-gapping)**
@@ -68,6 +124,7 @@ TCP/IP (as well as most protocols) is also subject to passive attacks via monito
     </p>
 
 ### Virtual Local Network
+
   - VLANs are logically segments a network without altering physical topology.
   - Created by switches.
   - Examples of VLAN Segmentation:
@@ -442,8 +499,6 @@ Software Defined Networking (SDN) is a networking approach that centralizes netw
   - Interfaces with the control plane to define network policies and configurations.
   - Enables network administrators to deploy applications for specific network functions.
   - Examples include network monitoring, security, and traffic optimization applications.
-
-
 
 ----------------------------------------------
 
