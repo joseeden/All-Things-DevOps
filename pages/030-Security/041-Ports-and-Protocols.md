@@ -1,10 +1,17 @@
 
 # Ports and Protocols
 
+
 - [Ports and Protocols](#ports-and-protocols)
     - [Types of Ports](#types-of-ports)
     - [Secure Ports](#secure-ports)
-- [Ports and Protocol Reference Sheet](#ports-and-protocol-reference-sheet)
+    - [Ports and Protocol Reference Sheet](#ports-and-protocol-reference-sheet)
+- [Port Security](#port-security)
+    - [Network Switches](#network-switches)
+    - [Implementing Port Security](#implementing-port-security)
+    - [The 802.1X Protocol](#the-8021x-protocol)
+    - [Extensible Authentication Protocol](#extensible-authentication-protocol)
+    - [EAP Variants](#eap-variants)
 
 
 ## Ports and Protocols 
@@ -118,6 +125,133 @@ Certainly! Here is the modified reference sheet with an additional column indica
 
 
 ## Port Security 
+
+Port security is a common security feature found on network switches that allows administrators to restrict  which devices can connect to a specific port based on the network interface card's MAC address.
+
+### Network Switches
+
+Network switches make traffic switching decision based on the MAC address of the sending and receiving devices, through a process called **transparent bridging**.
+
+- Switches prevent collisions by ensuring each port is its own collision domain.
+- This allows switches to operate in full duplex mode.
+
+**Full duplex** 
+- This means a port can both receive and send data at the same time.
+
+**CAM Table**
+- Content Address Memory (CAM) Table
+- Stores information about the MAC addresses available on any given port.
+
+**MAC Flooding**
+- Attackers have discovered MAC Flooding, which causes MAC addresses to overflow.
+- Randomized MAC addresses are sent to the network switch.
+- When this happens, the network switch will simply fail open.
+- When it fail-open, the switch begins to rebroadcast all traffic out to every port.
+- Mitigation: Enable port security or MAC Filtering
+
+### Implementing Port Security
+
+With port security, administrators can link MAC addresses of certain devices to specific network interfaces for enhanced security.
+
+- Any other unregistered device that tries to plug to the switchport will be rejected.
+- Can be a lengthy process because each MAC address needs to be determined.
+- To simplify the process, we can use "sticky MAC"
+
+**Sticky MAC**
+
+- Also known as **Persistent MAC Learning**
+- Dynamically associate the first MAC address connected to switchport as authorized.
+- This prevents other MAC addresses from connecting to the specific switch port.
+- Can still be bypassed through MAC spoofing or resetting MAC Addresses.
+
+### The 802.1X Protocol
+
+802.1x is a standardized framework that provides an authentication mechanism for devices wishing to connect to wired or wireless networks.
+
+- Port-based access control, ensuring only authenticated devices can connect.
+- Supports dynamic encryption keys for secure communication.
+- Common in corporate environments to enhance security.
+- Uses authentication mechanisms such as RADIUS and TACACS+.
+
+**Components**
+
+- **Supplicant** 
+  - Client device trying to connect.
+
+- **Authenticator** 
+  - Device through which supplicant will go through
+  - Network switch or access point
+
+- **Authentication Server**  
+  - Usually RADIUS, performs authentications
+
+**Authentication Mechanisms**
+
+- **RADIUS** 
+  - Cross-platform
+  - Does NOT support remote access protocol, NetBIOS, or X.25 PAD connections
+  - Ideal for mixed network infrastructure.
+
+- **TACACS+**
+  - Cisco-proprietary protocol
+  - Slower, relies on TCP, but adds security
+  - Supports all networking protocols
+
+### Extensible Authentication Protocol
+
+EAP is a flexible authentication framework used in network access protocols. It supports multiple authentication methods and is commonly used in wireless networks and point-to-point connections.
+
+- Not a specific authentication mechanism but a framework supporting various methods.
+- Authentication: Simple passwords, Digital Certificates, and PKI
+- Operates at the data link layer, allowing for secure exchanges before IP assignment.
+- Ensures compatibility between different authentication methods and devices.
+- Commonly used in 802.1X networks for secure authentication.
+
+### EAP Variants
+
+All variants are considered cross-platform, except for LEAP. 
+
+- **EAP-MD5**
+  - Simple challenge-response method.
+  - Provides weak security; no encryption of data.
+  - Vulnerable to password-based attacks.
+  - Suitable for **basic authentication** needs.
+  - If used, ensure to have a long and strong password.
+  - One-way authentication process, no mutual authentication.
+
+- **EAP-TLS**
+  - Uses PKI with digital certificates for authentication.
+  - Digital certificates are installed on both client and server.
+  - Provides strong security through **mutual authentication**.
+  - Widely regarded as one of the most secure EAP methods.
+
+- **EAP-TTLS**
+  - Extends EAP-TLS with additional tunneling.
+  - **Only the server needs a certificate,** not on the client.
+  - Client uses a password for the authentication, making it less secure.
+  - Supports older authentication methods within a secure tunnel.
+  - Easier to deploy compared to EAP-TLS.
+
+- **EAP-FAST**
+  - FAST (Flexible Authentication via Secure Tunneling)
+  - **Uses Protected Access Credentials (PACs), instead of a certificate.**
+  - PACs is used to establish mutual authentication between two devices.
+  - Designed as an alternative to EAP-TTLS and EAP-PEAP.
+  - Suitable for environments where issuing certificates is challenging.
+
+- **PEAP**
+  - "Protected EAP", encapsulates **EAP within a secure TLS tunnel.**
+  - Only the server requires a certificate.
+  - Supports multiple authentication methods within the tunnel.
+  - Uses server certs and Microsoft AD Databases for the password.
+  - Commonly used due to its balance of security and ease of deployment.
+
+- **EAP-LEAP**
+  - Lightweight EAP.
+  - Cisco-proprietary protocol.
+  - Uses mutual authentication, but could still be vulnerable to dictionary attacks.
+  - Mostly deprecated in favor of more secure methods.
+
 
 
 ----------------------------------------------
