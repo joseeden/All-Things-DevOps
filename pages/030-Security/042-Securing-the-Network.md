@@ -41,7 +41,7 @@
     - [IDS Detection Methods](#ids-detection-methods)
 - [Evolution of Network Security](#evolution-of-network-security)
     - [SIEM](#siem)
-    - [Mobile Data Management](#mobile-data-management)
+    - [Mobile Device Management](#mobile-device-management)
     - [Software Defined Networking](#software-defined-networking)
 
 
@@ -654,13 +654,20 @@ A SIEM typically provides the following features:
 
 - **Log analysis**, which involves identifying patterns, trends and anomalies related to security events, in or close to real time.
 
-### Mobile Data Management 
+### Mobile Device Management 
 
-Mobile Data Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
+Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
 
 - Enforces security policies to enhance device security.
 - Allows remote management and wiping of devices for data protection.
 - Tracks device usage and location for monitoring and control.
+- Enforce configuration to ensure devices are meeting the security benchmarks.
+
+Example features:
+
+- Disable a device's ability to sideload programs.
+- Detect if a device has been jailbroken or rooted.
+- Force each device to use a VPN connection.
 
 
 ### Software Defined Networking

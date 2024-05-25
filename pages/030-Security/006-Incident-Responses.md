@@ -41,12 +41,13 @@ Understanding incident response begins with knowing the terms for various cybera
 | **Intrusion**       | An event where an intruder gains or attempts to gain unauthorized system access. (IETF RFC 4949 Ver. 2)                                                                       |
 | **Threat**          | A circumstance or event with the potential to harm organizational operations, assets, or individuals through unauthorized access or data destruction. (NIST SP 800-30 Rev. 1) |
 | **Vulnerability**   | A weakness in a system or security process that could be exploited by a threat source. (NIST SP 800-30 Rev. 1)                                                                |
+| **Attacks**         | Deliberate actions or activities carried out by threat actors with the intent to exploit vulnerabilities. |
 | **Zero Day**        | An unknown system vulnerability that could be exploited without typical detection or prevention.                                                                              |
 | **Impact**          | The expected harm from unauthorized data disclosure, modification, or loss.                                                                                                   |
 
-## Indicator of Compromise 
+## Indicators of Compromise 
 
-ndicators of Compromise (IOCs) are evidence or clues that suggest a computer system or network has been breached or compromised by malicious actors. These indicators can take various forms and are used by cybersecurity professionals to detect, investigate, and respond to security incidents. 
+Indicators of Compromise (IOCs) are evidence or clues that suggest a computer system or network has been breached or compromised by malicious actors. These indicators can take various forms and are used by cybersecurity professionals to detect, investigate, and respond to security incidents. 
 
 - Malware Signatures
 - Anomalous Network Traffic
@@ -58,6 +59,9 @@ ndicators of Compromise (IOCs) are evidence or clues that suggest a computer sys
 - Unusual System Performance
 - Suspicious File Attachments or Downloads
 - IoT Device Anomalies
+
+To learn more, see [Indicators of Compromise.](./044-Indicators-of-Compromise.md)   
+
 
 ## Goal of Incident Response
 

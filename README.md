@@ -190,6 +190,7 @@ The complete list of projects can be found [here](projects/README.md).
 
 - [Cyber Threats and Attacks](#cyber-threat-and-attacks) 
 
+    - [Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
 
     - [Threat Actors](pages/030-Security/026-Threat-Actors.md)
 
@@ -201,14 +202,17 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Threat Prevention](pages/030-Security/021-Threat-Prevention.md)
 
-    - [Threats](pages/030-Security/017-Cyber-Threats-and-Attacks.md)
+    - [Vulnerabilities](pages/030-Security/045-Vulnerabilities.md)
+
+    - [Malware](pages/030-Security/043-Malware.md) 
+
+    - [Indicators of Compromise](pages/030-Security/044-Indicators-of-Compromise.md) 
 
     - [Attacks](pages/030-Security/023-Attacks.md)
 
-    - [Social Engineering](pages/030-Security/036-Social-Engineering.md)
-    
     - [Attack Frameworks](pages/030-Security/022-Attack-Frameworks.md)
 
+    - [Social Engineering](pages/030-Security/036-Social-Engineering.md)
 
 - [Security Architecture](#security-architecture)
 
@@ -231,6 +235,8 @@ The complete list of projects can be found [here](projects/README.md).
     - [Data Handling](pages/030-Security/012-Data-Handling.md)
 
     - [Data Security](pages/030-Security/038-Data-Security.md)
+
+    - [Vulnerability Management](pages/030-Security/046-Vulnerability-Management.md)
 
     - [System Hardening](pages/030-Security/013-System-Hardening.md)
 

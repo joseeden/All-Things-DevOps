@@ -24,7 +24,7 @@
     - [Mobile Device Constraints](#mobile-device-constraints)
     - [SIM Cards](#sim-cards)
     - [Securing Mobile Devices](#securing-mobile-devices)
-    - [Hardening mobile devices](#hardening-mobile-devices)
+    - [Hardening Mobile Devices](#hardening-mobile-devices)
 
 
 ## Embedded Systems
@@ -404,12 +404,13 @@ Subscribe Identity Modules (SIM) cards authenticates device to carrier network. 
     - Can be used for work purposes, and for personal use
     - Device can be partitioned (containers) for personal and corporate apps 
 
-### Hardening mobile devices
+### Hardening Mobile Devices
 
 
 - **Mobile Device Management**
-    - For organizations, management at scale through [Mobile Device Management.](./016-Computer-Networking.md#mobile-data-management-mdm)
+    - For organizations, management at scale through [Mobile Device Management.](./042-Securing-the-Network.md#mobile-device-management)
     - Employees' device just need to be registered.
+    
 - **Sideloading** 
     - Instead of installing app from the app store, use the actual packages.
     - Security risk, attacker can install app which allow them full access to the phone.
