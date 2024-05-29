@@ -25,8 +25,8 @@
     - [One-Time](#one-time)
     - [Continuous](#continuous)
 - [Risk Assessment Types](#risk-assessment-types)
-    - [Quantitative risk assessment](#quantitative-risk-assessment)
-    - [Qualitative risk assessment](#qualitative-risk-assessment)
+    - [Quantitative Risk Assessment](#quantitative-risk-assessment)
+    - [Qualitative Risk Assessment](#qualitative-risk-assessment)
 - [Managing Risks](#managing-risks)
     - [Risk Register](#risk-register)
     - [Risk Heat Map](#risk-heat-map)
@@ -371,7 +371,7 @@ An ongoing process of risk assessment that integrates risk monitoring into daily
 
 ## Risk Assessment Types
 
-### Quantitative risk assessment
+### Quantitative Risk Assessment
 
 Quantitative risk assessment is a risk analysis approach that uses numerical values and data to estimate risks.
 
@@ -408,7 +408,7 @@ Example:
 ![](../../Images/sec+-ale-computation-example.png)
 
 
-### Qualitative risk assessment
+### Qualitative Risk Assessment
 
 Qualitative risk assessment evaluates risks using descriptive, subjective factors instead of numerical data.
 - Relies on expert judgment, interviews, and categorization of threats and vulnerabilities.
