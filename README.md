@@ -153,15 +153,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Security Controls](pages/030-Security/004-Security-Controls.md)
 
-    - [Governance Elements](pages/030-Security/005-Governance-Elements.md)
-
-- [Incident Response](#incident-response)
-
-    - [Incident Response](pages/030-Security/006-Incident-Responses.md)
-
-    - [Digital Forensics](pages/030-Security/034-Digital-Forensics.md)
-
-    - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
+    - [Governance and Compliance](pages/030-Security/005-Governance-Elements.md)
 
 - [Managing Access](#managing-access)
 
@@ -228,7 +220,7 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Embedded Systems](pages/030-Security/040-Embedded-Systems.md)
 
-    - [Cyber Resilience and Redundancy](pages/030-Security/008-Disaster-recovery.md)
+    - [High Availability and Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
 
 - [Security Operations](#security-operations)
 
@@ -238,11 +230,25 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Vulnerability Management](pages/030-Security/046-Vulnerability-Management.md)
 
+    - [Alerting and Monitoring](pages/030-Security/047-Alerting-and-Monitoring.md)
+
+    - [Logging](pages/030-Security/048-Logging-Data.md)
+
+    - [Automation and Orchestration](pages/030-Security/049-Automation-and-Orchestration.md)
+
     - [System Hardening](pages/030-Security/013-System-Hardening.md)
 
     - [Common Security Policies](pages/030-Security/014-Common-Security-Policies.md)
 
     - [Security Awareness](pages/030-Security/015-Security-Awareness-Training.md)
+
+- [Incident Response](#incident-response)
+
+    - [Incident Response](pages/030-Security/006-Incident-Responses.md)
+
+    - [Digital Forensics](pages/030-Security/034-Digital-Forensics.md)
+
+    - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
 
 - [Terminologies](pages/030-Security/001-Terminologies.md)
 

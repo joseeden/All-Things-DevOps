@@ -1,5 +1,5 @@
 
-# Cyber Resilience and Redundancy
+# High Availability and Disaster Recovery
 
 - [Capacity Planning](#capacity-planning)
 - [High Availability](#high-availability)

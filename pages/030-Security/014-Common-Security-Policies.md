@@ -6,15 +6,22 @@
     - [Accounts/Credential Policy](#accountscredential-policy)
     - [Data Handling Policy](#data-handling-policy)
     - [Password Policy](#password-policy)
-    - [Acceptable Use Policy AUP](#acceptable-use-policy-aup)
-    - [Bring Your Own Device BYOD](#bring-your-own-device-byod)
+    - [Bring Your Own Device](#bring-your-own-device)
     - [Privacy Policy](#privacy-policy)
+    - [Acceptable Use Policy](#acceptable-use-policy)
+    - [Information Security PolicY](#information-security-policy)
+    - [Business Continuity Policy](#business-continuity-policy)
+    - [Disaster Recovery](#disaster-recovery)
+    - [Incident Response](#incident-response)
+    - [SDLC Policy](#sdlc-policy)
     - [Change Management Policy](#change-management-policy)
 - [Change Management Components](#change-management-components)
     - [Request for Change RFC](#request-for-change-rfc)
     - [Approval](#approval)
     - [Rollback](#rollback)
 - [Continuous Change Management Cycle](#continuous-change-management-cycle)
+
+
 
 
 ## Common Security Policies
@@ -115,19 +122,7 @@ Password Security:
 - **Risky logins**
     - Locking accounts after a number of incorrect attempts 
 
-### Acceptable Use Policy (AUP)
-
-AUP defines network and system usage, safeguarding against legal action, covering aspects like:
-
-- Data access
-- System access
-- Data disclosure
-- Passwords
-- Data retention
-- Internet usage
-- Company device usage
-
-### Bring Your Own Device (BYOD)
+### Bring Your Own Device
 
 BYOD allows employee use of personally owned devices for business, requiring:
 
@@ -144,6 +139,73 @@ Crucial for personnel with PII access, outlining:
 - References to applicable regulations
 - Creation of a public document
 
+### Acceptable Use Policy
+AUP defines network and system usage, safeguarding against legal action, covering aspects like:
+
+- Data access
+- System access
+- Data disclosure
+- Passwords
+- Data retention
+- Internet usage
+- Company device usage
+
+It is a document that outlines the do's and don'ts for users when interacting with an organization's IT systems and resources.
+
+### Information Security PolicY 
+
+Outlines how an organization protects its information assets from threats, both internal and external. These policies cover a range of areas, including
+
+- Data Classification
+- Access Control 
+- Encryption 
+- Physical Security
+
+### Business Continuity Policy 
+
+Focuses on how an organization will continue its critical operations during and after a disruption. 
+
+- Outline the steps to ensure minimal interruption to services.
+- Focuses on recovering as quickly as possible.
+- Dealing with strategies like hardware failure and natural disasters. 
+
+To learn more, please see [Business Continuity.](./007-Business-Continuity.md)
+
+### Disaster Recovery
+
+Closely related to business continuity, disaster recovery focuses on how an organization will recover its IT systems and data after disaster. 
+
+- Outlines steps for data backup and restoration.
+- Hardware/software recovery, as well as alternative processing locations.
+
+To learn more, please see [Disaster Recovery.](./008-Disaster-recovery.md)
+
+
+### Incident Response  
+
+A plan for handling security incidents. 
+
+- Involves steps on detecting, assessing, and responding to incidents.
+- Can include person to contact in case of data breach. 
+
+To learn more, please see [Incident Response.](./006-Incident-Responses.md)
+
+### SDLC Policy 
+
+A software development lifecycle (SDLC) policy guides how software is developed within an organization. It covers all stages of software development:
+
+- Initial requirements gathering 
+- Design 
+- Coding 
+- Testing 
+- Maintenance
+
+It may also include standards:
+
+- Secure coding practices 
+- Code reviews
+- Software testing
+
 ### Change Management Policy
 
 Essential for transitioning from current to future states, covering:
@@ -154,6 +216,13 @@ Essential for transitioning from current to future states, covering:
 - Mitigating vulnerabilities introduced by changes
 
 ## Change Management Components
+
+Change Management Procedure typically involves:
+
+1. The need for change is identifies (RFC). 
+2. A plan is developed. 
+3. Change is implemented, often in stages. 
+4. A review is conducted to assess the success of the change.
 
 ### Request for Change (RFC)
 
