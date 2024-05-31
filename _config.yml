@@ -1,8 +1,8 @@
 # Site settings
-title: All Things DevOps
-description: Collection of notes, projects, and documentations.
-baseurl: "/All-Things-DevOps" # the subpath of your site, e.g. /blog
-url: "https://joseeden.github.io" 
+# title: All Things DevOps
+# description: Collection of notes, projects, and documentations.
+# baseurl: "/All-Things-DevOps" # the subpath of your site, e.g. /blog
+url: "https://joseeden.github.io/All-Things-DevOps" 
 
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
