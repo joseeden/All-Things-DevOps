@@ -9,7 +9,7 @@
     - [Bring Your Own Device](#bring-your-own-device)
     - [Privacy Policy](#privacy-policy)
     - [Acceptable Use Policy](#acceptable-use-policy)
-    - [Information Security PolicY](#information-security-policy)
+    - [Information Security Policy](#information-security-policy)
     - [Business Continuity Policy](#business-continuity-policy)
     - [Disaster Recovery](#disaster-recovery)
     - [Incident Response](#incident-response)
@@ -140,7 +140,8 @@ Crucial for personnel with PII access, outlining:
 - Creation of a public document
 
 ### Acceptable Use Policy
-AUP defines network and system usage, safeguarding against legal action, covering aspects like:
+
+It is a document that outlines the do's and don'ts for users when interacting with an organization's IT systems and resources.
 
 - Data access
 - System access
@@ -150,9 +151,7 @@ AUP defines network and system usage, safeguarding against legal action, coverin
 - Internet usage
 - Company device usage
 
-It is a document that outlines the do's and don'ts for users when interacting with an organization's IT systems and resources.
-
-### Information Security PolicY 
+### Information Security Policy
 
 Outlines how an organization protects its information assets from threats, both internal and external. These policies cover a range of areas, including
 
