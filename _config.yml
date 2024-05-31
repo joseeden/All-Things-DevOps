@@ -1,36 +1,9 @@
 # Site settings
-title: My Status Website
-description: A website to show the status of my projects.
+title: All Things DevOps
+description: Collection of notes, projects, and documentations.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joseeden.github.io" 
 
-theme: minimal
-
-# Exclude specific files or directories from the site
-exclude:
-  # - README.md
-  - Gemfile
-  - Gemfile.lock
-
+remote_theme: pages-themes/architect@v0.2.0
 plugins:
-  - jekyll-feed
-
-markdown: kramdown
-kramdown:
-  input: GFM
-  auto_ids: true
-  toc_levels: 1..6
-
-# Additional configuration options
-paginate: 5
-paginate_path: "/page:num/"
-
-# Custom variables (add your own custom variables here)
-status_updates:
-  - date: "2024-05-31"
-    status: "All systems operational."
-  - date: "2024-05-30"
-    status: "Minor downtime due to maintenance."
-  - date: "2024-05-29"
-    status: "Resolved connectivity issues."
-
+- jekyll-remote-theme # add this line to the plugins list if you already have one
