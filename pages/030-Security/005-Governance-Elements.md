@@ -152,7 +152,7 @@ Procedures typically contains the detailed steps to complete tasks supporting de
 **Emergency Evacuation Procedure**
 
 - Outlines steps to take in case of emergency, such as fire.
-- Evacuation routes, assmebly points, and roles and responsibilities.
+- Evacuation routes, assembly points, and roles and responsibilities.
 
 **Data Backup Procedure**
 

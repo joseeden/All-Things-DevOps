@@ -333,7 +333,7 @@ The complete list of projects can be found [here](projects/README.md).
 - [dependency-track](https://github.com/DependencyTrack/dependency-track)
 
 
-## Site Reliability Engineering (SRE) 
+## Site Reliability Engineering
 
 - [Automation](pages/009-SRE/001-Automation.md)
 

@@ -20,6 +20,12 @@
 
 Hardening is the process of applying secure configurations (to reduce the attack surface) and locking down various hardware, communications systems and software, including the operating system, web server, application server and applications, etc.
 
+- Applying security patches
+- Configure access controls
+- Disable unnecessary services 
+- Adopt best practices
+
+
 ## Configuration management 
 
 Configuration management ensures that authorized and validated changes are the only ones made to a system. 
