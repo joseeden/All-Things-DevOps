@@ -70,6 +70,10 @@ When setting up new systems or devices, default configurations are often used to
   - Disable or close any ports and protocols that are not required for operation.
   - If you're using SMTP, use the secure versions, SMTPS and HTTPS.
 
+    <!-- <p>
+    <img width=500 src=''>
+    </p> -->
+
 - **Extra Open Ports**
 
   - Systems may have several ports open by default for various services.
@@ -85,19 +89,21 @@ When setting up new systems or devices, default configurations are often used to
 Configuration management ensures that authorized and validated changes are the only ones made to a system. It involves decision-making and control procedures, focusing on aspects like identification, establishing baselines, and applying updates and patches.
 
 - **Identification**
+
     - Baseline identification of a system and all its components, interfaces and documentation.
 
 - **Baseline**
-    - A security baseline is a reference point that sets the minimum accepted level of security requirements. 
-    
-    - It ensures updates adhere to essential security standards.
 
+    - A security baseline is a reference point that sets the minimum accepted level of security requirements. 
+    - It ensures updates adhere to essential security standards.
     - Security baselines are used to guarantee that network devices, software, hardware and endpoints are configured consistently. 
 
-- **Change Control**    
+- **Change Control**   
+
     - Process for requesting changes to a baseline, with a review and approval process for updates and patches.
 
 - **Verification and Audit**    
+
     - Ensure system integrity after changes and an audit to validate the current baseline against its initial baseline plus approved changes.
 
 ## Restricting Applications
@@ -107,22 +113,27 @@ Configuration management ensures that authorized and validated changes are the o
 Ensuring systems and devices operate with the least functionality necessary reduces the attack surface and minimizes security risks. This principle involves disabling or removing all non-essential features, services, and applications.
 
 - **Minimize Installed Applications**
+
   - Install only the applications needed for the system's purpose.
   - Regularly review and uninstall unnecessary software.
 
 - **Disable Unnecessary Services**
+
   - Turn off services that are not required for the system's operation.
   - This includes services like file sharing, remote desktop, and print services.
 
 - **Limit User Access**
+
   - Restrict user permissions to the minimum required to perform their tasks.
   - Use role-based access control (RBAC) to manage user privileges.
 
 - **Use Minimal Software Versions**
+
   - Opt for software versions with the least number of features that meet requirements.
   - Avoid using versions with unnecessary add-ons or plugins.
 
 - **Regularly Update and Patch**
+
   - Ensure all essential software is up-to-date with the latest security patches.
   - Remove or replace unsupported or obsolete software versions.
 
@@ -168,21 +179,24 @@ Trusted Operating Systems (TOS) are designed with enhanced security features to 
 - Run applications in isolated environments to limit the impact of potential breaches.
 - Use virtualization and containerization for additional isolation.
 
-### Features of Trusted Operating Systems
+### Features
 
 Trusted Operating Systems (TOS) incorporate advanced security features to ensure a high level of protection and integrity. Key features include:
 
 - **Mandatory Access Control (MAC)**
+
   - Enforces strict policies that control access to resources based on security labels.
   - Prevents unauthorized users from accessing sensitive information.
   - Centralized control over security policies, reducing the risk of data breaches.
 
 - **Security Auditing**
+
   - Tracks and records system activities and access attempts.
   - Helps in detecting and investigating security incidents.
   - Accountability and transparency, by maintaining logs of user actions and system events.
 
 - **Role-based Access Control (RBAC)**
+
   - Assigns permissions based on user roles rather than individual users.
   - Simplifies the management of user privileges.
   - Ensures users have the minimum necessary access to perform their duties.
@@ -221,30 +235,37 @@ This specific operating system is also rated as **EAL6.**
 The Common Criteria (CC) standards evaluate the security controls in an operating system to assess their effectiveness. The evaluation is categorized into seven Evaluation Assurance Levels (EALs), each with increasing rigor and assurance.
 
 - **EAL1: Functionally Tested**
+
   - Basic testing to ensure the system functions as claimed.
   - Suitable for systems requiring minimal assurance.
 
 - **EAL2: Structurally Tested**
+
   - Analysis of design and testing of security features.
   - Useful for systems where developers' cooperation is available.
 
 - **EAL3: Methodically Tested and Checked**
+
   - Focuses on testing and checking the system's security functions.
   - Requires evidence of developer testing and a review of the development environment.
 
 - **EAL4: Methodically Designed, Tested, and Reviewed**
+
   - Involves a thorough review of the system's design and implementation.
   - Requires rigorous testing and development practices.
 
 - **EAL5: Semiformally Designed and Tested**
+
   - Employs semiformally specified design and analysis methods.
   - Suitable for high assurance applications requiring rigorous validation.
 
 - **EAL6: Semiformally Verified Design and Tested**
+
   - Requires detailed and comprehensive design and testing, including formal methods.
   - Ideal for systems requiring high levels of trust and security.
 
 - **EAL7: Formally Verified Design and Tested**
+
   - The highest level, involving formal design verification and extensive testing.
   - Ensures the highest degree of security assurance.
   - Suitable for extremely sensitive applications.
@@ -326,31 +347,37 @@ Patch Management involves updating software to address vulnerabilities and impro
 Security-Enhanced Linux (SELinux) is a powerful security module for Linux that implements Mandatory Access Control (MAC) policies. Developed by the NSA, it enhances the security of Linux systems through the following features:
 
 - **Mandatory Access Control (MAC)**
+
   - Enforces strict policies controlling access to files, processes, and resources.
   - Prevents unauthorized actions by users and applications.
   - Policies are defined by the administrator and enforced by the kernel.
 
 - **Fine-Grained Security Policies**
+
   - Allows detailed specification of security rules.
   - Policies can be customized to fit specific security requirements.
   - Controls access based on a wide range of attributes and contexts.
 
 - **Context-Based Permissions**
+
   - Uses security contexts to determine access permissions.
   - Every file, process, and system resource is labeled with a security context.
   - Access decisions are made based on these contexts.
 
 - **Isolation and Containment**
+
   - Helps in isolating applications and users to prevent the spread of security breaches.
   - Limits the potential damage from compromised processes or accounts.
   - Ensures that applications run with the minimum necessary privileges.
 
 - **Comprehensive Security Auditing**
+
   - Provides extensive logging of security-relevant events.
   - Enables tracking and analysis of security policy violations.
   - Helps in incident response and forensic investigations.
 
 - **Role-Based Access Control (RBAC)**
+
   - Integrates RBAC to manage permissions based on user roles.
   - Simplifies the administration of access controls.
   - Ensures users have only the permissions necessary for their role.
@@ -459,16 +486,19 @@ SELinux provides support for multi-level security contexts through a fourth cont
 SELinux operates in three modes:
 
 - **Enforcing Mode**
+
   - Enforces security policies, denying actions that violate rules.
   - Provides active protection against policy violations.
   - Ensures strict adherence to security policies.
 
 - **Permissive Mode**
+
   - Logs policy violations without enforcing them.
   - Allows actions that would otherwise be denied for monitoring purposes.
   - Provides insights into potential policy issues without affecting system behavior.
 
 - **Disabled Mode**
+
   - Completely disables SELinux.
   - No security policies are enforced.
   - System operates without SELinux restrictions.
@@ -497,12 +527,14 @@ sudo nano /etc/selinux/config
 SELinux supports various policies, including:
 
 - **Targeted Policy**
+
   - Default policy used in Red Hat Linux and CentOS.
   - Applies SELinux restrictions selectively to targeted processes.
   - Leaves other processes unconfined.
   - Offers a balance between security and flexibility.
   
 - **Strict Policy**
+
   - Enforces SELinux restrictions on all processes.
   - Provides a higher level of security.
   - May require more configuration effort to manage.
