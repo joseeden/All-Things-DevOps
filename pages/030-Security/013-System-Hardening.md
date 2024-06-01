@@ -13,7 +13,7 @@
     - [Noncompliant to Security Baselines](#noncompliant-to-security-baselines)
     - [Filtering Applications](#filtering-applications)
 - [Trusted Operating Systems TOS](#trusted-operating-systems-tos)
-    - [Features of Trusted Operating Systems](#features-of-trusted-operating-systems)
+    - [Features](#features)
     - [Using Microkernels](#using-microkernels)
     - [Integrity 178B](#integrity-178b)
     - [Common Criteria CC Standards](#common-criteria-cc-standards)
@@ -30,6 +30,9 @@
     - [Multi-level Security Context](#multi-level-security-context)
     - [SELinux Modes](#selinux-modes)
     - [SELinux Policies](#selinux-policies)
+- [Group Policies](#group-policies)
+    - [Baselining](#baselining)
+
 
 
 ## Hardening 
@@ -539,6 +542,26 @@ SELinux supports various policies, including:
   - Provides a higher level of security.
   - May require more configuration effort to manage.
 
+## Group Policies 
+
+A group policy is a set of rules or policies that can be applied to a set of users or computer accounts within an operating system. 
+
+- In Windows environment, open Run > gpedit
+- Each policy acts as a security template containing a set of rules:
+  - Password requirements 
+  - Account lockout policies 
+  - Software restrictions 
+  - Application restrictions
+- Used to create a secure baseline as part of configuration management
+- Active Directory Domain Controllers hava advanced Group Policy Editor.
+
+### Baselining 
+
+The process of measuring changes in the network, hardware, or software environment.
+
+- Establish normal configurations for the organization.
+- By knowing what's normal, we can also identify what's considered a deviation.
+- Any deviations are compared to the known baseline to determine if it is expected.
 
 ----------------------------------------------
 
