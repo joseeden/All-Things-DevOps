@@ -3,6 +3,27 @@
 
 This repository contains various labs, notes, ideas, and lessons that I've gathered over the years working on various DevOps projects. 
 
+    - [Notes](#notes)
+    - [Projects](#projects)
+    - [Foundations](#foundations)
+    - [Cloud - Fundamentals](#cloud---fundamentals)
+    - [Cloud - Amazon Web Services](#cloud---amazon-web-services)
+    - [Cloud - Microsoft Azure](#cloud---microsoft-azure)
+    - [Security](#security)
+    - [Linux](#linux)
+    - [Git](#git)
+    - [Infrastructure as Code](#infrastructure-as-code)
+    - [CICD](#cicd)
+    - [Containers](#containers)
+    - [Observability](#observability)
+    - [Programming](#programming)
+    - [Serverless](#serverless)
+    - [DevSecOps](#devsecops)
+    - [Site Reliability Engineering](#site-reliability-engineering)
+    - [Project Management](#project-management)
+    - [Resources](#resources)
+
+
 
 ## Notes
 
