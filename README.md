@@ -24,7 +24,7 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Resources](#resources)
 
 
-
+<!-- 
 ## Notes
 
 - [Notes - Setting Up Development Laptop](pages/001-Notes/002-Setting-up-dev-laptop.md)
@@ -272,8 +272,8 @@ The complete list of projects can be found [here](projects/README.md).
     - [Business Continuity](pages/030-Security/007-Business-Continuity.md)
 
 - [Terminologies](pages/030-Security/001-Terminologies.md)
-
-
+ -->
+<!-- 
 ## Linux 
 
 - [All-Things-Linux Projects Repository](https://github.com/joseeden/All-Things-Linux)
@@ -327,12 +327,12 @@ The complete list of projects can be found [here](projects/README.md).
 
 ## Programming 
 
-- [Work-in-progress...](xxx)
+- [Work-in-progress...](xxx) -->
 
 <!-- <p>
 <img width=250 src="Images/loadingicon4.png">
 </p> -->
-
+<!-- 
 ## Serverless 
 
 - [Serverless Computing](pages/002-Becoming-a-Cloud-Architect/014-Serverless-Computing.md)
@@ -430,4 +430,4 @@ Containers and Kubernetes:
 
 - [Certified Kubernetes Administrator (CKA) Exam Preparation](https://cloudacademy.com/learning-paths/certified-kubernetes-administrator-exam-preparation-242/)
 
-
+ -->
