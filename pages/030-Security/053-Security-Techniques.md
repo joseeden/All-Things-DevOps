@@ -22,6 +22,7 @@
     - [Dynamic Code Analysis](#dynamic-code-analysis)
     - [Code Signing](#code-signing)
     - [Sandboxing](#sandboxing)
+    - [Package Monitoring](#package-monitoring)
 - [Web Filtering](#web-filtering)
     - [Agent-Based Web Filtering](#agent-based-web-filtering)
     - [Centralized Proxies](#centralized-proxies)
@@ -344,6 +345,16 @@ Sandboxing is a security mechanism used to isolate running applications to preve
 - Limits the access of an application to the system resources.
 - Provides a controlled environment for executing untrusted code.
 - Helps protect the system from potential malicious activity initiated by the application.
+
+### Package Monitoring
+
+Package Monitoring involves keeping track of security of third-party packages and dependencies used.
+
+- Ensures that packages are up-to-date with the latest security patches.
+- Verifies the integrity and authenticity of packages to prevent supply chain attacks.
+- Alerts developers to known vulnerabilities in dependencies.
+- Example tools are Snyk and Dependabot.
+
 
 ## Web Filtering 
 

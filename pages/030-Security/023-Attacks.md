@@ -56,6 +56,11 @@
     - [Replay Attack](#replay-attack)
 - [On-Path Attack](#on-path-attack)
     - [Interception](#interception)
+- [Layer 2 Attacks](#layer-2-attacks)
+    - [ARP Cache Poisoning](#arp-cache-poisoning)
+    - [MAC Address Flooding](#mac-address-flooding)
+    - [Broadcast Storm](#broadcast-storm)
+    - [Layer 2 Attack Mitigation](#layer-2-attack-mitigation)
     - [Replaying the Attack](#replaying-the-attack)
     - [Relaying the Attack](#relaying-the-attack)
     - [SSL Stripping](#ssl-stripping)
@@ -70,8 +75,6 @@
     - [Buffer Overflow Attack](#buffer-overflow-attack)
     - [Side Channel Attacks](#side-channel-attacks)
 - [Tools](#tools)
-
-
 
 
 
@@ -994,9 +997,8 @@ Ways to conduct on-path or interception attacks:
 - **ARP Poisoning**
 
   - Manipulates the ARP cache on a local network.
-  - Associates the attacker's MAC address with the IP address of a legitimate device.
-  - Intercepts, alters, or blocks network traffic.
-  - Can be used for man-in-the-middle attacks.
+  - Associates attacker's MAC address with the IP address of a legitimate device.
+  - More details found here: [ARP Cache Poisoning](#arp-cache-poisoning)
 
 - **DNS Poisoning**
 
@@ -1018,6 +1020,68 @@ Ways to conduct on-path or interception attacks:
   - Intercepts, manipulates, or redirects network traffic.
   - Can be used to capture data packets for analysis.
   - May disrupt legitimate network operations or degrade performance.
+
+## Layer 2 Attacks 
+
+### ARP Cache Poisoning
+
+ARP cache poisoning involves sending falsified ARP (Address Resolution Protocol) messages to a local network.
+
+- Redirects traffic intended for one host to another host.
+- Often used for man-in-the-middle attacks.
+- Can lead to data interception and unauthorized access.
+
+Mitigations:
+
+- Use static ARP cache entries. 
+- Hosts should not accept ARP cache updates.
+- Limit access to the network.
+
+### MAC Address Flooding
+
+MAC address flooding overwhelms a network switch with fake MAC addresses.
+
+- Forces switch to broadcast traffic to all ports.
+- Results in potential data exposure and network congestion.
+- Used to intercept data in a switched network environment.
+
+**Fail-open**
+
+- When MAC flooding occurs, the network switch will simply fail open.
+- When it fail-open, the switch begins to rebroadcast all traffic out to every port.
+
+
+### Broadcast Storm
+
+A broadcast storm occurs when a network is overwhelmed with continuous broadcast or multicast traffic.
+
+- Also known as **Switching Loop**
+- Can cause network congestion and slow down or crash the network.
+- Often triggered by a loop in the network.
+- Disrupts normal network communication.
+
+Can be caused by:
+
+- Faulty switch, network card ("jabber")
+- Redundant links between switches
+
+Mitigation:
+
+- Configure STP (Spanning Tree Protocol) on the switch.
+
+### Layer 2 Attack Mitigation
+
+Mitigating Layer 2 attacks involves implementing various security measures.
+
+- Enable port security to limit the number of MAC addresses per port.
+- Employ MAC address filtering for network access.
+- Use VLANs to segment and isolate network traffic.
+- Implement Dynamic ARP Inspection (DAI) to prevent ARP spoofing.
+- Use Static MAC Address assignments.
+- Disable unused switch ports.
+- Enable storm control to prevent broadcast storms.
+- Configure STP and BPDU to prevent broadcast storms.
+- Regularly update network devices to patch vulnerabilities.
 
 ### Replaying the Attack 
 
@@ -1139,7 +1203,6 @@ Rootkits are malicious software designed to hide the existence of certain proces
 
 
 ## Other Attacks 
-
 
 ### Cross-Site Scripting (XSS)
 

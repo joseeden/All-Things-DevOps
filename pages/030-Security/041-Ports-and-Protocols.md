@@ -11,6 +11,9 @@
     - [Implementing Port Security](#implementing-port-security)
     - [The 802.1X Protocol](#the-8021x-protocol)
     - [EAP](#eap)
+- [Transport Method](#transport-method)
+    - [TCP](#tcp)
+    - [UDP](#udp)
 
 
 ## Ports and Protocols 
@@ -142,11 +145,10 @@ Network switches make traffic switching decision based on the MAC address of the
 - Stores information about the MAC addresses available on any given port.
 
 **MAC Flooding**
-- Attackers have discovered MAC Flooding, which causes MAC addresses to overflow.
 - Randomized MAC addresses are sent to the network switch.
 - When this happens, the network switch will simply fail open.
 - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-- Mitigation: Enable port security or MAC Filtering
+- More details can be found here: [MAC Address Flooding](./023-Attacks.md#mac-address-flooding)
 
 ### Implementing Port Security
 
@@ -206,6 +208,27 @@ EAP (Extensible Authentication Protocol) is a versatile authentication framework
 
 More details can be found here: [EAP](./025-Network-Authentication-Protocols.md#eap)
 
+
+## Transport Method
+
+The transport method refers to the protocols used to move data across networks, primarily TCP and UDP, each serving different purposes based on their characteristics.
+
+### TCP
+
+TCP (Transmission Control Protocol) is a reliable, **connection-oriented** protocol that ensures data is transferred accurately and in order between devices on a network.
+
+- Provides reliable, ordered, and error-checked delivery of data.
+- Ensures complete data transfer between sender and receiver.
+- Utilizes handshakes to establish a connection before data transfer.
+- Suitable for applications where data integrity is crucial, e.g. web browsing, email, file transfers.
+
+### UDP 
+
+UDP (User Datagram Protocol) is a **connectionless** protocol that offers fast transmission by not guaranteeing the delivery of packets, often used in real-time communications.
+
+- Does not guarantee delivery, order, or error checking
+- Has lower overhead compared to TCP, leading to faster data transmission
+- Preferred for real-time applications where speed is critical, e.g. streaming, VoIP, online gaming.
 
 ----------------------------------------------
 

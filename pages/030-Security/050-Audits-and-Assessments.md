@@ -19,6 +19,7 @@
     - [Offensive Pentesting](#offensive-pentesting)
     - [Defensive Pentesting](#defensive-pentesting)
     - [Integrated Pentesting](#integrated-pentesting)
+- [Penetration Testing Process](#penetration-testing-process)
 - [Reconnaisance in Pentesting](#reconnaisance-in-pentesting)
     - [Types of Reconnaissance](#types-of-reconnaissance)
     - [Environment Classifications](#environment-classifications)
@@ -133,9 +134,10 @@ Below is an excerpt from the HIPAA Audit Checklist provided by [San Bernardino C
 
 Penetration Testing is a simulated cyber attack that helps in the assessment of computer systems for exploitable vulnerabilities.
 
-- Simulate network intrusion based on threat scenarios.
-- There's a **specific goal in mind.**
 - Agree on methodology and rules of engagement before performing pentests.
+- Simulate network intrusion based on threat scenarios.
+- Normally triggers IDS/IPS alerts. If it doesn't, then this should also be reported.
+- There's a **specific goal in mind.**
 
 Types:
 
@@ -180,6 +182,47 @@ Integrated pentesting, also known as **purple teaming**, combines both offensive
 - Identifies and addresses both internal and external threats.
 - Enhances coordination between offensive and defensive security teams.
 - Provides a thorough analysis of an organization's security posture.
+
+## Penetration Testing Process 
+
+Penetration testing is a structured approach to identifying and exploiting vulnerabilities in a system to assess its security.
+
+1. **Rules of Engagement**
+
+    - Define the scope and objectives of the test.
+    - Establish clear communication channels and protocols.
+    - Ensure legal and ethical boundaries are respected.
+
+2. **Discovery/Enumeration**
+
+    - Gather information about the target system.
+    - Identify open ports, services, and potential entry points.
+    - Map the network and identify connected devices.
+
+3. **Vulnerability Identification and Exploitation**
+
+    - Scan for known vulnerabilities and weaknesses.
+    - Attempt to exploit identified vulnerabilities.
+    - Validate the exploitability and impact of each vulnerability.
+
+4. **Privilege Escalation, Backdoors, and Pivoting**
+
+    - Attempt to gain higher-level access to the system.
+    - Install backdoors for future access if permitted.
+    - Use the compromised system to access other network areas.
+
+5. **Cleanup**
+
+    - Remove any tools or scripts used during the test.
+    - Restore the system to its original state.
+    - Ensure no traces of the test remain on the target.
+
+6. **Report Findings**
+
+    - Document all discovered vulnerabilities and exploited weaknesses.
+    - Provide detailed findings, including evidence and impact analysis.
+    - Offer recommendations for remediation and improving security posture.
+
 
 ## Reconnaisance in Pentesting
 
@@ -272,10 +315,23 @@ Environment classifications define the level of information available to the tes
 
 ### Tools 
 
-- **Nmap**: A network scanning tool to discover hosts and services on a network.
-- **Shodan**: A search engine for Internet-connected devices to find exposed systems.
-- **WHOIS Lookup**: A protocol used to query databases for domain registration information.
-- **Google Dorking**: Using advanced search techniques to find specific information on the web.
+Here's the information converted into a table format:
+
+| **Tool**              | **Description**                                                                                  |
+|-----------------------|--------------------------------------------------------------------------------------------------|
+| **Nmap**              | A network scanning tool to discover hosts and services on a network.                             |
+| **Shodan**            | A search engine for Internet-connected devices to find exposed systems.                          |
+| **WHOIS Lookup**      | A protocol used to query databases for domain registration information.                          |
+| **Google Dorking**    | Using advanced search techniques to find specific information on the web.                        |
+| **curl**              | A command-line tool for transferring data with URLs.                                             |
+| **scanless**          | A tool to perform open port scans using multiple online scanners.                                |
+| **dnsenum**           | A DNS enumeration tool that helps in gathering information about DNS servers and records.         |
+| **tcpreplay**         | A suite of tools to edit and replay captured network traffic.                                     |
+| **Cuckoo**            | An automated malware analysis system.                                                            |
+| **theHarvester**      | An information gathering tool to get emails, subdomains, hosts, employee names, open ports, and banners. |
+| **hping3**            | A network tool able to send custom TCP/IP packets and to display target replies like ping does with ICMP replies. |
+| **Metasploit Framework** | A penetration testing framework that helps identify and exploit vulnerabilities.                  |
+
 
 
 ## Attestation of Findings 
