@@ -262,6 +262,8 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [Asset and Change Management](pages/030-Security/051-Asset-and-Change-Management.md)
 
+    - [Third-Party Vendor Risks](pages/030-Security/052-Third-Party-Vendor-Risks.md)
+
     - [Common Security Policies](pages/030-Security/014-Common-Security-Policies.md)
 
     - [Security Awareness](pages/030-Security/015-Security-Awareness-Training.md)
