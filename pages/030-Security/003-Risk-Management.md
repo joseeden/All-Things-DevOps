@@ -566,8 +566,7 @@ To learn more, please see [Business Continuity](./007-Business-Continuity.md).
 
 ## Agreement Types 
 
-### Interconnection Security Agreement (ISA)
-
+### Interconnection Security Agreement 
 An Interconnection Security Agreement (ISA) outlines the security requirements for two organizations that are connecting their information systems.
 
 - Details the roles, responsibilities, and technical safeguards for secure connections and data exchange.
@@ -589,7 +588,7 @@ In risk management and vendor selection, a well-drafted basic contract is essent
 - Outlines the conditions under which the contract can be terminated by either party
 - Ensures that both parties adhere to relevant laws and regulations throughout the engagement
 
-### Service Level Agreement (SLA)
+### Service Level Agreement 
 
 A Service Level Agreement (SLA) is a contract that defines the performance expectations and service standards between a service provider and a customer.
 
@@ -634,7 +633,7 @@ Additionally:
   - Caution required in cloud-based outsourcing, thorough legal review recommended.
 
 
-### Master Services Agreement (MSA)
+### Master Services Agreement 
 
 A Master Services Agreement (MSA) provides a standardized set of terms for all projects and services provided over time. It helps streamline interactions and ensure consistency across multiple engagements.
 
@@ -644,7 +643,7 @@ A Master Services Agreement (MSA) provides a standardized set of terms for all p
 
 For recurring client relationships, the involved parties can use an MSA instead of drafting up a new contract for every project. These agreement will contain the overarchign terms, and can be supplemented with the individual work orders or a **Statement of Work (SOW).**
 
-### Statement of Work (SOW)
+### Statement of Work 
 
 The Statement of Work (SOW) is a critical document that details the specifics of a project or service engagement, clearly defining the scope, deliverables, and timeline to ensure all parties are aligned.
 
@@ -653,7 +652,7 @@ The Statement of Work (SOW) is a critical document that details the specifics of
 - Lists the expected deliverables, project milestones, and deadlines for deliverables.
 
 
-### Non-Disclosure Agreement (NDA)
+### Non-Disclosure Agreement 
 
 A Non-Disclosure Agreement (NDA) is a legally binding contract that requires parties to keep certain information confidential.
 
@@ -662,7 +661,7 @@ A Non-Disclosure Agreement (NDA) is a legally binding contract that requires par
 - Violation can lead to legal consequences, including lawsuits and financial penalties.
 
 
-### Business Partnership Agreement (BPA)
+### Business Partnership Agreement
 
 A Business Partnership Agreement (BPA) is a legally binding document that outlines the terms and conditions of a business relationship between two or more partners.
 
@@ -673,7 +672,6 @@ A Business Partnership Agreement (BPA) is a legally binding document that outlin
 
 
 ## Risk Monitoring and Reporting 
-
 
 ### Risk Monitoring 
 
