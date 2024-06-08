@@ -1,26 +1,19 @@
 
 # Security Policies
 
-- [Common Security Policies](#common-security-policies)
-    - [Employee/Contractor Hiring](#employeecontractor-hiring)
-    - [Accounts/Credential Policy](#accountscredential-policy)
-    - [Data Handling Policy](#data-handling-policy)
-    - [Password Policy](#password-policy)
-    - [Bring Your Own Device](#bring-your-own-device)
-    - [Privacy Policy](#privacy-policy)
-    - [Acceptable Use Policy](#acceptable-use-policy)
-    - [Information Security Policy](#information-security-policy)
-    - [Business Continuity Policy](#business-continuity-policy)
-    - [Disaster Recovery](#disaster-recovery)
-    - [Incident Response](#incident-response)
-    - [SDLC Policy](#sdlc-policy)
-    - [Change Management Policy](#change-management-policy)
-- [Change Management Components](#change-management-components)
-    - [Request for Change RFC](#request-for-change-rfc)
-    - [Approval](#approval)
-    - [Rollback](#rollback)
-- [Continuous Change Management Cycle](#continuous-change-management-cycle)
-
+- [Employee/Contractor Hiring](#employeecontractor-hiring)
+- [Accounts/Credential Policy](#accountscredential-policy)
+- [Data Handling Policy](#data-handling-policy)
+- [Password Policy](#password-policy)
+- [Bring Your Own Device](#bring-your-own-device)
+- [Privacy Policy](#privacy-policy)
+- [Acceptable Use Policy](#acceptable-use-policy)
+- [Information Security Policy](#information-security-policy)
+- [Business Continuity Policy](#business-continuity-policy)
+- [Disaster Recovery](#disaster-recovery)
+- [Incident Response](#incident-response)
+- [SDLC Policy](#sdlc-policy)
+- [Change Management Policy](#change-management-policy)
 
 
 
@@ -214,50 +207,7 @@ Essential for transitioning from current to future states, covering:
 - Confirmation of correct implementation
 - Mitigating vulnerabilities introduced by changes
 
-## Change Management Components
-
-Change Management Procedure typically involves:
-
-1. The need for change is identifies (RFC). 
-2. A plan is developed. 
-3. Change is implemented, often in stages. 
-4. A review is conducted to assess the success of the change.
-
-### Request for Change (RFC)
-
-Initiating the change management process with an RFC, including:
-
-- Core activities in change management
-- Formalized management and decision-making
-- Documented results in accounting or log entries
-
-### Approval 
-
-Key steps in the approval process involve:
-
-- Evaluating RFC completeness
-- Assigning to the proper authorization process
-- Stakeholder reviews and resource allocation
-- Obtaining necessary approvals or rejections
-- Documenting the approval or rejection status
-
-### Rollback 
-
-Addressing the potential need for rollback with activities such as:
-
-- Scheduling and testing the change
-- Verifying rollback procedures
-- Implementing the change and evaluating its effectiveness
-- Documenting changes in the production environment
-- Rollback authority defined in the rollback plan
-
-## Continuous Change Management Cycle
-
-- **Ongoing Process**: Change management is a continuous cycle that requires constant monitoring and approvals.
-- **Rollback Preparedness**: Organizations must be prepared for rollbacks in case a change proves ineffective.
-- **Coordination Responsibility**: Information Security professionals often coordinate and oversee change management.
-- **Departmental Involvement**: It can fall under IT, development, quality, or risk management departments.
-- **Comprehensive Oversight**: Involves input from end users, various IT areas, and management to ensure proper testing, approval, and communication before implementation.
+For more details, please see [Asset and Change Management](./051-Asset-and-Change-Management.md#change-management). 
 
 
 ----------------------------------------------

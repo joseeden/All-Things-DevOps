@@ -188,6 +188,7 @@ To learn more about Incident Response, please see [Incident Response Plan.](./00
 - Simulate network intrusion based on threat scenarios.
 - There's a **specific goal in mind.**
 - Agree on methodology and rules of engagement before performing pentests.
+- To learn more, please see [Penetration Testing.](./050-Audits-and-Assessments.md#penetration-testing)
 
 ### Simulation Exercise
 

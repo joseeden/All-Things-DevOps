@@ -658,10 +658,11 @@ A SIEM typically provides the following features:
 
 Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
 
-- Enforces security policies to enhance device security.
 - Allows remote management and wiping of devices for data protection.
 - Tracks device usage and location for monitoring and control.
 - Enforce configuration to ensure devices are meeting the security benchmarks.
+- Enforces security policies to enhance device security.
+- Lowers risks tied to unsecured or outdated devices.
 
 Example features:
 

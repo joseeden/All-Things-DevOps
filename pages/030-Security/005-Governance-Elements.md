@@ -254,6 +254,7 @@ Key components:
 
 - **Attestation**
   - Formal declarations confirming compliance with regulations or standards.
+  - To learn more, please see [Attestations of Findings](./050-Audits-and-Assessments.md#attestation-of-findings)
 
 - **Acknowledgement**
   - Recognition and acceptance of compliance requirements by all relevant parties.

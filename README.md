@@ -258,6 +258,10 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [System Hardening](pages/030-Security/013-System-Hardening.md)
 
+    - [Audits and Assessments](pages/030-Security/050-Audits-and-Assessments.md)
+
+    - [Asset and Change Management](pages/030-Security/051-Asset-and-Change-Management.md)
+
     - [Common Security Policies](pages/030-Security/014-Common-Security-Policies.md)
 
     - [Security Awareness](pages/030-Security/015-Security-Awareness-Training.md)

@@ -26,7 +26,6 @@
     - [Deprovisioning](#deprovisioning)
     - [Permission/Authorization Creep](#permissionauthorization-creep)
     - [Interoperability](#interoperability)
-    - [Attestation](#attestation)
     - [User Account Control](#user-account-control)
     - [Password Security](#password-security)
     - [Sensitivity](#sensitivity)
@@ -359,13 +358,6 @@ The ability of different systems, devices, and applications to work together
 and share information.
 
 - Can involve standards such as SAML or OpenID connect
-
-### Attestation 
-
-Process of validating that user accounts and access rights area correct and up-to-date.
-
-- Involves regular reviews and audits of user access
-- Ensures users can only access what they need
 
 ### User Account Control 
 
