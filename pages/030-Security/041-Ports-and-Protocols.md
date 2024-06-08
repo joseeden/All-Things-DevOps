@@ -10,8 +10,7 @@
     - [Network Switches](#network-switches)
     - [Implementing Port Security](#implementing-port-security)
     - [The 802.1X Protocol](#the-8021x-protocol)
-    - [Extensible Authentication Protocol](#extensible-authentication-protocol)
-    - [EAP Variants](#eap-variants)
+    - [EAP](#eap)
 
 
 ## Ports and Protocols 
@@ -197,61 +196,15 @@ With port security, administrators can link MAC addresses of certain devices to 
   - Slower, relies on TCP, but adds security
   - Supports all networking protocols
 
-### Extensible Authentication Protocol
+### EAP
 
-EAP is a flexible authentication framework used in network access protocols. It supports multiple authentication methods and is commonly used in wireless networks and point-to-point connections.
+EAP (Extensible Authentication Protocol) is a versatile authentication framework that supports multiple methods for secure access to network resources.
 
-- Not a specific authentication mechanism but a framework supporting various methods.
-- Authentication: Simple passwords, Digital Certificates, and PKI
-- Operates at the data link layer, allowing for secure exchanges before IP assignment.
-- Ensures compatibility between different authentication methods and devices.
-- Commonly used in 802.1X networks for secure authentication.
+- A flexible authentication framework supporting methods like EAP-TLS, EAP-TTLS, and PEAP.
+- Commonly used in wireless networks (e.g., Wi-Fi) and secure network access setups.
+- Provides strong security through certificate-based authentication.
 
-### EAP Variants
-
-All variants are considered cross-platform, except for LEAP. 
-
-- **EAP-MD5**
-  - Simple challenge-response method.
-  - Provides weak security; no encryption of data.
-  - Vulnerable to password-based attacks.
-  - Suitable for **basic authentication** needs.
-  - If used, ensure to have a long and strong password.
-  - One-way authentication process, no mutual authentication.
-
-- **EAP-TLS**
-  - Uses PKI with digital certificates for authentication.
-  - Digital certificates are installed on both client and server.
-  - Provides strong security through **mutual authentication**.
-  - Widely regarded as one of the most secure EAP methods.
-
-- **EAP-TTLS**
-  - Extends EAP-TLS with additional tunneling.
-  - **Only the server needs a certificate,** not on the client.
-  - Client uses a password for the authentication, making it less secure.
-  - Supports older authentication methods within a secure tunnel.
-  - Easier to deploy compared to EAP-TLS.
-
-- **EAP-FAST**
-  - FAST (Flexible Authentication via Secure Tunneling)
-  - **Uses Protected Access Credentials (PACs), instead of a certificate.**
-  - PACs is used to establish mutual authentication between two devices.
-  - Designed as an alternative to EAP-TTLS and EAP-PEAP.
-  - Suitable for environments where issuing certificates is challenging.
-
-- **PEAP**
-  - "Protected EAP", encapsulates **EAP within a secure TLS tunnel.**
-  - Only the server requires a certificate.
-  - Supports multiple authentication methods within the tunnel.
-  - Uses server certs and Microsoft AD Databases for the password.
-  - Commonly used due to its balance of security and ease of deployment.
-
-- **EAP-LEAP**
-  - Lightweight EAP.
-  - Cisco-proprietary protocol.
-  - Uses mutual authentication, but could still be vulnerable to dictionary attacks.
-  - Mostly deprecated in favor of more secure methods.
-
+More details can be found here: [EAP](./025-Network-Authentication-Protocols.md#eap)
 
 
 ----------------------------------------------

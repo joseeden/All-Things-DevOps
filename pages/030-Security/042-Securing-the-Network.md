@@ -1,7 +1,6 @@
 
 # Securing the Network
 
-
 - [Securing the Infrastructure](#securing-the-infrastructure)
     - [Infrastructure Considerations](#infrastructure-considerations)
     - [Physical vs Logical Separation](#physical-vs-logical-separation)
@@ -43,7 +42,6 @@
     - [SIEM](#siem)
     - [Mobile Device Management](#mobile-device-management)
     - [Software Defined Networking](#software-defined-networking)
-
 
 
 
@@ -174,26 +172,39 @@ Microsegmentation addresses modern cyber threats exploiting traditional security
 
 ### Network Access Control 
 
-- **Role of NAC Device**
-  - Enforces organization's access control and security policies.
-  - Provides network visibility for access security and potential incident response.
+Network Access Control (NAC) scans devices for thir security status before granting network access, safeguarding against both known and unknown devices. 
 
-- **Key Capabilities of NAC Device**
-  - Initiates with policy enforcement based on organization policies.
+  - Provides network visibility for access security and potential incident response.
   - Identifies connections, isolates noncompliant devices, and supports incident response.
   - Ensures compliance with organization policies before allowing devices to join the network.
 
-- **Use Cases for NAC Deployment**
+**Use Cases for NAC Deployment:**
+
   - Medical devices
   - IoT devices
   - BYOD/mobile devices (laptops, tablets, smartphones)
   - Guest users and contractors
 
-- **Onboarding Process Importance**
+**Onboarding Process Importance:**
+
   - Emphasizes the importance of an onboarding process for all mobile devices.
   - Device identification and interrogation to ensure compliance with organization policies during network connection.
 
+**NAC Deployments:**
 
+- **Persistent Agents**
+  - Software installed on a device requesting network access.
+  - Continuously monitor the security state of devices.
+  - Works well in a corporate environment, where the organization owns all devices.
+  - Doesn't work well in BYOD environments.
+
+- **Non-Persistent Agents**
+  - Popular in BYOD environments, such as college campuses.
+  - Users connect to WiFi, access a web portal, and click login link.
+  - Once link is clicked, a temporary agent is installed on the device.
+  - Agents scans device for compliance and delete itself after inspection.
+  - Provide a quick evaluation without ongoing monitoring.
+  - Typically used for initial security checks at connection time.
 
 ## Selecting Infrastructure Controls
 

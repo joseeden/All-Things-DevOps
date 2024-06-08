@@ -242,6 +242,8 @@ The complete list of projects can be found [here](projects/README.md).
 
     - [High Availability and Disaster Recovery](pages/030-Security/008-Disaster-recovery.md)
 
+    - [Security Techniques](pages/030-Security/053-Security-Techniques.md)
+
 - [Security Operations](#security-operations)
 
     - [Data Handling](pages/030-Security/012-Data-Handling.md)

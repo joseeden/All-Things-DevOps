@@ -3,7 +3,7 @@
 # Authentication, Authorization, and Access Control
 
 
-- [Authentication, Authorization, and Access Control in AWS](#authentication-authorization-and-access-control-in-aws)
+- [AAA in AWS](#aaa-in-aws)
     - [Authentication](#authentication)
     - [Authorization](#authorization)
     - [Access Control](#access-control)
@@ -18,17 +18,12 @@
 - [Authorization Controls in AWS](#authorization-controls-in-aws)
     - [AWS IAM](#aws-iam)
     - [Amazon S3](#amazon-s3)
-    - [Network Access Control lists NACLs](#network-access-control-lists-nacls)
-        - [NACLs are Stateless](#nacls-are-stateless)
-        - [NACL Rules](#nacl-rules)
+    - [NACLs](#nacls)
     - [Security Groups](#security-groups)
-        - [Security Groups are Stateful](#security-groups-are-stateful)
-        - [Security Group Rules](#security-group-rules)
 
 
 
-
-## Authentication, Authorization, and Access Control in AWS 
+## AAA in AWS 
 
 ### Authentication 
 
@@ -262,7 +257,7 @@ ACLs allow you to control access to buckets, in addition to specific objects wit
 
 
 
-### Network Access Control lists (NACLs)
+### NACLs
 
 Network Access Control Lists or NACLs are a way of authorizing network packets to enter and leave different parts of your VPC.  
 
@@ -274,29 +269,31 @@ Network Access Control Lists or NACLs are a way of authorizing network packets t
 
 If you haven't created a custom NACL, then your subnets will automatically be associated with your VPC's default NACL, and in this instance, the default allows all traffic to flow in and out of the network, as opposed to denying it.
 
-#### NACLs are Stateless 
-
+**NACLs are Stateless**
 NACLs are stateless, which means when create your rules, you'll need to apply an outbound reply rule to permit responses to inbound requests. 
 
-#### NACL Rules
-
+**NACL Rules**
 The rule set itself is very simple, and has both an inbound and outbound list of rules, and these rules are comprised of the following:
 
 - **Rule Number**
-ACL rules are read in ascending order, and as soon as a network packet is received, it reads each rule in ascending order until a match is found. For this reason, you'll want to carefully sequence your rules with an organized numbering system. Its recommended to leave a gap of at least 50 between each of your rules to allow you to easily add new rules in sequence later if it becomes necessary. 
+    - ACL rules are read in ascending order, and as soon as a network packet is received, it reads each rule in ascending order until a match is found. 
+    - For this reason, you'll want to carefully sequence your rules with an organized numbering system. 
+    - Its recommended to leave a gap of at least 50 between each of your rules to allow you to easily add new rules in sequence later if it becomes necessary. 
 
 - **Type**
-This dropdown list allows you to select from a list of common protocol types, including SSH, RDP, HTTP, and POP3. You can alternatively specify custom protocols, such as varieties of ICMP. 
+    - This dropdown list allows you to select from a list of common protocol types, including SSH, RDP, HTTP, and POP3. 
+    - You can alternatively specify custom protocols, such as varieties of ICMP. 
 
 - **Protocol**
-Based on your choice of ‘Type’, the protocol option might be grayed out. For custom rules like TCP and UDP, however, you should provide a value. 
+    - Based on your choice of ‘Type’, the protocol option might be grayed out. 
+    - For custom rules like TCP and UDP, however, you should provide a value. 
 
 - **Port Range**
-If you create a custom rule, you'll need to specify the port range for the protocol to use. 
-Source: this can be a net or a subnet range, a specific IP address, or even left open to traffic from anywhere. 
+    - If you create a custom rule, you'll need to specify the port range for the protocol to use. 
+    - Source: this can be a net or a subnet range, a specific IP address, or even left open to traffic from anywhere. 
 
 - **Allow/Deny**
-Each rule must include an action specifying whether to Allow or Deny the traffic that meets the parameters of the rule.
+    - Each rule must include an action specifying whether to Allow or Deny the traffic that meets the parameters of the rule.
 
 ### Security Groups 
 
@@ -310,37 +307,39 @@ AWS security groups are associated with EC2 instances, and provide security at t
     - inbound 
     - outbound
 
-#### Security Groups are Stateful 
-
+**Security Groups are Stateful** 
 Security groups are stateful, meaning you do not need the same rules for both inbound and outbound traffic for response traffic, unlike, NACLs, which are stateless. Therefore, any rule that authorizes traffic into an EC2 instance will allow any response to be returned without an explicit rule in the outbound ruleset.
 
-#### Security Group Rules 
-
+**Security Group Rules** 
 Each rule set is composed of the following fields:
 
 - **Name**
-As expected this allows you to add a name for the rule up to 255 characters in length
+    - As expected this allows you to add a name for the rule up to 255 characters in length.
 
 - **Security Group Rule ID**
-This is automatically created and set a unique identifier for the security group rule
+    - This is automatically created and set a unique identifier for the security group rule.
 
 - **IP Version**
-Here you can select which IP version that the security group apples to, V4 or V6
+    - Here you can select which IP version that the security group apples to, V4 or V6.
 
 - **Type** 
-This dropdown list allows you to select common protocols like SSH, RDP, HTTP. You can also choose custom protocols. 
+    - This dropdown list allows you to select common protocols like SSH, RDP, HTTP. 
+    - You can also choose custom protocols. 
 
 - **Protocol**
-This is typically grayed out, as it's covered by most type choices. However, if you create a custom rule, you can specify your protocol here
+    - This is typically grayed out, as it's covered by most type choices. 
+    - However, if you create a custom rule, you can specify your protocol here
 
 - **Port range**
-This value will also usually be pre-filled, reflecting the default port range for your chosen protocol. However, there might be times when you prefer to use custom ports. 
+    - Usually pre-filled, reflecting the default port range for your chosen protocol. 
+    - However, there might be times when you prefer to use custom ports. 
 
 - **Source**
-This can be a net or subnet range, a specific IP address, or another AWS security group. You can also leave access open to the entire internet using the Anywhere value. 
+    - This can be a net or subnet range, a specific IP address, or another AWS security group. 
+    - You can also leave access open to the entire internet using the Anywhere value. 
 
 - **Description**
-This simply allows you to add a description for the rule itself
+    - This simply allows you to add a description for the rule itself.
 
 ![](../../Images/screenshotofsamplesecuritygroup.png) 
 
