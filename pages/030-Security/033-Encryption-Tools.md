@@ -22,7 +22,13 @@ A Trusted Platform Module (TPM) is a **hardware-based microcontroller** designed
 - Enables hardware-based encryption and attestation (proving system integrity).
 - Supports secure boot and platform integrity checks.
 
-**Applications**
+Checks boot integrity of the host:
+
+- UEFI secure boot 
+- Measured boot
+- Boot attestation
+
+Applications:
   - Commonly used in laptops and desktops to secure boot processes and protect encryption keys.
   - Utilized in enterprise environments for secure device authentication and attestation.
   

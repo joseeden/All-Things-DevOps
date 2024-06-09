@@ -82,7 +82,8 @@ Certainly! Here is the modified reference sheet with an additional column indica
 | 21   | TCP     | FTP (File Transfer Protocol) Control            | Controls communication in FTP                                   |
 | 22   | TCP     | SSH (Secure Shell)                              | Secure remote login and other secure network services over an unsecured network |
 | 22   | TCP     | SCP (Secure Copy Protocol)                      | Securely transfers files between hosts using SSH                |
-| 22   | TCP     | SFTP (SSH File Transfer Protocol)               | Secure file transfer over SSH                                   |
+| 22   | TCP     | SFTP (SSH File Transfer Protocol)               | Secure file transfer over port 22 (SSH)                                   |
+| 990  | TCP     | FTPS (File Transfer Protocol Secure) Control    | Secure file transfer over port 990                       |
 | 23   | TCP     | Telnet                                          | Unencrypted text communications                                 |
 | 25   | TCP     | SMTP (Simple Mail Transfer Protocol)            | Email transmission                                              |
 | 49   | TCP     | TACACS+ (Terminal Access Controller Access-Control System Plus) | Remote authentication                           |
@@ -110,7 +111,6 @@ Certainly! Here is the modified reference sheet with an additional column indica
 | 514  | UDP     | Syslog                                          | System logging                                                  |
 | 636  | TCP     | LDAPS (LDAP Secure)                             | Secure version of LDAP (Lightweight Directory Access Protocol)  |
 | 989  | TCP     | FTPS (File Transfer Protocol Secure) Data       | Secure file transfer data channel                               |
-| 990  | TCP     | FTPS (File Transfer Protocol Secure) Control    | Secure file transfer control channel                            |
 | 993  | TCP     | IMAPS (Internet Message Access Protocol Secure) | Secure email retrieval using IMAP                               |
 | 995  | TCP     | POP3S (Post Office Protocol 3 Secure)           | Secure email retrieval using POP3                               |
 | 1433 | TCP     | MS-SQL-S (Microsoft SQL Server)                 | Microsoft SQL Server database management                        |
@@ -120,6 +120,7 @@ Certainly! Here is the modified reference sheet with an additional column indica
 | 1813 | UDP     | RADIUS Accounting                               | Accounting for network access                                   |
 | 3260 | TCP     | iSCSI (Internet Small Computer Systems Interface) Target | iSCSI targets for storage over IP networks             |
 | 3389 | TCP     | RDP (Remote Desktop Protocol)                   | Remote desktop access                                           |
+| 5004 | UDP     | SRTP (Secure Real-time Transport Protocol)      | Voice over IP (VoIP) communication
 | 5060 | UDP/TCP | SIP (Session Initiation Protocol)               | Voice over IP (VoIP) and multimedia communication (unencrypted) |
 | 5061 | TCP     | SIP-TLS (Session Initiation Protocol over TLS)  | Secure VoIP and multimedia communication                        |
 | 6514 | TCP     | Syslog over TLS                                 | Secure system logging                                           |

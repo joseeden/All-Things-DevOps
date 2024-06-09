@@ -1,6 +1,8 @@
 
 # Security Techniques
 
+
+
 - [Wireless Infrastructure Security](#wireless-infrastructure-security)
     - [Wireless Access Points](#wireless-access-points)
     - [Placements of WAPs](#placements-of-waps)
@@ -8,6 +10,7 @@
     - [Interference Considerations](#interference-considerations)
     - [Site Survey](#site-survey)
     - [Heat Map](#heat-map)
+    - [Wi-Fi Discovery and Mapping](#wi-fi-discovery-and-mapping)
 - [Wireless Security Settings](#wireless-security-settings)
     - [Wireless Encryption](#wireless-encryption)
     - [WPA3](#wpa3)
@@ -15,6 +18,7 @@
     - [RADIUS](#radius)
     - [TACACS+](#tacacs)
     - [EAP](#eap)
+    - [WPS](#wps)
 - [Application Security](#application-security)
     - [Input Validation](#input-validation)
     - [Secure Cookies](#secure-cookies)
@@ -23,6 +27,10 @@
     - [Code Signing](#code-signing)
     - [Sandboxing](#sandboxing)
     - [Package Monitoring](#package-monitoring)
+    - [Web Server Security](#web-server-security )
+- [DNS](#dns)
+    - [DNSSEC](#dnssec)
+    - [DNS Filtering](#dns-filtering)
 - [Web Filtering](#web-filtering)
     - [Agent-Based Web Filtering](#agent-based-web-filtering)
     - [Centralized Proxies](#centralized-proxies)
@@ -30,7 +38,6 @@
     - [Content Categorization](#content-categorization)
     - [Block Rules](#block-rules)
     - [Reputation-Based Filtering](#reputation-based-filtering)
-- [DNS Filtering](#dns-filtering)
 - [Email Security](#email-security)
     - [DKIM](#dkim)
     - [SPF](#spf)
@@ -44,6 +51,7 @@
 - [User Behavior Analytics](#user-behavior-analytics)
     - [UBA](#uba)
     - [UEBA](#ueba)
+
 
 
 
@@ -157,10 +165,37 @@ Sample heat map:
 <img src='../../Images/sec+-sample-heat-map-diagram.png'>
 </p>
 
+### Wi-Fi Discovery and Mapping 
+
+Wi-Fi discovery and mapping involve techniques used to locate and document the presence and details of Wi-Fi networks. These methods can range from ground-based activities to aerial searches, each serving different purposes and scales of mapping.
+
+- **War-chalking**
+
+  - Involves marking public spaces to indicate the presence of Wi-Fi networks.
+  - Symbols are often drawn with chalk on sidewalks, walls, or other visible surfaces.
+  - The symbols convey information about the network's availability and security.
+  - It helps others locate and understand the types of Wi-Fi networks in the area.
+
+- **War-driving**
+
+  - Searching for Wi-Fi networks by driving around in a vehicle equipped with a Wi-Fi-enabled device. 
+  - The goal is to map out the locations and details of wireless networks.
+  - A laptop, smartphone, or other device with Wi-Fi capability is used.
+  - The device typically runs software that detects and logs Wi-Fi network details.
+  - The gathered data can include SSIDs, signal strength, and security types.
+
+- **War-flying**
+
+  - Similar to war-driving but involves searching for Wi-Fi networks from an aircraft.
+  - This method can cover larger areas more quickly than ground-based methods.
+  - Networks are detected and logged as the aircraft flies over different areas, e.g. drones.
+  - Allows for  mapping of Wi-Fi networks over extensive regions, e.g. remote, less accessible areas.
+
 
 ## Wireless Security Settings 
 
 Implementing robust security settings is essential for protecting wireless networks from unauthorized access and attacks. Key security protocols and settings include WPA3, AAA, RADIUS, and EAP.
+
 
 ### Wireless Encryption
 
@@ -262,6 +297,21 @@ EAP (Extensible Authentication Protocol) is a flexible authentication framework 
 
 More details can be found here: [EAP Variants](./025-Network-Authentication-Protocols.md#eap)
 
+### WPS
+
+Wi-Fi Protected Setup (WPS) is a network security standard that aims to simplify the process of connecting devices to a wireless network, but it has known vulnerabilities.
+
+- Must have a WPS-capable WAPs and devices.
+- Press button on both the WAP and device, to create a WPA2-encrypted connection.
+- Easy to crack, more and more devices will drop support for it.
+- Advisable to disable WPS in favor of stronger security measures like WPA3.
+
+Methods: 
+
+- Push Button Method - Users press a physical button on the router to connect devices.
+- PIN Method - Involves entering an 8-digit PIN, which is susceptible to brute-force attacks.
+- NFC Method - Connects devices via Near Field Communication; easier access but limited security.
+
 ## Application Security 
 
 Application security focuses on protecting software applications from security threats by implementing measures to prevent, detect, and respond to vulnerabilities and attacks.
@@ -355,6 +405,38 @@ Package Monitoring involves keeping track of security of third-party packages an
 - Alerts developers to known vulnerabilities in dependencies.
 - Example tools are Snyk and Dependabot.
 
+### Web Server Security 
+
+Web server security involves protecting web servers and the services they host from various online threats. This includes securing the server software, the web applications, and the underlying infrastructure to ensure data integrity, confidentiality, and availability.
+
+- Enable HTTPS on the web server using a PKI certs and TLS.
+- Use TCP port 443 instead of port 80.
+- Use TLS version 1.2 or higher.
+- Secure web app user using LDAP over SSL.
+
+## DNS  
+
+### DNSSEC
+
+DNS Security Extensions (DNSSEC) enhance the security of the Domain Name System (DNS) by ensuring the authenticity and integrity of DNS data. It helps protect against attacks like cache poisoning.
+
+- All DNS zones have certificates.
+- DNSSEC uses digital signatures to authenticate DNS data.
+- It ensures that DNS responses are unaltered and legitimate.
+- Helps prevent cache poisoning by validating DNS responses.
+- Introduces new DNS record types like RRSIG, DNSKEY, and DS.
+- Establishes a chain of trust from the DNS root zone to individual domains.
+- Increases the overall security and trustworthiness of the internet's DNS infrastructure.
+
+### DNS Filtering
+
+DNS filtering controls internet content access by blocking domains at the DNS resolution level, preventing users from accessing harmful or inappropriate websites.
+
+- Blocks access to known harmful websites before the connection is established.
+- Reduces the load on network resources by stopping threats early in the DNS resolution process.
+- Can be configured to block access to categories of sites, such as social media or gambling.
+- Provides a broad security layer by integrating with other security measures to protect users.
+
 
 ## Web Filtering 
 
@@ -426,14 +508,6 @@ Reputation-based filtering assesses the trustworthiness of websites based on the
 - Utilizes global databases of known good and bad sites to filter content.
 - Enhances security by blocking access to potentially harmful sites in real-time.
 
-## DNS Filtering
-
-DNS filtering controls internet content access by blocking domains at the DNS resolution level, preventing users from accessing harmful or inappropriate websites.
-
-- Blocks access to known harmful websites before the connection is established.
-- Reduces the load on network resources by stopping threats early in the DNS resolution process.
-- Can be configured to block access to categories of sites, such as social media or gambling.
-- Provides a broad security layer by integrating with other security measures to protect users.
 
 ## Email Security 
 

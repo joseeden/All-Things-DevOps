@@ -34,6 +34,7 @@ While there is no single step to protect against all threats, several basic meas
 - **Anti-Malware Software**
   - Utilize up-to-date anti-malware software.
   - Countermeasure against various types of malicious code.
+  - More details about malwares can be found here: [Malware](./043-Malware.md)
 
 - **Firewalls**
   - Deploy network-based firewalls for entire networks.

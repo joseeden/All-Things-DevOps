@@ -239,6 +239,7 @@ SCADA (Supervisory Control and Data Acquisition) is a system used to remotely mo
 
   - Vulnerability to malware infections targeting industrial control systems.
   - Risks of data theft, operational disruption, or physical damage.
+  - More details about malwares can be found here: [Malware](./043-Malware.md)
 
 - **Lack of updates**
 

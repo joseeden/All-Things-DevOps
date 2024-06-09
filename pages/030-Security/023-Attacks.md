@@ -1,7 +1,6 @@
 
 # Attacks 
 
-
 - [Attacks](#attacks)
 - [Password Attacks](#password-attacks)
     - [Brute Force Attack](#brute-force-attack)
@@ -29,13 +28,10 @@
     - [Distributed DoS](#distributed-dos)
     - [DNS Amplification](#dns-amplification)
     - [Stopping DDoS](#stopping-ddos)
-- [DNS Attacks](#dns-attacks)
-    - [Domain Name System](#domain-name-system)
-    - [DNS Cache Poisoning](#dns-cache-poisoning)
-    - [DNS Amplification Attack](#dns-amplification-attack)
-    - [DNS Tunneling](#dns-tunneling)
-    - [Domain Hijacking](#domain-hijacking)
-    - [DNS Zone Transfer Attacks](#dns-zone-transfer-attacks)
+- [Spoofing Attacks](#spoofing-attacks)
+    - [IP Address Spoofing](#ip-address-spoofing)
+    - [Session Hijacking](#session-hijacking)
+    - [Replay Attack](#replay-attack)
 - [Injection Attacks](#injection-attacks)
     - [LDAP Injections](#ldap-injections)
     - [Command Injections](#command-injections)
@@ -50,29 +46,49 @@
     - [Packet Sniffing](#packet-sniffing)
     - [Oversized Packet Attack](#oversized-packet-attack)
     - [Fragmented Packet Attack](#fragmented-packet-attack)
-- [Spoofing Attacks](#spoofing-attacks)
-    - [IP Address Spoofing](#ip-address-spoofing)
-    - [Session Hijacking](#session-hijacking)
-    - [Replay Attack](#replay-attack)
+- [DNS Attacks](#dns-attacks)
+    - [Domain Name System](#domain-name-system)
+    - [DNS Cache Poisoning](#dns-cache-poisoning)
+    - [DNS Amplification Attack](#dns-amplification-attack)
+    - [DNS Tunneling](#dns-tunneling)
+    - [Domain Hijacking](#domain-hijacking)
+    - [DNS Zone Transfer Attacks](#dns-zone-transfer-attacks)
+- [Wireless Attacks](#wireless-attacks)
+    - [Deauthentication/Deassociation](#deauthenticationdeassociation)
+    - [Evil Twin](#evil-twin)
+- [Bluetooth Attacks](#bluetooth-attacks)
+    - [Bluejacking](#bluejacking)
+    - [Bluesnarfing](#bluesnarfing)
+    - [Bluebugging](#bluebugging)
+    - [Bluesmack](#bluesmack)
+    - [Blueborne](#blueborne)
+    - [Mitigation Strategies](#mitigation-strategies)
 - [On-Path Attack](#on-path-attack)
     - [Interception](#interception)
+    - [Replaying the Attack](#replaying-the-attack)
+    - [Relaying the Attack](#relaying-the-attack)
+    - [SSL Stripping](#ssl-stripping)
 - [Layer 2 Attacks](#layer-2-attacks)
     - [ARP Cache Poisoning](#arp-cache-poisoning)
     - [MAC Address Flooding](#mac-address-flooding)
     - [Broadcast Storm](#broadcast-storm)
     - [Layer 2 Attack Mitigation](#layer-2-attack-mitigation)
-    - [Replaying the Attack](#replaying-the-attack)
-    - [Relaying the Attack](#relaying-the-attack)
-    - [SSL Stripping](#ssl-stripping)
+- [Driver Attacks](#driver-attacks)
+    - [Driver Shimming](#driver-shimming)
+    - [Driver Refactoring](#driver-refactoring)
 - [Execution and Escalation](#execution-and-escalation)
     - [Arbitrary Code Execution](#arbitrary-code-execution)
     - [Remote Code Execution](#remote-code-execution)
     - [Privilege Escalation](#privilege-escalation)
     - [Rootkits](#rootkits)
-- [Other Attacks](#other-attacks)
-    - [Cross-Site Scripting XSS](#cross-site-scripting-xss)
-    - [Cross-Site Request Forgery XSRF](#cross-site-request-forgery-xsrf)
+- [Overflow Attacks](#overflow-attacks)
+    - [Integer Overflow](#integer-overflow)
     - [Buffer Overflow Attack](#buffer-overflow-attack)
+    - [What is the Heartbleed Bug?](#what-is-the-heartbleed-bug)
+- [Other Attacks](#other-attacks)
+    - [Cross-Site Scripting](#cross-site-scripting)
+    - [Cross-Site Request Forgery](#cross-site-request-forgery)
+    - [Server-side Request Forgery](#server-side-request-forgery)
     - [Side Channel Attacks](#side-channel-attacks)
 - [Tools](#tools)
 
@@ -117,6 +133,7 @@ A form of brute force attack that involves trying a small number of commonly use
 
 - Effective, can avoid triggering account lockouts from too many failed login attempts. 
 - In a large group of user, there's a good chance some of them uses very common and weak passwords.
+- Slower (per-account basis), since each common password is tried on each user first.
 
 **Mitigation:**
 
@@ -491,87 +508,109 @@ To learn more, see [DNS Amplification Attack.](#dns-amplification-attack)
     - CloudFlare 
     - Akamai
 
-## DNS Attacks 
+## Spoofing Attacks 
 
-### Domain Name System 
+Cybercriminals impersonate a familiar or trusted source to interact with targets, aiming to steal information, extort money, or install malicious software on their devices.
 
-Domain Name System or DNS is responsible for translating human-friendly domain names into IP addresses that computers understand.
+Example of spoofing attacks:
+
+- Email Spoofing
+- Caller ID Spoofing
+- Website/Domain Spoofing
+- IP Spoofing
+- ARP Spoofing
+- GPS Spoofing
+- Facial Spoofing
+- Man-in-the-middle attack 
+
+**Mitigations** 
+
+- **Email Security**: Use SPF, DKIM, and DMARC.
+- **User Training**: Educate on recognizing suspicious communications.
+- **Secure Authentication**: Use multifactor authentication.
+- **Access Controls**: Limit sensitive system access.
+- **Secure Routing**: Implement SBGP or similar protocols.
+- **Network Access Control (NAC)**: Restrict unauthorized devices.
+- **IDS/IPS**: Detect spoofing patterns.
+
+<small>Reference: https://www.crowdstrike.com/cybersecurity-101/spoofing-attacks/</small>
+
+### IP Address Spoofing
+
+Impersonating a trusted IP address to gain unauthorized access. 
+
+**Mitigations** 
+
+- **Packet Filtering**: Block spoofed IP addresses.
+- **Secure Routing**: Use SBGP to validate routing.
+- **NAC**: Restrict unauthorized devices from network access.
+- **IDS/IPS**: Monitor for spoofing patterns.
 
 
-### DNS Cache Poisoning
+### Session Hijacking 
 
-Also known as **DNS spoofing**, is a type of attack where false DNS information is introduced into the DNS resolver's cache, causing it to return an incorrect IP address.
+**Session Management**
 
-- Manipulation of DNS cache.
-- Redirects users to fraudulent websites, phishing attacks, malware distribution.
-- Monitoring DNS traffic for unusual patterns, unexpected DNS responses.
+- A fundamental security component that enables web applications to identify a user.
+- Uniquely identify user across requests while keeping the state of the data.
+- Data generated by the user is ensured to be assigned to that user only.
+- Information can be stored in database or cookies.
+
+**Cookies**
+
+- HTTP is a stateless protocol, server doesn't preserve any info about the client.
+- To store the client information, store it in a cookie or database.
+- Cookies allow web app to retain information about the users. 
+- Any subsequest request headers sent by the client will contain the cookie.
+- Needs to encrypt cookies to protect the session.
+- Types: 
+
+  - **Session Cookies**
+
+    - Non-persistent, only stored in the browser.
+    - When browser is closed, cookies are deleted.
+
+  - **Persistent Cookies**
+
+    - Stay around even after the browser is closed.
+    - Stored in the browser cache until they're deleted by the user.
+    - Delete when user "Clear cookies", or when they pass the defined expiration date.
+
+**Session Hijacking**
+
+- Spoofing attack where host is disconnected and replaced by the attacker.
+- Occurs through theft or modification of cookies.
+
+**Session Prediction**
+
+- Attacker attempts to predict session token to hijack the session.
+- If token is predictable, they can be guessed, attackers can take over the session.
+
+**Cookie Poisoning**
+
+- Modifying the contents of the cookies to be sent to a client's browser.
+- Modified cookie can be used to exploit vulnerabilities in a web app
+
+### Replay Attack
+
+Attacker intercepts and retransmits a valid data transmission to trick the receiver into unauthorized actions, often impersonating one of the legitimate parties in the communication.
+
+- Interception and retransmission of valid data packets.
+- Unauthorized access, data manipulation, session hijacking.
 
 **Mitigations**:
 
-- **DNSSEC** (Domain Name System Security Extensions), verifies authenticity of DNS data.
-- Use secure DNS resolvers and regularly clear and update DNS cache.
-- Protect DNS servers with secure network configurations and firewalls.
-- Employ intrusion detection systems (IDS) to monitor for unusual DNS activity.
+- Time-stamped tokens or nonces, ensures each transaction is unique and only valid for a short period.
+- Use TLS/SSL to encrypt data and make interception more difficult.
+- Mutual authentication techniques, validate each other's identities.
+- Maintain a session or message log to track and verify unique transactions.
+- Replay detection mechanisms to identify and block replayed messages.
+- Use WPA3 to avoid replay attacks.
 
-### DNS Amplification Attack
+**Difference with Session Hijacking**
 
-DNS Amplification Attack is a type of DDoS attack that uses open DNS resolvers to flood a target with amplified traffic, overwhelming the target's resources and causing service disruption.
-
-- Exploitation of DNS resolvers to amplify traffic.
-- Service outages, network congestion, degraded performance.
-- Unusually high DNS traffic, traffic originating from multiple sources.
-
-**Mitigations**:
-
-- Configure DNS servers to prevent recursion for unauthorized users.
-- Rate limiting on DNS requests and anomaly detection mechanisms.
-- Use Anycast networks to distribute and manage traffic load.
-
-### DNS Tunneling
-
-DNS Tunneling involves encoding the data within DNS queries and responses to bypass network security measures. This technique can be used for covert communication or data exfiltration.
-
-- Encapsulate non-DNS trafic over port 53 to bypass firewalls rules.
-- Legitimate technique, but is often exploited by attackers.
-- Data exfiltration, bypassing security controls, command and control for malware.
-- Unusual DNS query patterns, large volume of DNS traffic, long domain names.
-
-**Mitigations**:
-
-- Monitor and analyze DNS traffic for unusual patterns.
-- Implement deep packet inspection (DPI) to detect tunneled traffic.
-- Restrict DNS queries to known and trusted DNS servers.
-- Use DNS firewalls to block suspicious or unauthorized DNS traffic.
-
-### Domain Hijacking
-
-Domain Hijacking involves the unauthorized acquisition of a domain name. Attackers gain control over the domain registrar account or exploit vulnerabilities to change domain registration information.
-
-- Exploitation of domain registrar accounts, social engineering.
-- Loss of domain control, website defacement, phishing, etc.
-- Configure alerts for unauthorized changes to domain registration, WHOIS records.
-
-**Mitigations**:
-
-- Enable two-factor authentication (2FA) for domain registrar accounts.
-- Use strong, unique passwords for domain accounts.
-- Regularly monitor and review domain registration details.
-- Lock the domain to prevent unauthorized transfers.
-
-### DNS Zone Transfer Attacks
-
-Attackers successfully requests a copy of the DNS zone data from a DNS server. This data can provide valuable information about the network, such as internal IP addresses and hostnames, which can be used to launch further attacks.
-
-- Unauthorized zone transfer requests.
-- Exposure of sensitive network information, reconnaissance for further attacks.
-- Monitoring for unauthorized zone transfer requests, unusual query patterns.
-
-**Mitigations**:
-
-- Restrict zone transfers to specific IP addresses/authorized secondary DNS servers.
-- Implement access controls and authentication for DNS zone transfers.
-- Regularly audit and update DNS server configurations.
-- Use network security tools to detect and block unauthorized zone transfer attempts.
+- Replay Attacks - attacker intercepts data, decides whether to retransmit it later.
+- Session Hijacking - attacker alters data transmission in real-time.
 
 
 ## Injection Attacks
@@ -822,6 +861,7 @@ How it looks like:
 - Access controls restricting aaccess to sensitive files and directories.
 - Regularly audit and monitor file system access logs for suspicious activities.
 
+
 ## Network Attacks 
 
 ### Man-in-the-Middle
@@ -871,109 +911,190 @@ Fragmented packet attacks involve breaking down data into smaller fragments to b
 - **Secure Protocols**: Use protocols that handle fragmentation securely.
 
 
-## Spoofing Attacks 
 
-Cybercriminals impersonate a familiar or trusted source to interact with targets, aiming to steal information, extort money, or install malicious software on their devices.
+## DNS Attacks 
 
-Example of spoofing attacks:
+### Domain Name System 
 
-- Email Spoofing
-- Caller ID Spoofing
-- Website/Domain Spoofing
-- IP Spoofing
-- ARP Spoofing
-- GPS Spoofing
-- Facial Spoofing
-- Man-in-the-middle attack 
-
-**Mitigations** 
-
-- **Email Security**: Use SPF, DKIM, and DMARC.
-- **User Training**: Educate on recognizing suspicious communications.
-- **Secure Authentication**: Use multifactor authentication.
-- **Access Controls**: Limit sensitive system access.
-- **Secure Routing**: Implement SBGP or similar protocols.
-- **Network Access Control (NAC)**: Restrict unauthorized devices.
-- **IDS/IPS**: Detect spoofing patterns.
-
-<small>Reference: https://www.crowdstrike.com/cybersecurity-101/spoofing-attacks/</small>
-
-### IP Address Spoofing
-
-Impersonating a trusted IP address to gain unauthorized access. 
-
-**Mitigations** 
-
-- **Packet Filtering**: Block spoofed IP addresses.
-- **Secure Routing**: Use SBGP to validate routing.
-- **NAC**: Restrict unauthorized devices from network access.
-- **IDS/IPS**: Monitor for spoofing patterns.
+Domain Name System or DNS is responsible for translating human-friendly domain names into IP addresses that computers understand.
 
 
-### Session Hijacking 
+### DNS Cache Poisoning
 
-**Session Management**
+Also known as **DNS spoofing**, is a type of attack where false DNS information is introduced into the DNS resolver's cache, causing it to return an incorrect IP address.
 
-- A fundamental security component that enables web applications to identify a user.
-- Uniquely identify user across requests while keeping the state of the data.
-- Data generated by the user is ensured to be assigned to that user only.
-- Information can be stored in database or cookies.
-
-**Cookies**
-
-- HTTP is a stateless protocol, server doesn't preserve any info about the client.
-- To store the client information, store it in a cookie or database.
-- Cookies allow web app to retain information about the users. 
-- Any subsequest request headers sent by the client will contain the cookie.
-- Needs to encrypt cookies to protect the session.
-- Types: 
-
-  - **Session Cookies**
-
-    - Non-persistent, only stored in the browser.
-    - When browser is closed, cookies are deleted.
-
-  - **Persistent Cookies**
-
-    - Stay around even after the browser is closed.
-    - Stored in the browser cache until they're deleted by the user.
-    - Delete when user "Clear cookies", or when they pass the defined expiration date.
-
-**Session Hijacking**
-
-- Spoofing attack where host is disconnected and replaced by the attacker.
-- Occurs through theft or modification of cookies.
-
-**Session Prediction**
-
-- Attacker attempts to predict session token to hijack the session.
-- If token is predictable, they can be guessed, attackers can take over the session.
-
-**Cookie Poisoning**
-
-- Modifying the contents of the cookies to be sent to a client's browser.
-- Modified cookie can be used to exploit vulnerabilities in a web app
-
-### Replay Attack
-
-Attacker intercepts and retransmits a valid data transmission to trick the receiver into unauthorized actions, often impersonating one of the legitimate parties in the communication.
-
-- Interception and retransmission of valid data packets.
-- Unauthorized access, data manipulation, session hijacking.
+- Manipulation of DNS cache.
+- Redirects users to fraudulent websites, phishing attacks, malware distribution.
+- Monitoring DNS traffic for unusual patterns, unexpected DNS responses.
 
 **Mitigations**:
 
-- Time-stamped tokens or nonces, ensures each transaction is unique and only valid for a short period.
-- Use TLS/SSL to encrypt data and make interception more difficult.
-- Mutual authentication techniques, validate each other's identities.
-- Maintain a session or message log to track and verify unique transactions.
-- Replay detection mechanisms to identify and block replayed messages.
-- Use WPA3 to avoid replay attacks.
+- **DNSSEC** (Domain Name System Security Extensions), verifies authenticity of DNS data.
+- Use secure DNS resolvers and regularly clear and update DNS cache.
+- Protect DNS servers with secure network configurations and firewalls.
+- Employ intrusion detection systems (IDS) to monitor for unusual DNS activity.
 
-**Difference with Session Hijacking**
+### DNS Amplification Attack
 
-- Replay Attacks - attacker intercepts data, decides whether to retransmit it later.
-- Session Hijacking - attacker alters data transmission in real-time.
+DNS Amplification Attack is a type of DDoS attack that uses open DNS resolvers to flood a target with amplified traffic, overwhelming the target's resources and causing service disruption.
+
+- Exploitation of DNS resolvers to amplify traffic.
+- Service outages, network congestion, degraded performance.
+- Unusually high DNS traffic, traffic originating from multiple sources.
+
+**Mitigations**:
+
+- Configure DNS servers to prevent recursion for unauthorized users.
+- Rate limiting on DNS requests and anomaly detection mechanisms.
+- Use Anycast networks to distribute and manage traffic load.
+
+### DNS Tunneling
+
+DNS Tunneling involves encoding the data within DNS queries and responses to bypass network security measures. This technique can be used for covert communication or data exfiltration.
+
+- Encapsulate non-DNS trafic over port 53 to bypass firewalls rules.
+- Legitimate technique, but is often exploited by attackers.
+- Data exfiltration, bypassing security controls, command and control for malware.
+- Unusual DNS query patterns, large volume of DNS traffic, long domain names.
+
+**Mitigations**:
+
+- Monitor and analyze DNS traffic for unusual patterns.
+- Implement deep packet inspection (DPI) to detect tunneled traffic.
+- Restrict DNS queries to known and trusted DNS servers.
+- Use DNS firewalls to block suspicious or unauthorized DNS traffic.
+
+### Domain Hijacking
+
+Domain Hijacking involves the unauthorized acquisition of a domain name. Attackers gain control over the domain registrar account or exploit vulnerabilities to change domain registration information.
+
+- Exploitation of domain registrar accounts, social engineering.
+- Loss of domain control, website defacement, phishing, etc.
+- Configure alerts for unauthorized changes to domain registration, WHOIS records.
+
+**Mitigations**:
+
+- Enable two-factor authentication (2FA) for domain registrar accounts.
+- Use strong, unique passwords for domain accounts.
+- Regularly monitor and review domain registration details.
+- Lock the domain to prevent unauthorized transfers.
+
+### DNS Zone Transfer Attacks
+
+Attackers successfully requests a copy of the DNS zone data from a DNS server. This data can provide valuable information about the network, such as internal IP addresses and hostnames, which can be used to launch further attacks.
+
+- Unauthorized zone transfer requests.
+- Exposure of sensitive network information, reconnaissance for further attacks.
+- Monitoring for unauthorized zone transfer requests, unusual query patterns.
+
+**Mitigations**:
+
+- Restrict zone transfers to specific IP addresses/authorized secondary DNS servers.
+- Implement access controls and authentication for DNS zone transfers.
+- Regularly audit and update DNS server configurations.
+- Use network security tools to detect and block unauthorized zone transfer attempts.
+
+## Wireless Attacks
+
+Wireless attacks target vulnerabilities in wireless networks to disrupt service or gain unauthorized access.
+
+### Deauthentication/Deassociation
+
+Deauthentication and deassociation attacks force devices to disconnect from a wireless network.
+
+- Exploits the deauthentication frame in the 802.11 protocol.
+- Disrupts network connectivity for users.
+- Can be used to capture WPA/WPA2 handshakes for brute-force attacks.
+- Commonly used in denial-of-service (DoS) attacks on Wi-Fi networks.
+
+Summary steps:
+
+1. Discover Access Points
+
+  - Need to know the AP MAC address and the channel it is listening on.
+  - This can easily be found through **airodump**, which is built-in to Kali Linux.
+
+2. Discover connected clients.
+
+  - Find connected clients or clients that are in the process of connecting.
+  - The goal is to capture the wireless traffic while client is authenticating.
+  - Record the MAC address of the client that is authenticating to the wireless network.
+
+3. Disconnect active client from AP.
+
+  - Tools can be used, like **aireplay** which is built-in to Kali Linux.
+  - Need to specify the MAC address of both the client and the AP.
+
+4. Monitor client-AP handshake.
+
+  - When victim client is disconnected, it will try to reconnect to the wireless network.
+  - Capture the traffic.
+
+5. Perform online/offline dictionary or brute-force attack.
+
+  - The goal is to determine the pre-shared key (PSK).
+  - A text file containing a long list of common passphrases can be used.
+
+### Evil Twin
+
+Evil Twin attacks involve setting up a rogue access point that mimics a legitimate one to intercept data.
+
+- Attackers create a fake Wi-Fi network with the same SSID as a trusted network.
+- Users unknowingly connect to the rogue access point.
+- Allows attackers to capture sensitive information like passwords and emails.
+- Often used in phishing attacks to steal login credentials.
+
+## Bluetooth Attacks 
+
+### Bluejacking
+Bluejacking involves sending unsolicited messages to Bluetooth-enabled devices. These messages usually appear as notifications or contact information and are typically harmless.
+
+- An attacker uses a Bluetooth device to scan for nearby devices.
+- Messages are sent via the Bluetooth "contact" feature.
+- Recipients receive unexpected notifications.
+- Typically harmless but can be used for spam or pranks.
+
+### Bluesnarfing
+Bluesnarfing is the unauthorized access to information on a Bluetooth-enabled device through a Bluetooth connection. Attackers can retrieve sensitive data such as contacts, messages, and emails.
+
+- Attackers scan for discoverable Bluetooth devices.
+- Exploits vulnerabilities in the Bluetooth connection process.
+- Specialized software exploits Bluetooth protocol vulnerabilities.
+- Can lead to stolen contact lists, messages, and other sensitive information.
+
+### Bluebugging
+Bluebugging allows attackers to gain control over a Bluetooth-enabled device. They can perform actions like making calls, sending messages, or accessing data remotely.
+
+- Advanced bluesnarfing.
+- Exploits vulnerabilities in the Bluetooth protocol.
+- Allows remote control of a Bluetooth-enabled device without the owner's consent.
+- Attackers can make calls, send messages, and access other device functions.
+
+### Bluesmack
+Bluesmack is a denial-of-service (DoS) attack that overwhelms Bluetooth-enabled devices, causing them to become unresponsive.
+
+- Attackers send a large number of malicious packets to the target device.
+- The device's resources get overwhelmed and become slow or crash.
+- Results in temporary or permanent denial of service.
+
+### Blueborne
+Blueborne exploits vulnerabilities in the Bluetooth protocol, allowing attackers to take complete control of a device without any user interaction. It can lead to full device compromise and data theft.
+
+- Attackers scan for Bluetooth-enabled devices.
+- Exploits Blueborne vulnerabilities for remote code execution.
+- Allows malware to spread via Bluetooth without user interaction.
+- Unauthorized data access, device takeover, and further malware distribution.
+
+### Mitigation Strategies
+To protect against these Bluetooth attacks:
+
+- Keep Bluetooth off when not in use.
+- Use non-discoverable mode to prevent unauthorized scanning.
+- Update devices regularly for the latest security patches.
+- Pair devices only with trusted sources.
+- Monitor Bluetooth connections for unusual activity.
+- Use encryption and strong authentication mechanisms where possible.
+
 
 ## On-Path Attack 
 
@@ -1020,6 +1141,31 @@ Ways to conduct on-path or interception attacks:
   - Intercepts, manipulates, or redirects network traffic.
   - Can be used to capture data packets for analysis.
   - May disrupt legitimate network operations or degrade performance.
+
+
+### Replaying the Attack 
+
+Occurs when an attacker captures a valid data which is then repeated immediately or delayed and then repeated. See [Replay Attack.](#replay-attack)
+
+<p align=center>
+<img width=500 src='../../Images/sec+-replaying-the-attack.png'>
+</p>
+
+### Relaying the Attack 
+
+Occurs when an attacker inserts themselves in between two hosts and become part of the conversation, and they can read or modify any any communications.
+
+<p align=center>
+<img width=500 src='../../Images/sec+-relaying-the-attack.png'>
+</p>
+
+### SSL Stripping 
+
+If the server is using a strong encryption scheme like TLS 1.3, it's going to be difficult for an attacker to insert himself in between the two hosts. To overcome this, the attacker can use SSL stripping.
+
+- Tricking the application to use HTTP instead of HTTPS connection.
+- If it is impossible, attackers can resort to [downgrade attacks.](#downgrade-attacks)
+
 
 ## Layer 2 Attacks 
 
@@ -1083,28 +1229,31 @@ Mitigating Layer 2 attacks involves implementing various security measures.
 - Configure STP and BPDU to prevent broadcast storms.
 - Regularly update network devices to patch vulnerabilities.
 
-### Replaying the Attack 
 
-Occurs when an attacker captures a valid data which is then repeated immediately or delayed and then repeated. See [Replay Attack.](#replay-attack)
 
-<p align=center>
-<img width=500 src='../../Images/sec+-replaying-the-attack.png'>
-</p>
+## Driver Attacks
 
-### Relaying the Attack 
+**Driver**:
+A driver is software that allows the operating system to communicate with hardware devices, enabling the functionality of peripherals such as printers, graphics cards, and network adapters.
 
-Occurs when an attacker inserts themselves in between two hosts and become part of the conversation, and they can read or modify any any communications.
+**Driver Attacks**:
+Driver attacks exploit vulnerabilities within these drivers to gain unauthorized access or control over a system, potentially leading to data breaches, system instability, and other security issues.
 
-<p align=center>
-<img width=500 src='../../Images/sec+-relaying-the-attack.png'>
-</p>
+### Driver Shimming
 
-### SSL Stripping 
+Driver shimming involves inserting a layer of code between the operating system and the driver to intercept and modify its behavior.
 
-If the server is using a strong encryption scheme like TLS 1.3, it's going to be difficult for an attacker to insert himself in between the two hosts. To overcome this, the attacker can use SSL stripping.
+- Used to add compatibility for older drivers or to monitor and log driver activities.
+- Can be exploited to introduce malicious code or alter driver functions.
+- May lead to system instability or unauthorized access.
 
-- Tricking the application to use HTTP instead of HTTPS connection.
-- If it is impossible, attackers can resort to [downgrade attacks.](#downgrade-attacks)
+### Driver Refactoring
+
+Driver refactoring entails modifying the internal structure of driver code without changing its external behavior.
+
+- Hidden malicious functionalities are added while preserving normal driver operations.
+- Often used to bypass security mechanisms and avoid detection.
+- Makes it challenging to identify malicious changes due to the subtle nature of modifications.
 
 
 ## Execution and Escalation
@@ -1201,12 +1350,116 @@ Rootkits are malicious software designed to hide the existence of certain proces
 - Conduct regular system integrity checks and audits.
 
 
+## Overflow Attacks
+
+Overflow attacks exploit the limits of data storage, leading to unexpected behavior in a program.
+
+### Integer Overflow
+
+Integer overflow occurs when an arithmetic operation exceeds the maximum value a variable can hold.
+
+- Developers may allocate less memory than expected; can cause an application to crash.
+- Can lead to erroneous calculations and unpredictable software behavior.
+- Often used to bypass input validation or security checks.
+- Scenarios where precise integer values are crucial, e.g. financial calculations, memory allocations.
+
+Here's a [Wizardzines' comic diagram](https://wizardzines.com/comics/integer-overflow/) of how integer overflow works:
+
+![](../../Images/sec+-integer-overflow.png)
+
+### Buffer Overflow Attack 
+
+A Buffer Overflow attack involves sending malicious data to an application or system, causing it to crash or become unresponsive. 
+
+- Takes advantage of programming errors in applications or systems.
+- Allow attackers to send malicious data that exceeds the size of the allocated memory buffer.
+- Causes the application or system to crash or become unresponsive.
+
+**Buffer**
+
+- A temporary storage area where a program stores its data.
+- A program reserves a chunk of system memory when started up, this area is called a **stack.**
+- Stacks stores the return addresses from function calls
+
+**Smashing the Stack**
+
+- Occurs when malicious code overwrites the return address.
+- Attacker fills the buffer with **NOP** (Non-operation) instruction.
+- **NOP Instruction** - tells the computer to do nothing and proceed to the next instruction.
+- **NOP Slide** - NOPS is hit by non-malicious programs because buffer is already filled.
+- The pointer now points to the area in the stack which contains the malicious code.
+- It will "slide down" up to the last instruction, causing the pointer to branch out to the memory address where the malicious code is.
+
+**Mitigations** 
+
+- Implement strict checks for input length.
+- Regularly audit code for vulnerabilities.
+- Replace standard functions with bounds-checking alternatives.
+- Deploy canaries for early detection of buffer overflows.
+- Restrict code execution in specific memory areas.
+- Keep software current to address vulnerabilities.
+- Apply **ASLR** to randomize memory addresses.
+  - ASLR or Address Space Layout Randomization
+  - Prevents an attacker from guessing where the return pointer is.
+  - Randomizes memory addresses, making buffer overflows attackers difficult. 
+  - Can still be bypassed using sidechannel attacks.
+
+
+### What is the Heartbleed Bug?
+
+The Heartbleed bug is a flaw in the heartbeat extension of TLS and DTLS protocols which allows one computer to send a small amount of data to another computer to keep the connection alive and verify that the other computer is still responsive.
+
+- A serious vulnerability in the popular OpenSSL cryptographic software library.
+- Discovered in April 2014 and is officially designated as CVE-2014-0160
+- Affects the heartbeat extension implemented in OpenSSL, hence the name "Heartbleed."
+
+**How it works:**
+
+1. **Heartbeat Request**: 
+   - A client sends a heartbeat request to the server, which includes a payload (a small piece of data) and specifies the payload's length.
+   - For example, the client might send a request with a payload of 5 characters ("hello") and specify a length of 5.
+
+2. **Server Response**:
+   - The server is supposed to respond with the same payload and length, confirming that it received the request.
+
+3. **Exploitation**:
+   - The bug occurs because the server does not properly verify the length of the payload in the request. 
+   - An attacker can send a malformed heartbeat request that specifies a much larger length than the actual payload. For example, the attacker could send a request with a payload of 1 character ("A") and specify a length of 65,535.
+   - The server will then respond with the payload plus additional data from its memory buffer, up to the specified length.
+   - This can result in the server inadvertently sending back sensitive data from its memory, including private keys, user passwords, session tokens, and other confidential information.
+
+**Example Scenario:**
+
+1. **Normal Heartbeat Request:**
+
+  - Client: "hello" (5 bytes) with length field = 5
+  - Server: "hello" (5 bytes)
+
+2. **Malicious Heartbeat Request:**
+
+  - Attacker: "A" (1 byte) with length field = 65,535
+  - Server: "A" followed by up to 65,534 bytes of adjacent memory data
+
+**Mitigation and Response:**
+
+- **Patch OpenSSL**: 
+  - Updating OpenSSL to a version that patches the Heartbleed bug (versions 1.0.1g and later) is crucial.
+
+- **Reissue Certificates**: 
+  - After patching, affected organizations should revoke and reissue SSL/TLS certificates, as private keys may have been compromised.
+
+- **Change Passwords**: 
+  - Users should change passwords for any accounts that may have been accessed during the period the vulnerability was exploitable.
+
+- **Monitor for Attacks**: 
+  - Implement monitoring solutions to detect unusual activity that might indicate exploitation of the vulnerability.
+
 
 ## Other Attacks 
 
-### Cross-Site Scripting (XSS)
+### Cross-Site Scripting
 
-XSS is a web security vulnerability that involves injecting malicious scripts into web pages viewed by other users, allowing the attackers to circumvent the browser's security model or trusted zones.
+Cross-Site Scripting (XSS) is a web security vulnerability that involves injecting malicious scripts into web pages viewed by other users, allowing the attackers to circumvent the browser's security model or trusted zones.
 
 - Attackers inject malicious scripts into web pages.
 - Scripts execute in the context of the victim's browser (client-side)
@@ -1281,9 +1534,9 @@ XSS is a web security vulnerability that involves injecting malicious scripts in
   
 
 
-### Cross-Site Request Forgery (XSRF)
+### Cross-Site Request Forgery
 
-XSRF is a malicious script host on the attacker's site which is used to exploit a session started on another site within the same web browser. The attacker needs to convince the victim to start a session with the targeted website.
+Cross-Site Request Forgery (XSRF) is a malicious script host on the attacker's site which is used to exploit a session started on another site within the same web browser. The attacker needs to convince the victim to start a session with the targeted website.
 
 - Manipulation of session cookies, user impersonation.
 - Users are tricked into executing malicious actions without their consent.
@@ -1296,45 +1549,26 @@ XSRF is a malicious script host on the attacker's site which is used to exploit 
 - Use of user-specific CSRF tokens in all form submissions.
 - Add randomness and prompt for additional information.
 - Require users to enter current password when changing their password.
+- Use Web application firewalls (WAFs).
 
-### Buffer Overflow Attack 
+### Server-side Request Forgery
 
-A Buffer Overflow attack involves sending malicious data to an application or system, causing it to crash or become unresponsive. 
+Server-side request forgery (SSRF) allows an attacker to make unauthorized requests from a server they control or manipulate, exploiting the server's network interaction capabilities.
 
-- Takes advantage of programming errors in applications or systems.
-- Allow attackers to send malicious data that exceeds the size of the allocated memory buffer.
-- Causes the application or system to crash or become unresponsive.
+- Typically involves manipulating the server to route requests internally.
+- Security controls are bypassed by leveraging server’s trust to make internal requests.
+- Accessing sensitive data, exploiting services, or unauthorized actions.
+- Data breaches, service disruptions, or unauthorized data manipulation.
 
-**Buffer**
+**Mitigations**:
 
-- A temporary storage area where a program stores its data.
-- A program reserves a chunk of system memory when started up, this area is called a **stack.**
-- Stacks stores the return addresses from function calls
-
-**Smashing the Stack**
-
-- Occurs when malicious code overwrites the return address.
-- Attacker fills the buffer with **NOP** (Non-operation) instruction.
-- **NOP Instruction** - tells the computer to do nothing and proceed to the next instruction.
-- **NOP Slide** - NOPS is hit by non-malicious programs because buffer is already filled.
-- The pointer now points to the area in the stack which contains the malicious code.
-- It will "slide down" up to the last instruction, causing the pointer to branch out to the memory address where the malicious code is.
-
-**Mitigations** 
-
-- Implement strict checks for input length.
-- Regularly audit code for vulnerabilities.
-- Replace standard functions with bounds-checking alternatives.
-- Deploy canaries for early detection of buffer overflows.
-- Restrict code execution in specific memory areas.
-- Keep software current to address vulnerabilities.
-- Apply **ASLR** to randomize memory addresses.
-  - ASLR or Address Space Layout Randomization
-  - Prevents an attacker from guessing where the return pointer is.
-  - Randomizes memory addresses, making buffer overflows attackers difficult. 
-  - Can still be bypassed using sidechannel attacks.
-
-
+- Rigorously validate input data, especially URLs and addresses.
+- Prevent user-supplied data in URLs used for server-side requests.
+- Limit access to internal services from the server.
+- Apply security policies to control server interactions.
+- Use network segmentation to isolate internal networks.
+- Implement firewalls and access control lists (ACLs).
+- Set up comprehensive logging and monitoring.
 
 ### Side Channel Attacks 
 
@@ -1345,23 +1579,18 @@ Examples: Timing attacks, power analysis attacks, and electromagnetic analysis a
 **Mitigations** 
 
 - Constant-time algorithms, noise injection, and secure hardware design.
-- This countermeasures reduce the risk of information leakage from side channels. - Regularly update and patch systems to address potential vulnerabilities.
+- This countermeasures reduce the risk of information leakage from side channels. 
+- Regularly update and patch systems to address potential vulnerabilities.
 
 ## Tools 
 
-- **John the Ripper**
-
-  - Famous Open Source password security auditing and password recovery tool. 
-
-- **Burp Suite** 
-
-  - Well-known set of tools for vulnerability scanning, penetration testing, and web app security (not for cracking passwords). 
-
-- **Wireshark** 
-
-  - Most used network protocol analyzer in the world. 
-
-
+| Tool              | Description                                                                                       |
+|-------------------|---------------------------------------------------------------------------------------------------|
+| **John the Ripper** | Famous open-source password security auditing and password recovery tool.                         |
+| **Burp Suite**     | Well-known set of tools for vulnerability scanning, penetration testing, and web app security (not for cracking passwords). |
+| **Wireshark**      | Most used network protocol analyzer in the world.                                                  |
+| **Cain and Abel**  | Password recovery tool for Microsoft Operating Systems. Uses network packet sniffing, cracking various password hashes, and revealing password boxes. |
+| **Hydra**          | Fast network logon cracker supporting many different services.                                      |
 
 ----------------------------------------------
 

@@ -109,6 +109,7 @@ There are many types of cyber threats to organizations. Below are several of the
 Malicious software designed to harm or exploit systems.                          
 
 - Examples are viruses, worms, trojans.
+- More details about malwares can be found here: [Malware](./043-Malware.md)
 
 ### Virus 
 
@@ -203,15 +204,14 @@ Malware that encrypts files, demanding payment for their release.
 
 Mitigation:
 
-- Conduct regular backups
-- Install regular software updates 
-- Provide security awareness training
-- Implementing MFA for the systems
-
+- Conduct regular backups.
+- Install regular software updates. 
+- Provide security awareness training.
+- Implementing MFA for the systems.
 
 ### Zombies and Botnets 
 
-A **botnet** is a network of compromised computers, known as **zombies**, which are remotely controlled by malicious actors.
+A **botnet** is a network of compromised computers, known as **zombies** or **bots** , which are remotely controlled by malicious actors.
 
 - Created using other types of malwares to gain access to a system and victimize it. 
 - Zombies are used to perform tasks using remote commands.
