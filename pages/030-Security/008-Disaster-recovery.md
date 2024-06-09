@@ -76,6 +76,31 @@ The process of distributing workloads across multiple computing resources.
 - Minimize response time.
 - Prevent overloading of any single resource.
 
+**Session Persistence**
+
+- Ensures user sessions are consistently directed to the same server in a load-balanced environment.
+- Useful for applications where user session state must be maintained across multiple requests.
+- Often implemented through cookies or session IDs that are recognized by the load balancer.
+
+**Round-robin**
+
+- Incoming requests are distributed sequentially to each server in a set.
+- No server-specific criteria are considered; each server gets an equal share of traffic.
+- Effective for evenly distributed, stateless applications.
+
+**Least Connections**
+
+- Directs traffic to the server with the fewest active connections.
+- BalanceS load more effectively in environments where some servers may be faster or more capable.
+- Can be more efficient in handling sessions that require significant processing power.
+
+**Weighted Value**
+
+- Load balancing based on predefined weights assigned to each server based on capacity or performance.
+- Higher weights are assigned to servers that can handle more traffic or have better performance capabilities.
+- Allows for more fine-tuned control over how traffic is distributed across servers.
+
+
 ### Clustering 
 
 Multiple computers and multiple storage devices are grouped together to work as a single system.

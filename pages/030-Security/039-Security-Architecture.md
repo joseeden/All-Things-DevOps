@@ -1,7 +1,6 @@
 
 # Security Architecture
 
-
 - [Security Architecture](#security-architecture)
 - [On-Premises Data Centers](#on-premises-data-centers)
     - [Heating, Ventilation and Air Conditioning HVAC / Environmental](#heating-ventilation-and-air-conditioning-hvac--environmental)
@@ -14,7 +13,8 @@
     - [Key Considerations](#key-considerations)
     - [Managed Service Provider MSP](#managed-service-provider-msp)
     - [Service-Level Agreement SLA](#service-level-agreement-sla)
-    - [Cloud Security](#cloud-security)
+    - [Common Security Challenges](#common-security-challenges)
+    - [Cloud Security Controls](#cloud-security-controls)
 - [Virtualization](#virtualization)
     - [Hypervisors](#hypervisors)
     - [VM Vulnerabilities](#vm-vulnerabilities)
@@ -27,6 +27,7 @@
     - [Monolithic vs Microservices](#monolithic-vs-microservices)
     - [Benefits](#benefits)
     - [Challenges](#challenges)
+
 
 
 
@@ -316,7 +317,7 @@ It is an agreement between a cloud service provider and customer that defines th
   - Change management processes and dispute mediation.
   - Exit strategy considerations.
 
-### Cloud Security 
+### Common Security Challenges 
 
 - **Shared Physical Server Vulnerabilities**
     - Multiple users often share the same underlying physical servers in a cloud environment.
@@ -354,6 +355,35 @@ It is an agreement between a cloud service provider and customer that defines th
     - Secure data deletion procedures to ensure data remnants are properly erased.
     - Compliance with regulatory requirements regarding data privacy and disposal.
 
+### Cloud Security Controls 
+
+- **Instance Awareness**
+    - The idea is to be aware of how many VMs are being managed.
+    - "**VM Sprawl**, overprovisioning VMs which can lead to unused or forgotten VMs.
+    - More VMs means increased attack surface.
+
+- **Cloud Access Security Broker (CASB)**
+    - Enforces security policies when accessing cloud resources.
+    - Usually a VM that runs on-prem, acts as a middle-man.
+    - Can restrict VM types that can be deployed, limit storage account size, etc. 
+
+- **Next-Generation Secure Web Gateway (SWG)**
+    - Security appliance that has the CASB functionality, with additional capabilities.
+    - Web content filtering, data loss prevention (DLP), firewall abilities.
+
+- **CSP Secure Solutions**
+    - Azure and AWS Network Security Groups
+    - Azure Policies; controls cloud resource deployments and compliance.
+
+- **Data Loss Prevention (DLP) Solutions**
+    - Prevents data exfiltration.
+    - Azure Information Protection (AIP).<br> 
+        ![](../../Images/sec+-dlp-solutions-azure.png)
+
+- **Cloud Monitoring**
+    - Detect abnormalities or suspicious activities.
+    - Utilize log reviews for "detective" security controls.
+    - Employ log forwarding to aggregate logs into a centralized logs repository.
 
 ## Virtualization 
 
@@ -379,7 +409,6 @@ Hypervisors are software or firmware that create and manage virtual machines (VM
     - Examples: Oracle VirtualBox, VMware Workstation, Parallels Desktop.
 
 ### VM Vulnerabilities 
-
 
 - **VM Escape**
 
@@ -432,9 +461,8 @@ Securing VMs are almost similar with how we secure physical servers.
 - Limit the connections between VMs and the physical machines.
 - Minimize and remove unneeded features to reduce potential vulnerabilities.
 - Consider VM distribution across different servers.
-- Beware of **Virtualization Sprawl** - Provisioning VMs without proper oversight.
+- Beware of **VM Sprawl** - Provisioning VMs without proper oversight.
 - Enable encryption of the file that hosts the VM.
-
 
 
 ## Containerization 

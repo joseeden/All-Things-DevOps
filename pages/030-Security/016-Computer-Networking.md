@@ -294,6 +294,7 @@ A network appliance is a dedicated hardware device with pre-installed software t
   - Provide high availability by redirecting traffic during server failures.
   - Balance loads based on various algorithms, such as round-robin or least connections.
   - Improve response times and optimize resource usage.
+  - More details found here: [Load Balancing](./008-Disaster-recovery.md#load-balancing)
 
 - **Application Delivery Controllers**
   - Advanced form of a loadBalancer; can optimize application delivery.
