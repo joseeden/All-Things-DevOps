@@ -159,6 +159,8 @@ IEEE 802.1X is a standard for port-based network access control, ensuring that o
 - Authentication is managed through a central RADIUS server.
 - Widely used in both wired and wireless networks to enhance security.
 
+More details can be found here: [IEEE 802.1X Protocol](./041-Ports-and-Protocols.md#ieee-8021x-protocol)
+
 ### RADIUS
 
 RADIUS (Remote Authentication Dial-In User Service) is a networking protocol that provides centralized Authentication, Authorization, and Accounting for users who connect and use a network service.

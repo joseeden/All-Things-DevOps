@@ -543,7 +543,7 @@ Impersonating a trusted IP address to gain unauthorized access.
 
 - **Packet Filtering**: Block spoofed IP addresses.
 - **Secure Routing**: Use SBGP to validate routing.
-- **NAC**: Restrict unauthorized devices from network access.
+- **Network Access Control (NAC)**: Restrict unauthorized devices from network access.
 - **IDS/IPS**: Monitor for spoofing patterns.
 
 

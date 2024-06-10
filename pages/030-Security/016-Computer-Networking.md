@@ -2,14 +2,16 @@
 # Networking Basics
 
 
-
 - [Network](#network)
     - [Types of Networks](#types-of-networks)
     - [Ethernet](#ethernet)
     - [Device Address](#device-address)
     - [Internet Protocol IPv4 and IPv6](#internet-protocol-ipv4-and-ipv6)
     - [Wifi](#wifi)
+    - [Virtual Local Network](#virtual-local-network)
     - [Quality of Service](#quality-of-service)
+    - [Network Address Translation NAT](#network-address-translation-nat)
+    - [Port Address Translation PAT](#port-address-translation-pat)
     - [Networking Tools](#networking-tools)
 - [Proxy](#proxy)
     - [Forward Proxy](#forward-proxy)
@@ -23,6 +25,7 @@
     - [Common Network Devices](#common-network-devices)
     - [SD-WAN](#sd-wan)
     - [SASE](#sase)
+
 
 
 ## Network 
@@ -78,8 +81,26 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 ![](../../Images/security-wifi.png)
 
 
+### Virtual Local Network
+
+**VLANs** are created by switches to logically segments a network without altering physical topology. 
+**VLAN Trunking** is when you have VLANs spanning multiple switches to extend the reach of that VLAN.
+
+- Corporate Network:
+    - Departments like HR, Finance, and IT each on separate VLANs.
+- Guest Wi-Fi:
+    - Isolate guest devices from internal network using a dedicated VLAN.
+- Voice over IP (VoIP):
+    - Separate VLAN for VoIP traffic to prioritize voice communication.
+- Server Farm:
+    - Different VLANs for web servers, database servers, ensuring segmentation.
 
 
+
+Sample diagram:
+<p align=center>
+<img width=800 src='../../Images/security-vlan-simplifieddd.png'>
+</p>
 
 ### Quality of Service 
 
@@ -87,6 +108,46 @@ Quality of Service (QoS) refers to the technology that allows the network to pri
 
 - Prioritizes critical traffic like VoIP or video conferencing.
 - Uses mechanisms like classes of service (CoS), packet classification, and traffic shaping.
+
+### Network Address Translation (NAT)
+
+Network Address Translation (NAT) translates private IP addresses to a public IP address, allowing multiple devices on a local network to access the internet using a single public IP.
+
+- Conserves public IP addresses.
+- Hides internal network structure.
+- Provides a basic level of security.
+- Enables internal IP address management.
+- Supports dynamic and static NAT configurations.
+
+Sample diagram:
+
+<p align=center>
+<img width=700 src='../../Images/all-things-devops-NAT-3.png'>
+</p>
+
+
+### Port Address Translation (PAT)
+
+Port Address Translation (PAT), a subset of NAT, maps multiple private IP addresses to a single public IP address using different ports, allowing multiple devices to share one public IP address simultaneously.
+
+- Can be a hardware or software configuration.
+- Normally enabled on the router, PAT hides the internal IPs.
+- Enables multiple connections from different devices.
+- Uses port numbers to differentiate traffic.
+- Supports large-scale networks with limited public IPs.
+- Often referred to as "NAT overload", or "NAT Gateway"
+
+Almost similar to a forward proxy, but their differences are:
+
+- PAT is Layer 4, while Forward Proxy is Layer 7 of the OSI Model.
+- Forward proxy can cache the retrieved content from the internet, PAT doesn't.
+- Forward proxy can force users to authenticate before fetching requests.
+
+Sample diagram:
+
+<p align=center>
+<img width=700 src='../../Images/all-things-devops-PAT.png'>
+</p>
 
 
 ### Networking Tools 

@@ -9,6 +9,7 @@
     - [Virtual Local Network](#virtual-local-network)
     - [Microsegmentation](#microsegmentation)
     - [Network Access Control](#network-access-control)
+    - [DHCP Snooping](#dhcp-snooping)
 - [Selecting Infrastructure Controls](#selecting-infrastructure-controls)
     - [Defense in Depth](#defense-in-depth)
     - [Zero Trust Model](#zero-trust-model)
@@ -155,18 +156,7 @@ Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
 
 VLANs are created by switches to logically segments a network without altering physical topology. 
 
-- **Corporate Network:**
-    - Departments like HR, Finance, and IT each on separate VLANs.
-- **Guest Wi-Fi:**
-    - Isolate guest devices from internal network using a dedicated VLAN.
-- **Voice over IP (VoIP):**
-    - Separate VLAN for VoIP traffic to prioritize voice communication.
-- **Server Farm:**
-    - Different VLANs for web servers, database servers, ensuring segmentation.
-
-  <p align=center>
-  <img width=800 src='../../Images/security-vlan-simplifieddd.png'>
-  </p>
+More details can be found here: [VLANs](./016-Computer-Networking.md#virtual-local-network)
 
 ### Microsegmentation 
 
@@ -182,9 +172,15 @@ Microsegmentation addresses modern cyber threats exploiting traditional security
 
 Network Access Control (NAC) scans devices for thir security status before granting network access, safeguarding against both known and unknown devices. 
 
-  - Provides network visibility for access security and potential incident response.
   - Identifies connections, isolates noncompliant devices, and supports incident response.
+  - Limits endpoint access to the network and provides network visibility for potential incident response.
   - Ensures compliance with organization policies before allowing devices to join the network.
+
+**NAC Policy typically contains:**
+  - Device/OS type 
+  - Device location
+  - Checks host-based firewall 
+  - Antivirus/update status
 
 **Use Cases for NAC Deployment:**
 
@@ -213,6 +209,16 @@ Network Access Control (NAC) scans devices for thir security status before grant
   - Agents scans device for compliance and delete itself after inspection.
   - Provide a quick evaluation without ongoing monitoring.
   - Typically used for initial security checks at connection time.
+
+### DHCP Snooping 
+
+DHCP Snooping is a security feature that acts as a firewall between untrusted hosts and trusted DHCP servers. By monitoring and filtering DHCP traffic, it helps prevent malicious attacks such as IP address spoofing and rogue DHCP servers.
+
+- Network switch feature, can be enabled to trust only known DHCP servers.
+- Maintains a binding table that records trusted devices and their IP addresses.
+- Drops traffic from untrusted ports and blocks unauthorized DHCP responses.
+- Prevents IP address conflicts, protecting against DHCP exhaustion attacks.
+
 
 ## Selecting Infrastructure Controls
 

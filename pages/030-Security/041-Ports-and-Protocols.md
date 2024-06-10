@@ -9,7 +9,7 @@
 - [Port Security](#port-security)
     - [Network Switches](#network-switches)
     - [Implementing Port Security](#implementing-port-security)
-    - [The 802.1X Protocol](#the-8021x-protocol)
+    - [IEEE 802.1X Protocol](#ieee-8021x-protocol)
     - [EAP](#eap)
 - [Transport Method](#transport-method)
     - [TCP](#tcp)
@@ -166,7 +166,7 @@ With port security, administrators can link MAC addresses of certain devices to 
 - This prevents other MAC addresses from connecting to the specific switch port.
 - Can still be bypassed through MAC spoofing or resetting MAC Addresses.
 
-### The 802.1X Protocol
+### IEEE 802.1X Protocol
 
 802.1x is a standardized framework that provides an authentication mechanism for devices wishing to connect to wired or wireless networks.
 
