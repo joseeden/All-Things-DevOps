@@ -1,8 +1,8 @@
 
 # Securing the Network
 
+
 - [Securing the Infrastructure](#securing-the-infrastructure)
-    - [Infrastructure Considerations](#infrastructure-considerations)
     - [Physical vs Logical Separation](#physical-vs-logical-separation)
     - [Network Segmentation](#network-segmentation)
     - [Demilitarized Zone](#demilitarized-zone)
@@ -10,6 +10,9 @@
     - [Microsegmentation](#microsegmentation)
     - [Network Access Control](#network-access-control)
     - [DHCP Snooping](#dhcp-snooping)
+    - [Infrastructure Considerations](#infrastructure-considerations)
+    - [Understand device attributes](#understand-device-attributes)
+    - [Failure Modes](#failure-modes)
 - [Selecting Infrastructure Controls](#selecting-infrastructure-controls)
     - [Defense in Depth](#defense-in-depth)
     - [Zero Trust Model](#zero-trust-model)
@@ -20,16 +23,18 @@
     - [Selection Process](#selection-process)
     - [Best Practices](#best-practices)
 - [Virtual Private Network](#virtual-private-network)
-    - [VPN Configurations](#vpn-configurations)
+    - [Tunneling Protocols](#tunneling-protocols)
     - [Tunnel Configurations](#tunnel-configurations)
+    - [VPN Configurations](#vpn-configurations)
 - [TLS](#tls)
     - [TCP](#tcp)
     - [DTLS](#dtls)
 - [IPSec](#ipsec)
-    - [Steps in Establishing IPSec Tunnel](#steps-in-establishing-ipsec-tunnel)
-    - [Data Transfer Modes](#data-transfer-modes)
-    - [Authentication Header](#authentication-header)
-    - [Encapsulating Security Payload](#encapsulating-security-payload)
+    - [Establishing an IPSec Tunnel](#establishing-an-ipsec-tunnel)
+    - [IPSec Tunnel Mode](#ipsec-tunnel-mode)
+    - [IPSec Transport Mode](#ipsec-transport-mode)
+    - [Authentication Header AH](#authentication-header-ah)
+    - [Encapsulation Security Payload ESP](#encapsulation-security-payload-esp)
 - [Firewall](#firewall)
     - [Types of Firewall](#types-of-firewall)
     - [Evolution of Firewalls](#evolution-of-firewalls)
@@ -46,6 +51,8 @@
 
 
 
+
+
 ## Securing the Infrastructure 
 
 TCP/IP’s vulnerabilities are numerous. Improperly implemented TCP/IP stacks in various operating systems are vulnerable to various attacks:
@@ -57,69 +64,6 @@ TCP/IP’s vulnerabilities are numerous. Improperly implemented TCP/IP stacks in
 - man-in-the-middle attacks
 
 TCP/IP (as well as most protocols) is also subject to passive attacks via monitoring or sniffing. Network monitoring, or sniffing, is the act of monitoring traffic patterns to obtain information about a network. 
-
-### Infrastructure Considerations
-
-Infrastructure considerations play a pivotal role in the efficiency and security of a network environment.
-
-- **Correct placement of devices**
-  - Location influences security and performance.
-  - Proper placement ensure optimal data flow and minimized latency
-  - If placed in the wrong places, it can lead to:
-    - Network bottlenecks 
-    - Vulnerability points 
-    - Areas without connectivity
-    
-- **Security Zones and Screened subnets** 
-  - **Security zones** - Isolating or segmenting networks 
-  - **Screened subnet** - previously referred to as **Demilitarized Zone (DMS)**
-
-- **Understanding attack surface**
-  - **Attack Surface** - all points that an unauthorized user can try to enter.
-  - The more complex a network becomes, the wider the attack surface becomes.
-  - Implement proper controls to mitigate the risk.
-
-- **Determine connectivity methods**
-  - Wired networks provide stabiilty and speed, but restrictive in terms of mobility.
-  - Wirelss connections offer greater levels of flexibility and scalability.
-  - Hybrid methods can be used to combine both.
-  - When deciding for connectivity methods to user, consider:
-    - scalability
-    - Speed requirements
-    - Security considerations 
-    - Budgetary constraints
-
-- **Understand device attributes**
-
-  - **Active**
-    - Monitor and act on suspicious network traffic by influencing data flows
-    - Makes real-time decisions based on the network's current state
-    - Example: IPS 
-
-  - **Passive**
-    - Simply observe and report on network traffic without actively intervening
-    - Example: IDS 
-
-  - **Inline** 
-    - Positioned directly in the path of the network traffic
-    - Can influence or block traffic as it passes through the device
-    - Filters malicious traffic and optimize data flow
-    - Example: Firewall, routers, IPS
-
-  - **Tap-based**  
-    - Discreet; placed outside of the direct network path
-    - Configured to only listen to network activity
-    - Captures data for analysis without impacting the actual traffic
-
-- **Configure the failure mode**
-  - Failover mode determines how devices will act in case something goes wrong.
-  - **Fail-open**
-    - Allows all traffic to pass through in the event of failure
-    - Will not inspect or filter, ensuring no disruption to the network service
-  - **Fail-closed**
-    - Blocks all traffic in the event of failure.
-    - Ensure security of the network is intact, but will impact network connectivity.
-
 
 ### Physical vs Logical Separation
 
@@ -219,6 +163,71 @@ DHCP Snooping is a security feature that acts as a firewall between untrusted ho
 - Drops traffic from untrusted ports and blocks unauthorized DHCP responses.
 - Prevents IP address conflicts, protecting against DHCP exhaustion attacks.
 
+### Infrastructure Considerations
+
+Infrastructure considerations play a pivotal role in the efficiency and security of a network environment.
+
+- **Correct placement of devices**
+  - Location influences security and performance.
+  - Proper placement ensure optimal data flow and minimized latency
+  - If placed in the wrong places, it can lead to:
+    - Network bottlenecks 
+    - Vulnerability points 
+    - Areas without connectivity
+    
+- **Understanding attack surface**
+  - **Attack Surface** - all points that an unauthorized user can try to enter.
+  - The more complex a network becomes, the wider the attack surface becomes.
+  - Implement proper controls to mitigate the risk.
+
+- **Determine connectivity methods**
+  - Wired networks provide stabiilty and speed, but restrictive in terms of mobility.
+  - Wirelss connections offer greater levels of flexibility and scalability.
+  - Hybrid methods can be used to combine both.
+  - When deciding for connectivity methods to user, consider:
+    - scalability
+    - Speed requirements
+    - Security considerations 
+    - Budgetary constraints
+
+- **Security Zones and Screened subnets** 
+  - **Security zones** - Isolating or segmenting networks 
+  - **Screened subnet** - previously referred to as **Demilitarized Zone (DMS)**
+
+### Understand device attributes
+
+  - **Active**
+    - Monitor and act on suspicious network traffic by influencing data flows
+    - Makes real-time decisions based on the network's current state
+    - Example: IPS 
+
+  - **Passive**
+    - Simply observe and report on network traffic without actively intervening
+    - Example: IDS 
+
+  - **Inline** 
+    - Positioned directly in the path of the network traffic
+    - Can influence or block traffic as it passes through the device
+    - Filters malicious traffic and optimize data flow
+    - Example: Firewall, routers, IPS
+
+  - **Tap-based**  
+    - Discreet; placed outside of the direct network path
+    - Configured to only listen to network activity
+    - Captures data for analysis without impacting the actual traffic
+
+### Failure Modes 
+
+Failover mode determines how devices will act in case something goes wrong.
+
+- **Fail-open**
+  - Allows all traffic to pass through in the event of failure
+  - Will not inspect or filter, ensuring no disruption to the network service
+- **Fail-closed**
+  - Blocks all traffic in the event of failure.
+  - Ensure security of the network is intact, but will impact network connectivity.
+
+
 
 ## Selecting Infrastructure Controls
 
@@ -284,31 +293,37 @@ Ensures transparency and accountability through rigorous testing and scrutiny of
 
 ## Virtual Private Network
 
-A Virtual Private Network or VPN extends a private network over a public one, enabling users to securely send and receive data.
+A Virtual Private Network or VPN extends a private network over a public one, allowing secure access to remote networks. This enables users to securely send and receive data.
 
 - Communication tunnel for point-to-point transmission.
-- With VPN, users can work from remote or different locaions.
+- With VPN, users can work from remote or different locations.
 - Secures authentication and data traffic over untrusted networks.
 
-### VPN Configurations
 
-- **Site-to-site**
-  - Connects multiple networks over the internet.
-  - Commonly used for linking branch offices to headquarters.
-  - Secures traffic, but can slow down users due to extra hops
-  - Requires compatible hardware at each site.
+### Tunneling Protocols 
 
-- **Client-to-site**
-  - Connects individual devices to a remote network.
-  - Ideal for remote or mobile workers.
-  - Requires VPN client software on the user's device.
-  - Uses strong authentication and encryption methods.
+Tunneling protocols are essential for securing data transmission across networks, especially over the internet. They encapsulate and encrypt data to ensure confidentiality, integrity, and authentication during transmission.
 
-- **Clientless**
-  - Provides secure access via a web browser.
-  - No need for VPN software installation on client devices.
-  - Ideal for temporary or unmanaged devices.
-  - Access is typically limited to specific web applications.
+- **Layer 2 Tunneling Protocol (L2TP)**
+
+  - Mechanism for establishing a tunnel over an insecure network.
+  - Often used with IPSec for secure VPN connections.
+  - Combines features of PPTP and L2F.
+  - Operates at the data link layer (Layer 2).
+
+- **Secure Sockets Layer (SSL)**
+
+  - Establishes secure connections between browsers and servers.
+  - Secures HTTP traffic, forming HTTPS.
+  - Operates above the transport layer (Layer 4).
+  - No longer used.
+
+- **Transport Layer Security (TLS)**
+
+  - Upgraded, more secure version of SSL.
+  - Operates above the transport layer (Layer 4).
+  - Used in HTTPS and other secure protocols like FTPS and IMAPS.
+
 
 ### Tunnel Configurations
 
@@ -328,6 +343,36 @@ Both tunnel configurations can be used for site-to-site or client-to-site VPNs.
   - Useful for accessing local resources and internet simultaneously.
   - Requires careful configuration to avoid security risks.
 
+### VPN Configurations
+
+VPN configurations ensure secure connections over public networks and come in various forms, including site-to-site, client-to-site, and clientless VPNs. 
+
+- **Site-to-site**
+  - Requires compatible VPN appliance at each site.
+  - Commonly used for linking branch offices to headquarters.
+  - Secures traffic, but can slow down users due to extra hops
+
+    <p>
+    <img width=600 
+    src="../../Images/azure-vnet-s2s-vpn-with-border.png">
+    </p>
+
+- **Client-to-site**
+  - Requires VPN client software on the user's device.
+  - Connects individual devices to a remote network.
+  - Ideal for remote or mobile workers.
+  - Uses strong authentication and encryption methods.
+
+    <p>
+    <img width=600 
+    src="../../Images/azure-vnet-p2s-vpn-with-border.png">
+    </p>
+
+- **Clientless**
+  - Provides secure access via a web browser.
+  - No need for VPN software installation on client devices.
+  - Ideal for temporary or unmanaged devices.
+  - Access is typically limited to specific web applications.
 
 ## TLS 
 
@@ -359,10 +404,18 @@ IPSec (Internet Protocol Security) is the most famous protocol used today for es
 - Encrypts IP packets to secure data transmission.
 - Confirms the identity of communicating devices.
 - Protects against data modification during transit.
-- an be used for site-to-site and client-to-site VPNs.
+- Can be used for site-to-site and client-to-site VPNs.
 - Supports secure communication between hosts (transport) and networks (tunnel).
 
-### Steps in Establishing IPSec Tunnel
+To secure the communication between two endpoints, we can utilized the following mechanisms:
+
+- Kerberos 
+- NTLMv2
+- PKI Certificates 
+- Pre-Shared Key (PSK)
+
+
+### Establishing an IPSec Tunnel
 
 1. Request to start Internet Key Exchange (IKE).
     - PC1 Initiates trafffic to PC2.
@@ -381,45 +434,64 @@ IPSec (Internet Protocol Security) is the most famous protocol used today for es
 5. Tunnel Termination
     - Tunnel is torn down, deleting IPSec security associations
 
-### Data Transfer Modes 
 
-- **Transport Mode**
-  - Employs the original IP header, keeping it intact.
-  - Encrypts only the payload of the IP packet.
-  - Works well when you want to increase packet size, exceeding the MTU size
-  - **Max Transmission Size (MTU)** - set at only 1500 bytes
-  - Anything beyond MTU, packet gets fragmented and causes VPN problems.
-  - Used for end-to-end communication between hosts, e.g. client-to-site VPNs
-  
-- **Tunneling Mode**
-  - Commonly used for site-to-site VPNs
-  - Packets are encapsulated within new ones, increasing the actual packet size.
-  - **Workaround for the packetsize:**
-    - Drop Max MTU size to 1400 bytes on inner router, then connect to VPN
-    - Allow jumbo frames, bigger thatn 1500 bytes
-    - Adjust MTU size to 9000 bytes, not recommended for internet use due to latency issues
-  - **At source and destination:**
-    - **Source side:** Encapsulates the encrypted packet within a new IP packet.
-    - **Destination side:** VPN concentrator removes outer header, decrypts content, and routes internally.
+### IPSec Tunnel Mode
 
-### Authentication Header 
+**IPSec Tunnel Mode** secures data transmission between two networks over the internet by encapsulating and encrypting the entire original IP packet within a new IP packet. This ensures both the payload and the original IP header are protected, commonly used in VPNs to create secure connections between gateways.
+
+- Packets are encapsulated within new ones, increasing the actual packet size.
+- Ideal for connecting remote networks securely; site-to-site VPNS.
+- Secures the entire original IP packet **using packet encapsulation.**
+
+Workaround for the packetsize:
+
+- Drop Max MTU size to 1400 bytes on inner router, then connect to VPN
+- Allow jumbo frames, bigger thatn 1500 bytes
+- Adjust MTU size to 9000 bytes, not recommended for internet use due to latency issues
+
+At source and destination:
+
+  - **Source side:** Encapsulates the encrypted packet within a new IP packet.
+  - **Destination side:** VPN concentrator removes outer header, decrypts content, and routes internally.
+
+### IPSec Transport Mode
+
+**IPSec Transport Mode** secures end-to-end communication between two devices by encrypting only the payload of the IP packet, while leaving the original IP header intact. This mode is commonly used for securing communication between two hosts or between a host and a gateway. 
+
+- Slightly less overhead than Tunnel Mode since only the payload is encrypted.
+- Commonly used within a secure network where the IP header does not need encryption.
+- Used for end-to-end communication between hosts, e.g. client-to-site VPNs
+- Secures the data portion of the IP packet, **no packet encapsulation.**
+
+Packet size:
+
+- Works well when you want to increase packet size, exceeding the MTU size
+- **Max Transmission Size (MTU)** - set at only 1500 bytes
+- Anything beyond MTU, packet gets fragmented and causes VPN problems.
+
+### Authentication Header (AH)
 
 Authentication Header (AH) offers connectionless data integrity and data origin authentication for IP datagrams using cryptographic hash as identification information.
 
-- Provides protection against replay attacks
-- Does not provide confidentiality of the data itself 
+- Ensures messages is not modified or tampered with.
+- Provides protection against replay attacks.
+- Uses HMAC-MD5 or HMAC-SHA, to hash the entire packet.
+- Does not provide confidentiality of the data itself.
 
-### Encapsulating Security Payload 
+### Encapsulation Security Payload (ESP) 
 
-ESP provides authentication, integrity, replay protection, and data confidentiality by encrypting the packet's payload.
+Encapsulation Security Payload (ESP) provides authentication, integrity, replay protection, and data confidentiality by encrypting the packet's payload.
 
 - Payload can be rewritten inside of an encrypted format.
-- Only protect confidentiality of the payload contained within the packet, not the headers.
+- Only the payload is encrypted but not the entire packet.
+- Protects confidentiality of payload contained within the packet, not the headers.
 
 In tunneling mode, ESP can be used along with authentication headers.
 
 - New IP header is added in front of the packet to cover the hops.
 - AH provides integrity for TCP header, ESP encrypts TCP header and payload.
+
+Since the payload is encrypted, some details like the type of traffic, e.g. whether it is TCP or UDP, and the port numbers are hidden. This is all well and good, but it might get blocked by a firewall since the firewall will have to check the traffic type and ports.
 
 
 ## Firewall 
@@ -450,7 +522,13 @@ Safeguards networks by monitoring and controlling traffic based on predefined se
   - Filters based on source and destination IP addresses, ports, and protocols.
   - Operates at the network layer (Layer 4) of the OSI model.
   - Simple and fast but lacks deep inspection capabilities.
-  - Cannot prevent IP spoofing, packet fragementation attacks, or TCP handshake attacks.
+
+- **Stateful**
+
+  - Tracks the state of active connections and requests.
+  - Inspects packets within the context of the traffic flow.
+  - Operates at the transport layer (Layer 4) of the OSI model.
+  - More secure than packet filtering, ensures packets are part of a valid session.
 
 - **Dynamic Packet Filtering**
 
@@ -458,13 +536,6 @@ Safeguards networks by monitoring and controlling traffic based on predefined se
   - Monitors ongoing connections and updates rules in real-time.
   - Offers higher security by adjusting to current network conditions.
   - More complex and resource-intensive than static packet filtering.
-
-- **Stateful**
-
-  - Tracks the state of active connections and requests.
-  - Inspects packets within the context of the traffic flow.
-  - Operates at the transport layer (Layer 4) of the OSI model.
-  - Provides more security than packet filtering by ensuring packets are part of a valid session.
 
 - **Proxy**
 
@@ -519,6 +590,7 @@ Safeguards networks by monitoring and controlling traffic based on predefined se
 
 - **Unified Threat Management Firewall (UTM)**
 
+  - Also known as **Secure Web Gateway (SWG)**.
   - Consolidates multiple security functions into a single device.
   - Firewall, antivirus, anti-spam, content filtering, and intrusion detection/prevention.
   - Simplifies network security management, ideal for small to medium-sized businesses.
@@ -573,11 +645,13 @@ An **intrusion** occurs when security mechanisms are bypassed, enabling unauthor
 
 ### Difference between IDS and IPS 
 
+Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS) are both crucial for network security, designed to monitor network traffic for suspicious activity. 
+
 - **Intrusion Detection Systems (IDS)**
   - Logs and alerts when it finds something suspicious or malicious.
   - Automates log inspection and real-time event analysis to detect intrusion attempts.
   - Recognizes anomalies and responds with alerts or alarms.
-  - Do not stop an attack, but are programmed to alert based on a criteria.
+  - Does not stop an attack, but are programmed to alert based on a criteria.
 
 - **Intrusion Protection Systems (IPS)**
   - Logs, alert on it, and take an action when it finds something suspicious or malicious.

@@ -373,6 +373,7 @@ Secures data while it's being transmitted over networks to prevent interception 
   - Suite of protocols; secure IP communications by encrypting and authenticating data packets.
   - End-to-end security for IP traffic, ensuring confidentiality, integrity, and authenticity.
   - Often used with VPNs to encrypt traffic between network segments.
+  - More details can be found here: [IPSec](./042-Securing-the-Network.md#ipsec)
 
 ### Data-in-Use Encryption
 
