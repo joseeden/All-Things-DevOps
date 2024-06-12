@@ -46,6 +46,7 @@
     - [Packet Sniffing](#packet-sniffing)
     - [Oversized Packet Attack](#oversized-packet-attack)
     - [Fragmented Packet Attack](#fragmented-packet-attack)
+    - [Reverse Shell](#reverse-shell)
 - [DNS Attacks](#dns-attacks)
     - [Domain Name System](#domain-name-system)
     - [DNS Cache Poisoning](#dns-cache-poisoning)
@@ -910,7 +911,21 @@ Fragmented packet attacks involve breaking down data into smaller fragments to b
 - **IDS/IPS**: Detect unusual fragmentation.
 - **Secure Protocols**: Use protocols that handle fragmentation securely.
 
+### Reverse Shell
 
+A reverse shell is a malicious connection where the target machine initiates a connection to the attacker's machine, allowing remote control over the target system. This technique bypasses firewalls that block incoming connections but allow outbound ones.
+
+- Attackers establish a connection from the victim's machine to their own, avoiding security controls.
+- Methods include exploiting vulnerabilities or using social engineering to run malicious code.
+
+Mitigation
+
+- Implement egress filtering to control outbound connections.
+- Regularly update and patch software to fix exploitable vulnerabilities.
+
+Sample diagram:
+
+![](../../Images/sec+-reverse-shell-diagram.png)
 
 ## DNS Attacks 
 
