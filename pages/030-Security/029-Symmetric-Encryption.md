@@ -2,8 +2,8 @@
 # Symmetric Encryption
 
 - [Symmetric Cryptosystems](#symmetric-cryptosystems)
-    - [Block Algorithms](#block-algorithms)
-    - [RC Cipher Suites](#rc-cipher-suites)
+    - [Block Ciphers](#block-ciphers)
+    - [Streaming Ciphers](#streaming-ciphers)
 - [Symmetric Block Modes](#symmetric-block-modes)
     - [Electronic Codebook](#electronic-codebook)
     - [Cipher Block Chaining CBC](#cipher-block-chaining-cbc)
@@ -11,8 +11,6 @@
     - [Output Feedback OFB](#output-feedback-ofb)
     - [Counter CTR](#counter-ctr)
     - [Galois/Counter Mode GCM](#galoiscounter-mode-gcm)
-
-
 
 
 ## Symmetric Cryptosystems 
@@ -28,7 +26,7 @@ Symmetric encryption is generally faster and less computationally intensive comp
 <img width=650 src='../../Images/sec+-symmetric-encryption-example-photo.png'>
 </p>
 
-### Block Algorithms
+### Block Ciphers
 
 | Algorithm                                             | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                               |
 |-------------------------------------------------------|---------------|-------------------|-----------------------|---------------------------|-------------------------------------------------------------------------------------------|
@@ -46,14 +44,15 @@ Symmetric encryption is generally faster and less computationally intensive comp
 - Number of rounds refers to how many rounds the data went through encryption. It is a pretty good clue as to how robust encryption is.
 - Blowfish and twofish were both released as open source products.
 
-### RC Cipher Suites 
+### Streaming Ciphers
 
-The RC suite comprises a range of ciphers, from block to stream, with varying levels of flexibility and security. 
+Also known as **RC Cipher Suites**, the streaming ciphers comprises a range of ciphers, from block to stream, with varying levels of flexibility and security. 
 
 - Rivest Cipher, created by Ron Rivest.
 - Some are now considered insecure (like RC4)
 - Others have had broader applications in encryption history (like RC5 and RC6).
 
+Unlike block ciphers, streaming ciphers encrypt one bit a time. It is wideless in encrypting wireless networks.
 
 | Algorithm  | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                                                   |
 |------------|---------------|-------------------|-----------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|

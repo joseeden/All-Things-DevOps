@@ -1,9 +1,4 @@
-
-
-
-## Indicators of Compromise
-
-These indicators help in detecting and responding to potential malicious activity on a network or a system.
+# Indicators of Compromise
 
 - [Account Lockouts](#account-lockouts)
 - [Concurrent Session Utilization](#concurrent-session-utilization)
@@ -16,7 +11,9 @@ These indicators help in detecting and responding to potential malicious activit
 - [Published or Documented Attacks](#published-or-documented-attacks)
 
 
-### Account Lockouts
+These indicators help in detecting and responding to potential malicious activity on a network or a system.
+
+## Account Lockouts
 
 Repeated failed login attempts resulting in accounts being locked.
 
@@ -24,7 +21,7 @@ Repeated failed login attempts resulting in accounts being locked.
 - Users reporting unexpected account lockouts.
 - Account lockout events in security logs.
 
-### Concurrent Session Utilization
+## Concurrent Session Utilization
 
 Multiple sessions active from different locations for a single user account.
 
@@ -32,7 +29,7 @@ Multiple sessions active from different locations for a single user account.
 - Unusual login times.
 - Elevated number of active sessions.
 
-### Blocked Content
+## Blocked Content
 
 Legitimate content being blocked by security mechanisms.
 
@@ -40,7 +37,7 @@ Legitimate content being blocked by security mechanisms.
 - Frequent false positives by security filters.
 - Users reporting inability to access necessary resources.
 
-### Impossible Travel
+## Impossible Travel
 
 Logins from geographically distant locations within an impossible timeframe.
 
@@ -48,7 +45,7 @@ Logins from geographically distant locations within an impossible timeframe.
 - Alerts for impossible travel scenarios.
 - Discrepancies in login locations.
 
-### Resource Consumption
+## Resource Consumption
 
 Excessive use of system resources like CPU, memory, or network bandwidth.
 
@@ -56,7 +53,7 @@ Excessive use of system resources like CPU, memory, or network bandwidth.
 - Spikes in CPU or memory usage.
 - Increased network traffic.
 
-### Resource Inaccessibility
+## Resource Inaccessibility
 
 Legitimate users unable to access system resources or services.
 
@@ -64,7 +61,7 @@ Legitimate users unable to access system resources or services.
 - Services becoming unavailable.
 - Frequent timeouts or access errors.
 
-### Out-of-Cycle Logging
+## Out-of-Cycle Logging
 
 Unexpected logging activity outside of normal operational hours.
 
@@ -72,7 +69,7 @@ Unexpected logging activity outside of normal operational hours.
 - Unusual patterns in log activity.
 - System generating logs when idle.
 
-### Missing Logs
+## Missing Logs
 
 Absence of expected log entries indicating potential tampering.
 
@@ -80,7 +77,7 @@ Absence of expected log entries indicating potential tampering.
 - Critical events not logged.
 - Log tampering alerts.
 
-### Published or Documented Attacks
+## Published or Documented Attacks
 
 Known attack methods or vulnerabilities being actively exploited.
 

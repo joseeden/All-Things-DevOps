@@ -3,24 +3,28 @@
 
 
 - [Logs and Metadata](#logs-and-metadata)
-- [Syslog](#syslog)
-    - [Syslog](#syslog)
-    - [Rsyslog](#rsyslog)
-    - [Syslog-ng](#syslog-ng)
-- [Logging Tools](#logging-tools)
-    - [Journalctl](#journalctl)
-    - [NXLog](#nxlog)
 - [Network Traffic Flow](#network-traffic-flow)
     - [NetFlow](#netflow)
     - [Sampled Flow](#sampled-flow)
     - [IPFix](#ipfix)
-- [Invetigating Logs](#invetigating-logs)
+- [Centralized Logging](#centralized-logging)
+    - [SNMP](#snmp)
+    - [Windows Logs](#windows-logs)
+    - [SIEM](#siem)
+- [Logging Tools](#logging-tools)
+    - [Journalctl](#journalctl)
+    - [NXLog](#nxlog)
+- [Syslog](#syslog)
+    - [Syslog](#syslog)
+    - [Rsyslog](#rsyslog)
+    - [Syslog-ng](#syslog-ng)
+    - [Configuring Linux Log Forwarding](#configuring-linux-log-forwarding)
+- [Investigating Logs](#investigating-logs)
     - [Firewall Logs](#firewall-logs)
     - [Application Logs](#application-logs)
     - [Endpoint Logs](#endpoint-logs)
     - [OS Logs](#os-logs)
     - [Network Logs](#network-logs)
-
 
 
 ## Logs and Metadata
@@ -43,49 +47,6 @@ Types of log files:
 
 - Data about the data
 - Example, phone bill shows the calls made, but not actual conversation in the calls.
-
-## Syslog 
-
-There are different variations of syslog which all permit the logging of data from different types of systems in a central repository.
-
-### Syslog
-
-- Standard logging protocol used for message logging on Unix-like systems.
-- Sends log messages to a central server or repository for storage and analysis.
-- Widely supported by various network devices, servers, and applications.
-
-### Rsyslog
-
-- Enhanced version of syslog, offering additional features and capabilities.
-- Supports reliable transmission of log messages over TCP and TLS.
-- Provides advanced filtering, message modification, and routing options.
-- Linux and Unix.
-
-### Syslog-ng
-
-- Advanced features and customization options.
-- High-performance log processing, including filtering, routing, and correlation.
-- Offers support for log classification, encryption, and archival.
-- Linux and Unix.
-
-## Logging Tools 
-
-### Journalctl
-
-Linux command-line utility for querying and displaying logs from the systemd journal, which is responsible for managing and storing log data on a Linux machine. 
-
-- Part of the systemd system and service manager used in many Linux distributions.
-- Filtering options, including time range, unit, priority, and log level.
-- Offers interactive and non-interactive modes for browsing log entries efficiently.
-
-### NXLog
-
-NXLog is an open-source, cross-platform log collection and management tool that facilitates the collection, processing, and forwarding of logs from various sources.
-
-- Supports multiple log formats and protocols, including syslog, JSON, and XML.
-- Offers filtering, parsing, and enrichment capabilities for log data.
-- Integrates with SIEM solutions and log management platforms.
-- Unix, Linux, and Windows.
 
 ## Network Traffic Flow 
 
@@ -111,7 +72,145 @@ IPFix (IP Flow Information Export) is a standard protocol for exporting flow inf
 - Allows network devices to export flow records to a collector for analysis.
 - Network traffic analysis, performance monitoring, and security threat detection.
 
-## Invetigating Logs 
+
+## Centralized Logging 
+
+### SNMP
+
+Simple Network Management Protocol (SNMP) is a widely used protocol for monitoring and managing network devices.
+
+- Operates on the Application Layer of the OSI model.
+- Software agent or built into firmware; uses a manager/agent architecture.
+- SNMP traps provide real-time alerts and notify management stations.
+- More details can be fond here: [SNMP](./047-Alerting-and-Monitoring.md#snmp)
+
+### Windows Logs
+
+Windows Logs record system, security, and application events, essential for troubleshooting and security auditing.
+
+- View and manage with Windows Event Viewer Subscriptions.
+- Logs from Windows host can be pushed to a collector server over WinRM protocol.
+- The collector server can also initiate and pull the logs from the hosts.
+- Key categories: System, Application, Security.
+
+### SIEM
+
+Security Information and Event Management (SIEM) systems aggregate and analyze security events for real-time monitoring and incident response.
+
+- Collects log and event data from multiple sources and uses correlation to detect threats.
+- Provides dashboards, alerts, and reports for alerts, packet captures, malware alerts, etc.
+- More details can be fond here: [SIEM](./047-Alerting-and-Monitoring.md#siem)
+
+## Logging Tools 
+
+### Journalctl
+
+Linux command-line utility for querying and displaying logs from the systemd journal, which is responsible for managing and storing log data on a Linux machine. 
+
+- Part of the systemd system and service manager used in many Linux distributions.
+- Filtering options, including time range, unit, priority, and log level.
+- Offers interactive and non-interactive modes for browsing log entries efficiently.
+
+### NXLog
+
+NXLog is an open-source, cross-platform log collection and management tool that facilitates the collection, processing, and forwarding of logs from various sources.
+
+- Supports multiple log formats and protocols, including syslog, JSON, and XML.
+- Offers filtering, parsing, and enrichment capabilities for log data.
+- Integrates with SIEM solutions and log management platforms.
+- Unix, Linux, and Windows.
+
+
+## Syslog 
+
+There are different variations of syslog which all permit the logging of data from different types of systems in a central repository.
+
+### Syslog
+
+- Standard logging protocol used for message logging on Unix-like systems.
+- Sends log messages to a central server or repository for storage and analysis.
+- Widely supported by various network devices, servers, and applications.
+
+### Rsyslog
+
+- Enhanced version of syslog, offering additional features and capabilities.
+- Supports reliable transmission of log messages over TCP and TLS.
+- Provides advanced filtering, message modification, and routing options.
+- Linux and Unix.
+
+### Syslog-ng
+
+- Advanced features and customization options.
+- High-performance log processing, including filtering, routing, and correlation.
+- Offers support for log classification, encryption, and archival.
+- Linux and Unix.
+
+### Configuring Linux Log Forwarding
+
+Configure first the centralized host that will receive the logs.
+Modify the /etc/rsyslog.conf. Enable a listener on port 514 or you can also specify a different port.
+
+```bash
+# /etc/rsyslog.conf
+
+#### MODULES ####
+module(load="imuxsock")  # provides support for local system logging (e.g., via logger command)
+module(load="imklog")    # provides kernel logging support (previously done by rklogd)
+module(load="imudp")     # provides UDP syslog reception
+input(type="imudp" port="514")
+module(load="imtcp")     # provides TCP syslog reception
+input(type="imtcp" port="514")
+```
+
+Save the file and restart rsyslog afterwards.
+
+```bash
+sudo systemctl restart rsyslog 
+sudo systemctl status rsyslog 
+```
+
+Verify that the listener is created:
+
+```bash
+sudo netstat -tnlpu | grep rsyslog  
+```
+
+<p>
+<img width=600  src='../../Images/sec+-rsyslog-on-central-server.png'>
+</p>
+
+
+Next, configure the client that will be forwarding the logs to the centralized log server. Modify the /etc/rsyslog.conf and add the line at the bottom of the file:
+
+```bash
+*.*  @10.1.1.5      # IP of the central log server.
+``` 
+
+"*.*" means any log entry. Save the file and restart the rsyslog service.
+
+```bash
+sudo systemctl restart rsyslog 
+sudo systemctl status rsyslog 
+```
+
+To verify, we can use the logger utility.
+
+```bash
+logger "testing forwarding from client"  
+```
+
+This should appear in the syslog file in the client side.
+
+```bash
+tail -10 /var/log/syslog 
+```
+
+Go to the central log server and run the same command. We should see the same message.
+
+
+
+
+## Investigating Logs 
 
 ### Firewall Logs 
 

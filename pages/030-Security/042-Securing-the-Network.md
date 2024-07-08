@@ -182,7 +182,7 @@ Infrastructure considerations play a pivotal role in the efficiency and security
 
 - **Determine connectivity methods**
   - Wired networks provide stabiilty and speed, but restrictive in terms of mobility.
-  - Wirelss connections offer greater levels of flexibility and scalability.
+  - Wireless connections offer greater levels of flexibility and scalability.
   - Hybrid methods can be used to combine both.
   - When deciding for connectivity methods to user, consider:
     - scalability

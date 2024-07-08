@@ -3,7 +3,7 @@
 
 This repository contains various labs, notes, ideas, and lessons that I've gathered over the years working on various DevOps projects. 
 
-- [Notes](#notes)
+- [Personal Notes](#personal-notes)
 - [Projects](#projects)
 - [Foundations](#foundations)
 - [Cloud - Fundamentals](#cloud---fundamentals)
@@ -24,11 +24,13 @@ This repository contains various labs, notes, ideas, and lessons that I've gathe
 - [Resources](#resources)
 
 
-## Notes
+## Personal Notes
 
-- [Notes - Setting Up Development Laptop](pages/001-Notes/002-Setting-up-dev-laptop.md)
-- [Notes - IDE and Terminal](pages/001-Notes/000-IDE.md)
-- [Notes - DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
+- [Setting Up Development Laptop](pages/001-Notes/002-Setting-up-dev-laptop.md)
+- [IDE and Terminal](pages/001-Notes/000-IDE.md)
+- [DevOps Handbook](pages/001-Notes/001-Devops-Handbook.md)
+- [Tools Specifications](pages/001-Notes/005-Tools-Specifications.md)
+- [Building a Documentation Website](pages/001-Notes/004-Building-a-Documentation-Website.md)
 
 ## Projects 
 

@@ -1,18 +1,18 @@
 
 # Asymmetric Encryption
 
+
 - [Asymmetric Encryption](#asymmetric-encryption)
 - [Digital Signature](#digital-signature)
 - [Asymmetric Encryption Methods](#asymmetric-encryption-methods)
 - [ECC Variations](#ecc-variations)
-    - [ECDSA Elliptic Curve Digital Signature Algorithm](#ecdsa-elliptic-curve-digital-signature-algorithm)
-    - [ECDH Elliptic Curve Diffie-Hellman](#ecdh-elliptic-curve-diffie-hellman)
-    - [ECMQV Elliptic Curve Menezes-Qu-Vanstone](#ecmqv-elliptic-curve-menezes-qu-vanstone)
-    - [EdDSA Edwards-curve Digital Signature Algorithm](#eddsa-edwards-curve-digital-signature-algorithm)
+    - [ECDSA](#ecdsa)
+    - [ECDH](#ecdh)
+    - [ECMQV](#ecmqv)
+    - [EdDSA](#eddsa)
     - [Secp256k1](#secp256k1)
 - [Diffie-Hellman](#diffie-hellman)
 - [Diffie-Hellman Groups](#diffie-hellman-groups)
-
 
 
 ## Asymmetric Encryption 
@@ -68,6 +68,7 @@ Each algorithm supports a range of key sizes that directly influence the securit
 - Provides similar security with **smaller key sizes**, leading to efficiency gains. 
 - ECC with a 256-bit key is just as secure as RSA with 2048-bit key.
 
+Summarized table:
 
 | Algorithm                             | Key Structure             | Supported Key Sizes   | Use Cases                                         | Strengths                                                     | Weaknesses                                                                        |
 |---------------------------------------|---------------------------|-----------------------|---------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------|
@@ -81,31 +82,35 @@ Each algorithm supports a range of key sizes that directly influence the securit
 
 Elliptic Curve Cryptography (ECC) is a type of public-key cryptography that relies on the mathematical properties of elliptic curves to secure communications. Within ECC, there are several variations that offer different approaches and benefits.
 
-### ECDSA (Elliptic Curve Digital Signature Algorithm)
+### ECDSA 
 
+- ECDSA (Elliptic Curve Digital Signature Algorithm)
 - **A variant of the Digital Signature Algorithm (DSA)** that uses elliptic curves for digital signatures.
 - Often used in secure communications, blockchain technology, and software signing.
 - Provides strong security with smaller key sizes compared to RSA. 
 - Efficient for generating digital signatures.
 - Requires careful selection of curve parameters and robust implementation to avoid vulnerabilities.
 
-### ECDH (Elliptic Curve Diffie-Hellman)
+### ECDH 
 
+- ECDH (Elliptic Curve Diffie-Hellman)
 - **A variation of the Diffie-Hellman key exchange** that uses elliptic curves.
 - Used to establish shared secret keys for secure communication.
 - Offers secure key exchange with reduced computational overhead compared to traditional Diffie-Hellman.
 - Like ECDSA, requires careful parameter selection to ensure security.
 
-### ECMQV (Elliptic Curve Menezes-Qu-Vanstone)
+### ECMQV
 
+- ECMQV (Elliptic Curve Menezes-Qu-Vanstone)
 - An elliptic curve-based key agreement protocol.
 - Used in situations requiring authenticated key exchange.
 - Provides authenticated key exchange with lower computational requirements than traditional MQV.
 - Less commonly used than ECDSA or ECDH. 
 - Robustness depends on correct parameter choices and secure implementation.
 
-### EdDSA (Edwards-curve Digital Signature Algorithm)
+### EdDSA 
 
+- EdDSA (Edwards-curve Digital Signature Algorithm)
 - **A digital signature algorithm based on the Edwards curve family**.
 - Increasingly used in modern cryptographic systems for digital signatures.
 - High security and simplicity; resistant to several types of attacks, with rapid signature verification.
