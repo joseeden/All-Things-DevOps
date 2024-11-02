@@ -1,12 +1,11 @@
 
 # All Things DevOps 
 
-> [!WARNING] Archived
+> [!WARNING] 
 > 
 > This repository is now archived.<br>
 > All future documentations can be accessed on my personal website.<br>
 > See [Joeden in Github](https://github.com/joseeden/joeden)
-
 
 
 This repository contains various labs, notes, ideas, and lessons that I've gathered over the years working on various DevOps projects. 
